@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#07090d"/>
+  <circle cx="980" cy="120" r="260" fill="#4ea5ff" opacity=".18"/>
+  <circle cx="140" cy="540" r="240" fill="#d8b65a" opacity=".12"/>
+  <text x="86" y="180" fill="#f5f7fb" font-family="Arial, sans-serif" font-size="76" font-weight="800">AtlasOps AI</text>
+  <text x="86" y="275" fill="#dfe7f4" font-family="Arial, sans-serif" font-size="44" font-weight="700">AI Business Automation Audit</text>
+  <text x="86" y="356" fill="#abb6c8" font-family="Arial, sans-serif" font-size="30">Workflow mapping, content systems, website CTAs, and practical AI operations.</text>
+  <rect x="86" y="430" width="390" height="70" rx="10" fill="#4ea5ff"/>
+  <text x="116" y="476" fill="#ffffff" font-family="Arial, sans-serif" font-size="28" font-weight="800">Start the audit</text>
+</svg>

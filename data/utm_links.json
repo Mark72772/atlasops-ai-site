@@ -1,0 +1,30 @@
+[
+  {
+    "id": "website-hero",
+    "source": "website",
+    "medium": "hero_cta",
+    "campaign": "ai_business_automation_audit",
+    "url": "https://www.paypal.me/markWilson385"
+  },
+  {
+    "id": "linkedin-organic",
+    "source": "linkedin",
+    "medium": "organic",
+    "campaign": "ai_business_automation_audit",
+    "url": "https://Mark72772.github.io/atlasops-ai-site/ai-business-automation-audit.html?utm_source=linkedin&utm_medium=organic&utm_campaign=ai_business_automation_audit"
+  },
+  {
+    "id": "x-organic",
+    "source": "x",
+    "medium": "organic",
+    "campaign": "ai_business_automation_audit",
+    "url": "https://Mark72772.github.io/atlasops-ai-site/ai-business-automation-audit.html?utm_source=x&utm_medium=organic&utm_campaign=ai_business_automation_audit"
+  },
+  {
+    "id": "service-ad",
+    "source": "website",
+    "medium": "service_ad",
+    "campaign": "ai_business_automation_audit",
+    "url": "https://Mark72772.github.io/atlasops-ai-site/ai-business-automation-audit.html?utm_source=website&utm_medium=service_ad&utm_campaign=ai_business_automation_audit"
+  }
+]
