@@ -1,0 +1,122 @@
+[
+  {
+    "slug": "ai-business-automation-audit",
+    "name": "AI Business Automation Audit",
+    "price": "Starter Audit from $99",
+    "image": "assets/img/service-ai-business-automation.png",
+    "alt": "Abstract AtlasOps AI workflow map for an AI Business Automation Audit",
+    "helps": "Operators, founders, consultants, creators, and small businesses with manual follow-up, website, payment, or content gaps.",
+    "problems": [
+      "Missed follow-ups",
+      "Scattered tools",
+      "Weak payment CTAs",
+      "No workflow map"
+    ],
+    "deliverables": "Workflow review, opportunity map, tool stack recommendation, marketing automation plan, risk checklist, and 7-day roadmap.",
+    "process": [
+      "Send the workflow and public website details.",
+      "AtlasOps maps bottlenecks and handoffs.",
+      "You receive an implementation-ready audit report."
+    ]
+  },
+  {
+    "slug": "ai-marketing-automation-audit",
+    "name": "AI Marketing Automation Audit",
+    "price": "Quote-based",
+    "image": "assets/img/service-ai-business-automation.png",
+    "alt": "AtlasOps AI marketing automation flow with source-backed content and follow-up signals",
+    "helps": "Teams that need better intake, follow-up, content, and campaign handoffs.",
+    "problems": [
+      "Manual campaign tracking",
+      "Inconsistent content",
+      "Lost leads",
+      "Unclear approval gates"
+    ],
+    "deliverables": "Marketing workflow map, automation opportunities, content cadence, and approval boundaries.",
+    "process": [
+      "Review current marketing process.",
+      "Identify automation opportunities.",
+      "Create a safer campaign operating plan."
+    ]
+  },
+  {
+    "slug": "ai-website-paypal-setup",
+    "name": "AI Website + PayPal CTA Setup",
+    "price": "Quote-based",
+    "image": "assets/img/service-ai-business-automation.png",
+    "alt": "AtlasOps AI website and PayPal CTA workflow card",
+    "helps": "Businesses that need a clear service page and payment path.",
+    "problems": [
+      "Buried CTA",
+      "No payment route",
+      "No public-safe content guard",
+      "No UTM structure"
+    ],
+    "deliverables": "Static page structure, PayPal.me CTA, UTM links, tracked static /go routes, and content guard review.",
+    "process": [
+      "Define the offer.",
+      "Build public-safe static pages.",
+      "Verify CTA and deployment status."
+    ]
+  },
+  {
+    "slug": "ai-social-content-system",
+    "name": "AI Social Content System Setup",
+    "price": "Quote-based",
+    "image": "assets/img/service-social-content-system.png",
+    "alt": "AtlasOps AI social content system with source-backed posts and manual-final-click gates",
+    "helps": "Operators who want a daily content machine without unsupported claims.",
+    "problems": [
+      "Generic posts",
+      "No source tracking",
+      "Duplicate content",
+      "No posting verification"
+    ],
+    "deliverables": "Source-backed post templates, queue, duplicate guard, UTM links, and manual-final-click workflow.",
+    "process": [
+      "Select business topics.",
+      "Create source-backed drafts.",
+      "Queue or publish only when platform gates pass."
+    ]
+  },
+  {
+    "slug": "code-intelligence-audit",
+    "name": "Code Intelligence / Spec-Driven Audit",
+    "price": "Quote-based",
+    "image": "assets/img/service-code-intelligence.png",
+    "alt": "AtlasOps AI code intelligence audit diagram with checks, diffs, and rollback points",
+    "helps": "Teams with codebases that need repair, documentation, or safer automation.",
+    "problems": [
+      "Unclear runtime ownership",
+      "Missing tests",
+      "Risky changes",
+      "No rollback plan"
+    ],
+    "deliverables": "Code review, workflow plan, risk map, test recommendations, and delivery checklist.",
+    "process": [
+      "Inventory the codebase.",
+      "Review risks and missing tests.",
+      "Create a repair plan with verification steps."
+    ]
+  },
+  {
+    "slug": "ocr-document-workflow-automation",
+    "name": "OCR + Document Workflow Automation",
+    "price": "Quote-based",
+    "image": "assets/img/service-ocr-document-workflow.png",
+    "alt": "AtlasOps AI OCR document workflow showing forms, tables, and verification checks",
+    "helps": "Businesses with forms, receipts, PDFs, screenshots, or repeat document handling.",
+    "problems": [
+      "Manual data entry",
+      "Unverified extraction",
+      "Scattered document review",
+      "No audit trail"
+    ],
+    "deliverables": "OCR path, extraction plan, verification rules, workflow routing, and fallback handling.",
+    "process": [
+      "Review document examples.",
+      "Select extraction targets.",
+      "Create a verified workflow map."
+    ]
+  }
+]
