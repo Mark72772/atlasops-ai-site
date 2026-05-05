@@ -1,0 +1,20 @@
+{
+  "ok": true,
+  "endpoint_type": "none",
+  "endpoint_configured": false,
+  "endpoint_url": null,
+  "gmail_destination_configured": false,
+  "gmail_destination": null,
+  "status": "setup_required",
+  "setup_instructions": [
+    "Option A Formspree: create a Formspree form, set ATLASOPS_LEAD_ENDPOINT_TYPE=formspree and ATLASOPS_LEAD_ENDPOINT_URL to the form endpoint.",
+    "Option B Google Apps Script: deploy a doPost(e) web app that writes to a Sheet and sends a Gmail notification, then set ATLASOPS_LEAD_ENDPOINT_TYPE=google_apps_script and ATLASOPS_LEAD_ENDPOINT_URL.",
+    "Option C fallback: keep the public form in setup-required mode and use the PayPal/contact instructions until the endpoint exists."
+  ],
+  "privacy_rules": [
+    "No passwords, API keys, payment cards, or private uploads in public forms.",
+    "UTM fields are campaign context only, not browser fingerprinting.",
+    "Lead data is local Atlas runtime data and is never committed to the public website repo."
+  ],
+  "updated_at": "2026-05-05T15:32:08.739348+00:00"
+}

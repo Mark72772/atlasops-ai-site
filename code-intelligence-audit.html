@@ -9,6 +9,7 @@
   <meta property="og:description" content="Code Intelligence / Spec-Driven Audit from AtlasOps AI.">
   <meta property="og:image" content="assets/img/atlas-og-image.png">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/img/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
   <link rel="stylesheet" href="assets/css/atlas-site.css">
   <script defer src="assets/js/atlas-site.js"></script>
@@ -52,6 +53,38 @@
       <h2>What AtlasOps delivers</h2>
       <p>Code review, workflow plan, risk map, test recommendations, and delivery checklist.</p>
       <p>No fake guarantees: AtlasOps makes practical recommendations and delivery assets, but does not promise revenue, traffic, platform approval, or legal/financial outcomes.</p>
+    </section>
+    <section class="section band">
+      
+      <form class="lead-form atlasops-lead-form" action="#lead-form-setup-required" method="get" data-endpoint-status="setup_required" data-endpoint-type="none">
+        <h2>Start an AtlasOps AI intake</h2>
+        <p class="form-note">Tell us what workflow, website, content system, or document process you want reviewed. Do not send passwords, API keys, payment card data, or private files through this public form.</p>
+        <p class="form-note" id="lead-form-setup-required">Lead endpoint setup is pending. AtlasOps can still be contacted through the PayPal/start-audit path while Formspree or Google Apps Script is configured.</p>
+        <div class="form-grid two">
+          <label>Name <input name="name" autocomplete="name" required></label>
+          <label>Email <input name="email" type="email" autocomplete="email" required></label>
+          <label>Company <input name="company" autocomplete="organization"></label>
+          <label>Website <input name="website" type="url" placeholder="https://example.com"></label>
+          <label>Service interest <select name="service_interest"><option value="AI Business Automation Audit">AI Business Automation Audit</option>
+<option value="AI Marketing Automation Audit">AI Marketing Automation Audit</option>
+<option value="AI Website + PayPal CTA Setup">AI Website + PayPal CTA Setup</option>
+<option value="AI Social Content System Setup">AI Social Content System Setup</option>
+<option value="Code Intelligence / Spec-Driven Audit" selected>Code Intelligence / Spec-Driven Audit</option>
+<option value="OCR + Document Workflow Automation">OCR + Document Workflow Automation</option></select></label>
+          <label>Budget range <select name="budget_range"><option value="">Select range</option><option>$99 starter audit</option><option>$299 workflow audit</option><option>$499 setup call</option><option>Quote-based build</option></select></label>
+        </div>
+        <label>Message <textarea name="message" rows="5" required placeholder="What manual workflow or conversion problem should AtlasOps review first?"></textarea></label>
+        <input type="hidden" name="source_page" value="code-intelligence-audit.html">
+        <input type="hidden" name="referrer" value="">
+        <input type="hidden" name="utm_source" value="">
+        <input type="hidden" name="utm_medium" value="">
+        <input type="hidden" name="utm_campaign" value="">
+        <input type="hidden" name="utm_content" value="">
+        <input type="hidden" name="go_route" value="">
+        <label class="consent-line"><input name="consent_checkbox" type="checkbox" required> I agree to be contacted about this AtlasOps AI inquiry and understand this public form is not for sensitive data.</label>
+        <button class="button primary" type="submit">Submit intake</button>
+      </form>
+    
     </section>
 
   </main>

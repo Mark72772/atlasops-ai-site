@@ -82,6 +82,22 @@ p { color: var(--muted); margin: 0 0 1.1rem; max-width: 70ch; }
 .meta { color: var(--gold); font-size: .86rem; text-transform: uppercase; letter-spacing: .08em; font-weight: 850; }
 .service-hero { display: grid; grid-template-columns: minmax(0, .9fr) minmax(300px, .7fr); gap: min(6vw, 4rem); align-items: center; }
 .route-box { word-break: break-word; border: 1px solid var(--line); border-radius: .45rem; padding: 1rem; background: rgba(0, 0, 0, .22); }
+.lead-form { display: grid; gap: 1rem; border: 1px solid var(--line); border-radius: .65rem; padding: 1.35rem; background: rgba(17, 24, 39, .84); box-shadow: var(--shadow); }
+.form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.lead-form label { display: grid; gap: .45rem; color: #E3EAF6; font-weight: 750; }
+.lead-form input, .lead-form select, .lead-form textarea {
+  width: 100%;
+  border: 1px solid rgba(170, 180, 196, .28);
+  border-radius: .45rem;
+  background: rgba(8, 11, 18, .78);
+  color: var(--text);
+  padding: .86rem .9rem;
+  font: inherit;
+}
+.lead-form textarea { resize: vertical; min-height: 8rem; }
+.form-note { color: var(--muted); font-size: .95rem; }
+.consent-line { display: flex !important; grid-template-columns: auto 1fr; align-items: flex-start; gap: .7rem !important; color: var(--muted) !important; font-weight: 650 !important; }
+.consent-line input { width: auto; margin-top: .28rem; }
 .footer { border-top: 1px solid var(--line); padding: 2rem min(6vw, 4.5rem); color: var(--muted); display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
 .footer a { color: var(--text); }
 @media (max-width: 900px) {
