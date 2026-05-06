@@ -31,7 +31,7 @@
     <section class="section service-hero">
       <div>
         <h1>Ask Atlas About AI Business Automation</h1>
-        <p class="lead">Send a question about your workflow, website, content system, document process, codebase, or AI automation idea. Atlas will review it and reply by email when the intake path is connected.</p>
+        <p class="lead">Send a question about your workflow, website, content system, document process, codebase, or AI automation idea. Ask Atlas is live when Atlas is online, with email fallback when offline.</p>
         <div class="actions"><a class="button primary" href="ai-business-automation-audit.html">Start AI Business Automation Audit</a><a class="button gold" href="https://www.paypal.me/markWilson385">Pay with PayPal</a><a class="button ghost" href="services.html">View Services</a></div>
       </div>
       <div class="service-media"><img src="assets/img/service-ai-business-automation.png" alt="AtlasOps AI automation audit workflow map"></div>
@@ -41,10 +41,10 @@
       <div class="ask-atlas-widget" data-widget-state="endpoint_needs_setup">
         <div class="ask-atlas-widget-header">
           <div>
-            <h2>Ask Atlas - async reply by email</h2>
-            <p class="form-note" id="lead-form-setup-required">Endpoint setup needed. AtlasOps is ready to connect Formspree, Google Apps Script, Cloudflare Worker, or mailto fallback before collecting public submissions.</p>
+            <h2>Ask Atlas - live when Atlas is online, email fallback when offline</h2>
+            <p class="form-note" id="lead-form-setup-required">Endpoint setup needed. AtlasOps is ready to connect the Cloudflare Worker relay before collecting public submissions.</p>
           </div>
-          <span class="ask-atlas-widget-badge">Not live chat</span>
+          <span class="ask-atlas-widget-badge">Relay setup needed</span>
         </div>
         <form class="lead-form atlasops-lead-form ask-atlas-widget-form" action="#lead-form-setup-required" method="get" data-endpoint-status="endpoint_needs_setup" data-endpoint-type="none">
           <div class="form-grid two">
@@ -85,7 +85,7 @@
     <!-- ATLAS_FAQ_START -->
     <section class="section faq-section">
       <h2>FAQ</h2>
-      <div class="faq-list"><details><summary>What is the AI Business Automation Audit?</summary><p>A practical review of one business workflow, website/payment CTA, follow-up path, and automation opportunity map.</p></details><details><summary>What do I receive?</summary><p>A workflow map, opportunity scorecard, risk notes, suggested tools, and a short roadmap for the next useful automation step.</p></details><details><summary>What should I send?</summary><p>A public website link, the workflow you want reviewed, current tools, and where follow-up or handoff breaks down.</p></details><details><summary>How does payment work?</summary><p>Payment is through PayPal.me. AtlasOps verifies payment locally from evidence before delivery.</p></details><details><summary>Can Atlas answer questions before I pay?</summary><p>Yes. Ask Atlas can answer basic service-fit questions by async email once the intake endpoint is connected.</p></details><details><summary>Can Atlas access my systems?</summary><p>Not through the public form. Deeper technical review requires explicit authorization and scope.</p></details><details><summary>Is this live AI chat?</summary><p>No. Ask Atlas is async email unless a real-time relay is configured and verified.</p></details><details><summary>What should I not send through the public form?</summary><p>Do not send passwords, API keys, payment card data, private files, or sensitive customer data.</p></details><details><summary>How fast will AtlasOps reply?</summary><p>Usually within one business day once the intake endpoint and monitoring path are configured.</p></details><details><summary>What happens after I submit?</summary><p>AtlasOps creates a local question/lead record, drafts a governed reply, and sends only after the configured email policy allows it.</p></details></div>
+      <div class="faq-list"><details><summary>What is the AI Business Automation Audit?</summary><p>A practical review of one business workflow, website/payment CTA, follow-up path, and automation opportunity map.</p></details><details><summary>What do I receive?</summary><p>A workflow map, opportunity scorecard, risk notes, suggested tools, and a short roadmap for the next useful automation step.</p></details><details><summary>What should I send?</summary><p>A public website link, the workflow you want reviewed, current tools, and where follow-up or handoff breaks down.</p></details><details><summary>How does payment work?</summary><p>Payment is through PayPal.me. AtlasOps verifies payment locally from evidence before delivery.</p></details><details><summary>Can Atlas answer questions before I pay?</summary><p>Yes. Ask Atlas can answer basic service-fit questions when the relay or email fallback is connected.</p></details><details><summary>Can Atlas access my systems?</summary><p>Not through the public form. Deeper technical review requires explicit authorization and scope.</p></details><details><summary>Is this live AI chat?</summary><p>Ask Atlas is live only when the Cloudflare Worker reply loop and local Atlas polling are configured and verified. Otherwise it falls back to email.</p></details><details><summary>What should I not send through the public form?</summary><p>Do not send passwords, API keys, payment card data, private files, or sensitive customer data.</p></details><details><summary>How fast will AtlasOps reply?</summary><p>If the relay is online, keep the page open for a near-live reply. If not, AtlasOps follows up by email after local sync.</p></details><details><summary>What happens after I submit?</summary><p>The relay stores the question, local Atlas pulls it, creates a local question/lead record, drafts a governed reply, and sends only after policy allows it.</p></details></div>
     </section>
     <!-- ATLAS_FAQ_END -->
   </main>
