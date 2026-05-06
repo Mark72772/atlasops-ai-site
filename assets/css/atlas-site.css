@@ -107,3 +107,60 @@ p { color: var(--muted); margin: 0 0 1.1rem; max-width: 70ch; }
   .grid, .two, .trust-strip { grid-template-columns: 1fr; }
   h1 { max-width: none; }
 }
+
+.honeypot { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+.form-note.warning { color: #F59E0B; }
+
+.ask-atlas-widget {
+  border: 1px solid rgba(59, 130, 246, .32);
+  border-radius: .65rem;
+  background: linear-gradient(160deg, rgba(23, 32, 51, .92), rgba(8, 11, 18, .96));
+  box-shadow: var(--shadow);
+  padding: 1.35rem;
+}
+.ask-atlas-widget-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+.ask-atlas-widget-badge {
+  color: #111827;
+  background: var(--gold);
+  border-radius: .35rem;
+  padding: .28rem .5rem;
+  font-size: .78rem;
+  font-weight: 850;
+  white-space: nowrap;
+}
+.ask-atlas-widget textarea { min-height: 7rem; }
+.ask-atlas-safety {
+  border-left: 2px solid var(--warning);
+  padding-left: .85rem;
+  color: #F8D28B;
+}
+.faq-section details {
+  border: 1px solid var(--line);
+  border-radius: .5rem;
+  background: rgba(17, 24, 39, .72);
+  padding: 1rem;
+  margin-bottom: .75rem;
+}
+.faq-section summary {
+  cursor: pointer;
+  color: #E3EAF6;
+  font-weight: 850;
+}
+.insight-card .meta {
+  color: var(--success);
+}
+.field-notes-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+@media (max-width: 900px) {
+  .ask-atlas-widget-header,
+  .field-notes-strip { grid-template-columns: 1fr; display: grid; }
+}

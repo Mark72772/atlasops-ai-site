@@ -1,102 +1,86 @@
 [
   {
-    "mirror_id": "a447ccf9117646adb6bccd8170241d63",
-    "title": "AI for business update",
-    "slug": "ai-for-business-update",
-    "summary": "In Atlas's view, this matters because operators need systems that turn ai for business update into repeatable business action.\n\nFor business teams, the advantage comes from reliable workflows, not just model novelty.\n\nSee the full Atlas website mirror.: the public AtlasOps AI insight page",
-    "atlas_interpretation": "AtlasOps AI turns AI/business signals into practical workflow actions.",
-    "business_relevance": "The insight matters when it improves a real business handoff.",
+    "title": "Enterprise AI is shifting from experiments to operating layers",
+    "slug": "enterprise-ai-operating-layer",
+    "summary": "OpenAI described enterprise demand moving beyond isolated copilots toward governed agents connected to company systems. For business owners, the practical lesson is to map the workflow and permissions before buying more tools.",
+    "what_changed": "Enterprise AI buyers increasingly want agents grounded in business context, connected to systems, and governed by permissions.",
+    "why_it_matters": "Point tools can create more handoff work. The useful move is a workflow map that shows which agent should act, what data it can touch, and where approval is required.",
+    "practical_takeaway": "Start with one workflow, one owner, and one approval gate before expanding automation across the business.",
+    "atlas_interpretation": "AtlasOps should sell the AI Business Automation Audit as a first step toward governed agent workflows, not as generic AI setup.",
+    "business_relevance": "Small teams can copy the enterprise lesson at smaller scale: map the work, set permissions, and prove the handoff.",
+    "cta_label": "Ask Atlas which workflow to automate first",
+    "cta_url": "ask-atlas.html",
+    "claim_check_status": "source_backed",
     "sources": [
       {
-        "title": "AI for business update",
-        "topic": "AI for business update",
-        "summary": "A sourced enterprise AI update.",
-        "ok": true,
-        "claims": [
-          {
-            "claim_text": "OpenAI update",
-            "claim_type": "factual",
-            "verified": true,
-            "source_id": "s1"
-          }
-        ]
+        "source_id": "src-openai-enterprise-ai-2026-04-08",
+        "title": "The next phase of enterprise AI",
+        "url": "https://openai.com/index/next-phase-of-enterprise-ai/",
+        "source_name": "OpenAI",
+        "date_published": "2026-04-08",
+        "claim": "OpenAI says companies want AI as a unified operating layer with agents grounded in context, connected to systems, and governed by permissions."
       }
     ],
     "tags": [
-      "AI automation"
+      "AI automation",
+      "workflow design"
     ],
-    "status": "public_safe_draft"
+    "status": "public_safe"
   },
   {
-    "mirror_id": "9d0a5f96145e4711b0cb2f54d122c1fe",
-    "title": "AI for business update",
-    "slug": "ai-for-business-update",
-    "summary": "In Atlas's view, this matters because operators need systems that turn ai for business update into repeatable business action.\n\nFor business teams, the advantage comes from reliable workflows, not just model novelty.\n\nSee the full Atlas website mirror.: the public AtlasOps AI insight page",
-    "atlas_interpretation": "AtlasOps AI turns AI/business signals into practical workflow actions.",
-    "business_relevance": "The insight matters when it improves a real business handoff.",
+    "title": "AI services demand is becoming hands-on implementation work",
+    "slug": "ai-services-hands-on-implementation",
+    "summary": "Anthropic announced a new AI services company with major financial partners to help mid-sized companies put Claude into core operations. The signal for AtlasOps is clear: business value depends on workflow discovery, implementation, and long-term support.",
+    "what_changed": "Anthropic and partners announced a services company focused on bringing Claude into important operations for mid-sized companies.",
+    "why_it_matters": "AI adoption is not just model access. Companies need someone to sit with operators, identify where time disappears, and build the right handoff.",
+    "practical_takeaway": "Use an audit to find the highest-value workflow before promising implementation.",
+    "atlas_interpretation": "AtlasOps can position audits as practical operating discovery for businesses that are not ready for a large systems integrator.",
+    "business_relevance": "Mid-sized and small teams need a scaled-down version of the same work: understand the operation first, then build.",
+    "cta_label": "View the AI Business Automation Audit",
+    "cta_url": "ai-business-automation-audit.html",
+    "claim_check_status": "source_backed",
     "sources": [
       {
-        "title": "AI for business update",
-        "topic": "AI for business update",
-        "summary": "A sourced enterprise AI update.",
-        "ok": true,
-        "claims": [
-          {
-            "claim_text": "OpenAI update",
-            "claim_type": "factual",
-            "verified": true,
-            "source_id": "s1"
-          }
-        ]
+        "source_id": "src-anthropic-enterprise-services-2026-05-04",
+        "title": "Building a new enterprise AI services company with Blackstone, Hellman & Friedman, and Goldman Sachs",
+        "url": "https://www.anthropic.com/news/enterprise-ai-services-company",
+        "source_name": "Anthropic",
+        "date_published": "2026-05-04",
+        "claim": "Anthropic announced a services company that will work with mid-sized companies to apply Claude to important operations."
       }
     ],
     "tags": [
-      "AI automation"
+      "AI services",
+      "operations"
     ],
-    "status": "public_safe_draft"
+    "status": "public_safe"
   },
   {
-    "mirror_id": "a369f42276194f4182c346a33ecd7976",
-    "title": "How OpenAI delivers low-latency voice AI\nat",
-    "slug": "how-openai-delivers-low-latency-voice-ai-at",
-    "summary": "How OpenAI delivers low-latency voice AI\nat\n\n(Business teams can turn this signal into better automation, content,...)\n\n1. What changed\n\u21b3 How OpenAI delivers low-latency voice AI at scale\n\u21b3 How OpenAI rebuilt its WebRTC stack to power real-time Voice AI with low latency, global scale, and seamless conversational turn-taking.\n\n2. Why it matters\n\u21b3 Business teams can turn this signal into better automation, content, support, or workflow design decisions.\n\u21b3 Businesses that treat AI as workflow infrastructure move faster than teams that treat it like a novelty layer.\n\n3. Operator move\n\u21b3 Atlas treats AI news as an operating signal: source it, claim-check it, turn it into a practical business action, and track the route.\n\u21b3 The bottleneck is usually context, verification, and handoff design rather than raw model output.\n\n4. How Atlas helps\n\u21b3 Atlas can map this into verified workflow steps across web research, social drafting, website mirrors.\n\u21b3 The goal is not more AI noise. It is better execution with proof, tracking, and review gates.\n\nAI is becoming an operating layer, not just a content layer.\nBusiness teams can turn this signal into better automation, content, support, or workflow design decisions.\n\nWant the workflow version? Start with the AI Business Automation Audit: /go/linkedin-ai-business-audit\n\n#AIBusiness #AIAgents #EnterpriseAI",
-    "atlas_interpretation": "AtlasOps AI turns AI/business signals into practical workflow actions.",
-    "business_relevance": "The insight matters when it improves a real business handoff.",
+    "title": "Agent workflows need secret checks before they touch code",
+    "slug": "agent-workflows-need-secret-checks",
+    "summary": "GitHub made secret scanning through its MCP Server generally available, giving AI coding agents a safer pre-commit check. For AtlasOps clients, code intelligence work should include secret exposure checks before any public deployment.",
+    "what_changed": "GitHub announced general availability for secret scanning through the GitHub MCP Server.",
+    "why_it_matters": "Agentic coding is powerful, but it must not leak credentials. Security checks belong inside the workflow, not after the fact.",
+    "practical_takeaway": "Before publishing a site, codebase, or automation, run a content and secret guard and treat findings as blockers.",
+    "atlas_interpretation": "AtlasOps should connect Code Intelligence audits, public content guard, and website deploy checks as one governed delivery path.",
+    "business_relevance": "Small teams can prevent expensive mistakes by checking for secrets before commits and public pushes.",
+    "cta_label": "Ask Atlas about a code intelligence audit",
+    "cta_url": "ask-atlas.html?utm_source=insight&utm_medium=site&utm_campaign=code-intelligence",
+    "claim_check_status": "source_backed",
     "sources": [
       {
-        "source_id": "455497a9da98407bbf98c7c51565b792",
-        "url": "https://openai.com/index/delivering-low-latency-voice-ai-at-scale",
-        "title": "How OpenAI delivers low-latency voice AI at scale",
-        "source_name": "OpenAI News",
-        "source_tier": "official",
-        "date_read": "2026-05-05T02:06:25.521266+00:00",
-        "summary": "How OpenAI rebuilt its WebRTC stack to power real-time Voice AI with low latency, global scale, and seamless conversational turn-taking.",
-        "claims": [
-          {
-            "claim_id": "3132c91a6432479c84627cd594a74cf6",
-            "claim_text": "How OpenAI delivers low-latency voice AI at scale",
-            "source_url": "https://openai.com/index/delivering-low-latency-voice-ai-at-scale",
-            "source_name": "OpenAI News"
-          }
-        ],
-        "business_relevance": "Business teams can turn this signal into better automation, content, support, or workflow design decisions.",
-        "atlas_relevance": "Atlas can use the source to create grounded social drafts, service CTAs, website mirrors, and tracked follow-up routes.",
-        "content_angles": [
-          "AI business news insight",
-          "agent-first workflow lesson",
-          "AI automation audit education"
-        ],
-        "revenue_angles": [
-          "AI Business Automation Audit",
-          "workflow bottleneck discovery",
-          "website and payment funnel review"
-        ],
-        "confidence": 0.82
+        "source_id": "src-github-mcp-secret-scanning-2026-05-05",
+        "title": "Secret scanning with GitHub MCP Server is now generally available",
+        "url": "https://github.blog/changelog/2026-05-05-secret-scanning-with-github-mcp-server-is-now-generally-available/",
+        "source_name": "GitHub Changelog",
+        "date_published": "2026-05-05",
+        "claim": "GitHub announced MCP Server secret scanning general availability for MCP-compatible agents and IDEs."
       }
     ],
     "tags": [
-      "AI automation"
+      "code intelligence",
+      "security"
     ],
-    "status": "public_safe_draft"
+    "status": "public_safe"
   }
 ]
