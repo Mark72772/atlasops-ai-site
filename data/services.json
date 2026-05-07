@@ -1,122 +1,142 @@
 [
   {
-    "slug": "ai-business-automation-audit",
+    "alt": "Abstract AtlasOps AI workflow map for an AI Business Automation Audit",
+    "deliverables": "Workflow review, opportunity map, tool stack recommendation, marketing automation plan, risk checklist, and 7-day roadmap.",
+    "helps": "Operators, founders, consultants, creators, and small businesses with manual follow-up, website, payment, or content gaps.",
+    "image": "assets/img/service-ai-business-automation.png",
     "name": "AI Business Automation Audit",
     "price": "Starter Audit from $99",
-    "image": "assets/img/service-ai-business-automation.png",
-    "alt": "Abstract AtlasOps AI workflow map for an AI Business Automation Audit",
-    "helps": "Operators, founders, consultants, creators, and small businesses with manual follow-up, website, payment, or content gaps.",
     "problems": [
       "Missed follow-ups",
       "Scattered tools",
       "Weak payment CTAs",
       "No workflow map"
     ],
-    "deliverables": "Workflow review, opportunity map, tool stack recommendation, marketing automation plan, risk checklist, and 7-day roadmap.",
     "process": [
       "Send the workflow and public website details.",
       "AtlasOps maps bottlenecks and handoffs.",
       "You receive an implementation-ready audit report."
-    ]
+    ],
+    "slug": "ai-business-automation-audit"
   },
   {
-    "slug": "ai-marketing-automation-audit",
+    "alt": "AtlasOps AI quiet SaaS workflow map for agent-native rebuild planning",
+    "deliverables": "Candidate scoring report, acquisition diligence checklist, workflow map, authorized support-ticket pain analysis if available, agent-native MVP spec, relaunch copy, content/ad drafts, and privacy-risk checklist.",
+    "helps": "Founders, operators, and buyers evaluating quiet or underperforming SaaS products.",
+    "image": "assets/img/service-ai-business-automation.png",
+    "name": "Dead SaaS to Agent-Native Business Audit",
+    "price": "Opportunity Scan from $299",
+    "problems": [
+      "Quiet product with unclear value",
+      "Dashboard-heavy workflow",
+      "Unknown data-rights risk",
+      "No one-feature relaunch plan"
+    ],
+    "process": [
+      "Run public-source scan first.",
+      "Review authorization and data rights before private material.",
+      "Build one-feature MVP spec and relaunch plan."
+    ],
+    "slug": "dead-saas-agent-native-audit"
+  },
+  {
+    "alt": "AtlasOps AI marketing automation flow with source-backed content and follow-up signals",
+    "deliverables": "Marketing workflow map, automation opportunities, content cadence, and approval boundaries.",
+    "helps": "Teams that need better intake, follow-up, content, and campaign handoffs.",
+    "image": "assets/img/service-ai-business-automation.png",
     "name": "AI Marketing Automation Audit",
     "price": "Quote-based",
-    "image": "assets/img/service-ai-business-automation.png",
-    "alt": "AtlasOps AI marketing automation flow with source-backed content and follow-up signals",
-    "helps": "Teams that need better intake, follow-up, content, and campaign handoffs.",
     "problems": [
       "Manual campaign tracking",
       "Inconsistent content",
       "Lost leads",
       "Unclear approval gates"
     ],
-    "deliverables": "Marketing workflow map, automation opportunities, content cadence, and approval boundaries.",
     "process": [
       "Review current marketing process.",
       "Identify automation opportunities.",
       "Create a safer campaign operating plan."
-    ]
+    ],
+    "slug": "ai-marketing-automation-audit"
   },
   {
-    "slug": "ai-website-paypal-setup",
+    "alt": "AtlasOps AI website and PayPal CTA workflow card",
+    "deliverables": "Static page structure, PayPal.me CTA, UTM links, tracked static /go routes, and content guard review.",
+    "helps": "Businesses that need a clear service page and payment path.",
+    "image": "assets/img/service-ai-business-automation.png",
     "name": "AI Website + PayPal CTA Setup",
     "price": "Quote-based",
-    "image": "assets/img/service-ai-business-automation.png",
-    "alt": "AtlasOps AI website and PayPal CTA workflow card",
-    "helps": "Businesses that need a clear service page and payment path.",
     "problems": [
       "Buried CTA",
       "No payment route",
       "No public-safe content guard",
       "No UTM structure"
     ],
-    "deliverables": "Static page structure, PayPal.me CTA, UTM links, tracked static /go routes, and content guard review.",
     "process": [
       "Define the offer.",
       "Build public-safe static pages.",
       "Verify CTA and deployment status."
-    ]
+    ],
+    "slug": "ai-website-paypal-setup"
   },
   {
-    "slug": "ai-social-content-system",
+    "alt": "AtlasOps AI social content system with source-backed posts and manual-final-click gates",
+    "deliverables": "Source-backed post templates, queue, duplicate guard, UTM links, and manual-final-click workflow.",
+    "helps": "Operators who want a daily content machine without unsupported claims.",
+    "image": "assets/img/service-social-content-system.png",
     "name": "AI Social Content System Setup",
     "price": "Quote-based",
-    "image": "assets/img/service-social-content-system.png",
-    "alt": "AtlasOps AI social content system with source-backed posts and manual-final-click gates",
-    "helps": "Operators who want a daily content machine without unsupported claims.",
     "problems": [
       "Generic posts",
       "No source tracking",
       "Duplicate content",
       "No posting verification"
     ],
-    "deliverables": "Source-backed post templates, queue, duplicate guard, UTM links, and manual-final-click workflow.",
     "process": [
       "Select business topics.",
       "Create source-backed drafts.",
       "Queue or publish only when platform gates pass."
-    ]
+    ],
+    "slug": "ai-social-content-system"
   },
   {
-    "slug": "code-intelligence-audit",
+    "alt": "AtlasOps AI code intelligence audit diagram with checks, diffs, and rollback points",
+    "deliverables": "Code review, workflow plan, risk map, test recommendations, and delivery checklist.",
+    "helps": "Teams with codebases that need repair, documentation, or safer automation.",
+    "image": "assets/img/service-code-intelligence.png",
     "name": "Code Intelligence / Spec-Driven Audit",
     "price": "Quote-based",
-    "image": "assets/img/service-code-intelligence.png",
-    "alt": "AtlasOps AI code intelligence audit diagram with checks, diffs, and rollback points",
-    "helps": "Teams with codebases that need repair, documentation, or safer automation.",
     "problems": [
       "Unclear runtime ownership",
       "Missing tests",
       "Risky changes",
       "No rollback plan"
     ],
-    "deliverables": "Code review, workflow plan, risk map, test recommendations, and delivery checklist.",
     "process": [
       "Inventory the codebase.",
       "Review risks and missing tests.",
       "Create a repair plan with verification steps."
-    ]
+    ],
+    "slug": "code-intelligence-audit"
   },
   {
-    "slug": "ocr-document-workflow-automation",
+    "alt": "AtlasOps AI OCR document workflow showing forms, tables, and verification checks",
+    "deliverables": "OCR path, extraction plan, verification rules, workflow routing, and fallback handling.",
+    "helps": "Businesses with forms, receipts, PDFs, screenshots, or repeat document handling.",
+    "image": "assets/img/service-ocr-document-workflow.png",
     "name": "OCR + Document Workflow Automation",
     "price": "Quote-based",
-    "image": "assets/img/service-ocr-document-workflow.png",
-    "alt": "AtlasOps AI OCR document workflow showing forms, tables, and verification checks",
-    "helps": "Businesses with forms, receipts, PDFs, screenshots, or repeat document handling.",
     "problems": [
       "Manual data entry",
       "Unverified extraction",
       "Scattered document review",
       "No audit trail"
     ],
-    "deliverables": "OCR path, extraction plan, verification rules, workflow routing, and fallback handling.",
     "process": [
       "Review document examples.",
       "Select extraction targets.",
       "Create a verified workflow map."
-    ]
+    ],
+    "slug": "ocr-document-workflow-automation"
   }
 ]

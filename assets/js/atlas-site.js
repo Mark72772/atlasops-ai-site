@@ -30,7 +30,7 @@
   const config = {
     siteId: SITE_ID,
     relayWorkerUrl: safeRelayUrl(),
-    status: safeRelayUrl() ? "ready" : "endpoint_needs_setup",
+    status: safeRelayUrl() ? "ready" : "external_gate_cloudflare_login_required",
     heartbeatSeconds: 30,
     replyPollSeconds: 10,
     replyPollMaxSeconds: 300,
@@ -92,7 +92,7 @@
 
   async function sendEvent(type, detail = {}) {
     const event = rememberEvent(baseEvent(type, detail));
-    if (!config.relayWorkerUrl) return { ok: false, status: "endpoint_needs_setup", event };
+    if (!config.relayWorkerUrl) return { ok: false, status: "external_gate_cloudflare_login_required", event };
     const path = type === "heartbeat" ? "/heartbeat" : type === "go_click" ? "/go-click" : "/event";
     try {
       const response = await fetch(`${config.relayWorkerUrl}${path}`, {
@@ -161,7 +161,7 @@
     const payload = payloadFromForm(form);
     if (payload.website_confirm) return { ok: false, status: "blocked" };
     await sendEvent("lead_submit", { service_interest: payload.service_interest || "" });
-    if (!config.relayWorkerUrl) return { ok: false, status: "endpoint_needs_setup" };
+    if (!config.relayWorkerUrl) return { ok: false, status: "external_gate_cloudflare_login_required" };
     const response = await fetch(`${config.relayWorkerUrl}/lead`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -175,7 +175,7 @@
     if (payload.website_confirm) return { ok: false, status: "blocked" };
     payload.question = payload.question || payload.message || "";
     await sendEvent("ask_atlas_submit", { service_interest: payload.service_interest || "" });
-    if (!config.relayWorkerUrl) return { ok: false, status: "endpoint_needs_setup" };
+    if (!config.relayWorkerUrl) return { ok: false, status: "external_gate_cloudflare_login_required" };
     const response = await fetch(`${config.relayWorkerUrl}/ask`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -207,9 +207,9 @@
     document.querySelectorAll(".atlasops-lead-form").forEach((form) => {
       fillHiddenFields(form);
       if (!config.relayWorkerUrl) {
-        showStatus(form, "endpoint_needs_setup", "Endpoint setup needed. AtlasOps can connect a Cloudflare Worker relay before collecting public submissions.");
+        showStatus(form, "external_gate_cloudflare_login_required", "Cloudflare relay authorization is required before this public form can collect submissions.");
         const submit = form.querySelector('[type="submit"]');
-        if (submit) submit.textContent = "Endpoint setup needed";
+        if (submit) submit.textContent = "Cloudflare login required";
       } else {
         showStatus(form, "ready", "Relay ready. Ask Atlas is live when Atlas is online, with email fallback when offline.");
       }
@@ -218,9 +218,9 @@
         const isAsk = form.classList.contains("ask-atlas-widget-form");
         showStatus(form, "submitting", "Sending...");
         const result = isAsk ? await submitAskAtlasQuestion(form) : await submitLead(form);
-        if (result.status === "endpoint_needs_setup") {
-          await sendEvent("form_error", { reason: "endpoint_needs_setup" });
-          showStatus(form, "endpoint_needs_setup", "Endpoint setup needed. Your question was not sent yet. Use PayPal or contact instructions while AtlasOps connects the relay.");
+        if (result.status === "external_gate_cloudflare_login_required") {
+          await sendEvent("form_error", { reason: "external_gate_cloudflare_login_required" });
+          showStatus(form, "external_gate_cloudflare_login_required", "Cloudflare relay authorization is still required. Your question was not sent yet. Use the PayPal path or contact instructions while AtlasOps completes relay login and deploy.");
           return;
         }
         if (!result.ok) {

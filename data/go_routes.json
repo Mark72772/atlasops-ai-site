@@ -1,20 +1,26 @@
 [
   {
-    "slug": "paypal-ai-automation-audit",
-    "path": "go/paypal-ai-automation-audit.html",
     "destination": "https://www.paypal.me/markWilson385",
+    "path": "go/paypal-ai-automation-audit.html",
+    "slug": "paypal-ai-automation-audit",
     "tracking": "static_no_private_data"
   },
   {
-    "slug": "services",
-    "path": "go/services.html",
     "destination": "services.html",
+    "path": "go/services.html",
+    "slug": "services",
     "tracking": "static_no_private_data"
   },
   {
-    "slug": "contact",
-    "path": "go/contact.html",
     "destination": "contact.html",
+    "path": "go/contact.html",
+    "slug": "contact",
+    "tracking": "static_no_private_data"
+  },
+  {
+    "destination": "https://www.paypal.me/markWilson385",
+    "path": "go/dead-saas-agent-native-audit.html",
+    "slug": "dead-saas-agent-native-audit",
     "tracking": "static_no_private_data"
   }
 ]
