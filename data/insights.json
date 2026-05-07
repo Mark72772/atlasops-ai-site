@@ -1,86 +1,159 @@
 [
   {
+    "insight_id": "enterprise-ai-operating-layer",
     "title": "Enterprise AI is shifting from experiments to operating layers",
     "slug": "enterprise-ai-operating-layer",
+    "url": "/atlasops-ai-site/insights/enterprise-ai-operating-layer.html",
     "summary": "OpenAI described enterprise demand moving beyond isolated copilots toward governed agents connected to company systems. For business owners, the practical lesson is to map the workflow and permissions before buying more tools.",
-    "what_changed": "Enterprise AI buyers increasingly want agents grounded in business context, connected to systems, and governed by permissions.",
+    "takeaway": "Start with one workflow, one owner, and one approval gate before expanding automation across the business.",
+    "source_ids": [
+      "src-openai-enterprise-ai-operating-layer-2026"
+    ],
+    "service_links": [
+      {
+        "label": "AI Business Automation Audit",
+        "url": "ai-business-automation-audit.html"
+      },
+      {
+        "label": "Code Intelligence Audit",
+        "url": "code-intelligence-audit.html"
+      },
+      {
+        "label": "AI Website + PayPal CTA Setup",
+        "url": "ai-website-paypal-setup.html"
+      },
+      {
+        "label": "AI Tool Training",
+        "url": "ai-business-tool-training.html"
+      },
+      {
+        "label": "Cyber Readiness Audit",
+        "url": "ai-cyber-security-readiness-audit.html"
+      }
+    ],
+    "status": "published",
+    "claim_verification_status": "passed",
+    "created_at": "2026-05-07T16:49:57.500575+00:00",
+    "updated_at": "2026-05-07T16:49:57.500575+00:00",
+    "what_happened": "OpenAI framed enterprise AI as a move toward a unified operating layer where agents are grounded in business context, connected to systems, governed by permissions, and improved through evaluation loops.",
     "why_it_matters": "Point tools can create more handoff work. The useful move is a workflow map that shows which agent should act, what data it can touch, and where approval is required.",
     "practical_takeaway": "Start with one workflow, one owner, and one approval gate before expanding automation across the business.",
-    "atlas_interpretation": "AtlasOps should sell the AI Business Automation Audit as a first step toward governed agent workflows, not as generic AI setup.",
-    "business_relevance": "Small teams can copy the enterprise lesson at smaller scale: map the work, set permissions, and prove the handoff.",
-    "cta_label": "Ask Atlas which workflow to automate first",
-    "cta_url": "ask-atlas.html",
-    "claim_check_status": "source_backed",
-    "sources": [
-      {
-        "source_id": "src-openai-enterprise-ai-2026-04-08",
-        "title": "The next phase of enterprise AI",
-        "url": "https://openai.com/index/next-phase-of-enterprise-ai/",
-        "source_name": "OpenAI",
-        "date_published": "2026-04-08",
-        "claim": "OpenAI says companies want AI as a unified operating layer with agents grounded in context, connected to systems, and governed by permissions."
-      }
+    "how_to_steps": [
+      "Choose one workflow.",
+      "Define the owner.",
+      "Map systems of record.",
+      "Define permissions.",
+      "Define the approval gate.",
+      "Measure the outcome.",
+      "Then automate."
     ],
-    "tags": [
-      "AI automation",
-      "workflow design"
-    ],
-    "status": "public_safe"
+    "atlasops_application": "AtlasOps can run an AI Business Automation Audit that maps one workflow before a business buys more AI tools, then turns that map into a governed build plan.",
+    "source_links": [
+      "https://openai.com/index/next-phase-of-enterprise-ai/"
+    ]
   },
   {
+    "insight_id": "ai-services-hands-on-implementation",
     "title": "AI services demand is becoming hands-on implementation work",
     "slug": "ai-services-hands-on-implementation",
+    "url": "/atlasops-ai-site/insights/ai-services-hands-on-implementation.html",
     "summary": "Anthropic announced a new AI services company with major financial partners to help mid-sized companies put Claude into core operations. The signal for AtlasOps is clear: business value depends on workflow discovery, implementation, and long-term support.",
-    "what_changed": "Anthropic and partners announced a services company focused on bringing Claude into important operations for mid-sized companies.",
+    "takeaway": "Use an audit to find the highest-value workflow before promising implementation.",
+    "source_ids": [
+      "src-anthropic-enterprise-ai-services-company-2026"
+    ],
+    "service_links": [
+      {
+        "label": "AI Business Automation Audit",
+        "url": "ai-business-automation-audit.html"
+      },
+      {
+        "label": "Code Intelligence Audit",
+        "url": "code-intelligence-audit.html"
+      },
+      {
+        "label": "AI Website + PayPal CTA Setup",
+        "url": "ai-website-paypal-setup.html"
+      },
+      {
+        "label": "AI Tool Training",
+        "url": "ai-business-tool-training.html"
+      },
+      {
+        "label": "Cyber Readiness Audit",
+        "url": "ai-cyber-security-readiness-audit.html"
+      }
+    ],
+    "status": "published",
+    "claim_verification_status": "passed",
+    "created_at": "2026-05-07T16:49:57.500575+00:00",
+    "updated_at": "2026-05-07T16:49:57.500575+00:00",
+    "what_happened": "Anthropic, Blackstone, Hellman & Friedman, and Goldman Sachs announced a new AI services company focused on helping mid-sized companies bring Claude into important operations.",
     "why_it_matters": "AI adoption is not just model access. Companies need someone to sit with operators, identify where time disappears, and build the right handoff.",
     "practical_takeaway": "Use an audit to find the highest-value workflow before promising implementation.",
-    "atlas_interpretation": "AtlasOps can position audits as practical operating discovery for businesses that are not ready for a large systems integrator.",
-    "business_relevance": "Mid-sized and small teams need a scaled-down version of the same work: understand the operation first, then build.",
-    "cta_label": "View the AI Business Automation Audit",
-    "cta_url": "ai-business-automation-audit.html",
-    "claim_check_status": "source_backed",
-    "sources": [
-      {
-        "source_id": "src-anthropic-enterprise-services-2026-05-04",
-        "title": "Building a new enterprise AI services company with Blackstone, Hellman & Friedman, and Goldman Sachs",
-        "url": "https://www.anthropic.com/news/enterprise-ai-services-company",
-        "source_name": "Anthropic",
-        "date_published": "2026-05-04",
-        "claim": "Anthropic announced a services company that will work with mid-sized companies to apply Claude to important operations."
-      }
+    "how_to_steps": [
+      "Identify a high-value workflow.",
+      "Document current manual steps.",
+      "Define what the AI agent can safely do.",
+      "Create a training and support plan.",
+      "Monitor results after the first deployment."
     ],
-    "tags": [
-      "AI services",
-      "operations"
-    ],
-    "status": "public_safe"
+    "atlasops_application": "AtlasOps can start with an AI Business Automation Audit to find the first workflow worth automating, then produce a practical implementation and training plan.",
+    "source_links": [
+      "https://www.anthropic.com/news/enterprise-ai-services-company"
+    ]
   },
   {
+    "insight_id": "agent-workflows-need-secret-checks",
     "title": "Agent workflows need secret checks before they touch code",
     "slug": "agent-workflows-need-secret-checks",
+    "url": "/atlasops-ai-site/insights/agent-workflows-need-secret-checks.html",
     "summary": "GitHub made secret scanning through its MCP Server generally available, giving AI coding agents a safer pre-commit check. For AtlasOps clients, code intelligence work should include secret exposure checks before any public deployment.",
-    "what_changed": "GitHub announced general availability for secret scanning through the GitHub MCP Server.",
-    "why_it_matters": "Agentic coding is powerful, but it must not leak credentials. Security checks belong inside the workflow, not after the fact.",
-    "practical_takeaway": "Before publishing a site, codebase, or automation, run a content and secret guard and treat findings as blockers.",
-    "atlas_interpretation": "AtlasOps should connect Code Intelligence audits, public content guard, and website deploy checks as one governed delivery path.",
-    "business_relevance": "Small teams can prevent expensive mistakes by checking for secrets before commits and public pushes.",
-    "cta_label": "Ask Atlas about a code intelligence audit",
-    "cta_url": "ask-atlas.html?utm_source=insight&utm_medium=site&utm_campaign=code-intelligence",
-    "claim_check_status": "source_backed",
-    "sources": [
+    "takeaway": "Before publishing a site, codebase, or automation, run a content and secret guard and treat findings as blockers.",
+    "source_ids": [
+      "src-github-mcp-secret-scanning-ga-2026",
+      "src-github-docs-mcp-secret-scanning-2026"
+    ],
+    "service_links": [
       {
-        "source_id": "src-github-mcp-secret-scanning-2026-05-05",
-        "title": "Secret scanning with GitHub MCP Server is now generally available",
-        "url": "https://github.blog/changelog/2026-05-05-secret-scanning-with-github-mcp-server-is-now-generally-available/",
-        "source_name": "GitHub Changelog",
-        "date_published": "2026-05-05",
-        "claim": "GitHub announced MCP Server secret scanning general availability for MCP-compatible agents and IDEs."
+        "label": "AI Business Automation Audit",
+        "url": "ai-business-automation-audit.html"
+      },
+      {
+        "label": "Code Intelligence Audit",
+        "url": "code-intelligence-audit.html"
+      },
+      {
+        "label": "AI Website + PayPal CTA Setup",
+        "url": "ai-website-paypal-setup.html"
+      },
+      {
+        "label": "AI Tool Training",
+        "url": "ai-business-tool-training.html"
+      },
+      {
+        "label": "Cyber Readiness Audit",
+        "url": "ai-cyber-security-readiness-audit.html"
       }
     ],
-    "tags": [
-      "code intelligence",
-      "security"
+    "status": "published",
+    "claim_verification_status": "passed",
+    "created_at": "2026-05-07T16:49:57.500575+00:00",
+    "updated_at": "2026-05-07T16:49:57.500575+00:00",
+    "what_happened": "GitHub announced general availability for secret scanning in the GitHub MCP Server, and GitHub Docs explain that MCP-compatible agents can scan for exposed credentials before code is committed or a pull request is opened.",
+    "why_it_matters": "Agentic coding is powerful, but it must not leak credentials. Security checks belong inside the workflow, not after the fact.",
+    "practical_takeaway": "Before publishing a site, codebase, or automation, run a content and secret guard and treat findings as blockers.",
+    "how_to_steps": [
+      "Scan for exposed secrets.",
+      "Block commits and deploys when secrets are found.",
+      "Run public content guard before website push.",
+      "Keep credentials out of prompts, logs, and screenshots.",
+      "Verify before publishing."
     ],
-    "status": "public_safe"
+    "atlasops_application": "AtlasOps can review website and code workflows for secret-exposure risk before deployment, then add governed content checks to the delivery path.",
+    "source_links": [
+      "https://github.blog/changelog/2026-05-05-secret-scanning-with-github-mcp-server-is-now-generally-available/",
+      "https://docs.github.com/en/code-security/how-tos/use-ghas-with-ai-coding-agents/scan-for-secrets-with-github-mcp-server?tool=cli"
+    ]
   }
 ]

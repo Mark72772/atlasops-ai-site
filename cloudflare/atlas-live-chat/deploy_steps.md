@@ -2,7 +2,7 @@
 
 1. Confirm Cloudflare auth:
    `npx wrangler whoami`
-2. Set the local-only admin secret:
+2. Set the local-only relay credential with Wrangler:
    `Get-Content <local-secret-file> | npx wrangler secret put ATLAS_RELAY_SECRET`
 3. Deploy:
    `npx wrangler deploy`

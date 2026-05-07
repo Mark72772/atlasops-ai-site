@@ -1,0 +1,54 @@
+[
+  {
+    "source_id": "src-openai-enterprise-ai-operating-layer-2026",
+    "source_name": "OpenAI",
+    "title": "The next phase of enterprise AI",
+    "url": "https://openai.com/index/next-phase-of-enterprise-ai/",
+    "source_type": "official_blog",
+    "date_published": "2026-04-08",
+    "trust_tier": 1,
+    "claims_supported": [
+      "Enterprise AI is moving toward a unified operating layer with agents grounded in business context, connected to systems, and governed by permissions."
+    ],
+    "last_checked": "2026-05-07T16:49:57.501121+00:00"
+  },
+  {
+    "source_id": "src-anthropic-enterprise-ai-services-company-2026",
+    "source_name": "Anthropic",
+    "title": "Building a new enterprise AI services company with Blackstone, Hellman & Friedman, and Goldman Sachs",
+    "url": "https://www.anthropic.com/news/enterprise-ai-services-company",
+    "source_type": "company_announcement",
+    "date_published": "2026-05-04",
+    "trust_tier": 1,
+    "claims_supported": [
+      "Mid-sized companies need workflow discovery, custom solution building, and long-term support to put AI into important operations."
+    ],
+    "last_checked": "2026-05-07T16:49:57.501121+00:00"
+  },
+  {
+    "source_id": "src-github-mcp-secret-scanning-ga-2026",
+    "source_name": "GitHub Changelog",
+    "title": "Secret scanning with GitHub MCP Server is now generally available",
+    "url": "https://github.blog/changelog/2026-05-05-secret-scanning-with-github-mcp-server-is-now-generally-available/",
+    "source_type": "official_changelog",
+    "date_published": "2026-05-05",
+    "trust_tier": 1,
+    "claims_supported": [
+      "MCP-compatible AI coding agents can scan code for exposed secrets before commit or pull request when GitHub Secret Protection is enabled."
+    ],
+    "last_checked": "2026-05-07T16:49:57.501121+00:00"
+  },
+  {
+    "source_id": "src-github-docs-mcp-secret-scanning-2026",
+    "source_name": "GitHub Docs",
+    "title": "Scanning for secrets with the GitHub MCP server",
+    "url": "https://docs.github.com/en/code-security/how-tos/use-ghas-with-ai-coding-agents/scan-for-secrets-with-github-mcp-server?tool=cli",
+    "source_type": "official_docs",
+    "date_published": null,
+    "trust_tier": 1,
+    "claims_supported": [
+      "GitHub MCP secret scanning is a pre-commit safety check and findings are ephemeral in the agent session."
+    ],
+    "last_checked": "2026-05-07T16:49:57.501121+00:00"
+  }
+]
