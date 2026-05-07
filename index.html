@@ -16,9 +16,13 @@
   <script defer src="assets/js/atlas-liveops-config.js"></script>
   <script defer src="assets/js/atlas-site.js"></script>
   <script defer src="assets/js/atlas-liveops.js"></script>
+  <link rel="stylesheet" href="assets/css/atlas-assistant-console.css">
   <link rel="stylesheet" href="assets/css/atlas-live-chat.css">
+  <script defer src="assets/js/atlas-assistant-config.js"></script>
+  <script defer src="assets/js/atlas-assistant-console.js"></script>
   <script defer src="assets/js/atlas-live-chat-config.js"></script>
-  <script defer src="assets/js/atlas-live-chat.js"></script></head>
+  <script defer src="assets/js/atlas-live-chat.js"></script>
+</head>
 <body>
   <header class="site-header">
     <a class="brand" href="./"><img src="assets/img/logo-mark.svg" alt="" aria-hidden="true"><span>AtlasOps AI</span></a>
@@ -34,29 +38,44 @@
   </header>
   <main data-page="/">
 
-    <section class="section hero hero--operator">
-      <div>
-        <h1>AtlasOps AI &mdash; Your Agentic Business Operator</h1>
-        <p class="lead">Atlas helps small businesses, founders, and operators turn messy workflows into AI-assisted systems for leads, content, websites, reports, and code.</p>
-        <div class="actions">
-          <a class="button primary" href="ask-atlas.html">Ask Atlas Live</a>
-          <a class="button ghost" href="ai-business-automation-audit.html">Start an AI Business Automation Audit</a>
-        </div>
-        <div class="trust-strip">
-          <span>Live website intake</span>
-          <span>Local-first operator</span>
-          <span>PayPal-ready</span>
-          <span>Source-backed insights</span>
-          <span>Human-governed public actions</span>
-        </div>
-      </div>
+    <section id="atlas-assistant-hero" class="atlas-assistant-hero">
       <div class="atlas-orb-stage" data-atlas-orb-state="idle" aria-label="Animated Atlas operator orb">
-        <div class="atlas-orb" aria-hidden="true"></div>
+        <div id="atlas-orb" class="atlas-orb" aria-hidden="true"></div>
       </div>
-    </section>
-    <section class="section band">
-      <h2>Ask Atlas Like A Real Assistant</h2>
-      <p class="lead">Click the Ask Atlas bubble in the lower-right corner to ask about services, audits, automation ideas, website issues, AI tools, code reviews, or whether AtlasOps AI can help. When Atlas is online, replies flow through the public relay. When Atlas is offline, the message queues safely and email follow-up is available.</p>
+
+      <h1>Ask Atlas</h1>
+      <p class="assistant-subtitle">Atlas is an agentic business operator that helps with AI automation, websites, leads, reports, code, content, and workflow systems.</p>
+
+      <div id="atlas-public-chat-console" class="atlas-public-chat-console" data-atlas-console-ready="false">
+        <div class="atlas-chat-thread" id="atlas-chat-thread" aria-live="polite">
+          <div class="atlas-message atlas-message-assistant">
+            Hi, I'm Atlas. Ask me what to automate, how to improve your website, how to structure an AI workflow, or what service fits your business.
+          </div>
+        </div>
+
+        <form id="atlas-chat-form" class="atlas-chat-form">
+          <textarea id="atlas-chat-input" placeholder="How can Atlas help your business today?" aria-label="Ask Atlas a question"></textarea>
+          <button type="submit">Send</button>
+        </form>
+
+        <div class="atlas-chat-chips" aria-label="Quick prompts">
+          <button type="button" data-prompt="Can Atlas review my website?">Website review</button>
+          <button type="button" data-prompt="What should I automate first?">Automation idea</button>
+          <button type="button" data-prompt="Can Atlas make a SWOT report?">SWOT report</button>
+          <button type="button" data-prompt="Can Atlas review my codebase?">Code review</button>
+          <button type="button" data-prompt="Can Atlas help with AI content?">AI content</button>
+          <button type="button" data-prompt="How do I start an audit?">Start audit</button>
+        </div>
+
+        <div class="atlas-chat-followup">
+          <label>Email for follow-up <input id="atlas-chat-email" type="email" autocomplete="email" placeholder="optional"></label>
+        </div>
+
+        <div class="atlas-chat-status" id="atlas-chat-status">
+          Connecting to Atlas relay...
+        </div>
+        <p class="atlas-chat-safety">Do not send passwords, API keys, payment card data, private files, or sensitive customer data.</p>
+      </div>
     </section>
     <section class="section">
       <h2>The Problem</h2>
@@ -207,9 +226,9 @@
     <section class="section band">
 
       <form class="lead-form atlasops-lead-form" action="#lead-form-setup-required" method="get" data-endpoint-status="ready" data-endpoint-type="cloudflare_worker">
-        <h2>Ask Atlas about your automation audit</h2>
-        <p class="form-note">Ask about the AI Business Automation Audit or send the workflow you want reviewed. Do not send passwords, API keys, payment card data, credentials, or private files through this public form.</p>
-        <p class="form-note" id="lead-form-setup-required">Ask Atlas is online through the AtlasOps live chat relay when the local bridge is connected, with queued/email fallback when offline.</p>
+        <h2>Detailed intake form</h2>
+        <p class="form-note">Use this after the chat if you want to send structured audit details. Do not send passwords, API keys, payment card data, credentials, or private files through this public form.</p>
+        <p class="form-note" id="lead-form-setup-required">The assistant console above is the primary chat path. This form can still queue structured details through the public relay path when available.</p>
         <div class="form-grid two">
           <label>Name <input name="name" autocomplete="name" required></label>
           <label>Email <input name="email" type="email" autocomplete="email" required></label>
@@ -256,10 +275,10 @@
       <div class="ask-atlas-widget" data-widget-state="online">
         <div class="ask-atlas-widget-header">
           <div>
-            <h2>Ask Atlas Live</h2>
-            <p class="form-note" id="lead-form-setup-required">Ask Atlas is online through the AtlasOps live chat relay when the local bridge is connected, with queued/email fallback when offline.</p>
+            <h2>Detailed Ask Atlas intake</h2>
+            <p class="form-note" id="lead-form-setup-required">The primary Ask Atlas experience is the assistant console at the top of this page. This longer form is for optional structured follow-up details.</p>
           </div>
-          <span class="ask-atlas-widget-badge">Live relay</span>
+          <span class="ask-atlas-widget-badge">Relay path</span>
         </div>
         <form class="lead-form atlasops-lead-form ask-atlas-widget-form" action="#lead-form-setup-required" method="get" data-endpoint-status="ready" data-endpoint-type="cloudflare_worker">
           <div class="form-grid two">

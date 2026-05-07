@@ -9,8 +9,12 @@ ALLOWED_ORIGINS = "https://mark72772.github.io,https://mark72772.github.io/atlas
 
 [[durable_objects.bindings]]
 name = "ATLAS_CHAT_ROOM"
-class_name = "AtlasChatRoom"
+class_name = "AtlasChatSession"
 
 [[migrations]]
 tag = "v1"
 new_sqlite_classes = ["AtlasChatRoom"]
+
+[[migrations]]
+tag = "v2"
+renamed_classes = [{ from = "AtlasChatRoom", to = "AtlasChatSession" }]

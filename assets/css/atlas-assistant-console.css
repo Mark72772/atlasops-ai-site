@@ -1,0 +1,290 @@
+.atlas-assistant-hero {
+  position: relative;
+  min-height: calc(100vh - 72px);
+  display: grid;
+  align-content: start;
+  justify-items: center;
+  gap: .72rem;
+  padding: 1.2rem min(5vw, 4rem) 2.2rem;
+  overflow: hidden;
+}
+
+.atlas-assistant-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(8, 11, 18, .1), rgba(8, 11, 18, .96)),
+    radial-gradient(circle at 50% 12%, rgba(59, 130, 246, .18), transparent 25rem),
+    radial-gradient(circle at 72% 32%, rgba(212, 175, 55, .12), transparent 20rem);
+  pointer-events: none;
+}
+
+.atlas-assistant-hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+.atlas-assistant-hero .atlas-orb-stage {
+  width: min(15vw, 5.8rem);
+  height: min(15vw, 5.8rem);
+  min-width: 4.4rem;
+  min-height: 4.4rem;
+  max-height: 5.8rem;
+  aspect-ratio: 1;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+  display: grid;
+  place-items: center;
+}
+
+.atlas-assistant-hero .atlas-orb-stage::before {
+  display: none;
+}
+
+.atlas-assistant-hero .atlas-orb {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 42% 35%, rgba(255, 255, 255, .92), rgba(255, 255, 255, 0) 14%),
+    radial-gradient(circle at 56% 48%, rgba(212, 175, 55, .9), rgba(212, 175, 55, 0) 24%),
+    radial-gradient(circle at 50% 52%, rgba(59, 130, 246, .95), rgba(59, 130, 246, .08) 55%, transparent 70%);
+  box-shadow:
+    0 0 38px rgba(59, 130, 246, .32),
+    inset 0 0 38px rgba(248, 250, 252, .12);
+  animation: atlas-console-orb 6s ease-in-out infinite;
+}
+
+.atlas-assistant-hero h1 {
+  margin: 0;
+  text-align: center;
+  max-width: none;
+  font-size: clamp(3.4rem, 7.6vw, 5.8rem);
+  line-height: .88;
+}
+
+.assistant-subtitle {
+  margin: 0;
+  max-width: 54rem;
+  text-align: center;
+  color: #dfe8f5;
+  font-size: clamp(1.02rem, 1.8vw, 1.28rem);
+}
+
+.atlas-public-chat-console {
+  width: min(880px, 100%);
+  margin-top: .5rem;
+  border: 1px solid rgba(170, 180, 196, .24);
+  border-radius: .75rem;
+  background: rgba(8, 11, 18, .74);
+  box-shadow: 0 30px 90px rgba(0, 0, 0, .38);
+  backdrop-filter: blur(18px);
+  padding: .78rem;
+}
+
+.atlas-chat-thread {
+  display: grid;
+  gap: .75rem;
+  max-height: min(20vh, 9rem);
+  overflow: auto;
+  padding: .2rem .15rem .8rem;
+}
+
+.atlas-message {
+  max-width: 82%;
+  border: 1px solid rgba(170, 180, 196, .18);
+  border-radius: .68rem;
+  padding: .68rem .82rem;
+  color: #eef4ff;
+  background: rgba(17, 24, 39, .82);
+  font-size: 1rem;
+  line-height: 1.48;
+}
+
+.atlas-message-user {
+  justify-self: end;
+  background: rgba(59, 130, 246, .95);
+  border-color: rgba(59, 130, 246, .7);
+  color: #fff;
+}
+
+.atlas-message-assistant {
+  justify-self: start;
+}
+
+.atlas-message-typing {
+  width: auto;
+  display: inline-flex;
+  gap: .28rem;
+  align-items: center;
+}
+
+.atlas-message-typing span {
+  width: .42rem;
+  height: .42rem;
+  border-radius: 50%;
+  background: #d4af37;
+  animation: atlas-console-dot 1.15s ease-in-out infinite;
+}
+
+.atlas-message-typing span:nth-child(2) { animation-delay: .16s; }
+.atlas-message-typing span:nth-child(3) { animation-delay: .32s; }
+
+.atlas-chat-form {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: .75rem;
+  align-items: end;
+  border: 1px solid rgba(170, 180, 196, .24);
+  border-radius: .75rem;
+  background: rgba(248, 250, 252, .06);
+  padding: .65rem;
+}
+
+.atlas-chat-form textarea {
+  width: 100%;
+  min-height: 4.7rem;
+  height: 3.8rem;
+  max-height: 11rem;
+  resize: vertical;
+  border: 0;
+  outline: none;
+  color: #f8fafc;
+  background: transparent;
+  font: inherit;
+  font-size: 1.05rem;
+  line-height: 1.45;
+}
+
+.atlas-chat-form textarea::placeholder {
+  color: rgba(226, 232, 240, .62);
+}
+
+.atlas-chat-form button,
+.atlas-chat-chips button {
+  border: 1px solid rgba(170, 180, 196, .26);
+  border-radius: .55rem;
+  font: inherit;
+  font-weight: 850;
+  cursor: pointer;
+}
+
+.atlas-chat-form button {
+  min-width: 5.2rem;
+  min-height: 3.2rem;
+  padding: .8rem 1rem;
+  background: #d4af37;
+  color: #111827;
+}
+
+.atlas-chat-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .55rem;
+  margin-top: .78rem;
+  max-height: 5.8rem;
+  overflow: auto;
+}
+
+.atlas-chat-chips button {
+  min-height: 2.3rem;
+  padding: .45rem .64rem;
+  color: #dbeafe;
+  background: rgba(17, 24, 39, .74);
+}
+
+.atlas-chat-chips button:hover,
+.atlas-chat-form button:hover {
+  filter: brightness(1.06);
+}
+
+.atlas-chat-followup {
+  margin-top: .75rem;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.atlas-chat-followup label {
+  display: flex;
+  align-items: center;
+  gap: .7rem;
+  color: #aab4c4;
+  font-size: .92rem;
+}
+
+.atlas-chat-followup input {
+  width: min(22rem, 100%);
+  border: 1px solid rgba(170, 180, 196, .24);
+  border-radius: .45rem;
+  padding: .62rem .72rem;
+  background: rgba(8, 11, 18, .72);
+  color: #f8fafc;
+  font: inherit;
+}
+
+.atlas-chat-status,
+.atlas-chat-safety {
+  margin: .5rem 0 0;
+  max-width: none;
+  font-size: .88rem;
+}
+
+.atlas-chat-status {
+  color: #bcd0ea;
+}
+
+.atlas-chat-status[data-status="reply_available"],
+.atlas-chat-status[data-status="relay_online"] {
+  color: #9ff0bf;
+}
+
+.atlas-chat-safety {
+  color: #f8d28b;
+}
+
+@keyframes atlas-console-orb {
+  0%, 100% { transform: translateY(0) scale(1); filter: saturate(1); }
+  45% { transform: translateY(-.35rem) scale(1.04); filter: saturate(1.18); }
+}
+
+@keyframes atlas-console-dot {
+  0%, 80%, 100% { transform: translateY(0); opacity: .45; }
+  40% { transform: translateY(-.24rem); opacity: 1; }
+}
+
+@media (max-width: 720px) {
+  .atlas-assistant-hero {
+    min-height: calc(100vh - 60px);
+    padding: 2rem 1rem 2.8rem;
+  }
+
+  .atlas-assistant-hero .atlas-orb-stage {
+    width: 6.4rem;
+  }
+
+  .atlas-public-chat-console {
+    padding: .75rem;
+  }
+
+  .atlas-chat-form {
+    grid-template-columns: 1fr;
+  }
+
+  .atlas-message {
+    max-width: 94%;
+  }
+
+  .atlas-chat-followup label {
+    display: grid;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .atlas-assistant-hero .atlas-orb,
+  .atlas-message-typing span {
+    animation: none;
+  }
+}

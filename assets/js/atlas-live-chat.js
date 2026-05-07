@@ -142,6 +142,7 @@
   }
 
   function buildWidget() {
+    if (document.getElementById("atlas-public-chat-console")) return;
     if (!config.enableFloatingWidget) return;
     const root = ensureRoot();
     if (root.dataset.widgetReady === "true") return;

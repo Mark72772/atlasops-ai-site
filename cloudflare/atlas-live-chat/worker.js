@@ -169,7 +169,7 @@ export class AtlasChatRoom {
       ok: true,
       site_id: SITE_ID,
       worker: "atlasops-live-chat",
-      durable_object: "AtlasChatRoom",
+      durable_object: "AtlasChatSession",
       bridge_status: this.agents.size > 0 ? "live_online" : "worker_online_atlas_offline",
       active_sessions: activeSessions.length,
       total_sessions: Object.keys(sessions).length,
@@ -177,6 +177,7 @@ export class AtlasChatRoom {
       reply_count: replies.length,
       latest_messages: messages.slice(-30),
       latest_replies: replies.slice(-30),
+      agent_status: await this.get("agent_status", { status: this.agents.size > 0 ? "live_online" : "offline", updated_at: null }),
       updated_at: now(),
     };
   }
@@ -268,13 +269,20 @@ export class AtlasChatRoom {
         status: this.agents.size ? "sent_to_atlas" : "queued",
         message_id: message.message_id,
         session_id: message.session_id,
-        question_id: message.session_id
+        question_id: message.message_id
       });
+    }
+    if (path.startsWith("/chat/session/") && request.method === "GET") {
+      const sessionId = decodeURIComponent(path.slice("/chat/session/".length));
+      const messages = (await this.get("messages", [])).filter((item) => item.session_id === sessionId);
+      const replies = (await this.get("replies", [])).filter((item) => item.session_id === sessionId);
+      const sessions = await this.get("sessions", {});
+      return json({ ok: true, session: sessions[sessionId] || null, messages, replies });
     }
     if ((path.startsWith("/chat/reply/") || path.startsWith("/reply/")) && request.method === "GET") {
       const prefix = path.startsWith("/chat/reply/") ? "/chat/reply/" : "/reply/";
-      const sessionId = decodeURIComponent(path.slice(prefix.length));
-      const replies = (await this.get("replies", [])).filter((item) => item.session_id === sessionId);
+      const lookupId = decodeURIComponent(path.slice(prefix.length));
+      const replies = (await this.get("replies", [])).filter((item) => item.message_id === lookupId || item.session_id === lookupId);
       return json(replies.length ? { ok: true, status: "reply_available", replies } : { ok: true, status: "pending", replies: [] });
     }
     if (path === "/event" || path === "/heartbeat" || path === "/go-click" || path === "/lead") {
@@ -285,6 +293,16 @@ export class AtlasChatRoom {
     if (path === "/admin/summary" && request.method === "GET") return json(await this.summary());
     if (path === "/admin/sessions" && request.method === "GET") return json({ ok: true, sessions: await this.get("sessions", {}) });
     if (path === "/admin/messages" && request.method === "GET") return json({ ok: true, messages: await this.get("messages", []) });
+    if (path === "/admin/agent/status" && request.method === "POST") {
+      const payload = await readJson(request);
+      const status = {
+        status: payload.status || (this.agents.size ? "live_online" : "offline"),
+        mode: payload.mode || "outbound_bridge",
+        updated_at: now(),
+      };
+      await this.put("agent_status", status);
+      return json({ ok: true, agent_status: status });
+    }
     if (path === "/admin/agent/reply" && request.method === "POST") {
       const payload = await readJson(request);
       const reply = normalizeMessage({ ...payload, text: payload.reply_text || payload.text, role: "atlas", status: "reply_available" }, { role: "atlas" });
@@ -344,3 +362,5 @@ export default {
     }
   },
 };
+
+export class AtlasChatSession extends AtlasChatRoom {}
