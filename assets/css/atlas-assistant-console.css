@@ -25,6 +25,10 @@
   z-index: 1;
 }
 
+.atlas-assistant-hero--compact {
+  min-height: min(780px, calc(100vh - 72px));
+}
+
 .atlas-assistant-hero .atlas-orb-stage {
   width: min(15vw, 5.8rem);
   height: min(15vw, 5.8rem);
