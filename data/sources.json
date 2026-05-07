@@ -10,7 +10,7 @@
     "claims_supported": [
       "Enterprise AI is moving toward a unified operating layer with agents grounded in business context, connected to systems, and governed by permissions."
     ],
-    "last_checked": "2026-05-07T16:49:57.501121+00:00"
+    "last_checked": "2026-05-07T17:16:18.163208+00:00"
   },
   {
     "source_id": "src-anthropic-enterprise-ai-services-company-2026",
@@ -23,7 +23,7 @@
     "claims_supported": [
       "Mid-sized companies need workflow discovery, custom solution building, and long-term support to put AI into important operations."
     ],
-    "last_checked": "2026-05-07T16:49:57.501121+00:00"
+    "last_checked": "2026-05-07T17:16:18.163208+00:00"
   },
   {
     "source_id": "src-github-mcp-secret-scanning-ga-2026",
@@ -36,7 +36,7 @@
     "claims_supported": [
       "MCP-compatible AI coding agents can scan code for exposed secrets before commit or pull request when GitHub Secret Protection is enabled."
     ],
-    "last_checked": "2026-05-07T16:49:57.501121+00:00"
+    "last_checked": "2026-05-07T17:16:18.163208+00:00"
   },
   {
     "source_id": "src-github-docs-mcp-secret-scanning-2026",
@@ -49,6 +49,6 @@
     "claims_supported": [
       "GitHub MCP secret scanning is a pre-commit safety check and findings are ephemeral in the agent session."
     ],
-    "last_checked": "2026-05-07T16:49:57.501121+00:00"
+    "last_checked": "2026-05-07T17:16:18.163208+00:00"
   }
 ]
