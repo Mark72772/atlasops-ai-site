@@ -1,0 +1,186 @@
+.atlas-chat-bubble {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 60;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 0 18px;
+  border: 1px solid rgba(77, 208, 225, 0.4);
+  border-radius: 999px;
+  background: #101722;
+  color: #f8fbff;
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.28);
+  cursor: pointer;
+}
+
+.atlas-chat-bubble-mark {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #ffffff, #4dd0e1 36%, #6b7cff 64%, #101722 100%);
+  box-shadow: 0 0 18px rgba(77, 208, 225, 0.75);
+}
+
+.atlas-chat-panel {
+  position: fixed;
+  right: 20px;
+  bottom: 82px;
+  z-index: 61;
+  display: grid;
+  grid-template-rows: auto auto auto minmax(210px, 1fr) auto auto;
+  width: min(420px, calc(100vw - 28px));
+  max-height: min(720px, calc(100vh - 112px));
+  overflow: hidden;
+  border: 1px solid rgba(130, 150, 170, 0.3);
+  border-radius: 16px;
+  background: #f9fbff;
+  color: #101722;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.32);
+}
+
+.atlas-chat-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 16px;
+  background: #101722;
+  color: #f8fbff;
+}
+
+.atlas-chat-head strong,
+.atlas-chat-head span {
+  display: block;
+}
+
+.atlas-chat-head span {
+  margin-top: 2px;
+  color: #a9e8ef;
+  font-size: 0.82rem;
+}
+
+.atlas-chat-head button,
+.atlas-chat-compose button,
+.atlas-chat-chips button {
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.atlas-chat-head button {
+  width: 32px;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+}
+
+.atlas-chat-meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  padding: 12px;
+  background: #eef5f7;
+}
+
+.atlas-chat-meta input,
+.atlas-chat-meta select,
+.atlas-chat-compose textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #ccd8df;
+  border-radius: 8px;
+  padding: 10px;
+  font: inherit;
+  background: #fff;
+}
+
+.atlas-chat-meta select {
+  grid-column: 1 / -1;
+}
+
+.atlas-chat-chips {
+  display: flex;
+  gap: 8px;
+  padding: 10px 12px;
+  overflow-x: auto;
+}
+
+.atlas-chat-chips button {
+  flex: 0 0 auto;
+  padding: 8px 10px;
+  background: #e7edf8;
+  color: #182233;
+}
+
+.atlas-chat-messages {
+  overflow-y: auto;
+  padding: 12px;
+  background: linear-gradient(180deg, #ffffff, #f4f8fb);
+}
+
+.atlas-chat-message {
+  max-width: 84%;
+  margin: 0 0 10px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: #e8eff8;
+}
+
+.atlas-chat-message span {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #516173;
+}
+
+.atlas-chat-message p {
+  margin: 0;
+}
+
+.atlas-chat-message.visitor {
+  margin-left: auto;
+  background: #102238;
+  color: #fff;
+}
+
+.atlas-chat-message.visitor span {
+  color: #bfe5ef;
+}
+
+.atlas-chat-safety {
+  margin: 0;
+  padding: 8px 12px;
+  color: #657386;
+  font-size: 0.82rem;
+}
+
+.atlas-chat-compose {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+  padding: 12px;
+  border-top: 1px solid #dae4ec;
+}
+
+.atlas-chat-compose button {
+  min-width: 68px;
+  background: #1f6feb;
+  color: #fff;
+  font-weight: 700;
+}
+
+@media (max-width: 640px) {
+  .atlas-chat-panel {
+    right: 12px;
+    left: 12px;
+    width: auto;
+  }
+
+  .atlas-chat-meta {
+    grid-template-columns: 1fr;
+  }
+}

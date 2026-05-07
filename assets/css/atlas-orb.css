@@ -1,0 +1,89 @@
+.atlas-orb-stage {
+  position: relative;
+  min-height: 360px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.atlas-orb-stage::before {
+  content: "";
+  position: absolute;
+  inset: 14%;
+  background:
+    radial-gradient(circle at 45% 45%, rgba(255, 255, 255, 0.86), transparent 9%),
+    conic-gradient(from 120deg, #4dd0e1, #8f7dff, #1f6feb, #5ce1a3, #4dd0e1);
+  filter: blur(18px);
+  opacity: 0.76;
+  border-radius: 50%;
+  animation: atlas-orb-breathe 7s ease-in-out infinite;
+}
+
+.atlas-orb {
+  position: relative;
+  width: min(300px, 72vw);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 38% 34%, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.16) 12%, transparent 24%),
+    radial-gradient(circle at 62% 64%, rgba(92, 225, 163, 0.62), transparent 22%),
+    radial-gradient(circle at 50% 50%, rgba(77, 208, 225, 0.9), rgba(111, 103, 255, 0.78) 44%, rgba(8, 16, 30, 0.94) 72%);
+  box-shadow: inset 0 0 48px rgba(255, 255, 255, 0.18), 0 28px 90px rgba(31, 111, 235, 0.33);
+  animation: atlas-orb-float 8s ease-in-out infinite;
+}
+
+.atlas-orb::before,
+.atlas-orb::after {
+  content: "";
+  position: absolute;
+  inset: 11%;
+  border: 1px solid rgba(255, 255, 255, 0.46);
+  border-radius: 43% 57% 52% 48% / 45% 36% 64% 55%;
+  animation: atlas-orb-spin 13s linear infinite;
+}
+
+.atlas-orb::after {
+  inset: 22%;
+  border-color: rgba(92, 225, 163, 0.46);
+  animation-duration: 9s;
+  animation-direction: reverse;
+}
+
+[data-atlas-orb-state="thinking"] .atlas-orb,
+body[data-atlas-chat-state="thinking"] .atlas-orb {
+  animation-duration: 3.8s;
+}
+
+[data-atlas-orb-state="replying"] .atlas-orb,
+body[data-atlas-chat-state="replying"] .atlas-orb {
+  box-shadow: inset 0 0 52px rgba(255, 255, 255, 0.22), 0 30px 100px rgba(92, 225, 163, 0.46);
+}
+
+[data-atlas-orb-state="offline"] .atlas-orb,
+body[data-atlas-chat-state="offline"] .atlas-orb {
+  filter: saturate(0.55);
+  opacity: 0.78;
+}
+
+@keyframes atlas-orb-float {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-12px) scale(1.025); }
+}
+
+@keyframes atlas-orb-spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes atlas-orb-breathe {
+  0%, 100% { transform: scale(0.92); opacity: 0.58; }
+  50% { transform: scale(1.08); opacity: 0.82; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .atlas-orb,
+  .atlas-orb::before,
+  .atlas-orb::after,
+  .atlas-orb-stage::before {
+    animation: none;
+  }
+}

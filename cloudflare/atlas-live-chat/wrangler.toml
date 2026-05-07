@@ -1,0 +1,16 @@
+name = "atlasops-live-chat"
+main = "worker.js"
+compatibility_date = "2026-05-07"
+workers_dev = true
+preview_urls = false
+
+[vars]
+ALLOWED_ORIGINS = "https://mark72772.github.io,https://mark72772.github.io/atlasops-ai-site"
+
+[[durable_objects.bindings]]
+name = "ATLAS_CHAT_ROOM"
+class_name = "AtlasChatRoom"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["AtlasChatRoom"]

@@ -32,22 +32,29 @@
   </header>
   <main data-page="/">
 
-    <section class="section hero">
+    <section class="section hero hero--operator">
       <div>
-        <h1>AI Business Automation That Turns Manual Work Into Measurable Workflows</h1>
-        <p class="lead">AtlasOps AI helps operators, founders, and small businesses find automation opportunities, improve follow-up, strengthen content systems, and build practical AI-assisted workflows.</p>
+        <h1>AtlasOps AI &mdash; Your Agentic Business Operator</h1>
+        <p class="lead">Atlas helps small businesses, founders, and operators turn messy workflows into AI-assisted systems for leads, content, websites, reports, and code.</p>
         <div class="actions">
-          <a class="button primary" href="ai-business-automation-audit.html">Start Your AI Automation Audit</a>
-          <a class="button ghost" href="services.html">View Services</a>
+          <a class="button primary" href="ask-atlas.html">Ask Atlas Live</a>
+          <a class="button ghost" href="ai-business-automation-audit.html">Start an AI Business Automation Audit</a>
         </div>
         <div class="trust-strip">
-          <span>Practical AI workflows</span>
-          <span>PayPal payment option</span>
-          <span>Public-safe website</span>
-          <span>No fake ROI promises</span>
+          <span>Live website intake</span>
+          <span>Local-first operator</span>
+          <span>PayPal-ready</span>
+          <span>Source-backed insights</span>
+          <span>Human-governed public actions</span>
         </div>
       </div>
-      <div class="hero-media"><img src="assets/img/atlas-og-image.png" alt="AtlasOps AI automation audit brand visual"></div>
+      <div class="atlas-orb-stage" data-atlas-orb-state="idle" aria-label="Animated Atlas operator orb">
+        <div class="atlas-orb" aria-hidden="true"></div>
+      </div>
+    </section>
+    <section class="section band">
+      <h2>Ask Atlas Like A Real Assistant</h2>
+      <p class="lead">Use the chat bubble to ask about services, audits, automation ideas, website issues, AI tools, code reviews, or whether AtlasOps AI can help. When Atlas is online, replies flow through the public relay. When Atlas is offline, the message queues safely and email follow-up is available.</p>
     </section>
     <section class="section">
       <h2>The Problem</h2>
@@ -61,6 +68,36 @@
         <article class="card"><h3>Recommend</h3><p>Identify practical AI and automation opportunities.</p></article>
         <article class="card"><h3>Build</h3><p>Create simple public-safe pages, CTAs, and workflow assets when approved.</p></article>
         <article class="card"><h3>Report</h3><p>Package the next steps into a delivery-ready roadmap.</p></article>
+      </div>
+    </section>
+    <section class="section">
+      <h2>Agentic Modes</h2>
+      <div class="grid">
+        <article class="card"><h3>Ask Mode</h3><p>Answer service-fit questions and point clients to the right next step.</p></article>
+        <article class="card"><h3>Audit Mode</h3><p>Inspect workflows, websites, content, code, SWOT inputs, and risk areas.</p></article>
+        <article class="card"><h3>Build Mode</h3><p>Create pages, reports, automations, coding tools, and MCP tool prototypes.</p></article>
+        <article class="card"><h3>Review Mode</h3><p>Check claims, code, security, public content, and approval boundaries.</p></article>
+        <article class="card"><h3>Monitor Mode</h3><p>Watch live chat, website leads, jobs, social drafts, and learning outputs.</p></article>
+        <article class="card"><h3>Orchestrate Mode</h3><p>HERO delegates work to owner agents and tracks the next business action.</p></article>
+      </div>
+    </section>
+    <section class="section band">
+      <h2>Atlas Native Coding System</h2>
+      <p class="lead">Atlas can support agentic coding work through Atlas-native tools: literate coding, safe shell planning, code review findings, project context files, MCP tool building, commit and pull request drafting, and guarded Rust/OpenClaw bridge checks.</p>
+      <div class="grid">
+        <article class="card"><h3>Literate Coding</h3><p>Turn natural-language implementation notes into scoped plans, patches, tests, docs, and proof.</p></article>
+        <article class="card"><h3>Safe Shell</h3><p>Explain commands, classify risk, redact secrets, use timeouts, and require approval for high-risk actions.</p></article>
+        <article class="card"><h3>Review Findings</h3><p>Surface runtime, security, UI, tests, governance, and public-content risks before delivery.</p></article>
+        <article class="card"><h3>MCP Builder</h3><p>Create testable local MCP tool specs, client tests, Tool Literacy, and Capability Mesh entries.</p></article>
+      </div>
+    </section>
+    <section class="section">
+      <h2>Live Service Examples</h2>
+      <div class="grid">
+        <article class="card"><h3>Lead Follow-Up</h3><p>A realtor asks Atlas to map missed inquiries, draft a follow-up sequence, and route new questions to a local lead queue.</p></article>
+        <article class="card"><h3>Website CTA</h3><p>A local shop asks Atlas to make the homepage clearer, add a PayPal-ready path, and track public-safe clicks.</p></article>
+        <article class="card"><h3>Dead SaaS Rebuild</h3><p>A SaaS founder asks Atlas to turn a quiet product into an agent-native workflow with a scoped rebuild plan.</p></article>
+        <article class="card"><h3>Codebase Spec</h3><p>A team asks Atlas for a spec-driven code review, risk findings, and a repair plan before new automation work.</p></article>
       </div>
     </section>
     <section class="section">
@@ -170,7 +207,7 @@
       <form class="lead-form atlasops-lead-form" action="#lead-form-setup-required" method="get" data-endpoint-status="ready" data-endpoint-type="cloudflare_worker">
         <h2>Ask Atlas about your automation audit</h2>
         <p class="form-note">Ask about the AI Business Automation Audit or send the workflow you want reviewed. Do not send passwords, API keys, payment card data, credentials, or private files through this public form.</p>
-        <p class="form-note" id="lead-form-setup-required">Ask Atlas is online through the AtlasOps relay. Keep this page open for a near-live reply or watch your email.</p>
+        <p class="form-note" id="lead-form-setup-required">Ask Atlas is online through the AtlasOps live chat relay when the local bridge is connected, with queued/email fallback when offline.</p>
         <div class="form-grid two">
           <label>Name <input name="name" autocomplete="name" required></label>
           <label>Email <input name="email" type="email" autocomplete="email" required></label>
@@ -217,10 +254,10 @@
       <div class="ask-atlas-widget" data-widget-state="online">
         <div class="ask-atlas-widget-header">
           <div>
-            <h2>Ask Atlas - async reply by email</h2>
-            <p class="form-note" id="lead-form-setup-required">Ask Atlas is online through the AtlasOps relay. Keep this page open for a near-live reply or watch your email.</p>
+            <h2>Ask Atlas Live</h2>
+            <p class="form-note" id="lead-form-setup-required">Ask Atlas is online through the AtlasOps live chat relay when the local bridge is connected, with queued/email fallback when offline.</p>
           </div>
-          <span class="ask-atlas-widget-badge">Not live chat</span>
+          <span class="ask-atlas-widget-badge">Live relay</span>
         </div>
         <form class="lead-form atlasops-lead-form ask-atlas-widget-form" action="#lead-form-setup-required" method="get" data-endpoint-status="ready" data-endpoint-type="cloudflare_worker">
           <div class="form-grid two">
@@ -250,7 +287,7 @@
   <!-- ATLAS_FAQ_START -->
     <section class="section faq-section">
       <h2>FAQ</h2>
-      <div class="faq-list"><details><summary>What is the AI Business Automation Audit?</summary><p>A practical review of one business workflow, website/payment CTA, follow-up path, and automation opportunity map.</p></details><details><summary>What do I receive?</summary><p>A workflow map, opportunity scorecard, risk notes, suggested tools, and a short roadmap for the next useful automation step.</p></details><details><summary>What should I send?</summary><p>A public website link, the workflow you want reviewed, current tools, and where follow-up or handoff breaks down.</p></details><details><summary>How does payment work?</summary><p>Payment is through PayPal.me. AtlasOps verifies payment locally from evidence before delivery.</p></details><details><summary>Can Atlas answer questions before I pay?</summary><p>Yes. Ask Atlas can answer basic service-fit questions by async email once the intake endpoint is connected.</p></details><details><summary>Can Atlas access my systems?</summary><p>Not through the public form. Deeper technical review requires explicit authorization and scope.</p></details><details><summary>Is this live AI chat?</summary><p>No. Ask Atlas is async email unless a real-time relay is configured and verified.</p></details><details><summary>What should I not send through the public form?</summary><p>Do not send passwords, API keys, payment card data, private files, or sensitive customer data.</p></details><details><summary>How fast will AtlasOps reply?</summary><p>Usually within one business day once the intake endpoint and monitoring path are configured.</p></details><details><summary>What happens after I submit?</summary><p>AtlasOps creates a local question/lead record, drafts a governed reply, and sends only after the configured email policy allows it.</p></details></div>
+      <div class="faq-list"><details><summary>What is the AI Business Automation Audit?</summary><p>A practical review of one business workflow, website/payment CTA, follow-up path, and automation opportunity map.</p></details><details><summary>What do I receive?</summary><p>A workflow map, opportunity scorecard, risk notes, suggested tools, and a short roadmap for the next useful automation step.</p></details><details><summary>What should I send?</summary><p>A public website link, the workflow you want reviewed, current tools, and where follow-up or handoff breaks down.</p></details><details><summary>How does payment work?</summary><p>Payment is through PayPal.me. AtlasOps verifies payment locally from evidence before delivery.</p></details><details><summary>Can Atlas answer questions before I pay?</summary><p>Yes. Ask Atlas can answer basic service-fit questions through live chat when Atlas is online, or by queued/email follow-up when offline.</p></details><details><summary>Can Atlas access my systems?</summary><p>Not through public chat. Deeper technical review requires explicit authorization and scope.</p></details><details><summary>Is this live AI chat?</summary><p>Ask Atlas uses a public Cloudflare relay. It behaves as live chat when the local Atlas bridge is online, and falls back to a queued message when Atlas is offline.</p></details><details><summary>What should I not send through public chat?</summary><p>Do not send passwords, API keys, payment card data, private files, or sensitive customer data.</p></details><details><summary>How fast will AtlasOps reply?</summary><p>Live replies appear when the local Atlas bridge is online; otherwise AtlasOps follows up after the queued message is pulled locally.</p></details><details><summary>What happens after I submit?</summary><p>AtlasOps creates a local chat/question record, can create a lead, drafts a governed reply, and sends only replies allowed by policy.</p></details></div>
     </section>
     <!-- ATLAS_FAQ_END -->
   </main>

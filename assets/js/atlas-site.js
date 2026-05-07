@@ -1,4 +1,41 @@
 (function () {
+  const ATLAS_ASSET_BASE = (() => {
+    const script = document.currentScript;
+    const src = script?.getAttribute("src") || "assets/js/atlas-site.js";
+    return src.replace(/assets\/js\/atlas-site\.js(?:\?.*)?$/, "assets/");
+  })();
+
+  function loadAtlasLiveChatAssets() {
+    const head = document.head;
+    const addStyle = (href) => {
+      if (!document.querySelector(`link[href="${href}"]`)) {
+        const link = document.createElement("link");
+        link.rel = "stylesheet";
+        link.href = href;
+        head.appendChild(link);
+      }
+    };
+    const addScript = (src, onload) => {
+      if (document.querySelector(`script[src="${src}"]`)) {
+        if (onload) onload();
+        return;
+      }
+      const script = document.createElement("script");
+      script.src = src;
+      script.defer = true;
+      if (onload) script.addEventListener("load", onload, { once: true });
+      document.body.appendChild(script);
+    };
+    addStyle(`${ATLAS_ASSET_BASE}css/atlas-live-chat.css`);
+    addStyle(`${ATLAS_ASSET_BASE}css/atlas-orb.css`);
+    addScript(`${ATLAS_ASSET_BASE}js/atlas-live-chat-config.js`, () => {
+      addScript(`${ATLAS_ASSET_BASE}js/atlas-live-chat.js`);
+      addScript(`${ATLAS_ASSET_BASE}js/atlas-orb.js`);
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", loadAtlasLiveChatAssets);
+
   const RELAY_WORKER_URL = window.AtlasLiveOpsConfig?.relayWorkerUrl || "https://atlasops-liveops-relay.atlasops-ai.workers.dev";
   const SITE_ID = "atlasops-ai";
   const UTM_KEYS = ["utm_source", "utm_medium", "utm_campaign", "utm_content"];
