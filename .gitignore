@@ -16,3 +16,5 @@ sessions/
 downloads/
 node_modules/
 .cache/
+.wrangler/
+cloudflare/**/.wrangler/
