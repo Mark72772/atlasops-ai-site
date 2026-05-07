@@ -13,6 +13,7 @@
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
   <link rel="stylesheet" href="assets/css/atlas-site.css">
   <link rel="stylesheet" href="assets/css/atlas-liveops.css">
+  <script defer src="assets/js/atlas-liveops-config.js"></script>
   <script defer src="assets/js/atlas-site.js"></script>
   <script defer src="assets/js/atlas-liveops.js"></script>
 </head>
@@ -39,7 +40,7 @@
     </section>
     <section class="section band">
 
-      <form class="lead-form atlasops-lead-form" action="#lead-form-setup-required" method="get" data-endpoint-status="external_gate_cloudflare_login_required" data-endpoint-type="none">
+      <form class="lead-form atlasops-lead-form" action="#lead-form-setup-required" method="get" data-endpoint-status="ready" data-endpoint-type="cloudflare_worker">
         <h2>Start an AtlasOps AI intake</h2>
         <p class="form-note">Ask about the AI Business Automation Audit or send the workflow you want reviewed. Do not send passwords, API keys, payment card data, credentials, or private files through this public form.</p>
         <p class="form-note" id="lead-form-setup-required">Cloudflare relay authorization is pending. Use the PayPal/start-audit path while AtlasOps completes Worker login and deploy.</p>
@@ -88,15 +89,15 @@
 
   <!-- ASK_ATLAS_WIDGET_START -->
     <section class="section band ask-atlas-embed">
-      <div class="ask-atlas-widget" data-widget-state="external_gate_cloudflare_login_required">
+      <div class="ask-atlas-widget" data-widget-state="online">
         <div class="ask-atlas-widget-header">
           <div>
             <h2>Ask Atlas - async reply by email</h2>
-            <p class="form-note" id="lead-form-setup-required">Cloudflare relay authorization required. AtlasOps must complete Worker login and deploy before collecting public submissions.</p>
+            <p class="form-note" id="lead-form-setup-required">Ask Atlas is online through the AtlasOps relay. Keep this page open for a near-live reply or watch your email.</p>
           </div>
           <span class="ask-atlas-widget-badge">Not live chat</span>
         </div>
-        <form class="lead-form atlasops-lead-form ask-atlas-widget-form" action="#lead-form-setup-required" method="get" data-endpoint-status="external_gate_cloudflare_login_required" data-endpoint-type="none">
+        <form class="lead-form atlasops-lead-form ask-atlas-widget-form" action="#lead-form-setup-required" method="get" data-endpoint-status="ready" data-endpoint-type="cloudflare_worker">
           <div class="form-grid two">
             <label>Name <input name="name" autocomplete="name"></label>
             <label>Email <input name="email" type="email" autocomplete="email" required></label>
@@ -116,7 +117,7 @@
           <label class="consent-line"><input name="consent_checkbox" type="checkbox" required> I agree to be contacted about this AtlasOps AI inquiry and understand this public form is not for sensitive data.</label>
           <div class="honeypot" aria-hidden="true"><label>Leave this field blank <input name="website_confirm" tabindex="-1" autocomplete="off"></label></div>
           <p class="ask-atlas-safety">Do not send passwords, API keys, payment card data, private files, customer lists, or sensitive customer data through this public form.</p>
-          <button class="button primary" type="submit">Cloudflare login required</button>
+          <button class="button primary" type="submit">Ask Atlas online</button>
         </form>
       </div>
     </section>

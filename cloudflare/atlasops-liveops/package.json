@@ -1,0 +1,12 @@
+{
+  "name": "atlasops-liveops-relay",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "whoami": "wrangler whoami"
+  },
+  "devDependencies": {
+    "wrangler": "^4.88.0"
+  }
+}

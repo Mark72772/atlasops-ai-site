@@ -1,0 +1,16 @@
+name = "atlasops-liveops-relay"
+main = "worker.js"
+compatibility_date = "2026-05-06"
+workers_dev = true
+preview_urls = false
+
+[vars]
+ALLOWED_ORIGINS = "https://mark72772.github.io,https://mark72772.github.io/atlasops-ai-site"
+
+[[durable_objects.bindings]]
+name = "ATLAS_LIVEOPS_ROOM"
+class_name = "AtlasLiveOpsRoom"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["AtlasLiveOpsRoom"]

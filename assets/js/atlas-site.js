@@ -1,5 +1,5 @@
 (function () {
-  const RELAY_WORKER_URL = "";
+  const RELAY_WORKER_URL = window.AtlasLiveOpsConfig?.relayWorkerUrl || "https://atlasops-liveops-relay.atlasops-ai.workers.dev";
   const SITE_ID = "atlasops-ai";
   const UTM_KEYS = ["utm_source", "utm_medium", "utm_campaign", "utm_content"];
   const SESSION_KEY = "atlasops_public_session_id";
@@ -30,7 +30,7 @@
   const config = {
     siteId: SITE_ID,
     relayWorkerUrl: safeRelayUrl(),
-    status: safeRelayUrl() ? "ready" : "external_gate_cloudflare_login_required",
+    status: safeRelayUrl() ? "ready" : "relay_url_missing",
     heartbeatSeconds: 30,
     replyPollSeconds: 10,
     replyPollMaxSeconds: 300,
@@ -92,7 +92,7 @@
 
   async function sendEvent(type, detail = {}) {
     const event = rememberEvent(baseEvent(type, detail));
-    if (!config.relayWorkerUrl) return { ok: false, status: "external_gate_cloudflare_login_required", event };
+    if (!config.relayWorkerUrl) return { ok: false, status: "relay_url_missing", event };
     const path = type === "heartbeat" ? "/heartbeat" : type === "go_click" ? "/go-click" : "/event";
     try {
       const response = await fetch(`${config.relayWorkerUrl}${path}`, {
@@ -161,7 +161,7 @@
     const payload = payloadFromForm(form);
     if (payload.website_confirm) return { ok: false, status: "blocked" };
     await sendEvent("lead_submit", { service_interest: payload.service_interest || "" });
-    if (!config.relayWorkerUrl) return { ok: false, status: "external_gate_cloudflare_login_required" };
+    if (!config.relayWorkerUrl) return { ok: false, status: "relay_url_missing" };
     const response = await fetch(`${config.relayWorkerUrl}/lead`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -175,7 +175,7 @@
     if (payload.website_confirm) return { ok: false, status: "blocked" };
     payload.question = payload.question || payload.message || "";
     await sendEvent("ask_atlas_submit", { service_interest: payload.service_interest || "" });
-    if (!config.relayWorkerUrl) return { ok: false, status: "external_gate_cloudflare_login_required" };
+    if (!config.relayWorkerUrl) return { ok: false, status: "relay_url_missing" };
     const response = await fetch(`${config.relayWorkerUrl}/ask`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -207,9 +207,9 @@
     document.querySelectorAll(".atlasops-lead-form").forEach((form) => {
       fillHiddenFields(form);
       if (!config.relayWorkerUrl) {
-        showStatus(form, "external_gate_cloudflare_login_required", "Cloudflare relay authorization is required before this public form can collect submissions.");
+        showStatus(form, "relay_url_missing", "Ask Atlas relay URL is missing. Use email fallback while AtlasOps repairs public configuration.");
         const submit = form.querySelector('[type="submit"]');
-        if (submit) submit.textContent = "Cloudflare login required";
+        if (submit) submit.textContent = "Email fallback";
       } else {
         showStatus(form, "ready", "Relay ready. Ask Atlas is live when Atlas is online, with email fallback when offline.");
       }
@@ -218,9 +218,9 @@
         const isAsk = form.classList.contains("ask-atlas-widget-form");
         showStatus(form, "submitting", "Sending...");
         const result = isAsk ? await submitAskAtlasQuestion(form) : await submitLead(form);
-        if (result.status === "external_gate_cloudflare_login_required") {
-          await sendEvent("form_error", { reason: "external_gate_cloudflare_login_required" });
-          showStatus(form, "external_gate_cloudflare_login_required", "Cloudflare relay authorization is still required. Your question was not sent yet. Use the PayPal path or contact instructions while AtlasOps completes relay login and deploy.");
+        if (result.status === "relay_url_missing") {
+          await sendEvent("form_error", { reason: "relay_url_missing" });
+          showStatus(form, "relay_url_missing", "Ask Atlas relay URL is missing. Your question was not sent yet. Use email fallback while AtlasOps repairs public configuration.");
           return;
         }
         if (!result.ok) {
