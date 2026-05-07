@@ -111,6 +111,76 @@ function normalizeMessage(payload, defaults = {}) {
   };
 }
 
+const SIMPLE_TIMEZONES = [
+  ["japan", "Japan", "Asia/Tokyo", "JST"],
+  ["tokyo", "Tokyo", "Asia/Tokyo", "JST"],
+  ["china", "China", "Asia/Shanghai", "CST"],
+  ["shanghai", "Shanghai", "Asia/Shanghai", "CST"],
+  ["beijing", "Beijing", "Asia/Shanghai", "CST"],
+  ["uk", "UK", "Europe/London", "GMT/BST"],
+  ["united kingdom", "UK", "Europe/London", "GMT/BST"],
+  ["london", "London", "Europe/London", "GMT/BST"],
+  ["germany", "Germany", "Europe/Berlin", "CET/CEST"],
+  ["berlin", "Berlin", "Europe/Berlin", "CET/CEST"],
+  ["california", "California", "America/Los_Angeles", "Pacific Time"],
+  ["new york", "New York", "America/New_York", "Eastern Time"],
+  ["texas", "Texas", "America/Chicago", "Central Time"],
+  ["utc", "UTC", "UTC", "UTC"],
+];
+
+function wordMatch(text, needle) {
+  return new RegExp(`\\b${needle.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`, "i").test(text);
+}
+
+function simpleTimeReply(location, timezone, abbreviation) {
+  const formatted = new Intl.DateTimeFormat("en-US", {
+    timeZone: timezone,
+    hour: "numeric",
+    minute: "2-digit",
+    hour12: true,
+  }).format(new Date());
+  return `It is ${formatted} in ${location} right now (${timezone}, ${abbreviation}).`;
+}
+
+function answerSimpleTool(text) {
+  const lowered = String(text || "").toLowerCase();
+  if (!lowered.trim()) return null;
+  if (/\b(time|current time|right now)\b/.test(lowered)) {
+    for (const [key, location, timezone, abbreviation] of SIMPLE_TIMEZONES) {
+      if (wordMatch(lowered, key)) {
+        return { intent: "timezone_time", reply_text: simpleTimeReply(location, timezone, abbreviation), used_tools: ["worker_simple_time_tool"] };
+      }
+    }
+    return { intent: "time_now", reply_text: simpleTimeReply("UTC", "UTC", "UTC"), used_tools: ["worker_simple_time_tool"] };
+  }
+  if (/\b(date|what day|today)\b/.test(lowered)) {
+    const date = new Intl.DateTimeFormat("en-US", { timeZone: "UTC", weekday: "long", month: "long", day: "numeric", year: "numeric" }).format(new Date());
+    return { intent: "date_now", reply_text: `Today is ${date} in UTC.`, used_tools: ["worker_simple_date_tool"] };
+  }
+  if (/\b(what can atlas do|what do you do|what services|atlas do|help with)\b/.test(lowered)) {
+    return {
+      intent: "what_can_atlas_do",
+      reply_text: "AtlasOps AI helps with AI automation audits, website and PayPal CTA setup, lead follow-up systems, source-backed content workflows, SWOT reports, code/spec-driven reviews, OCR/document workflows, and AI tool training. Start with your goal, current tools, and the slowest part of the workflow.",
+      used_tools: ["worker_service_faq"],
+    };
+  }
+  if (/\b(start an audit|start audit|how do i start|begin an audit)\b/.test(lowered)) {
+    return {
+      intent: "start_audit",
+      reply_text: "To start an audit, ask Atlas what you want improved and include a public-safe website URL if relevant. Atlas can recommend the first service lane and draft the next intake questions. Do not send passwords, API keys, payment card data, or private customer files in public chat.",
+      used_tools: ["worker_start_audit_faq"],
+    };
+  }
+  if (/\b(pay|paypal|price|cost|how much)\b/.test(lowered)) {
+    return {
+      intent: "payment_link",
+      reply_text: "Atlas can explain the audit/start path and point you to the site's start-audit CTA. Custom quotes, contract terms, refunds, and money movement stay operator-reviewed.",
+      used_tools: ["worker_payment_faq"],
+    };
+  }
+  return null;
+}
+
 export class AtlasChatRoom {
   constructor(state) {
     this.state = state;
@@ -264,6 +334,41 @@ export class AtlasChatRoom {
       await this.append("messages", message);
       await this.updateSession(message);
       this.broadcast({ type: "visitor_message", message }, "agents");
+      const simple = answerSimpleTool(message.text);
+      if (simple) {
+        const reply = normalizeMessage({
+          session_id: message.session_id,
+          message_id: message.message_id,
+          role: "atlas",
+          text: simple.reply_text,
+          status: "reply_available",
+          synthetic_test: message.synthetic_test,
+          service_interest: message.service_interest,
+          page_path: message.page_path,
+        }, { role: "atlas" });
+        reply.answered_by = "worker_simple_tool";
+        reply.route = "simple_tool";
+        reply.intent = simple.intent;
+        reply.used_tools = simple.used_tools;
+        await this.append("messages", reply);
+        await this.append("replies", reply);
+        await this.updateSession(reply);
+        (this.visitors.get(reply.session_id) || []).forEach((socket) => {
+          try { socket.send(JSON.stringify({ type: "atlas_reply", message: reply })); } catch {}
+        });
+        return json({
+          ok: true,
+          status: "reply_available",
+          message_id: message.message_id,
+          session_id: message.session_id,
+          question_id: message.message_id,
+          bridge_status: this.agents.size ? "sent_to_atlas" : "worker_simple_tool",
+          answered_by: "worker_simple_tool",
+          route: "simple_tool",
+          reply,
+          note: "Worker simple tools answered a deterministic public question; local Atlas can still ingest the event later."
+        });
+      }
       return json({
         ok: true,
         status: this.agents.size ? "sent_to_atlas" : "queued",
