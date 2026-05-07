@@ -1,44 +1,85 @@
-.atlas-chat-bubble {
+#atlas-live-chat-root {
   position: fixed;
-  right: 20px;
-  bottom: 20px;
-  z-index: 60;
+  right: 22px;
+  bottom: 22px;
+  z-index: 2147483000;
+  font-family: inherit;
+  color: #102033;
+  pointer-events: none;
+}
+
+#atlas-live-chat-root * {
+  box-sizing: border-box;
+}
+
+.atlas-chat-bubble,
+.atlas-chat-panel {
+  pointer-events: auto;
+}
+
+.atlas-chat-bubble {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  min-height: 48px;
-  padding: 0 18px;
-  border: 1px solid rgba(77, 208, 225, 0.4);
+  min-height: 52px;
+  max-width: calc(100vw - 24px);
+  padding: 0 16px 0 13px;
+  border: 1px solid rgba(92, 218, 229, 0.52);
   border-radius: 999px;
   background: #101722;
   color: #f8fbff;
-  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.28);
+  box-shadow: 0 18px 52px rgba(4, 13, 24, 0.36);
   cursor: pointer;
+  font: inherit;
+}
+
+.atlas-chat-bubble:hover {
+  transform: translateY(-1px);
 }
 
 .atlas-chat-bubble-mark {
-  width: 18px;
-  height: 18px;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
-  background: radial-gradient(circle at 35% 35%, #ffffff, #4dd0e1 36%, #6b7cff 64%, #101722 100%);
-  box-shadow: 0 0 18px rgba(77, 208, 225, 0.75);
+  background: radial-gradient(circle at 34% 30%, #ffffff, #67e3ef 34%, #6b7cff 65%, #101722 100%);
+  box-shadow: 0 0 18px rgba(92, 218, 229, 0.78);
+}
+
+.atlas-chat-bubble-text {
+  display: grid;
+  gap: 1px;
+  text-align: left;
+}
+
+.atlas-chat-bubble-title {
+  font-weight: 800;
+  line-height: 1.05;
+}
+
+.atlas-chat-bubble-badge {
+  color: #a9e8ef;
+  font-size: 0.76rem;
+  line-height: 1.05;
 }
 
 .atlas-chat-panel {
-  position: fixed;
-  right: 20px;
-  bottom: 82px;
-  z-index: 61;
+  position: absolute;
+  right: 0;
+  bottom: 66px;
   display: grid;
-  grid-template-rows: auto auto auto minmax(210px, 1fr) auto auto;
-  width: min(420px, calc(100vw - 28px));
-  max-height: min(720px, calc(100vh - 112px));
+  grid-template-rows: auto auto auto minmax(180px, 1fr) auto auto;
+  width: min(420px, calc(100vw - 24px));
+  max-height: min(720px, calc(100dvh - 40px));
   overflow: hidden;
-  border: 1px solid rgba(130, 150, 170, 0.3);
-  border-radius: 16px;
+  border: 1px solid rgba(130, 150, 170, 0.34);
+  border-radius: 14px;
   background: #f9fbff;
   color: #101722;
-  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.32);
+  box-shadow: 0 24px 78px rgba(4, 13, 24, 0.36);
+}
+
+.atlas-chat-panel[hidden] {
+  display: none;
 }
 
 .atlas-chat-head {
@@ -57,7 +98,7 @@
 }
 
 .atlas-chat-head span {
-  margin-top: 2px;
+  margin-top: 3px;
   color: #a9e8ef;
   font-size: 0.82rem;
 }
@@ -68,12 +109,13 @@
   border: 0;
   border-radius: 8px;
   cursor: pointer;
+  font: inherit;
 }
 
 .atlas-chat-head button {
   width: 32px;
   height: 32px;
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.14);
   color: #fff;
 }
 
@@ -89,12 +131,13 @@
 .atlas-chat-meta select,
 .atlas-chat-compose textarea {
   width: 100%;
-  box-sizing: border-box;
+  min-width: 0;
   border: 1px solid #ccd8df;
   border-radius: 8px;
   padding: 10px;
   font: inherit;
   background: #fff;
+  color: #101722;
 }
 
 .atlas-chat-meta select {
@@ -116,13 +159,14 @@
 }
 
 .atlas-chat-messages {
+  min-height: 180px;
   overflow-y: auto;
   padding: 12px;
   background: linear-gradient(180deg, #ffffff, #f4f8fb);
 }
 
 .atlas-chat-message {
-  max-width: 84%;
+  max-width: 86%;
   margin: 0 0 10px;
   padding: 10px 12px;
   border-radius: 12px;
@@ -133,12 +177,13 @@
   display: block;
   margin-bottom: 4px;
   font-size: 0.78rem;
-  font-weight: 700;
+  font-weight: 800;
   color: #516173;
 }
 
 .atlas-chat-message p {
   margin: 0;
+  line-height: 1.45;
 }
 
 .atlas-chat-message.visitor {
@@ -156,6 +201,7 @@
   padding: 8px 12px;
   color: #657386;
   font-size: 0.82rem;
+  line-height: 1.35;
 }
 
 .atlas-chat-compose {
@@ -167,20 +213,35 @@
 }
 
 .atlas-chat-compose button {
-  min-width: 68px;
+  min-width: 72px;
   background: #1f6feb;
   color: #fff;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 @media (max-width: 640px) {
-  .atlas-chat-panel {
+  #atlas-live-chat-root {
     right: 12px;
-    left: 12px;
-    width: auto;
+    bottom: 12px;
+  }
+
+  .atlas-chat-panel {
+    right: 0;
+    width: calc(100vw - 24px);
+    max-height: calc(100dvh - 40px);
   }
 
   .atlas-chat-meta {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .atlas-chat-bubble {
+    transition: none;
+  }
+
+  .atlas-chat-bubble:hover {
+    transform: none;
   }
 }

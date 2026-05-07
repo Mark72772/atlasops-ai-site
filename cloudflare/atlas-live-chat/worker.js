@@ -255,7 +255,7 @@ export class AtlasChatRoom {
     if (path === "/admin/agent/ws" && request.headers.get("upgrade") === "websocket") {
       return this.acceptAgentSocket();
     }
-    if (path === "/chat/message" && request.method === "POST") {
+    if ((path === "/chat/message" || path === "/ask") && request.method === "POST") {
       const payload = await readJson(request);
       if (payload.website_confirm) return json({ ok: false, status: "blocked", error: "honeypot_triggered" }, { status: 400 });
       const message = normalizeMessage(payload, { role: "visitor" });
@@ -263,10 +263,17 @@ export class AtlasChatRoom {
       await this.append("messages", message);
       await this.updateSession(message);
       this.broadcast({ type: "visitor_message", message }, "agents");
-      return json({ ok: true, status: this.agents.size ? "sent_to_atlas" : "queued", message_id: message.message_id, session_id: message.session_id });
+      return json({
+        ok: true,
+        status: this.agents.size ? "sent_to_atlas" : "queued",
+        message_id: message.message_id,
+        session_id: message.session_id,
+        question_id: message.session_id
+      });
     }
-    if (path.startsWith("/chat/reply/") && request.method === "GET") {
-      const sessionId = decodeURIComponent(path.slice("/chat/reply/".length));
+    if ((path.startsWith("/chat/reply/") || path.startsWith("/reply/")) && request.method === "GET") {
+      const prefix = path.startsWith("/chat/reply/") ? "/chat/reply/" : "/reply/";
+      const sessionId = decodeURIComponent(path.slice(prefix.length));
       const replies = (await this.get("replies", [])).filter((item) => item.session_id === sessionId);
       return json(replies.length ? { ok: true, status: "reply_available", replies } : { ok: true, status: "pending", replies: [] });
     }
