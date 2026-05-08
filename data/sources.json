@@ -1,5 +1,57 @@
 [
   {
+    "source_id": "src-google-ai-features-website-guidance",
+    "source_name": "Google Search Central",
+    "title": "AI features and your website",
+    "url": "https://developers.google.com/search/docs/appearance/ai-features",
+    "source_type": "official_docs",
+    "date_published": null,
+    "trust_tier": 1,
+    "claims_supported": [
+      "Website owners should make content accessible, useful, and machine-readable for Google Search systems, including AI features."
+    ],
+    "last_checked": "2026-05-08T13:30:00+00:00"
+  },
+  {
+    "source_id": "src-openai-chatgpt-search",
+    "source_name": "OpenAI",
+    "title": "Introducing ChatGPT search",
+    "url": "https://openai.com/index/introducing-chatgpt-search/",
+    "source_type": "official_announcement",
+    "date_published": "2024-10-31",
+    "trust_tier": 1,
+    "claims_supported": [
+      "AI assistants can answer with timely web information and source links when search is available."
+    ],
+    "last_checked": "2026-05-08T13:30:00+00:00"
+  },
+  {
+    "source_id": "src-schema-org-structured-data",
+    "source_name": "Schema.org",
+    "title": "Getting started with schema.org",
+    "url": "https://schema.org/docs/gs.html",
+    "source_type": "standards_docs",
+    "date_published": null,
+    "trust_tier": 1,
+    "claims_supported": [
+      "Structured data helps machines interpret organizations, services, products, offers, and other public entities."
+    ],
+    "last_checked": "2026-05-08T13:30:00+00:00"
+  },
+  {
+    "source_id": "src-search-engine-land-geo-topic",
+    "source_name": "Search Engine Land",
+    "title": "Generative Engine Optimization topic coverage",
+    "url": "https://searchengineland.com/topic/generative-engine-optimization",
+    "source_type": "industry_analysis",
+    "date_published": null,
+    "trust_tier": 2,
+    "claims_supported": [
+      "Search marketing teams are treating AI answer visibility, answer engine optimization, and generative engine optimization as an emerging discipline."
+    ],
+    "last_checked": "2026-05-08T13:30:00+00:00"
+  },
+  {
     "source_id": "src-openai-enterprise-ai-operating-layer-2026",
     "source_name": "OpenAI",
     "title": "The next phase of enterprise AI",

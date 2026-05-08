@@ -1,5 +1,72 @@
 [
   {
+    "insight_id": "what-should-a-small-business-automate-first",
+    "title": "What should a small business automate first?",
+    "slug": "what-should-a-small-business-automate-first",
+    "url": "/atlasops-ai-site/insights/what-should-a-small-business-automate-first.html",
+    "summary": "Start with one painful workflow, one owner, one measurable outcome, and one approval gate.",
+    "takeaway": "For many small businesses, the first automation should be lead follow-up or website CTA routing.",
+    "source_ids": [
+      "internal-first-buyer-sprint-01"
+    ],
+    "service_links": [
+      {
+        "label": "AI Business Automation Audit",
+        "url": "ai-business-automation-audit.html"
+      }
+    ],
+    "status": "drafted_public_safe",
+    "claim_verification_status": "internal_strategy_no_external_stats",
+    "created_at": "2026-05-08T21:12:36.462239+00:00",
+    "updated_at": "2026-05-08T21:12:36.462244+00:00"
+  },
+  {
+    "insight_id": "ai-seo-narrative-control-blind-spot",
+    "title": "AI SEO is becoming the blind spot in business visibility",
+    "slug": "ai-seo-narrative-control-blind-spot",
+    "url": "/atlasops-ai-site/insights/ai-seo-narrative-control-blind-spot.html",
+    "summary": "Search presence is no longer only about ranking on Google. Businesses also need public content that AI answer systems can understand, cite, and summarize accurately.",
+    "takeaway": "Review your service pages, FAQs, source-backed articles, and entity signals before AI-assisted answers define the story for you.",
+    "source_ids": [
+      "src-google-ai-features-website-guidance",
+      "src-openai-chatgpt-search",
+      "src-schema-org-structured-data",
+      "src-search-engine-land-geo-topic"
+    ],
+    "service_links": [
+      {
+        "label": "AI Visibility + Narrative Control Audit",
+        "url": "ai-visibility-narrative-control-audit.html"
+      },
+      {
+        "label": "AI Business Automation Audit",
+        "url": "ai-business-automation-audit.html"
+      }
+    ],
+    "status": "published",
+    "claim_verification_status": "passed",
+    "created_at": "2026-05-08T13:30:00+00:00",
+    "updated_at": "2026-05-08T13:30:00+00:00",
+    "what_happened": "AI search and answer features are changing how people discover information. OpenAI introduced ChatGPT search, Google documents AI features in Search, and the search industry is tracking generative engine optimization and answer visibility.",
+    "why_it_matters": "A business can have traditional SEO strength and still be poorly represented in AI-assisted answers if public pages are vague, inconsistent, unsupported, or hard for machines to parse.",
+    "practical_takeaway": "Review your service pages, FAQs, source-backed articles, and entity signals before AI-assisted answers define the story for you.",
+    "how_to_steps": [
+      "Define the business entity clearly.",
+      "Name services in plain language.",
+      "Answer buyer questions directly.",
+      "Support important claims with public sources.",
+      "Use structured content where it fits.",
+      "Keep brand and service descriptions consistent."
+    ],
+    "atlasops_application": "AtlasOps can run an AI Visibility + Narrative Control Audit that reviews public brand/entity clarity, answer-ready content, citation/source readiness, narrative gaps, and a 30-day action plan.",
+    "source_links": [
+      "https://developers.google.com/search/docs/appearance/ai-features",
+      "https://openai.com/index/introducing-chatgpt-search/",
+      "https://schema.org/docs/gs.html",
+      "https://searchengineland.com/topic/generative-engine-optimization"
+    ]
+  },
+  {
     "insight_id": "enterprise-ai-operating-layer",
     "title": "Enterprise AI is shifting from experiments to operating layers",
     "slug": "enterprise-ai-operating-layer",
