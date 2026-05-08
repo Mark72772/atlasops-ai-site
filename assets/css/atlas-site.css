@@ -42,7 +42,8 @@ img { max-width: 100%; display: block; }
   border-bottom: 1px solid var(--line);
 }
 .brand { display: flex; align-items: center; gap: .75rem; text-decoration: none; font-weight: 850; font-size: 1.05rem; }
-.brand img { width: 2.25rem; height: 2.25rem; }
+.brand img { width: auto; height: 3.75rem; object-fit: contain; }
+.brand-logo { display: block; max-width: min(13.5rem, 48vw); }
 .nav { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; color: var(--muted); font-size: .94rem; }
 .nav a { text-decoration: none; transition: color .18s ease; }
 .nav a:hover { color: var(--text); }
