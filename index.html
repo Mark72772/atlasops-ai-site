@@ -18,10 +18,13 @@
   <script defer src="assets/js/atlas-liveops.js"></script>
   <link rel="stylesheet" href="assets/css/atlas-assistant-console.css">
   <link rel="stylesheet" href="assets/css/atlas-live-chat.css">
+<link rel="stylesheet" href="assets/css/atlas-payments.css">
   <script defer src="assets/js/atlas-assistant-config.js"></script>
   <script defer src="assets/js/atlas-assistant-console.js"></script>
   <script defer src="assets/js/atlas-live-chat-config.js"></script>
   <script defer src="assets/js/atlas-live-chat.js"></script>
+<script defer src="assets/js/atlas-payments-config.js"></script>
+<script defer src="assets/js/atlas-paypal-checkout.js"></script>
 </head>
 <body>
   <header class="site-header">
@@ -137,7 +140,7 @@
               <p>Workflow review, opportunity map, tool stack recommendation, marketing automation plan, risk checklist, and 7-day roadmap.</p>
               <a class="button ghost" href="ai-business-automation-audit.html">View service</a>
             </article>
-            
+
 
             <article class="card">
               <img src="assets/img/service-ai-business-automation.png" alt="AtlasOps AI marketing automation flow with source-backed content and follow-up signals">
@@ -147,7 +150,7 @@
               <p>Marketing workflow map, automation opportunities, content cadence, and approval boundaries.</p>
               <a class="button ghost" href="ai-marketing-automation-audit.html">View service</a>
             </article>
-            
+
 
             <article class="card">
               <img src="assets/img/service-ai-business-automation.png" alt="AtlasOps AI website and PayPal CTA workflow card">
@@ -157,7 +160,7 @@
               <p>Static page structure, PayPal.me CTA, UTM links, tracked static /go routes, and content guard review.</p>
               <a class="button ghost" href="ai-website-paypal-setup.html">View service</a>
             </article>
-            
+
 
             <article class="card">
               <img src="assets/img/service-social-content-system.png" alt="AtlasOps AI social content system with source-backed posts and manual-final-click gates">
@@ -167,7 +170,7 @@
               <p>Source-backed post templates, queue, duplicate guard, UTM links, and manual-final-click workflow.</p>
               <a class="button ghost" href="ai-social-content-system.html">View service</a>
             </article>
-            
+
 
             <article class="card">
               <img src="assets/img/service-code-intelligence.png" alt="AtlasOps AI code intelligence audit diagram with checks, diffs, and rollback points">
@@ -177,7 +180,7 @@
               <p>Code review, workflow plan, risk map, test recommendations, and delivery checklist.</p>
               <a class="button ghost" href="code-intelligence-audit.html">View service</a>
             </article>
-            
+
 
             <article class="card">
               <img src="assets/img/service-ocr-document-workflow.png" alt="AtlasOps AI OCR document workflow showing forms, tables, and verification checks">
@@ -251,23 +254,23 @@
         <div class="honeypot" aria-hidden="true"><label>Leave this field blank <input name="website_confirm" tabindex="-1" autocomplete="off"></label></div>
         <button class="button primary" type="submit">Submit Ask Atlas inquiry</button>
       </form>
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
+
+
+
+
+
+
+
+
+
     </section>
 
   <!-- ASK_ATLAS_WIDGET_START -->
@@ -311,7 +314,16 @@
       <div class="faq-list"><details><summary>What is the AI Business Automation Audit?</summary><p>A practical review of one business workflow, website/payment CTA, follow-up path, and automation opportunity map.</p></details><details><summary>What do I receive?</summary><p>A workflow map, opportunity scorecard, risk notes, suggested tools, and a short roadmap for the next useful automation step.</p></details><details><summary>What should I send?</summary><p>A public website link, the workflow you want reviewed, current tools, and where follow-up or handoff breaks down.</p></details><details><summary>How does payment work?</summary><p>Payment is through PayPal.me. AtlasOps verifies payment locally from evidence before delivery.</p></details><details><summary>Can Atlas answer questions before I pay?</summary><p>Yes. Ask Atlas can answer basic service-fit questions through live chat when Atlas is online, or by queued/email follow-up when offline.</p></details><details><summary>Can Atlas access my systems?</summary><p>Not through public chat. Deeper technical review requires explicit authorization and scope.</p></details><details><summary>Is this live AI chat?</summary><p>Ask Atlas uses a public Cloudflare relay. It behaves as live chat when the local Atlas bridge is online, and falls back to a queued message when Atlas is offline.</p></details><details><summary>What should I not send through public chat?</summary><p>Do not send passwords, API keys, payment card data, private files, or sensitive customer data.</p></details><details><summary>How fast will AtlasOps reply?</summary><p>Live replies appear when the local Atlas bridge is online; otherwise AtlasOps follows up after the queued message is pulled locally.</p></details><details><summary>What happens after I submit?</summary><p>AtlasOps creates a local chat/question record, can create a lead, drafts a governed reply, and sends only replies allowed by policy.</p></details></div>
     </section>
     <!-- ATLAS_FAQ_END -->
-  </main>
+
+<section class="section atlas-payment-section" aria-label="AtlasOps AI payment options">
+  <div class="section-head">
+    <span class="eyebrow">Payment</span>
+    <h2>Start with PayPal</h2>
+    <p>Checkout uses PayPal API evidence when configured. PayPal.me remains available as a fallback and requires manual verification before delivery.</p>
+  </div>
+  <div data-atlas-payments data-default-service="ai_business_automation_audit"></div>
+</section>
+</main>
   <footer class="footer">
     <span>AtlasOps AI keeps the local Atlas runtime private. This public site contains only public-safe static content.</span>
     <span><a href="privacy.html">Privacy</a> / <a href="terms.html">Terms</a></span>

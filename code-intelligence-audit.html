@@ -14,8 +14,11 @@
   <link rel="stylesheet" href="assets/css/atlas-site.css">
   <script defer src="assets/js/atlas-site.js"></script>
   <link rel="stylesheet" href="assets/css/atlas-live-chat.css">
+<link rel="stylesheet" href="assets/css/atlas-payments.css">
   <script defer src="assets/js/atlas-live-chat-config.js"></script>
-  <script defer src="assets/js/atlas-live-chat.js"></script></head>
+  <script defer src="assets/js/atlas-live-chat.js"></script>
+<script defer src="assets/js/atlas-payments-config.js"></script>
+<script defer src="assets/js/atlas-paypal-checkout.js"></script></head>
 <body>
   <header class="site-header">
     <a class="brand" href="./"><img src="assets/img/logo-mark.svg" alt="" aria-hidden="true"><span>AtlasOps AI</span></a>
@@ -58,7 +61,7 @@
       <p>No fake guarantees: AtlasOps makes practical recommendations and delivery assets, but does not promise revenue, traffic, platform approval, or legal/financial outcomes.</p>
     </section>
     <section class="section band">
-      
+
       <form class="lead-form atlasops-lead-form" action="#lead-form-setup-required" method="get" data-endpoint-status="setup_required" data-endpoint-type="none">
         <h2>Start an AtlasOps AI intake</h2>
         <p class="form-note">Tell us what workflow, website, content system, or document process you want reviewed. Do not send passwords, API keys, payment card data, or private files through this public form.</p>
@@ -87,10 +90,19 @@
         <label class="consent-line"><input name="consent_checkbox" type="checkbox" required> I agree to be contacted about this AtlasOps AI inquiry and understand this public form is not for sensitive data.</label>
         <button class="button primary" type="submit">Submit intake</button>
       </form>
-    
+
     </section>
 
-  </main>
+
+<section class="section atlas-payment-section" aria-label="AtlasOps AI payment options">
+  <div class="section-head">
+    <span class="eyebrow">Payment</span>
+    <h2>Start with PayPal</h2>
+    <p>Checkout uses PayPal API evidence when configured. PayPal.me remains available as a fallback and requires manual verification before delivery.</p>
+  </div>
+  <div data-atlas-payments data-default-service="code_dependency_security_audit"></div>
+</section>
+</main>
   <footer class="footer">
     <span>AtlasOps AI keeps the local Atlas runtime private. This public site contains only public-safe static content.</span>
     <span><a href="privacy.html">Privacy</a> / <a href="terms.html">Terms</a></span>

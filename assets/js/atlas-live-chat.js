@@ -229,18 +229,23 @@
   async function checkRelay() {
     if (!config.relayUrl) {
       console.warn("Atlas live chat relay not configured.");
-      setStatus("offline", "Leave message", "Atlas is offline — leave your email and AtlasOps will follow up.");
+      setStatus("offline", "Leave message", "Atlas relay is offline. Leave a message for follow-up.");
       return;
     }
     try {
       const response = await fetch(`${config.relayUrl}${config.healthEndpoint}`, { method: "GET" });
       if (response.ok) {
-        setStatus("relay", "Online relay", "Atlas relay is online — message will queue if local Atlas is offline.");
+        const health = await response.json().catch(() => ({}));
+        if (health.local_bridge_online) {
+          setStatus("live", "Online", "Atlas is online.");
+        } else {
+          setStatus("relay", "Online relay", "Atlas relay is online. Atlas may queue complex replies, but simple questions can still be answered.");
+        }
       } else {
-        setStatus("offline", "Leave message", "Atlas is offline — leave your email and AtlasOps will follow up.");
+        setStatus("offline", "Leave message", "Atlas relay is offline. Leave a message for follow-up.");
       }
     } catch {
-      setStatus("offline", "Leave message", "Atlas is offline — leave your email and AtlasOps will follow up.");
+      setStatus("offline", "Leave message", "Atlas relay is offline. Leave a message for follow-up.");
     }
   }
 
@@ -260,11 +265,11 @@
       const questionId = result.question_id || result.session_id || body.session_id;
       lastQuestionId = questionId;
       addMessage("atlas", "Atlas is checking...");
-      setStatus(result.status === "sent_to_atlas" || result.status === "reply_available" ? "live" : "relay", result.status === "sent_to_atlas" ? "Live" : "Online relay", result.status === "sent_to_atlas" ? "Atlas is online — replies can appear here." : "Atlas relay is online — message will queue if local Atlas is offline.");
+      setStatus(result.status === "sent_to_atlas" || result.status === "reply_available" ? "live" : "relay", result.status === "sent_to_atlas" ? "Live" : "Online relay", result.status === "sent_to_atlas" ? "Atlas is online." : "Atlas relay is online. Atlas may queue complex replies, but simple questions can still be answered.");
       pollForReply(questionId);
     } catch {
       addMessage("atlas", "Atlas has your message path, but the relay did not answer. If you left an email, AtlasOps can follow up.");
-      setStatus("offline", "Leave message", "Atlas is offline — leave your email and AtlasOps will follow up.");
+      setStatus("offline", "Leave message", "Atlas relay is offline. Leave a message for follow-up.");
     }
   }
 
@@ -310,7 +315,7 @@
         }
       } catch {
         if (attempts >= 3) {
-          setStatus("offline", "Leave message", "Atlas is offline — leave your email and AtlasOps will follow up.");
+          setStatus("offline", "Leave message", "Atlas relay is offline. Leave a message for follow-up.");
         }
       }
     };

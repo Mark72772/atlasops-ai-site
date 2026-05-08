@@ -17,8 +17,11 @@
   <script defer src="assets/js/atlas-site.js"></script>
   <script defer src="assets/js/atlas-liveops.js"></script>
   <link rel="stylesheet" href="assets/css/atlas-live-chat.css">
+<link rel="stylesheet" href="assets/css/atlas-payments.css">
   <script defer src="assets/js/atlas-live-chat-config.js"></script>
-  <script defer src="assets/js/atlas-live-chat.js"></script></head>
+  <script defer src="assets/js/atlas-live-chat.js"></script>
+<script defer src="assets/js/atlas-payments-config.js"></script>
+<script defer src="assets/js/atlas-paypal-checkout.js"></script></head>
 <body>
   <header class="site-header">
     <a class="brand" href="./"><img src="assets/img/logo-mark.svg" alt="" aria-hidden="true"><span>AtlasOps AI</span></a>
@@ -46,7 +49,7 @@
               <p>Workflow review, opportunity map, tool stack recommendation, marketing automation plan, risk checklist, and 7-day roadmap.</p>
               <a class="button ghost" href="ai-business-automation-audit.html">View service</a>
             </article>
-            
+
 
             <article class="card">
               <img src="assets/img/service-ai-business-automation.png" alt="AtlasOps AI quiet SaaS workflow map for agent-native rebuild planning">
@@ -56,7 +59,7 @@
               <p>Candidate scoring report, diligence checklist, authorized workflow mining plan, one-feature MVP spec, relaunch copy, content/ad drafts, and privacy-risk checklist.</p>
               <a class="button ghost" href="dead-saas-agent-native-audit.html">View service</a>
             </article>
-            
+
 
             <article class="card">
               <img src="assets/img/service-ai-business-automation.png" alt="AtlasOps AI marketing automation flow with source-backed content and follow-up signals">
@@ -66,7 +69,7 @@
               <p>Marketing workflow map, automation opportunities, content cadence, and approval boundaries.</p>
               <a class="button ghost" href="ai-marketing-automation-audit.html">View service</a>
             </article>
-            
+
 
             <article class="card">
               <img src="assets/img/service-ai-business-automation.png" alt="AtlasOps AI website and PayPal CTA workflow card">
@@ -76,7 +79,7 @@
               <p>Static page structure, PayPal.me CTA, UTM links, tracked static /go routes, and content guard review.</p>
               <a class="button ghost" href="ai-website-paypal-setup.html">View service</a>
             </article>
-            
+
 
             <article class="card">
               <img src="assets/img/service-social-content-system.png" alt="AtlasOps AI social content system with source-backed posts and manual-final-click gates">
@@ -105,7 +108,7 @@
               <p>Code review, workflow plan, risk map, test recommendations, and delivery checklist.</p>
               <a class="button ghost" href="code-intelligence-audit.html">View service</a>
             </article>
-            
+
             <article class="card">
               <img src="assets/img/service-code-intelligence.png" alt="AtlasOps AI agentic coding workflow with guarded shell, review findings, and MCP tool plans">
               <h3>Atlas Native Coding CLI / Agentic Coding Workflows</h3>
@@ -123,7 +126,7 @@
               <p>OCR path, extraction plan, verification rules, workflow routing, and fallback handling.</p>
               <a class="button ghost" href="ocr-document-workflow-automation.html">View service</a>
             </article>
-            
+
 
             <article class="card">
               <img src="assets/img/service-code-intelligence.png" alt="AtlasOps AI defensive cyber readiness workflow for code, endpoint, RDP, and email security checks">
@@ -163,25 +166,25 @@
         <div class="honeypot" aria-hidden="true"><label>Leave this field blank <input name="website_confirm" tabindex="-1" autocomplete="off"></label></div>
         <button class="button primary" type="submit">Submit Ask Atlas inquiry</button>
       </form>
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
+
+
+
+
+
+
+
+
+
+
     </section>
 
   <!-- cyber-services-start -->
@@ -256,7 +259,16 @@
       </div>
     </section>
     <!-- ASK_ATLAS_WIDGET_END -->
-  </main>
+
+<section class="section atlas-payment-section" aria-label="AtlasOps AI payment options">
+  <div class="section-head">
+    <span class="eyebrow">Payment</span>
+    <h2>Start with PayPal</h2>
+    <p>Checkout uses PayPal API evidence when configured. PayPal.me remains available as a fallback and requires manual verification before delivery.</p>
+  </div>
+  <div data-atlas-payments data-default-service="ai_business_automation_audit"></div>
+</section>
+</main>
   <footer class="footer">
     <span>AtlasOps AI keeps the local Atlas runtime private. This public site contains only public-safe static content.</span>
     <span><a href="privacy.html">Privacy</a> / <a href="terms.html">Terms</a></span>

@@ -1,5 +1,6 @@
 const SITE_ID = "atlasops-ai";
 const ACTIVE_WINDOW_MS = 120000;
+const BRIDGE_HEARTBEAT_WINDOW_MS = 30000;
 const MAX_MESSAGES = 800;
 const MAX_SESSIONS = 300;
 const ALLOWED_ORIGINS = new Set([
@@ -142,6 +143,26 @@ function simpleTimeReply(location, timezone, abbreviation) {
   return `It is ${formatted} in ${location} right now (${timezone}, ${abbreviation}).`;
 }
 
+function bridgeSnapshot(agentStatus, connectedAgents = 0) {
+  const updatedAt = agentStatus && (agentStatus.updated_at || agentStatus.timestamp || agentStatus.last_bridge_heartbeat_at);
+  const lastHeartbeat = updatedAt || null;
+  const freshHeartbeat = Boolean(lastHeartbeat && Date.now() - Date.parse(lastHeartbeat) <= BRIDGE_HEARTBEAT_WINDOW_MS);
+  const localBridgeOnline = Boolean(
+    freshHeartbeat &&
+    (agentStatus.local_bridge_online === true || agentStatus.atlas_responder_available === true || agentStatus.status === "live_online")
+  );
+  return {
+    local_bridge_online: localBridgeOnline,
+    last_bridge_heartbeat_at: lastHeartbeat,
+    bridge_status: localBridgeOnline ? "live_online" : connectedAgents > 0 ? "websocket_agent_connected" : "worker_online_atlas_offline",
+    mode: localBridgeOnline ? "live" : "relay_only",
+    atlas_responder_available: Boolean(agentStatus.atlas_responder_available),
+    simple_tools_available: agentStatus.simple_tools_available !== false,
+    rag_available: Boolean(agentStatus.rag_available),
+    search_available: Boolean(agentStatus.search_available),
+  };
+}
+
 function answerSimpleTool(text) {
   const lowered = String(text || "").toLowerCase();
   if (!lowered.trim()) return null;
@@ -174,7 +195,7 @@ function answerSimpleTool(text) {
   if (/\b(pay|paypal|price|cost|how much)\b/.test(lowered)) {
     return {
       intent: "payment_link",
-      reply_text: "Atlas can explain the audit/start path and point you to the site's start-audit CTA. Custom quotes, contract terms, refunds, and money movement stay operator-reviewed.",
+      reply_text: "The AI Business Automation Audit is $149. Use PayPal checkout when available, or PayPal.me as a fallback. Checkout Worker payments can be verified automatically after PayPal/Worker setup; PayPal.me payments require manual evidence or a transaction match before AtlasOps marks an order paid.",
       used_tools: ["worker_payment_faq"],
     };
   }
@@ -233,6 +254,8 @@ export class AtlasChatRoom {
     const messages = await this.get("messages", []);
     const replies = await this.get("replies", []);
     const sessions = await this.get("sessions", {});
+    const agentStatus = await this.get("agent_status", { status: this.agents.size ? "live_online" : "offline", updated_at: null, simple_tools_available: true });
+    const bridge = bridgeSnapshot(agentStatus, this.agents.size);
     const activeSince = Date.now() - ACTIVE_WINDOW_MS;
     const activeSessions = Object.values(sessions).filter((item) => Date.parse(item.last_seen || 0) >= activeSince);
     return {
@@ -240,14 +263,42 @@ export class AtlasChatRoom {
       site_id: SITE_ID,
       worker: "atlasops-live-chat",
       durable_object: "AtlasChatSession",
-      bridge_status: this.agents.size > 0 ? "live_online" : "worker_online_atlas_offline",
+      bridge_status: bridge.bridge_status,
+      local_bridge_online: bridge.local_bridge_online,
+      last_bridge_heartbeat_at: bridge.last_bridge_heartbeat_at,
+      atlas_responder_available: bridge.atlas_responder_available,
+      simple_tools_available: bridge.simple_tools_available,
+      rag_available: bridge.rag_available,
+      search_available: bridge.search_available,
+      mode: bridge.mode,
       active_sessions: activeSessions.length,
       total_sessions: Object.keys(sessions).length,
       message_count: messages.length,
       reply_count: replies.length,
       latest_messages: messages.slice(-30),
       latest_replies: replies.slice(-30),
-      agent_status: await this.get("agent_status", { status: this.agents.size > 0 ? "live_online" : "offline", updated_at: null }),
+      agent_status: agentStatus,
+      updated_at: now(),
+    };
+  }
+
+  async healthPayload() {
+    const agentStatus = await this.get("agent_status", { status: this.agents.size ? "live_online" : "offline", updated_at: null, simple_tools_available: true });
+    const bridge = bridgeSnapshot(agentStatus, this.agents.size);
+    return {
+      ok: true,
+      site_id: SITE_ID,
+      worker: "online",
+      durable_object: "configured",
+      websocket: true,
+      fallback_polling: true,
+      local_bridge_online: bridge.local_bridge_online,
+      last_bridge_heartbeat_at: bridge.last_bridge_heartbeat_at,
+      atlas_responder_available: bridge.atlas_responder_available,
+      simple_tools_available: true,
+      rag_available: bridge.rag_available,
+      search_available: bridge.search_available,
+      mode: bridge.mode,
       updated_at: now(),
     };
   }
@@ -326,6 +377,7 @@ export class AtlasChatRoom {
     if (path === "/admin/agent/ws" && request.headers.get("upgrade") === "websocket") {
       return this.acceptAgentSocket();
     }
+    if (path === "/health" && request.method === "GET") return json(await this.healthPayload());
     if ((path === "/chat/message" || path === "/ask") && request.method === "POST") {
       const payload = await readJson(request);
       if (payload.website_confirm) return json({ ok: false, status: "blocked", error: "honeypot_triggered" }, { status: 400 });
@@ -334,6 +386,8 @@ export class AtlasChatRoom {
       await this.append("messages", message);
       await this.updateSession(message);
       this.broadcast({ type: "visitor_message", message }, "agents");
+      const agentStatus = await this.get("agent_status", { status: this.agents.size ? "live_online" : "offline", updated_at: null, simple_tools_available: true });
+      const bridge = bridgeSnapshot(agentStatus, this.agents.size);
       const simple = answerSimpleTool(message.text);
       if (simple) {
         const reply = normalizeMessage({
@@ -362,7 +416,8 @@ export class AtlasChatRoom {
           message_id: message.message_id,
           session_id: message.session_id,
           question_id: message.message_id,
-          bridge_status: this.agents.size ? "sent_to_atlas" : "worker_simple_tool",
+          bridge_status: bridge.local_bridge_online ? "sent_to_atlas" : "worker_simple_tool",
+          local_bridge_online: bridge.local_bridge_online,
           answered_by: "worker_simple_tool",
           route: "simple_tool",
           reply,
@@ -371,7 +426,9 @@ export class AtlasChatRoom {
       }
       return json({
         ok: true,
-        status: this.agents.size ? "sent_to_atlas" : "queued",
+        status: bridge.local_bridge_online || this.agents.size ? "sent_to_atlas" : "queued",
+        bridge_status: bridge.bridge_status,
+        local_bridge_online: bridge.local_bridge_online,
         message_id: message.message_id,
         session_id: message.session_id,
         question_id: message.message_id
@@ -401,8 +458,14 @@ export class AtlasChatRoom {
     if (path === "/admin/agent/status" && request.method === "POST") {
       const payload = await readJson(request);
       const status = {
-        status: payload.status || (this.agents.size ? "live_online" : "offline"),
+        status: payload.status || (payload.local_bridge_online ? "live_online" : this.agents.size ? "live_online" : "offline"),
         mode: payload.mode || "outbound_bridge",
+        local_bridge_online: Boolean(payload.local_bridge_online),
+        atlas_responder_available: Boolean(payload.atlas_responder_available),
+        simple_tools_available: payload.simple_tools_available !== false,
+        rag_available: Boolean(payload.rag_available),
+        search_available: Boolean(payload.search_available),
+        timestamp: payload.timestamp || now(),
         updated_at: now(),
       };
       await this.put("agent_status", status);
@@ -444,13 +507,18 @@ export default {
     const path = url.pathname.replace(/\/+$/, "") || "/";
     try {
       if (path === "/health" && request.method === "GET") {
+        if (env.ATLAS_CHAT_ROOM) return withCors(request, await forwardToRoom(request, env, "/health"), env);
         return withCors(request, json({
           ok: true,
           site_id: SITE_ID,
-          worker: "atlasops-live-chat",
-          durable_object: env.ATLAS_CHAT_ROOM ? "configured" : "setup_required",
+          worker: "online",
+          durable_object: "setup_required",
           websocket: true,
           fallback_polling: true,
+          local_bridge_online: false,
+          last_bridge_heartbeat_at: null,
+          simple_tools_available: true,
+          mode: "relay_only",
         }), env);
       }
       if (path.startsWith("/admin/")) {

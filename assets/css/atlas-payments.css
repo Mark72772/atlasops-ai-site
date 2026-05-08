@@ -1,0 +1,49 @@
+.atlas-payment-card {
+  display: grid;
+  gap: 12px;
+  margin: 18px 0;
+  padding: 18px;
+  border: 1px solid rgba(12, 20, 33, 0.14);
+  border-radius: 8px;
+  background: #ffffff;
+  color: #111827;
+  box-shadow: 0 14px 36px rgba(17, 24, 39, 0.08);
+}
+
+.atlas-payment-kicker {
+  display: block;
+  color: #2563eb;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.atlas-payment-card h3 {
+  margin: 4px 0 0;
+  font-size: 1.15rem;
+}
+
+.atlas-payment-card p {
+  margin: 0;
+}
+
+.atlas-payment-button {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 16px;
+  border-radius: 6px;
+  background: #f2c94c;
+  color: #111827;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.atlas-payment-note,
+.atlas-payment-result {
+  color: #475569;
+  font-size: 0.92rem;
+}

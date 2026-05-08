@@ -17,13 +17,16 @@
   <script defer src="assets/js/atlas-site.js"></script>
   <script defer src="assets/js/atlas-liveops.js"></script>
   <link rel="stylesheet" href="assets/css/atlas-live-chat.css">
+<link rel="stylesheet" href="assets/css/atlas-payments.css">
   <link rel="stylesheet" href="assets/css/atlas-orb.css">
   <link rel="stylesheet" href="assets/css/atlas-assistant-console.css">
   <script defer src="assets/js/atlas-orb.js"></script>
   <script defer src="assets/js/atlas-assistant-config.js"></script>
   <script defer src="assets/js/atlas-assistant-console.js"></script>
   <script defer src="assets/js/atlas-live-chat-config.js"></script>
-  <script defer src="assets/js/atlas-live-chat.js"></script></head>
+  <script defer src="assets/js/atlas-live-chat.js"></script>
+<script defer src="assets/js/atlas-payments-config.js"></script>
+<script defer src="assets/js/atlas-paypal-checkout.js"></script></head>
 <body>
   <header class="site-header">
     <a class="brand" href="./"><img src="assets/img/logo-mark.svg" alt="" aria-hidden="true"><span>AtlasOps AI</span></a>
@@ -120,7 +123,16 @@
       <div class="faq-list"><details><summary>What is the AI Business Automation Audit?</summary><p>A practical review of one business workflow, website/payment CTA, follow-up path, and automation opportunity map.</p></details><details><summary>What do I receive?</summary><p>A workflow map, opportunity scorecard, risk notes, suggested tools, and a short roadmap for the next useful automation step.</p></details><details><summary>What should I send?</summary><p>A public website link, the workflow you want reviewed, current tools, and where follow-up or handoff breaks down.</p></details><details><summary>How does payment work?</summary><p>Payment is through PayPal.me. AtlasOps verifies payment locally from evidence before delivery.</p></details><details><summary>Can Atlas answer questions before I pay?</summary><p>Yes. Ask Atlas can answer basic service-fit questions when the relay or email fallback is connected.</p></details><details><summary>Can Atlas access my systems?</summary><p>Not through public chat. Deeper technical review requires explicit authorization and scope.</p></details><details><summary>Is this live AI chat?</summary><p>Ask Atlas is live only when the Cloudflare Worker reply loop and local Atlas polling are configured and verified. Otherwise it falls back to email.</p></details><details><summary>What should I not send through public chat?</summary><p>Do not send passwords, API keys, payment card data, private files, or sensitive customer data.</p></details><details><summary>How fast will AtlasOps reply?</summary><p>If the relay is online, keep the page open for a near-live reply. If not, AtlasOps follows up by email after local sync.</p></details><details><summary>What happens after I submit?</summary><p>The relay stores the question, local Atlas pulls it, creates a local question/lead record, drafts a governed reply, and sends only after policy allows it.</p></details></div>
     </section>
     <!-- ATLAS_FAQ_END -->
-  </main>
+
+<section class="section atlas-payment-section" aria-label="AtlasOps AI payment options">
+  <div class="section-head">
+    <span class="eyebrow">Payment</span>
+    <h2>Start with PayPal</h2>
+    <p>Checkout uses PayPal API evidence when configured. PayPal.me remains available as a fallback and requires manual verification before delivery.</p>
+  </div>
+  <div data-atlas-payments data-default-service="ai_business_automation_audit"></div>
+</section>
+</main>
   <footer class="footer">
     <span>AtlasOps AI keeps the local Atlas runtime private. This public site contains only public-safe static content.</span>
     <span><a href="privacy.html">Privacy</a> / <a href="terms.html">Terms</a></span>

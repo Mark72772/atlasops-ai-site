@@ -1,0 +1,13 @@
+name = "atlas-paypal-checkout"
+main = "worker.js"
+compatibility_date = "2026-05-07"
+
+[vars]
+PAYPAL_MODE = "live"
+ALLOWED_ORIGINS = "https://mark72772.github.io"
+
+# Create a KV namespace, then uncomment and fill these IDs before production deploy:
+# [[kv_namespaces]]
+# binding = "PAYPAL_CHECKOUT_STORE"
+# id = "REPLACE_WITH_KV_NAMESPACE_ID"
+# preview_id = "REPLACE_WITH_PREVIEW_KV_NAMESPACE_ID"

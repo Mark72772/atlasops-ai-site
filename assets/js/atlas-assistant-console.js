@@ -137,12 +137,19 @@
     try {
       const response = await fetch(`${config.relayUrl}${config.healthEndpoint}`, { method: "GET", cache: "no-store" });
       if (response.ok) {
-        setStatus("Atlas relay is online. Simple questions can answer immediately; richer tasks use the local Atlas brain when the bridge is online.", "relay_online");
+        const health = await response.json().catch(() => ({}));
+        if (health.local_bridge_online) {
+          setStatus("Atlas is online.", "live");
+        } else if (health.ok) {
+          setStatus("Atlas relay is online. Atlas may queue complex replies, but simple questions can still be answered.", "relay_online");
+        } else {
+          setStatus("Atlas relay is offline. Leave a message for follow-up.", "queued_fallback");
+        }
       } else {
-        setStatus("Atlas relay is not answering. Your message can still be kept here while you use the contact path.", "queued_fallback");
+        setStatus("Atlas relay is offline. Leave a message for follow-up.", "queued_fallback");
       }
     } catch {
-      setStatus("Atlas relay is unreachable right now. Your message can still be kept here while you use the contact path.", "queued_fallback");
+      setStatus("Atlas relay is offline. Leave a message for follow-up.", "queued_fallback");
     }
   }
 
@@ -198,7 +205,7 @@
         setStatus(result.answered_by === "worker_simple_tool" ? "Answered immediately by Atlas simple tools through the public relay." : "Atlas replied through the public relay.", result.status || "reply_available");
         return;
       }
-      setStatus(result.status === "sent_to_atlas" ? "Atlas is online. Waiting for the live reply..." : "Atlas local brain is currently offline, but your message is queued. Leave your email for follow-up.", result.status || "queued");
+      setStatus(result.status === "sent_to_atlas" || result.local_bridge_online ? "Atlas is online. Waiting for the live reply..." : "Atlas relay is online. Atlas may queue complex replies, but simple questions can still be answered.", result.status || "queued");
       pollForReply(replyKey);
     } catch {
       removeTyping();
@@ -228,8 +235,8 @@
         if (attempts >= 24) {
           clearInterval(activePoll);
           removeTyping();
-          appendMessage("assistant", "Atlas local brain is currently offline, but your message is queued. Leave your email for follow-up.");
-          setStatus("Queued for local Atlas. Simple deterministic questions should answer immediately when the relay simple-tools layer is available.", "queued_fallback");
+          appendMessage("assistant", "Atlas relay is online. Atlas may queue complex replies, but simple questions can still be answered. Leave your email for follow-up if you want AtlasOps to reply directly.");
+          setStatus("Queued for local Atlas. Simple deterministic questions should answer immediately through the relay simple-tools layer.", "queued_fallback");
         }
       } catch {
         if (attempts >= 3) {
