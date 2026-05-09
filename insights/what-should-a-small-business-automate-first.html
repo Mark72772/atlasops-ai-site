@@ -6,6 +6,7 @@
   <title>What should a small business automate first? | AtlasOps AI</title>
   <meta name="description" content="Start with one painful workflow, one owner, one measurable outcome, and one approval gate.">
   <link rel="stylesheet" href="../assets/css/atlas-site.css">
+  <link rel="stylesheet" href="../assets/css/atlas-live-chat.css">
 </head>
 <body>
   <header class="site-header">
@@ -34,12 +35,19 @@
       <p>If the website does not clearly tell visitors what to do next, the automation should start with a simpler CTA, a safer intake form, and a follow-up path that does not require passwords or private customer files.</p>
       <h2>What an AI Business Automation Audit includes</h2>
       <p>Atlas reviews one business workflow, finds the main bottlenecks, identifies the top automation opportunities, recommends the first automation, and turns it into a 30-day action plan.</p>
+      <h2>Source Box</h2>
+      <ul class="source-list">
+        <li><a href="https://openai.com/index/introducing-workspace-agents-in-chatgpt/">OpenAI workspace agents</a> - AI works best when it is tied to real workflow context, roles, and handoffs.</li>
+        <li><a href="https://openai.com/index/introducing-b2b-signals/">OpenAI B2B signals</a> - AI adoption is moving from experiments into production business workflows.</li>
+        <li><a href="https://github.blog/changelog/2026-05-05-secret-scanning-with-github-mcp-server-is-now-generally-available/">GitHub MCP secret scanning changelog</a> - useful automation still needs guardrails before action.</li>
+      </ul>
       <h2>How to start</h2>
       <p>Ask Atlas: <strong>What should my business automate first?</strong></p>
       <div class="actions">
         <a class="button primary" href="../ask-atlas.html">Ask Atlas</a>
         <a class="button gold" href="../ai-business-automation-audit.html">Start with a $149 AI Business Automation Audit</a>
       </div>
+      <div id="atlas-public-chat-console" data-atlas-prompt="What should my business automate first?"></div>
       <p class="meta">Safety note: do not send passwords, API keys, payment card data, private files, or sensitive customer records through public chat.</p>
     </section>
   </main>
@@ -47,5 +55,7 @@
     <span>AtlasOps AI keeps the local Atlas runtime private. This public site contains only public-safe static content.</span>
     <span><a href="../privacy.html">Privacy</a> / <a href="../terms.html">Terms</a></span>
   </footer>
+  <script src="../assets/js/atlas-live-chat-config.js"></script>
+  <script src="../assets/js/atlas-live-chat.js"></script>
 </body>
 </html>
