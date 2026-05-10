@@ -1,5 +1,33 @@
 [
   {
+    "insight_id": "why-service-businesses-should-automate-one-workflow-first",
+    "title": "Why service businesses should automate one workflow first",
+    "slug": "why-service-businesses-should-automate-one-workflow-first",
+    "url": "/atlasops-ai-site/insights/why-service-businesses-should-automate-one-workflow-first.html",
+    "summary": "AI is becoming useful inside real workflows, but a service business should start with one process: lead intake, estimate follow-up, service routing, reminders, or website inquiry response.",
+    "takeaway": "Pick one workflow, one owner, one approval gate, and one measurable outcome before buying more AI tools.",
+    "source_ids": [
+      "src-mckinsey-state-ai-2025-agentic-workflows",
+      "src-openai-enterprise-ai-2025-workflows",
+      "src-microsoft-agentic-ai-business-process-2025"
+    ],
+    "service_links": [
+      {
+        "label": "AI Business Automation Audit",
+        "url": "ai-business-automation-audit.html"
+      }
+    ],
+    "status": "published",
+    "claim_verification_status": "source_backed_no_fake_stats",
+    "created_at": "2026-05-10T15:18:28.510447+00:00",
+    "updated_at": "2026-05-10T15:18:28.510452+00:00",
+    "source_links": [
+      "https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai",
+      "https://openai.com/business/guides-and-resources/the-state-of-enterprise-ai-2025-report",
+      "https://blogs.microsoft.com/blog/2025/04/28/how-agentic-ai-is-driving-ai-first-business-transformation-for-customers-to-achieve-more/"
+    ]
+  },
+  {
     "insight_id": "what-should-a-small-business-automate-first",
     "title": "What should a small business automate first?",
     "slug": "what-should-a-small-business-automate-first",

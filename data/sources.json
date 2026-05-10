@@ -102,5 +102,44 @@
       "GitHub MCP secret scanning is a pre-commit safety check and findings are ephemeral in the agent session."
     ],
     "last_checked": "2026-05-07T17:16:18.163208+00:00"
+  },
+  {
+    "source_id": "src-mckinsey-state-ai-2025-agentic-workflows",
+    "source_name": "McKinsey State of AI 2025",
+    "title": "McKinsey State of AI 2025",
+    "url": "https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai",
+    "source_type": "industry_analysis",
+    "date_published": null,
+    "trust_tier": 2,
+    "claims_supported": [
+      "AI adoption is widening, while scaling value depends on moving from experiments into repeatable workflows with clear operating changes."
+    ],
+    "last_checked": "2026-05-10T15:18:09.125151+00:00"
+  },
+  {
+    "source_id": "src-openai-enterprise-ai-2025-workflows",
+    "source_name": "OpenAI State of Enterprise AI 2025",
+    "title": "OpenAI State of Enterprise AI 2025",
+    "url": "https://openai.com/business/guides-and-resources/the-state-of-enterprise-ai-2025-report",
+    "source_type": "industry_analysis",
+    "date_published": null,
+    "trust_tier": 1,
+    "claims_supported": [
+      "Enterprise AI is moving deeper into repeatable multi-step workflows across functions."
+    ],
+    "last_checked": "2026-05-10T15:18:09.125159+00:00"
+  },
+  {
+    "source_id": "src-microsoft-agentic-ai-business-process-2025",
+    "source_name": "Microsoft agentic AI business transformation",
+    "title": "Microsoft agentic AI business transformation",
+    "url": "https://blogs.microsoft.com/blog/2025/04/28/how-agentic-ai-is-driving-ai-first-business-transformation-for-customers-to-achieve-more/",
+    "source_type": "industry_analysis",
+    "date_published": null,
+    "trust_tier": 1,
+    "claims_supported": [
+      "Agentic AI value appears when it is connected to business processes and governed systems."
+    ],
+    "last_checked": "2026-05-10T15:18:09.125162+00:00"
   }
 ]
