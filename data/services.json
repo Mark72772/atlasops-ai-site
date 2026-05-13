@@ -5,7 +5,7 @@
     "helps": "Operators, founders, consultants, creators, and small businesses with manual follow-up, website, payment, or content gaps.",
     "image": "assets/img/service-ai-business-automation.png",
     "name": "AI Business Automation Audit",
-    "price": "Starter Audit from $99",
+    "price": "Starter Audit from $149",
     "problems": [
       "Missed follow-ups",
       "Scattered tools",
@@ -18,6 +18,46 @@
       "You receive an implementation-ready audit report."
     ],
     "slug": "ai-business-automation-audit"
+  },
+  {
+    "alt": "AtlasOps AI website AI SEO and answer-engine visibility workflow map",
+    "deliverables": "Website clarity review, AI/search visibility checklist, service-page structure review, FAQ and answer-engine content suggestions, local/service-business discoverability notes, and a 30-day action plan.",
+    "helps": "Service businesses that want clearer website pages, FAQs, trust signals, lead capture, and AI/search-readable public content.",
+    "image": "assets/img/service-ai-business-automation.png",
+    "name": "AI Website SEO + AI Visibility Audit",
+    "price": "$199",
+    "problems": [
+      "Unclear service pages",
+      "Weak FAQ and answer-engine content",
+      "Missing trust signals",
+      "Unclear lead capture"
+    ],
+    "process": [
+      "Send the public website URL and main service.",
+      "Atlas reviews clarity, service-page structure, FAQs, trust, and lead capture.",
+      "You receive a 30-day visibility improvement plan after payment is verified."
+    ],
+    "slug": "ai-visibility-narrative-control-audit"
+  },
+  {
+    "alt": "AtlasOps AI automation and AI visibility bundle workflow map",
+    "deliverables": "AI Business Automation Audit plus AI Website SEO + AI Visibility Audit.",
+    "helps": "Businesses that need one practical automation plan and a clearer website path for people and AI/search systems.",
+    "image": "assets/img/service-ai-business-automation.png",
+    "name": "Automation + AI Visibility Bundle",
+    "price": "$299",
+    "problems": [
+      "Manual workflow pain",
+      "Unclear website story",
+      "Weak service-page structure",
+      "Scattered next steps"
+    ],
+    "process": [
+      "Send the workflow, public website URL, and main service.",
+      "Atlas maps the first automation opportunity and AI visibility gaps.",
+      "You receive a combined 30-day action plan after payment is verified."
+    ],
+    "slug": "automation-plus-ai-visibility-bundle"
   },
   {
     "alt": "AtlasOps AI quiet SaaS workflow map for agent-native rebuild planning",
