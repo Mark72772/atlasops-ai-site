@@ -2,7 +2,7 @@
 
 Cloudflare Worker + Durable Object relay for the public Ask Atlas chat widget.
 
-The public GitHub Pages site connects only to this Worker. Local Atlas connects outbound through the admin endpoints or agent WebSocket. The local Atlas runtime is never exposed publicly.
+The public GitHub Pages site connects only to this Worker. Local Atlas connects outbound through the admin endpoints or agent WebSocket. Private systems are not exposed publicly.
 
 Public endpoints:
 - `GET /health`
@@ -22,3 +22,4 @@ Admin endpoints require `X-Atlas-Relay-Secret`:
 - `POST /admin/ack`
 - `GET /admin/agent/ws`
 - `POST /admin/clear-test-data`
+

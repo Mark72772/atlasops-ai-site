@@ -293,6 +293,43 @@
     });
   }
 
+  async function initializeNewsfeed() {
+    const hosts = document.querySelectorAll("[data-newsfeed-list]");
+    if (!hosts.length) return;
+    try {
+      const response = await fetch("data/newsfeed.json", { cache: "no-store" });
+      const data = await response.json();
+      const items = Array.isArray(data.items) ? data.items.slice(0, 8) : [];
+      hosts.forEach((host) => {
+        host.innerHTML = items.map((item) => `
+          <article class="news-item">
+            <div class="news-topic">${item.topic || "Industry Watch"}</div>
+            <h3>${item.title || "AI business signal"}</h3>
+            <p>${item.business_takeaway || item.summary || "Source-backed update for business operators."}</p>
+            <a href="${item.source_url}" rel="noopener">Read source</a>
+          </article>
+        `).join("") || "<p>No source-backed items are available yet.</p>";
+      });
+    } catch {
+      hosts.forEach((host) => {
+        host.innerHTML = "<p>Industry Watch is temporarily unavailable. Ask Atlas for the latest service guidance.</p>";
+      });
+    }
+  }
+
+  function initializeQuickPrompts() {
+    document.querySelectorAll("[data-prompt]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const prompt = button.getAttribute("data-prompt") || "";
+        const target = document.querySelector("#atlas-chat-input, textarea[name='question'], textarea[name='message']");
+        if (target) {
+          target.value = prompt;
+          target.focus();
+        }
+      });
+    });
+  }
+
   window.AtlasLiveOps = {
     config,
     getSessionId,
@@ -321,4 +358,6 @@
   initializeForms();
   initializeClicks();
   initializeCopyButtons();
+  initializeQuickPrompts();
+  initializeNewsfeed();
 })();

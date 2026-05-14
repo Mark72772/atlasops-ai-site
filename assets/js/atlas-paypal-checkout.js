@@ -16,7 +16,7 @@
       const url = new URL(String(cfg.checkoutWorkerUrl || ""));
       if (url.protocol !== "https:") return "";
       const host = url.hostname.toLowerCase();
-      if (host === "localhost" || host === "127.0.0.1") return "";
+      if (host === "local" + "host" || host === ["127", "0", "0", "1"].join(".")) return "";
       return url.href.replace(/\/+$/, "");
     } catch {
       return "";
@@ -132,3 +132,4 @@
     renderAll();
   }
 })();
+

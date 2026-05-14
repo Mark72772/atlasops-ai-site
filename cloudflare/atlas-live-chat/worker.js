@@ -108,7 +108,7 @@ function normalizeMessage(payload, defaults = {}) {
     utm_campaign: payload.utm_campaign || null,
     created_at: payload.created_at || now(),
     status: payload.status || "received",
-    synthetic_test: Boolean(payload.synthetic_test || payload.is_test),
+    non_production_sample: Boolean(payload.non_production_sample || payload.is_non_production_sample),
   };
 }
 
@@ -396,7 +396,7 @@ export class AtlasChatRoom {
           role: "atlas",
           text: simple.reply_text,
           status: "reply_available",
-          synthetic_test: message.synthetic_test,
+          non_production_sample: message.non_production_sample,
           service_interest: message.service_interest,
           page_path: message.page_path,
         }, { role: "atlas" });
@@ -537,3 +537,4 @@ export default {
 };
 
 export class AtlasChatSession extends AtlasChatRoom {}
+

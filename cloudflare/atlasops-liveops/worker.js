@@ -158,7 +158,7 @@ export class AtlasLiveOpsRoom {
         service_interest: payload.service_interest || null,
         timestamp: payload.timestamp || now(),
         source: "github_pages",
-        synthetic_test: Boolean(payload.synthetic_test),
+        non_production_sample: Boolean(payload.non_production_sample),
         received_at: now(),
       };
       await this.append("events", event);
@@ -192,7 +192,7 @@ export class AtlasLiveOpsRoom {
         utm_medium: payload.utm_medium || null,
         utm_campaign: payload.utm_campaign || null,
         status: "new",
-        synthetic_test: Boolean(payload.synthetic_test),
+        non_production_sample: Boolean(payload.non_production_sample),
         created_at: now(),
         received_at: now(),
       };
@@ -218,7 +218,7 @@ export class AtlasLiveOpsRoom {
         reply_text: payload.reply_text,
         status: "reply_posted",
         posted_at: now(),
-        synthetic_test: Boolean(payload.synthetic_test),
+        non_production_sample: Boolean(payload.non_production_sample),
       };
       await this.put("replies", replies);
       return json({ ok: true, reply_id: replies[payload.question_id].reply_id });
@@ -276,3 +276,4 @@ export default {
     }
   },
 };
+

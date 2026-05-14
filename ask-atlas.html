@@ -4,171 +4,90 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Ask Atlas | AtlasOps AI</title>
-  <meta name="description" content="Ask AtlasOps AI about workflows, websites, AI automation, AI website SEO, answer-engine visibility, document processes, code intelligence, or service fit.">
-  <meta property="og:title" content="Ask Atlas | AtlasOps AI">
-  <meta property="og:description" content="Ask AtlasOps AI about workflows, websites, AI automation, document processes, code intelligence, or service fit.">
-  <meta property="og:image" content="assets/img/atlas-og-image.png">
+  <meta name="description" content="Ask Atlas about automation, AI visibility, service fit, intake, and next steps for a practical audit.">
   <link rel="icon" href="assets/img/favicon.png" type="image/png">
-  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
   <link rel="stylesheet" href="assets/css/atlas-site.css">
   <link rel="stylesheet" href="assets/css/atlas-liveops.css">
+  <link rel="stylesheet" href="assets/css/atlas-live-chat.css">
   <script defer src="assets/js/atlas-liveops-config.js"></script>
+  <script defer src="assets/js/atlas-live-chat-config.js"></script>
   <script defer src="assets/js/atlas-site.js"></script>
   <script defer src="assets/js/atlas-liveops.js"></script>
-  <link rel="stylesheet" href="assets/css/atlas-live-chat.css">
-<link rel="stylesheet" href="assets/css/atlas-payments.css">
-  <link rel="stylesheet" href="assets/css/atlas-orb.css">
-  <link rel="stylesheet" href="assets/css/atlas-assistant-console.css">
-  <script defer src="assets/js/atlas-orb.js"></script>
-  <script defer src="assets/js/atlas-assistant-config.js"></script>
-  <script defer src="assets/js/atlas-assistant-console.js"></script>
-  <script defer src="assets/js/atlas-live-chat-config.js"></script>
   <script defer src="assets/js/atlas-live-chat.js"></script>
-<script defer src="assets/js/atlas-payments-config.js"></script>
-<script defer src="assets/js/atlas-paypal-checkout.js"></script></head>
+</head>
 <body>
   <header class="site-header">
     <a class="brand" href="./"><img class="brand-logo" src="assets/img/atlasops-ai-logo.png" alt="AtlasOps AI"></a>
     <nav class="nav" aria-label="Primary">
-      <a href="./">Home</a>
-      <a href="services.html">Services</a>
-      <a href="ai-business-automation-audit.html">Audit</a>
-      <a href="insights/index.html">Insights</a>
-      <a href="ask-atlas.html">Ask Atlas</a>
-      <a href="contact.html">Contact</a>
-      <a class="cta" href="go/paypal-ai-automation-audit.html">Start Audit</a>
+      <a href="./">Home</a><a href="ask-atlas.html">Ask Atlas</a><a href="services.html">Services</a><a href="industry-watch.html">Industry Watch</a><a href="insights/">Field Notes</a><a href="reports.html">Reports</a><a href="about-atlas.html">About</a><a href="https://x.com/atlasisai" rel="noopener">Follow</a>
     </nav>
   </header>
-  <main data-page="ask-atlas.html">
-    <section id="atlas-assistant-hero" class="atlas-assistant-hero atlas-assistant-hero--compact">
-      <div class="atlas-orb-stage" data-atlas-orb-state="idle" aria-label="Animated Atlas operator orb">
-        <div id="atlas-orb" class="atlas-orb" aria-hidden="true"></div>
+  <main>
+    <section class="hero">
+      <div>
+        <h1>Ask Atlas like you would ask a business operator.</h1>
+        <p class="lead">Atlas can explain which audit fits, what a website is missing, what workflow to automate first, and what information is needed to start.</p>
       </div>
-      <h1>Ask Atlas: Automation + AI Visibility</h1>
-      <p class="assistant-subtitle">Ask a natural business question. Start with a $149 AI Business Automation Audit, a $199 AI Website SEO + AI Visibility Audit, or the $299 bundle.</p>
-      <div id="atlas-public-chat-console" class="atlas-public-chat-console" data-atlas-console-ready="false">
-        <div class="atlas-chat-thread" id="atlas-chat-thread" aria-live="polite">
-          <div class="atlas-message atlas-message-assistant">
-            Hi, I'm Atlas. Ask me what to automate, how to improve your website, how to structure an AI workflow, how AI SEO and answer-engine visibility work, or what service fits your business.
-          </div>
+      <aside class="hero-panel">
+        <div class="hero-panel-header"><strong>Good first questions</strong><span class="status-dot">ready</span></div>
+        <div class="signal-list">
+          <div class="signal-row"><span class="signal-icon">A</span><span>What should my business automate first?</span></div>
+          <div class="signal-row"><span class="signal-icon">V</span><span>Can Atlas review my website for AI visibility?</span></div>
+          <div class="signal-row"><span class="signal-icon">B</span><span>What is the Automation + AI Visibility Bundle?</span></div>
         </div>
-        <form id="atlas-chat-form" class="atlas-chat-form">
-          <textarea id="atlas-chat-input" placeholder="How can Atlas help your business today?" aria-label="Ask Atlas a question"></textarea>
+      </aside>
+    </section>
+
+    <section class="section white">
+      <div class="chat-shell">
+        <div class="chat-top">
+          <strong>Ask Atlas</strong>
+          <span class="status-dot">service-aware</span>
+        </div>
+        <div class="chat-thread" id="atlas-chat-thread" aria-live="polite">
+          <div class="message">Hi, I am Atlas. Ask me about the $149 automation audit, the $199 AI visibility audit, or the $299 bundle. If your question qualifies, I will ask for a public website URL and basic contact path.</div>
+        </div>
+        <form id="atlas-chat-form" class="chat-form atlasops-lead-form ask-atlas-widget-form">
+          <textarea id="atlas-chat-input" name="question" aria-label="Ask Atlas a question" placeholder="What should I fix first on my website?"></textarea>
           <button type="submit">Send</button>
-        </form>
-        <div class="atlas-chat-chips" aria-label="Quick prompts">
-          <button type="button" data-prompt="What should my business automate first?">Automation idea</button>
-          <button type="button" data-prompt="Can Atlas review my website?">Website review</button>
-          <button type="button" data-prompt="Can Atlas review my website for AI SEO and answer-engine visibility?">AI visibility</button>
-          <button type="button" data-prompt="Can Atlas improve my lead follow-up?">Lead follow-up</button>
-          <button type="button" data-prompt="Is my business AI-ready?">AI-ready?</button>
-          <button type="button" data-prompt="How do I start the $149 audit?">Start audit</button>
-        </div>
-        <div class="atlas-chat-followup">
-          <label>Email for follow-up <input id="atlas-chat-email" type="email" autocomplete="email" placeholder="optional"></label>
-        </div>
-        <div class="atlas-chat-status" id="atlas-chat-status">Connecting to Atlas relay...</div>
-      </div>
-    </section>
-    <!-- ASK_ATLAS_WIDGET_START -->
-    <section class="section band ask-atlas-embed">
-      <div class="ask-atlas-widget" data-widget-state="online">
-        <div class="ask-atlas-widget-header">
-          <div>
-            <h2>Detailed intake form</h2>
-            <p class="form-note" id="lead-form-setup-required">Use this after the assistant console if you want to send structured audit details. Keep sensitive data out of public chat and public forms.</p>
-          </div>
-          <span class="ask-atlas-widget-badge">Optional details</span>
-        </div>
-        <form class="lead-form atlasops-lead-form ask-atlas-widget-form" action="#lead-form-setup-required" method="get" data-endpoint-status="ready" data-endpoint-type="cloudflare_worker">
-          <div class="form-grid two">
-            <label>Name <input name="name" autocomplete="name"></label>
-            <label>Email <input name="email" type="email" autocomplete="email" required></label>
-            <label>Company <input name="company" autocomplete="organization"></label>
-            <label>Website <input name="website" type="url" placeholder="https://example.com"></label>
-            <label>Service interest <select name="service_interest"><option selected>AI Business Automation Audit</option><option>AI Website SEO + AI Visibility Audit</option><option>Automation + AI Visibility Bundle</option><option>Legacy Code Intelligence Audit</option><option>AI Marketing Automation Audit</option><option>AI Website + PayPal CTA Setup</option><option>AI Social Content System Setup</option><option>OCR + Document Workflow Automation</option></select></label>
-            <label>Question <input name="question" placeholder="What should Atlas answer first?" required></label>
-          </div>
-          <label>Message <textarea name="message" rows="4" placeholder="Describe the workflow, website, content system, document process, codebase, or automation idea."></textarea></label>
           <input type="hidden" name="source_page" value="ask-atlas.html">
-        <input type="hidden" name="referrer" value="">
-        <input type="hidden" name="utm_source" value="">
-        <input type="hidden" name="utm_medium" value="">
-        <input type="hidden" name="utm_campaign" value="">
-        <input type="hidden" name="utm_content" value="">
-        <input type="hidden" name="go_route" value="">
-          <label class="consent-line"><input name="consent_checkbox" type="checkbox" required> I agree to be contacted about this AtlasOps AI inquiry and understand this public form is not for sensitive data.</label>
-          <div class="honeypot" aria-hidden="true"><label>Leave this field blank <input name="website_confirm" tabindex="-1" autocomplete="off"></label></div>
-          <p class="ask-atlas-safety">Do not send passwords, API keys, payment card data, private files, customer lists, or sensitive customer data through this public form.</p>
-          <button class="button primary" type="submit">Ask Atlas online</button>
+          <input type="hidden" name="service_interest" value="AI Website SEO + AI Visibility Audit">
+          <span class="honeypot"><input name="website_confirm" tabindex="-1" autocomplete="off"></span>
         </form>
+        <div class="quick-prompts" aria-label="Quick prompts">
+          <button type="button" data-prompt="What should my business automate first?">What should my business automate first?</button>
+          <button type="button" data-prompt="Can Atlas review my website for AI visibility?">Can Atlas review my website for AI visibility?</button>
+          <button type="button" data-prompt="What does the AI Visibility Audit include?">What does the AI Visibility Audit include?</button>
+          <button type="button" data-prompt="How do I make my website easier for AI systems to find?">How do I make my site easier for AI systems?</button>
+          <button type="button" data-prompt="What is the Automation + AI Visibility Bundle?">What is the bundle?</button>
+        </div>
       </div>
     </section>
-    <!-- ASK_ATLAS_WIDGET_END -->
-    <section class="section">
-      <h2>What Atlas can answer</h2>
-      <div class="grid">
-        <article class="card"><h3>Audit fit</h3><p>Which audit fits your business and what information to send after payment.</p></article>
-        <article class="card"><h3>Workflow first step</h3><p>What workflow to automate first and where manual follow-up is likely leaking time.</p></article>
-        <article class="card"><h3>Website and payment CTA</h3><p>Whether your service page, payment path, and follow-up flow are clear enough.</p></article>
-        <article class="card"><h3>AI content systems</h3><p>How source-backed content, approval gates, and duplicate guards work.</p></article>
-        <article class="card"><h3>AI visibility</h3><p>What AI SEO and answer-engine optimization mean for your website, service pages, FAQs, source-backed content, and lead-capture path.</p></article>
-        <article class="card"><h3>Document workflows</h3><p>How OCR and document automation can help without asking for sensitive files in public forms.</p></article>
-        <article class="card"><h3>Legacy Code Intelligence</h3><p>How a spec-driven audit can inventory old code, reconstruct behavior, and create a modernization roadmap after authorization and scope are clear.</p></article>
-      </div>
-    </section>
-    <section class="section band">
-      <h2>How Atlas keeps the answer honest</h2>
-      <div class="grid">
-        <article class="card"><h3>Evidence first</h3><p>Atlas can explain service fit and next steps, but does not claim rankings, revenue, payments, report delivery, or platform results without proof.</p></article>
-        <article class="card"><h3>Public-safe intake</h3><p>Use public URLs, service questions, and workflow descriptions. Do not send passwords, private files, API keys, payment cards, or customer records.</p></article>
-        <article class="card"><h3>Clear next action</h3><p>If AI SEO or automation fits, Atlas asks for the website, main service, contact path, and whether you want the $149, $199, or $299 option.</p></article>
-      </div>
-    </section>
-    <!-- ATLAS_FAQ_START -->
-    <section class="section faq-section">
-      <h2>FAQ</h2>
-      <div class="faq-list"><details><summary>What is the AI Business Automation Audit?</summary><p>A practical review of one business workflow, website/payment CTA, follow-up path, and automation opportunity map.</p></details><details><summary>What do I receive?</summary><p>A workflow map, opportunity scorecard, risk notes, suggested tools, and a short roadmap for the next useful automation step.</p></details><details><summary>What should I send?</summary><p>A public website link, the workflow you want reviewed, current tools, and where follow-up or handoff breaks down.</p></details><details><summary>How does payment work?</summary><p>Payment is through PayPal.me. AtlasOps verifies payment locally from evidence before delivery.</p></details><details><summary>Can Atlas answer questions before I pay?</summary><p>Yes. Ask Atlas can answer basic service-fit questions when the relay or email fallback is connected.</p></details><details><summary>Can Atlas access my systems?</summary><p>Not through public chat. Deeper technical review requires explicit authorization and scope.</p></details><details><summary>Is this live AI chat?</summary><p>Ask Atlas is live only when the Cloudflare Worker reply loop and local Atlas polling are configured and verified. Otherwise it falls back to email.</p></details><details><summary>What should I not send through public chat?</summary><p>Do not send passwords, API keys, payment card data, private files, or sensitive customer data.</p></details><details><summary>How fast will AtlasOps reply?</summary><p>If the relay is online, keep the page open for a near-live reply. If not, AtlasOps follows up by email after local sync.</p></details><details><summary>What happens after I submit?</summary><p>The relay stores the question, local Atlas pulls it, creates a local question/lead record, drafts a governed reply, and sends only after policy allows it.</p></details></div>
-    </section>
-    <!-- ATLAS_FAQ_END -->
 
-<section class="section" id="start-audit" aria-label="Start the AI Business Automation Audit">
-  <div class="service-hero">
-    <div>
-      <span class="meta">Start the audit</span>
-      <h2>Start your $149 Audit</h2>
-      <p class="lead">If Atlas helped you find the workflow worth fixing first, the AI Business Automation Audit turns that into a practical 30-day plan.</p>
-      <ul class="list">
-        <li>Workflow map for one business process: lead intake, follow-up, scheduling, quotes, or customer reminders.</li>
-        <li>Bottleneck analysis with the first automation Atlas recommends building.</li>
-        <li>30-day implementation plan with tools, approval points, and next-step options.</li>
-      </ul>
-    </div>
-    <div class="card">
-      <span class="meta">AI Business Automation Audit</span>
-      <h3><span class="price">$149</span> flat audit</h3>
-      <p>PayPal is the current start path. AtlasOps verifies payment evidence before any audit report is delivered.</p>
-      <div class="actions">
-        <a class="button gold" href="https://www.paypal.me/markWilson385/149" rel="noopener">Pay $149 with PayPal</a>
-        <a class="button ghost" href="mailto:mark@atlasops.ai?subject=Start%20the%20%24149%20AI%20Business%20Automation%20Audit&body=Hi%20Mark%2C%0A%0AI%20want%20to%20start%20the%20%24149%20AI%20Business%20Automation%20Audit.%20My%20business%20is%3A%0A%0AThe%20workflow%20I%20want%20help%20with%20is%3A%0A">Email Mark to start</a>
+    <section class="section white">
+      <div class="section-head">
+        <h2>Public-safe intake</h2>
+        <p class="lead">When you are ready, send only public-safe details. Atlas does not need passwords, private files, payment card data, or customer records to begin.</p>
       </div>
-      <p class="form-note">Do not send passwords, payment card details, private customer files, or sensitive data through public chat or email.</p>
-    </div>
-  </div>
-</section>
-
-<section class="section atlas-payment-section" aria-label="AtlasOps AI payment options">
-  <div class="section-head">
-    <span class="eyebrow">Payment</span>
-    <h2>Start with PayPal</h2>
-    <p>Checkout uses PayPal API evidence when configured. PayPal.me remains available as a fallback and requires manual verification before delivery.</p>
-  </div>
-  <div data-atlas-payments data-default-service="ai_business_automation_audit"></div>
-</section>
-</main>
+      <form class="lead-form atlasops-lead-form" action="#intake" method="get">
+        <div class="form-grid">
+          <label>Name <input name="name" autocomplete="name"></label>
+          <label>Email <input name="email" type="email" autocomplete="email" required></label>
+          <label>Company <input name="company" autocomplete="organization"></label>
+          <label>Public website URL <input name="website" type="url" placeholder="https://example.com"></label>
+          <label>Business type <input name="business_type" placeholder="Plumbing, consulting, agency, clinic..."></label>
+          <label>Service interest <select name="service_interest"><option>AI Business Automation Audit - $149</option><option selected>AI Website SEO + AI Visibility Audit - $199</option><option>Automation + AI Visibility Bundle - $299</option></select></label>
+        </div>
+        <label>What do you want Atlas to review first? <textarea name="message" rows="5" placeholder="Example: I want to know if my service pages are clear enough for AI answer engines and visitors."></textarea></label>
+        <label class="consent-line"><input name="consent_checkbox" type="checkbox" required> I agree to be contacted about this AtlasOps AI inquiry.</label>
+        <span class="honeypot"><input name="website_confirm" tabindex="-1" autocomplete="off"></span>
+        <button type="submit">Send intake</button>
+      </form>
+    </section>
+  </main>
   <footer class="footer">
-    <span>AtlasOps AI keeps the local Atlas runtime private. This public site contains only public-safe static content.</span>
-    <span><a href="privacy.html">Privacy</a> / <a href="terms.html">Terms</a> / <a href="https://x.com/atlasisai" rel="noopener">Follow on X</a></span>
+    <span>No private access required to start. Payments and reports are handled through verified workflows.</span>
+    <span><a href="services.html">Services</a> / <a href="industry-watch.html">Industry Watch</a> / <a href="privacy.html">Privacy</a> / <a href="terms.html">Terms</a></span>
   </footer>
 </body>
 </html>

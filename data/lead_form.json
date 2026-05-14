@@ -14,7 +14,7 @@
   "privacy_rules": [
     "No passwords, API keys, payment cards, or private uploads in public forms.",
     "UTM fields are campaign context only, not browser fingerprinting.",
-    "Lead data is local Atlas runtime data and is never committed to the public website repo."
+    "Lead data is private Atlas system data and is never committed to the public website repo."
   ],
   "updated_at": "2026-05-05T15:32:08.739348+00:00"
 }

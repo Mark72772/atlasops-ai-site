@@ -1,70 +1,82 @@
 {
-  "updated_at": "2026-05-13T22:51:23.758722+00:00",
+  "updated_at": "2026-05-13T21:17:36.569983-04:00",
   "items": [
     {
-      "news_id": "why-service-businesses-should-automate-one-workflow-first",
-      "title": "Why service businesses should automate one workflow first",
-      "summary": "AI is becoming useful inside real workflows, but a service business should start with one process: lead intake, estimate follow-up, service routing, reminders, or website inquiry response.",
-      "business_takeaway": "Pick one workflow, one owner, one approval gate, and one measurable outcome before buying more AI tools.",
-      "source_url": "https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai",
+      "news_id": "building-a-safe-effective-sandbox-to-enable-codex-on-windows",
+      "title": "Building a safe, effective sandbox to enable Codex on Windows",
+      "summary": "Use this signal to decide which workflow, service page, or AI visibility question Atlas should review next: Building a safe, effective sandbox to enable Codex on Windows",
+      "business_takeaway": "Use this signal to decide which workflow, service page, or AI visibility question Atlas should review next: Building a safe, effective sandbox to enable Codex on Windows",
+      "source_url": "https://openai.com/index/building-codex-windows-sandbox",
       "all_source_urls": [
-        "https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai",
-        "https://openai.com/business/guides-and-resources/the-state-of-enterprise-ai-2025-report",
-        "https://blogs.microsoft.com/blog/2025/04/28/how-agentic-ai-is-driving-ai-first-business-transformation-for-customers-to-achieve-more/"
+        "https://openai.com/index/building-codex-windows-sandbox"
       ],
-      "insight_url": "https://mark72772.github.io/atlasops-ai-site/insights/why-service-businesses-should-automate-one-workflow-first.html",
+      "insight_url": "https://mark72772.github.io/atlasops-ai-site/ask-atlas.html",
+      "topic": "Agents",
       "status": "published"
     },
     {
-      "news_id": "ai-seo-narrative-control-blind-spot",
-      "title": "AI SEO is becoming the blind spot in business visibility",
-      "summary": "Search presence is no longer only about ranking on Google. Businesses also need public content that AI answer systems can understand, cite, and summarize accurately.",
-      "business_takeaway": "Review your service pages, FAQs, source-backed articles, and entity signals before AI-assisted answers define the story for you.",
-      "source_url": "https://developers.google.com/search/docs/appearance/ai-features",
+      "news_id": "the-new-ai-powered-google-finance-is-expanding-to-europe",
+      "title": "The new AI-powered Google Finance is expanding to Europe.",
+      "summary": "AI visibility and workflow clarity matter when customers and answer engines need to understand what a company actually does.",
+      "business_takeaway": "AI visibility and workflow clarity matter when customers and answer engines need to understand what a company actually does.",
+      "source_url": "https://blog.google/products-and-platforms/products/search/ai-powered-google-finance-in-europe/",
       "all_source_urls": [
-        "https://developers.google.com/search/docs/appearance/ai-features",
-        "https://openai.com/index/introducing-chatgpt-search/",
-        "https://schema.org/docs/gs.html",
-        "https://searchengineland.com/topic/generative-engine-optimization"
+        "https://blog.google/products-and-platforms/products/search/ai-powered-google-finance-in-europe/"
       ],
-      "insight_url": "https://mark72772.github.io/atlasops-ai-site/insights/ai-seo-narrative-control-blind-spot.html",
+      "insight_url": "https://mark72772.github.io/atlasops-ai-site/ask-atlas.html",
+      "topic": "Small Business AI",
       "status": "published"
     },
     {
-      "news_id": "enterprise-ai-operating-layer",
-      "title": "Enterprise AI is shifting from experiments to operating layers",
-      "summary": "OpenAI described enterprise demand moving beyond isolated copilots toward governed agents connected to company systems. For business owners, the practical lesson is to map the workflow and permissions before buying more tools.",
-      "business_takeaway": "Start with one workflow, one owner, and one approval gate before expanding automation across the business.",
-      "source_url": "https://openai.com/index/next-phase-of-enterprise-ai/",
+      "news_id": "think-ibm",
+      "title": "Think | IBM",
+      "summary": "AI adoption needs approval boundaries and proof trails so automation does not outrun business risk.",
+      "business_takeaway": "AI adoption needs approval boundaries and proof trails so automation does not outrun business risk.",
+      "source_url": "https://www.ibm.com/blog/artificial-intelligence/feed/",
       "all_source_urls": [
-        "https://openai.com/index/next-phase-of-enterprise-ai/"
+        "https://www.ibm.com/blog/artificial-intelligence/feed/"
       ],
-      "insight_url": "https://mark72772.github.io/atlasops-ai-site/insights/enterprise-ai-operating-layer.html",
+      "insight_url": "https://mark72772.github.io/atlasops-ai-site/ask-atlas.html",
+      "topic": "Governance",
       "status": "published"
     },
     {
-      "news_id": "ai-services-hands-on-implementation",
-      "title": "AI services demand is becoming hands-on implementation work",
-      "summary": "Anthropic announced a new AI services company with major financial partners to help mid-sized companies put Claude into core operations. The signal for AtlasOps is clear: business value depends on workflow discovery, implementation, and long-term support.",
-      "business_takeaway": "Use an audit to find the highest-value workflow before promising implementation.",
-      "source_url": "https://www.anthropic.com/news/enterprise-ai-services-company",
+      "news_id": "new-enterprise-installation-api-now-in-public-preview",
+      "title": "New enterprise installation API now in public preview",
+      "summary": "Treat AI-assisted code changes as production work: inspect dependencies, secrets, tests, and rollback paths before shipping.",
+      "business_takeaway": "Treat AI-assisted code changes as production work: inspect dependencies, secrets, tests, and rollback paths before shipping.",
+      "source_url": "https://github.blog/changelog/2026-05-13-new-enterprise-installation-api-now-in-public-preview",
       "all_source_urls": [
-        "https://www.anthropic.com/news/enterprise-ai-services-company"
+        "https://github.blog/changelog/2026-05-13-new-enterprise-installation-api-now-in-public-preview"
       ],
-      "insight_url": "https://mark72772.github.io/atlasops-ai-site/insights/ai-services-hands-on-implementation.html",
+      "insight_url": "https://mark72772.github.io/atlasops-ai-site/ask-atlas.html",
+      "topic": "Code Intelligence",
       "status": "published"
     },
     {
-      "news_id": "agent-workflows-need-secret-checks",
-      "title": "Agent workflows need secret checks before they touch code",
-      "summary": "GitHub made secret scanning through its MCP Server generally available, giving AI coding agents a safer pre-commit check. For AtlasOps clients, code intelligence work should include secret exposure checks before any public deployment.",
-      "business_takeaway": "Before publishing a site, codebase, or automation, run a content and secret guard and treat findings as blockers.",
-      "source_url": "https://github.blog/changelog/2026-05-05-secret-scanning-with-github-mcp-server-is-now-generally-available/",
+      "news_id": "browser-run-now-running-on-cloudflare-containers-it-s-faster-and-more-sc",
+      "title": "Browser Run: now running on Cloudflare Containers, it\u2019s faster and more scalable",
+      "summary": "The useful move for a service business is still one clear workflow, one owner, and one measurable handoff.",
+      "business_takeaway": "The useful move for a service business is still one clear workflow, one owner, and one measurable handoff.",
+      "source_url": "https://blog.cloudflare.com/browser-run-containers/",
       "all_source_urls": [
-        "https://github.blog/changelog/2026-05-05-secret-scanning-with-github-mcp-server-is-now-generally-available/",
-        "https://docs.github.com/en/code-security/how-tos/use-ghas-with-ai-coding-agents/scan-for-secrets-with-github-mcp-server?tool=cli"
+        "https://blog.cloudflare.com/browser-run-containers/"
       ],
-      "insight_url": "https://mark72772.github.io/atlasops-ai-site/insights/agent-workflows-need-secret-checks.html",
+      "insight_url": "https://mark72772.github.io/atlasops-ai-site/ask-atlas.html",
+      "topic": "Automation",
+      "status": "published"
+    },
+    {
+      "news_id": "building-blocks-for-foundation-model-training-and-inference-on-aws",
+      "title": "Building Blocks for Foundation Model Training and Inference on AWS",
+      "summary": "Better business AI answers need source-backed knowledge, retrieval checks, and clear ownership of what the system knows.",
+      "business_takeaway": "Better business AI answers need source-backed knowledge, retrieval checks, and clear ownership of what the system knows.",
+      "source_url": "https://huggingface.co/blog/amazon/foundation-model-building-blocks",
+      "all_source_urls": [
+        "https://huggingface.co/blog/amazon/foundation-model-building-blocks"
+      ],
+      "insight_url": "https://mark72772.github.io/atlasops-ai-site/ask-atlas.html",
+      "topic": "RAG",
       "status": "published"
     }
   ]

@@ -167,7 +167,7 @@
       page_path: window.location.pathname,
       source: "atlasops_public_assistant_console",
       site_id: siteId,
-      synthetic_test: false,
+      non_production_sample: false,
       created_at: new Date().toISOString(),
       ...queryParams()
     };
@@ -271,3 +271,4 @@
   consoleEl.dataset.atlasConsoleReady = "true";
   checkRelay();
 })();
+

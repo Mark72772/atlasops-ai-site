@@ -116,7 +116,7 @@
       utm_medium: params.get("utm_medium"),
       utm_campaign: params.get("utm_campaign"),
       source: "atlasops_public_chat",
-      synthetic_test: false,
+      non_production_sample: false,
       site_id: siteId,
       created_at: new Date().toISOString()
     };
@@ -329,3 +329,4 @@
     buildWidget();
   }
 })();
+

@@ -2,4 +2,5 @@
 
 Public GitHub Pages website for AtlasOps AI services and AI business automation insights.
 
-This repository contains only static public website files. It does not contain the local Atlas runtime.
+This repository contains public website files only. Do not commit credentials, private customer data, or sensitive service records.
+
