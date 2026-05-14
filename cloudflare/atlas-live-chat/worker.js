@@ -181,7 +181,7 @@ function answerSimpleTool(text) {
   if (/\b(what can atlas do|what do you do|what services|atlas do|help with)\b/.test(lowered)) {
     return {
       intent: "what_can_atlas_do",
-      reply_text: "AtlasOps AI helps with AI automation audits, website and PayPal CTA setup, lead follow-up systems, source-backed content workflows, SWOT reports, code/spec-driven reviews, OCR/document workflows, and AI tool training. Start with your goal, current tools, and the slowest part of the workflow.",
+      reply_text: "AtlasOps AI helps with AI automation audits, AI website visibility audits, lead follow-up systems, source-backed content workflows, SWOT reports, code/spec-driven reviews, OCR/document workflows, and AI tool training. Start with your goal, current tools, and the slowest part of the workflow.",
       used_tools: ["worker_service_faq"],
     };
   }
@@ -192,10 +192,10 @@ function answerSimpleTool(text) {
       used_tools: ["worker_start_audit_faq"],
     };
   }
-  if (/\b(pay|paypal|price|cost|how much)\b/.test(lowered)) {
+  if (/\b(pay|card|credit card|checkout|price|cost|how much)\b/.test(lowered)) {
     return {
       intent: "payment_link",
-      reply_text: "The AI Business Automation Audit is $149. Use PayPal checkout when available, or PayPal.me as a fallback. Checkout Worker payments can be verified automatically after PayPal/Worker setup; PayPal.me payments require manual evidence or a transaction match before AtlasOps marks an order paid.",
+      reply_text: "Yes. AtlasOps can accept card payments through the Cloud9 secure checkout path when the gateway is enabled. You can start with the AI Website SEO + AI Visibility Audit for $199. Atlas will create an order, send you to secure checkout, and begin intake after payment is verified. No private website access is required to start. Card checkout is being configured now, so Atlas can still create the order and provide the current start path.",
       used_tools: ["worker_payment_faq"],
     };
   }

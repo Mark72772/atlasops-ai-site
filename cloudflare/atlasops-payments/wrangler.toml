@@ -1,0 +1,9 @@
+name = "atlasops-payments-relay"
+main = "worker.js"
+compatibility_date = "2026-05-14"
+
+[vars]
+C9PG_MERCHANT_NAME = "AtlasOps AI"
+C9PG_ACCEPT_PAYMENT_LIST = "Card"
+C9PG_IFRAME_BASE_URL_TEST = "https://testvterm.c9pg.com/checkout"
+

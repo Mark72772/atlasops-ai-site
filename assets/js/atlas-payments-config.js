@@ -1,38 +1,35 @@
 (function () {
   window.ATLAS_PAYMENTS_CONFIG = Object.freeze({
-    provider: "paypal",
-    mode: "live",
-    clientId: "",
-    clientIdConfigured: false,
+    provider: "c9pg",
+    displayName: "Cloud9 secure checkout",
+    mode: "sandbox_pending_credentials",
     currency: "USD",
-    checkoutWorkerUrl: "https://atlas-paypal-checkout.atlasops-ai.workers.dev",
-    paypalMeFallback: "https://www.paypal.me/markWilson385",
-    secretRotationRequired: true,
+    checkoutWorkerUrl: "https://atlasops-payments-relay.atlasops-ai.workers.dev",
+    cardDataPolicy: "hosted_checkout_only",
+    liveCardCheckoutEnabled: false,
     services: [
       {
         serviceId: "ai_business_automation_audit",
         name: "AI Business Automation Audit",
-        amount: "149.00",
-        currency: "USD"
+        amount: 149,
+        currency: "USD",
+        checkoutPath: "checkout.html?service=ai_business_automation_audit"
       },
       {
-        serviceId: "website_paypal_cta_setup",
-        name: "AI Website + PayPal CTA Setup",
-        amount: "199.00",
-        currency: "USD"
+        serviceId: "ai_website_seo_visibility_audit",
+        name: "AI Website SEO + AI Visibility Audit",
+        amount: 199,
+        currency: "USD",
+        checkoutPath: "checkout.html?service=ai_website_seo_visibility_audit"
       },
       {
-        serviceId: "server_rdp_hardening_review",
-        name: "Server/RDP Hardening Review",
-        amount: "299.00",
-        currency: "USD"
-      },
-      {
-        serviceId: "code_dependency_security_audit",
-        name: "Code + Dependency Security Audit",
-        amount: "499.00",
-        currency: "USD"
+        serviceId: "automation_plus_ai_visibility_bundle",
+        name: "Automation + AI Visibility Bundle",
+        amount: 299,
+        currency: "USD",
+        checkoutPath: "checkout.html?service=automation_plus_ai_visibility_bundle"
       }
     ]
   });
 })();
+

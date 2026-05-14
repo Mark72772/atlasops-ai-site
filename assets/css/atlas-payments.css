@@ -1,49 +1,65 @@
-.atlas-payment-card {
+.checkout-shell {
   display: grid;
-  gap: 12px;
-  margin: 18px 0;
-  padding: 18px;
-  border: 1px solid rgba(12, 20, 33, 0.14);
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 420px);
+  gap: 28px;
+  align-items: start;
+}
+
+.checkout-summary,
+.checkout-form-panel {
+  border: 1px solid rgba(15, 23, 42, 0.12);
   border-radius: 8px;
   background: #ffffff;
-  color: #111827;
-  box-shadow: 0 14px 36px rgba(17, 24, 39, 0.08);
+  padding: 24px;
+  box-shadow: 0 18px 48px rgba(15, 23, 42, 0.08);
 }
 
-.atlas-payment-kicker {
-  display: block;
-  color: #2563eb;
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0;
-  text-transform: uppercase;
-}
-
-.atlas-payment-card h3 {
-  margin: 4px 0 0;
-  font-size: 1.15rem;
-}
-
-.atlas-payment-card p {
-  margin: 0;
-}
-
-.atlas-payment-button {
-  display: inline-flex;
-  width: fit-content;
-  align-items: center;
-  justify-content: center;
-  min-height: 44px;
-  padding: 0 16px;
-  border-radius: 6px;
-  background: #f2c94c;
-  color: #111827;
+.checkout-price {
+  font-size: 38px;
   font-weight: 800;
-  text-decoration: none;
+  margin: 8px 0 16px;
 }
 
-.atlas-payment-note,
-.atlas-payment-result {
-  color: #475569;
-  font-size: 0.92rem;
+.checkout-form-panel label {
+  display: grid;
+  gap: 6px;
+  margin-bottom: 14px;
+  font-weight: 700;
 }
+
+.checkout-form-panel input {
+  width: 100%;
+  border: 1px solid rgba(15, 23, 42, 0.2);
+  border-radius: 6px;
+  padding: 12px 14px;
+  font: inherit;
+}
+
+.secure-note,
+.payment-message {
+  border-radius: 8px;
+  padding: 14px 16px;
+  background: #e8f7fb;
+  color: #0f3a45;
+  margin-top: 16px;
+}
+
+.payment-message[data-kind="gated"] {
+  background: #fff7e0;
+  color: #533b00;
+}
+
+.payment-result-box {
+  border-left: 4px solid #00a8c8;
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0 18px 48px rgba(15, 23, 42, 0.08);
+}
+
+@media (max-width: 760px) {
+  .checkout-shell {
+    grid-template-columns: 1fr;
+  }
+}
+

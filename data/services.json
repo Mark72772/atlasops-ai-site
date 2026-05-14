@@ -5,7 +5,8 @@
     "price": "$149",
     "helps": "Service businesses with manual intake, follow-up, scheduling, estimate, reminder, or content handoff work.",
     "deliverables": "Workflow map, bottleneck notes, automation opportunities, approval points, and 30-day action plan.",
-    "url": "services.html#automation"
+    "url": "ai-business-automation-audit.html",
+    "checkout_url": "checkout.html?service=ai_business_automation_audit"
   },
   {
     "name": "AI Website SEO + AI Visibility Audit",
@@ -13,7 +14,8 @@
     "price": "$199",
     "helps": "Service businesses that want public website pages to be clearer for people, Google, and AI answer engines.",
     "deliverables": "Service-page clarity review, FAQ gaps, proof/trust signal review, CTA clarity, and 30-day visibility plan.",
-    "url": "services.html#ai-visibility"
+    "url": "ai-website-seo-visibility-audit.html",
+    "checkout_url": "checkout.html?service=ai_website_seo_visibility_audit"
   },
   {
     "name": "Automation + AI Visibility Bundle",
@@ -21,6 +23,7 @@
     "price": "$299",
     "helps": "Owners who need one workflow automation plan and a clearer website story at the same time.",
     "deliverables": "Automation audit plus AI visibility audit combined into one prioritized 30-day plan.",
-    "url": "automation-plus-ai-visibility-bundle.html"
+    "url": "automation-plus-ai-visibility-bundle.html",
+    "checkout_url": "checkout.html?service=automation_plus_ai_visibility_bundle"
   }
 ]
