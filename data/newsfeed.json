@@ -1,13 +1,14 @@
 {
-  "updated_at": "2026-05-13T21:17:36.569983-04:00",
+  "updated_at": "2026-05-13T21:49:40.980451-04:00",
   "items": [
     {
       "news_id": "building-a-safe-effective-sandbox-to-enable-codex-on-windows",
       "title": "Building a safe, effective sandbox to enable Codex on Windows",
       "summary": "Use this signal to decide which workflow, service page, or AI visibility question Atlas should review next: Building a safe, effective sandbox to enable Codex on Windows",
       "business_takeaway": "Use this signal to decide which workflow, service page, or AI visibility question Atlas should review next: Building a safe, effective sandbox to enable Codex on Windows",
-      "source_url": "https://openai.com/index/building-codex-windows-sandbox",
+      "source_url": "https://openai.com/news/rss.xml",
       "all_source_urls": [
+        "https://openai.com/index/building-codex-windows-sandbox",
         "https://openai.com/index/building-codex-windows-sandbox"
       ],
       "insight_url": "https://mark72772.github.io/atlasops-ai-site/ask-atlas.html",
