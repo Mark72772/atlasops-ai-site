@@ -3,13 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Secure Checkout | AtlasOps AI</title>
-  <meta name="description" content="Start an AtlasOps AI audit through secure Cloud9 hosted checkout.">
+  <title>Stripe Checkout | AtlasOps AI</title>
+  <meta name="description" content="Start an AtlasOps AI audit through Stripe-hosted Checkout.">
   <link rel="icon" href="assets/img/favicon.png" type="image/png">
   <link rel="stylesheet" href="assets/css/atlas-site.css">
   <link rel="stylesheet" href="assets/css/atlas-payments.css">
+  <link rel="stylesheet" href="assets/css/stripe-checkout.css">
   <script defer src="assets/js/atlas-payments-config.js"></script>
   <script defer src="assets/js/atlas-payments.js"></script>
+  <script defer src="assets/js/stripe-config.js"></script>
+  <script defer src="assets/js/stripe-checkout.js"></script>
   <script defer src="assets/js/atlas-liveops-config.js"></script>
   <script defer src="assets/js/atlas-site.js"></script>
   <script defer src="assets/js/atlas-liveops.js"></script>
@@ -24,13 +27,13 @@
   <main>
     <section class="hero">
       <div>
-        <span class="eyebrow">Secure start path</span>
+        <span class="eyebrow">Stripe-hosted checkout</span>
         <h1>Start your AtlasOps AI audit.</h1>
-        <p class="lead">Card payment uses Cloud9 secure hosted checkout when the gateway is enabled. AtlasOps AI does not collect or store card numbers.</p>
+        <p class="lead">Card payment uses Stripe-hosted Checkout when the secure Worker gateway is enabled. AtlasOps AI does not collect or store card numbers.</p>
       </div>
       <aside class="hero-panel">
         <div class="hero-panel-header"><strong>Payment boundary</strong><span class="status-dot">safe</span></div>
-        <p>No private website access is required to start. Report work begins only after payment is verified through gateway evidence or an approved manual proof path.</p>
+        <p>No private website access is required to start. Report work begins only after payment is verified through signed Stripe webhook/API evidence.</p>
       </aside>
     </section>
     <section class="section white">
@@ -40,9 +43,14 @@
           <h2 data-service-name>AI Website SEO + AI Visibility Audit</h2>
           <p class="checkout-price" data-service-price>$199</p>
           <p>Atlas reviews your public website for clarity, answer-engine readiness, service specificity, proof signals, FAQ gaps, and next-step clarity.</p>
-          <div class="secure-note">No raw card fields are collected by Atlas. Cloud9 hosted checkout handles card entry and processing.</div>
+          <div class="secure-note">No raw card fields are collected by Atlas. Stripe-hosted Checkout handles card entry and processing.</div>
+          <div class="stripe-trust-strip">
+            <span>Checkout links are not payment proof.</span>
+            <span>Success redirects do not unlock reports.</span>
+            <span>Signed Stripe evidence is required.</span>
+          </div>
         </article>
-        <form class="checkout-form-panel" data-c9pg-checkout-form>
+        <form class="checkout-form-panel" data-stripe-checkout-form>
           <input type="hidden" name="service_id" value="ai_website_seo_visibility_audit">
           <input type="hidden" name="amount_usd" value="199">
           <label>Name
@@ -54,8 +62,8 @@
           <label>Business website URL
             <input name="business_url" type="url" inputmode="url" placeholder="https://example.com">
           </label>
-          <button class="button primary" type="submit">Start with Cloud9 Secure Checkout</button>
-          <p class="payment-message" data-payment-message>Card checkout is being configured. Atlas can still create the order and provide the current start path.</p>
+          <button class="button primary" type="submit">Start with Stripe Checkout</button>
+          <p class="stripe-message" data-stripe-message>Stripe Checkout is configured but waiting on the secure Worker URL and secrets. AtlasOps will verify payment from signed Stripe evidence before delivery starts.</p>
         </form>
       </div>
     </section>
@@ -66,4 +74,3 @@
   </footer>
 </body>
 </html>
-

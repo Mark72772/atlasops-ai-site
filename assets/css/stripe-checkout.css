@@ -1,0 +1,42 @@
+.stripe-trust-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.stripe-trust-strip span {
+  border: 1px solid rgba(17, 24, 39, 0.14);
+  border-radius: 8px;
+  padding: 10px 12px;
+  background: #fff;
+  color: #243042;
+  font-size: 0.94rem;
+  line-height: 1.45;
+}
+
+.stripe-message {
+  border: 1px solid rgba(17, 24, 39, 0.14);
+  border-radius: 8px;
+  padding: 12px 14px;
+  background: #f8fafc;
+  color: #243042;
+  line-height: 1.55;
+}
+
+.stripe-message[data-kind="ready"] {
+  border-color: rgba(15, 118, 110, 0.32);
+  background: #ecfdf5;
+}
+
+.stripe-message[data-kind="gated"] {
+  border-color: rgba(180, 83, 9, 0.32);
+  background: #fffbeb;
+}
+
+@media (max-width: 760px) {
+  .stripe-trust-strip {
+    grid-template-columns: 1fr;
+  }
+}
+

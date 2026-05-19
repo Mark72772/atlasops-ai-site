@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Operational Guardrails for AI Agents | AtlasOps AI</title>
+  <meta name="description" content="Operational Guardrails for AI Agents. Stop agents from pretending work is done.">
+  <link rel="canonical" href="https://atlasops.io/guardrails.html">
+  <meta property="og:title" content="Operational Guardrails for AI Agents">
+  <meta property="og:url" content="https://atlasops.io/guardrails.html">
+  <meta property="og:site_name" content="AtlasOps AI">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"AtlasOps AI","url":"https://atlasops.io/"}</script>
+  <link rel="stylesheet" href="assets/css/guardrail-store.css">
+</head>
+<body>
+<div class="gr-shell">
+<header class="gr-header">
+  <a class="gr-brand" href="index.html">AtlasOps AI</a>
+  <nav aria-label="Primary">
+    <a href="index.html">Home</a>
+    <a class="active" href="guardrails.html">Guardrails</a>
+    <a href="services.html">Services</a>
+    <a href="ask-atlas.html">Ask Atlas</a>
+  </nav>
+</header>
+<main>
+  <section class="gr-hero">
+    <div>
+      <h1>Operational Guardrails for AI Agents</h1>
+      <p class="gr-subtitle">Stop agents from pretending work is done.</p>
+      <p class="gr-body">AtlasOps Guardrail Kits help Codex, Claude Code, OpenClaw, MCP workflows, RAG systems, and business agents act with proof. Each kit defines what to check, what to block, what evidence is required, and what exact gate remains.</p>
+      <div class="gr-actions">
+        <a class="gr-primary" href="#guardrail-store">Browse Guardrails</a>
+        <a class="gr-secondary" href="services.html">Setup Review - $199</a>
+      </div>
+    </div>
+    <aside class="gr-proof-panel" aria-label="Proof contract">
+      <span>Proof Contract</span>
+      <strong>Check. Block. Verify. Deliver.</strong>
+      <p>Every kit names what evidence is required before an agent can claim the work is done.</p>
+    </aside>
+  </section>
+  <section class="gr-controls" id="guardrail-store">
+    <label class="gr-search-label" for="guardrailSearch">Search by tool, pain point, role, platform, or failure mode</label>
+    <input id="guardrailSearch" type="search" placeholder="Try: Codex, Stripe proof, dirty deploy, RAG, LinkedIn">
+    <div class="gr-filter-row" aria-label="Guardrail filters"><button type="button" data-filter="Codex">Codex</button>
+<button type="button" data-filter="Claude Code">Claude Code</button>
+<button type="button" data-filter="OpenClaw">OpenClaw</button>
+<button type="button" data-filter="MCP">MCP</button>
+<button type="button" data-filter="RAG">RAG</button>
+<button type="button" data-filter="AI SEO">AI SEO</button>
+<button type="button" data-filter="SaaS">SaaS</button>
+<button type="button" data-filter="Stock Research">Stock Research</button>
+<button type="button" data-filter="Social Publishing">Social Publishing</button>
+<button type="button" data-filter="Stripe / Payments">Stripe / Payments</button>
+<button type="button" data-filter="Website Deploy">Website Deploy</button>
+<button type="button" data-filter="Git Safety">Git Safety</button>
+<button type="button" data-filter="Business Automation">Business Automation</button></div>
+    <label class="gr-sort-label" for="guardrailSort">Sort</label>
+    <select id="guardrailSort">
+      <option>Most relevant</option>
+      <option>Newest</option>
+      <option>Best for Codex</option>
+      <option>Best for Claude Code</option>
+      <option>Best for Business</option>
+      <option>Best for Developers</option>
+      <option>Best for Agencies</option>
+    </select>
+  </section>
+  <section class="gr-grid" id="guardrailCards" data-store-path="data/guardrail-store.json"></section>
+  <section class="gr-disclaimer"><p>AtlasOps Guardrail Kits are independent workflow kits. They are not official products of OpenAI, Anthropic, OpenClaw, NVIDIA, IBM, CoreStory, LinkedIn, X, Stripe, or any other referenced platform.</p></section>
+</main>
+</div>
+<script src="assets/js/atlas-payments-config.js"></script>
+<script src="assets/js/guardrail-store.js"></script>
+<script src="assets/js/guardrail-checkout.js"></script>
+</body>
+</html>

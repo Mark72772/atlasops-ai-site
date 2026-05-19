@@ -195,7 +195,7 @@ function answerSimpleTool(text) {
   if (/\b(pay|card|credit card|checkout|price|cost|how much)\b/.test(lowered)) {
     return {
       intent: "payment_link",
-      reply_text: "Yes. AtlasOps can accept card payments through the Cloud9 secure checkout path when the gateway is enabled. You can start with the AI Website SEO + AI Visibility Audit for $199. Atlas will create an order, send you to secure checkout, and begin intake after payment is verified. No private website access is required to start. Card checkout is being configured now, so Atlas can still create the order and provide the current start path.",
+      reply_text: "Yes. AtlasOps can accept card payments through the Stripe-hosted Checkout path when the secure Worker is enabled. You can start with the AI Website SEO + AI Visibility Audit for $199. Atlas will create an order, send you to secure checkout, and begin intake after payment is verified. No private website access is required to start. Stripe Checkout is being configured now, so Atlas can still create the order and provide the current start path.",
       used_tools: ["worker_payment_faq"],
     };
   }
@@ -537,4 +537,3 @@ export default {
 };
 
 export class AtlasChatSession extends AtlasChatRoom {}
-

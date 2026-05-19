@@ -1,0 +1,506 @@
+{
+  "items": [
+    {
+      "pack_id": "agent-context-intelligence-guardrail",
+      "name": "Agent Context Intelligence Guardrail",
+      "slug": "agent-context-intelligence-guardrail",
+      "pain_point": "Coding agents edit before they understand architecture, ownership, dependencies, tests, or blast radius.",
+      "compatible_systems": [
+        "Codex",
+        "Claude Code",
+        "Cursor",
+        "OpenClaw",
+        "MCP",
+        "RAG"
+      ],
+      "included_files": [
+        "README.md",
+        "GUARDRAIL.md",
+        "SKILL.md",
+        "AGENTS.md",
+        "CLAUDE.md",
+        "CODEX.md",
+        "tests/",
+        "examples/"
+      ],
+      "proof_requirements": [
+        "evidence artifact",
+        "exact gate",
+        "regression check"
+      ],
+      "price": 99,
+      "setup_upsell": "$199 setup review",
+      "status": "ready",
+      "category": "Context Guardrails",
+      "detail_url": "guardrails/agent-context-intelligence-guardrail.html",
+      "content": "Agent Context Intelligence Guardrail Coding agents edit before they understand architecture, ownership, dependencies, tests, or blast radius. Context Guardrails Codex Claude Code Cursor OpenClaw MCP RAG blind edits wrong-file changes context drift test command guessing dirty worktree mistakes",
+      "canonical_product_url": "https://atlasops.io/guardrails/agent-context-intelligence-guardrail.html",
+      "fallback_product_url": "https://mark72772.github.io/atlasops-ai-site/guardrails/agent-context-intelligence-guardrail.html",
+      "checkout_button_id": "buy_agent_context_intelligence_guardrail",
+      "payment_provider": "stripe",
+      "delivery_type": "download_and_email",
+      "delivery_requires_verified_payment": true,
+      "service_type": "downloadable_guardrail_pack"
+    },
+    {
+      "pack_id": "codex-repo-control-guardrail",
+      "name": "Codex Repo Control Guardrail",
+      "slug": "codex-repo-control-guardrail",
+      "pain_point": "Codex can move too fast in repos that lack project instructions, test commands, and completion proof.",
+      "compatible_systems": [
+        "Codex",
+        "Git",
+        "CI",
+        "MCP"
+      ],
+      "included_files": [
+        "README.md",
+        "GUARDRAIL.md",
+        "SKILL.md",
+        "AGENTS.md",
+        "CLAUDE.md",
+        "CODEX.md",
+        "tests/",
+        "examples/"
+      ],
+      "proof_requirements": [
+        "evidence artifact",
+        "exact gate",
+        "regression check"
+      ],
+      "price": 99,
+      "setup_upsell": "$199 setup review",
+      "status": "ready",
+      "category": "Codex",
+      "detail_url": "guardrails/codex-repo-control-guardrail.html",
+      "content": "Codex Repo Control Guardrail Codex can move too fast in repos that lack project instructions, test commands, and completion proof. Codex Codex Git CI MCP unbounded patches forbidden path edits broad deletes unstated tests unsafe commits",
+      "canonical_product_url": "https://atlasops.io/guardrails/codex-repo-control-guardrail.html",
+      "fallback_product_url": "https://mark72772.github.io/atlasops-ai-site/guardrails/codex-repo-control-guardrail.html",
+      "checkout_button_id": "buy_codex_repo_control_guardrail",
+      "payment_provider": "stripe",
+      "delivery_type": "download_and_email",
+      "delivery_requires_verified_payment": true,
+      "service_type": "downloadable_guardrail_pack"
+    },
+    {
+      "pack_id": "claude-code-workflow-guardrail",
+      "name": "Claude Code Workflow Guardrail",
+      "slug": "claude-code-workflow-guardrail",
+      "pain_point": "Repeated Claude workflows become brittle copy-paste checklists instead of reusable operating procedures.",
+      "compatible_systems": [
+        "Claude Code",
+        "SKILL.md",
+        "CLAUDE.md",
+        "Git",
+        "CI"
+      ],
+      "included_files": [
+        "README.md",
+        "GUARDRAIL.md",
+        "SKILL.md",
+        "AGENTS.md",
+        "CLAUDE.md",
+        "CODEX.md",
+        "tests/",
+        "examples/"
+      ],
+      "proof_requirements": [
+        "evidence artifact",
+        "exact gate",
+        "regression check"
+      ],
+      "price": 99,
+      "setup_upsell": "$199 setup review",
+      "status": "ready",
+      "category": "Claude Code",
+      "detail_url": "guardrails/claude-code-workflow-guardrail.html",
+      "content": "Claude Code Workflow Guardrail Repeated Claude workflows become brittle copy-paste checklists instead of reusable operating procedures. Claude Code Claude Code SKILL.md CLAUDE.md Git CI prompt drift missed checks ambiguous subagent work unverified output",
+      "canonical_product_url": "https://atlasops.io/guardrails/claude-code-workflow-guardrail.html",
+      "fallback_product_url": "https://mark72772.github.io/atlasops-ai-site/guardrails/claude-code-workflow-guardrail.html",
+      "checkout_button_id": "buy_claude_code_workflow_guardrail",
+      "payment_provider": "stripe",
+      "delivery_type": "download_and_email",
+      "delivery_requires_verified_payment": true,
+      "service_type": "downloadable_guardrail_pack"
+    },
+    {
+      "pack_id": "rag-source-packet-guardrail",
+      "name": "RAG Source Packet Guardrail",
+      "slug": "rag-source-packet-guardrail",
+      "pain_point": "Agents make confident unsupported claims when retrieval is stale, insufficient, or unverified.",
+      "compatible_systems": [
+        "RAG",
+        "Agentic RAG",
+        "MCP",
+        "Codex",
+        "Claude Code",
+        "Business Agents"
+      ],
+      "included_files": [
+        "README.md",
+        "GUARDRAIL.md",
+        "SKILL.md",
+        "AGENTS.md",
+        "CLAUDE.md",
+        "CODEX.md",
+        "tests/",
+        "examples/"
+      ],
+      "proof_requirements": [
+        "evidence artifact",
+        "exact gate",
+        "regression check"
+      ],
+      "price": 99,
+      "setup_upsell": "$199 setup review",
+      "status": "ready",
+      "category": "RAG",
+      "detail_url": "guardrails/rag-source-packet-guardrail.html",
+      "content": "RAG Source Packet Guardrail Agents make confident unsupported claims when retrieval is stale, insufficient, or unverified. RAG RAG Agentic RAG MCP Codex Claude Code Business Agents unsupported claims stale-source claims citation gaps source conflicts fabricated current facts",
+      "canonical_product_url": "https://atlasops.io/guardrails/rag-source-packet-guardrail.html",
+      "fallback_product_url": "https://mark72772.github.io/atlasops-ai-site/guardrails/rag-source-packet-guardrail.html",
+      "checkout_button_id": "buy_rag_source_packet_guardrail",
+      "payment_provider": "stripe",
+      "delivery_type": "download_and_email",
+      "delivery_requires_verified_payment": true,
+      "service_type": "downloadable_guardrail_pack"
+    },
+    {
+      "pack_id": "ai-seo-visibility-guardrail",
+      "name": "AI SEO Visibility Guardrail",
+      "slug": "ai-seo-visibility-guardrail",
+      "pain_point": "Businesses can rank in Google while answer engines still cannot understand their entity, services, proof, or trust signals.",
+      "compatible_systems": [
+        "Websites",
+        "AI SEO",
+        "Answer Engines",
+        "Content Ops"
+      ],
+      "included_files": [
+        "README.md",
+        "GUARDRAIL.md",
+        "SKILL.md",
+        "AGENTS.md",
+        "CLAUDE.md",
+        "CODEX.md",
+        "tests/",
+        "examples/"
+      ],
+      "proof_requirements": [
+        "evidence artifact",
+        "exact gate",
+        "regression check"
+      ],
+      "price": 99,
+      "setup_upsell": "$199 setup review",
+      "status": "ready",
+      "category": "AI SEO",
+      "detail_url": "guardrails/ai-seo-visibility-guardrail.html",
+      "content": "AI SEO Visibility Guardrail Businesses can rank in Google while answer engines still cannot understand their entity, services, proof, or trust signals. AI SEO Websites AI SEO Answer Engines Content Ops entity ambiguity thin service pages FAQ gaps missing proof signals unsupported content claims",
+      "canonical_product_url": "https://atlasops.io/guardrails/ai-seo-visibility-guardrail.html",
+      "fallback_product_url": "https://mark72772.github.io/atlasops-ai-site/guardrails/ai-seo-visibility-guardrail.html",
+      "checkout_button_id": "buy_ai_seo_visibility_guardrail",
+      "payment_provider": "stripe",
+      "delivery_type": "download_and_email",
+      "delivery_requires_verified_payment": true,
+      "service_type": "downloadable_guardrail_pack"
+    },
+    {
+      "pack_id": "saas-operator-guardrail",
+      "name": "SaaS Operator Guardrail",
+      "slug": "saas-operator-guardrail",
+      "pain_point": "SaaS agents can automate messages and reports before they have evidence, customer context, or safe billing language.",
+      "compatible_systems": [
+        "SaaS",
+        "Support",
+        "Onboarding",
+        "Billing",
+        "Reporting"
+      ],
+      "included_files": [
+        "README.md",
+        "GUARDRAIL.md",
+        "SKILL.md",
+        "AGENTS.md",
+        "CLAUDE.md",
+        "CODEX.md",
+        "tests/",
+        "examples/"
+      ],
+      "proof_requirements": [
+        "evidence artifact",
+        "exact gate",
+        "regression check"
+      ],
+      "price": 99,
+      "setup_upsell": "$199 setup review",
+      "status": "ready",
+      "category": "SaaS",
+      "detail_url": "guardrails/saas-operator-guardrail.html",
+      "content": "SaaS Operator Guardrail SaaS agents can automate messages and reports before they have evidence, customer context, or safe billing language. SaaS SaaS Support Onboarding Billing Reporting fake metrics unsafe billing follow-up missed churn signals unsupported support decisions",
+      "canonical_product_url": "https://atlasops.io/guardrails/saas-operator-guardrail.html",
+      "fallback_product_url": "https://mark72772.github.io/atlasops-ai-site/guardrails/saas-operator-guardrail.html",
+      "checkout_button_id": "buy_saas_operator_guardrail",
+      "payment_provider": "stripe",
+      "delivery_type": "download_and_email",
+      "delivery_requires_verified_payment": true,
+      "service_type": "downloadable_guardrail_pack"
+    },
+    {
+      "pack_id": "stock-research-guardrail",
+      "name": "Stock Research Guardrail",
+      "slug": "stock-research-guardrail",
+      "pain_point": "Research agents can turn notes into advice without recency proof, source checks, or risk flags.",
+      "compatible_systems": [
+        "Research Workflows",
+        "RAG",
+        "Market Notes",
+        "Watchlists"
+      ],
+      "included_files": [
+        "README.md",
+        "GUARDRAIL.md",
+        "SKILL.md",
+        "AGENTS.md",
+        "CLAUDE.md",
+        "CODEX.md",
+        "tests/",
+        "examples/"
+      ],
+      "proof_requirements": [
+        "evidence artifact",
+        "exact gate",
+        "regression check"
+      ],
+      "price": 99,
+      "setup_upsell": "$199 setup review",
+      "status": "ready",
+      "category": "Stock Research",
+      "detail_url": "guardrails/stock-research-guardrail.html",
+      "content": "Stock Research Guardrail Research agents can turn notes into advice without recency proof, source checks, or risk flags. Stock Research Research Workflows RAG Market Notes Watchlists buy/sell recommendations stale market data unsupported catalysts missing risk flags",
+      "canonical_product_url": "https://atlasops.io/guardrails/stock-research-guardrail.html",
+      "fallback_product_url": "https://mark72772.github.io/atlasops-ai-site/guardrails/stock-research-guardrail.html",
+      "checkout_button_id": "buy_stock_research_guardrail",
+      "payment_provider": "stripe",
+      "delivery_type": "download_and_email",
+      "delivery_requires_verified_payment": true,
+      "service_type": "downloadable_guardrail_pack"
+    },
+    {
+      "pack_id": "social-publishing-guardrail",
+      "name": "Social Publishing Guardrail",
+      "slug": "social-publishing-guardrail",
+      "pain_point": "Agents publish debug-looking posts, stale drafts, duplicate content, or empty composer attempts.",
+      "compatible_systems": [
+        "LinkedIn",
+        "X",
+        "Browser Automation",
+        "Content Ops",
+        "OpenClaw"
+      ],
+      "included_files": [
+        "README.md",
+        "GUARDRAIL.md",
+        "SKILL.md",
+        "AGENTS.md",
+        "CLAUDE.md",
+        "CODEX.md",
+        "tests/",
+        "examples/"
+      ],
+      "proof_requirements": [
+        "evidence artifact",
+        "exact gate",
+        "regression check"
+      ],
+      "price": 99,
+      "setup_upsell": "$199 setup review",
+      "status": "ready",
+      "category": "Social Publishing",
+      "detail_url": "guardrails/social-publishing-guardrail.html",
+      "content": "Social Publishing Guardrail Agents publish debug-looking posts, stale drafts, duplicate content, or empty composer attempts. Social Publishing LinkedIn X Browser Automation Content Ops OpenClaw debug labels in public posts bad draft reentry empty LinkedIn composer X tab storms fake publish proof",
+      "canonical_product_url": "https://atlasops.io/guardrails/social-publishing-guardrail.html",
+      "fallback_product_url": "https://mark72772.github.io/atlasops-ai-site/guardrails/social-publishing-guardrail.html",
+      "checkout_button_id": "buy_social_publishing_guardrail",
+      "payment_provider": "stripe",
+      "delivery_type": "download_and_email",
+      "delivery_requires_verified_payment": true,
+      "service_type": "downloadable_guardrail_pack"
+    },
+    {
+      "pack_id": "git-deploy-safety-guardrail",
+      "name": "Git Deploy Safety Guardrail",
+      "slug": "git-deploy-safety-guardrail",
+      "pain_point": "Agents can commit unrelated dirty files, secrets, local paths, or unverified deploys.",
+      "compatible_systems": [
+        "Git",
+        "GitHub Pages",
+        "Vercel",
+        "Cloudflare",
+        "Static Sites"
+      ],
+      "included_files": [
+        "README.md",
+        "GUARDRAIL.md",
+        "SKILL.md",
+        "AGENTS.md",
+        "CLAUDE.md",
+        "CODEX.md",
+        "tests/",
+        "examples/"
+      ],
+      "proof_requirements": [
+        "evidence artifact",
+        "exact gate",
+        "regression check"
+      ],
+      "price": 99,
+      "setup_upsell": "$199 setup review",
+      "status": "ready",
+      "category": "Website Deploy",
+      "detail_url": "guardrails/git-deploy-safety-guardrail.html",
+      "content": "Git Deploy Safety Guardrail Agents can commit unrelated dirty files, secrets, local paths, or unverified deploys. Website Deploy Git GitHub Pages Vercel Cloudflare Static Sites whole dirty worktree commits secret leaks local path leaks local-only deploy claims broken public pages",
+      "canonical_product_url": "https://atlasops.io/guardrails/git-deploy-safety-guardrail.html",
+      "fallback_product_url": "https://mark72772.github.io/atlasops-ai-site/guardrails/git-deploy-safety-guardrail.html",
+      "checkout_button_id": "buy_git_deploy_safety_guardrail",
+      "payment_provider": "stripe",
+      "delivery_type": "download_and_email",
+      "delivery_requires_verified_payment": true,
+      "service_type": "downloadable_guardrail_pack"
+    },
+    {
+      "pack_id": "stripe-payment-proof-guardrail",
+      "name": "Stripe Payment Proof Guardrail",
+      "slug": "stripe-payment-proof-guardrail",
+      "pain_point": "Teams count checkout links or success pages as paid even when no verified Stripe event exists.",
+      "compatible_systems": [
+        "Stripe",
+        "Checkout",
+        "Payment Links",
+        "Webhooks",
+        "Reports"
+      ],
+      "included_files": [
+        "README.md",
+        "GUARDRAIL.md",
+        "SKILL.md",
+        "AGENTS.md",
+        "CLAUDE.md",
+        "CODEX.md",
+        "tests/",
+        "examples/"
+      ],
+      "proof_requirements": [
+        "evidence artifact",
+        "exact gate",
+        "regression check"
+      ],
+      "price": 99,
+      "setup_upsell": "$199 setup review",
+      "status": "ready",
+      "category": "Stripe / Payments",
+      "detail_url": "guardrails/stripe-payment-proof-guardrail.html",
+      "content": "Stripe Payment Proof Guardrail Teams count checkout links or success pages as paid even when no verified Stripe event exists. Stripe / Payments Stripe Checkout Payment Links Webhooks Reports payment link counted as proof success redirect counted as paid report unlock without payment fake revenue",
+      "canonical_product_url": "https://atlasops.io/guardrails/stripe-payment-proof-guardrail.html",
+      "fallback_product_url": "https://mark72772.github.io/atlasops-ai-site/guardrails/stripe-payment-proof-guardrail.html",
+      "checkout_button_id": "buy_stripe_payment_proof_guardrail",
+      "payment_provider": "stripe",
+      "delivery_type": "download_and_email",
+      "delivery_requires_verified_payment": true,
+      "service_type": "downloadable_guardrail_pack"
+    },
+    {
+      "pack_id": "openclaw-integration-guardrail",
+      "name": "OpenClaw Integration Guardrail",
+      "slug": "openclaw-integration-guardrail",
+      "pain_point": "OpenClaw integrations drift when version checks, doctor runs, gateway checks, and skill tree updates are skipped.",
+      "compatible_systems": [
+        "OpenClaw",
+        "Codex Bridge",
+        "MCP",
+        "Gateway",
+        "Plugins"
+      ],
+      "included_files": [
+        "README.md",
+        "GUARDRAIL.md",
+        "SKILL.md",
+        "AGENTS.md",
+        "CLAUDE.md",
+        "CODEX.md",
+        "tests/",
+        "examples/"
+      ],
+      "proof_requirements": [
+        "evidence artifact",
+        "exact gate",
+        "regression check"
+      ],
+      "price": 99,
+      "setup_upsell": "$199 setup review",
+      "status": "ready",
+      "category": "OpenClaw",
+      "detail_url": "guardrails/openclaw-integration-guardrail.html",
+      "content": "OpenClaw Integration Guardrail OpenClaw integrations drift when version checks, doctor runs, gateway checks, and skill tree updates are skipped. OpenClaw OpenClaw Codex Bridge MCP Gateway Plugins fake update claims beta installs without approval gateway drift unused skill tree missing rollback",
+      "canonical_product_url": "https://atlasops.io/guardrails/openclaw-integration-guardrail.html",
+      "fallback_product_url": "https://mark72772.github.io/atlasops-ai-site/guardrails/openclaw-integration-guardrail.html",
+      "checkout_button_id": "buy_openclaw_integration_guardrail",
+      "payment_provider": "stripe",
+      "delivery_type": "download_and_email",
+      "delivery_requires_verified_payment": true,
+      "service_type": "downloadable_guardrail_pack"
+    },
+    {
+      "pack_id": "agent-daily-operations-guardrail",
+      "name": "Agent Daily Operations Guardrail",
+      "slug": "agent-daily-operations-guardrail",
+      "pain_point": "Agents sit idle after one task and report heartbeat-only status as productivity.",
+      "compatible_systems": [
+        "Agent Ops",
+        "Schedulers",
+        "Learning Loops",
+        "RAG",
+        "Revenue Ops"
+      ],
+      "included_files": [
+        "README.md",
+        "GUARDRAIL.md",
+        "SKILL.md",
+        "AGENTS.md",
+        "CLAUDE.md",
+        "CODEX.md",
+        "tests/",
+        "examples/"
+      ],
+      "proof_requirements": [
+        "evidence artifact",
+        "exact gate",
+        "regression check"
+      ],
+      "price": 99,
+      "setup_upsell": "$199 setup review",
+      "status": "ready",
+      "category": "Business Automation",
+      "detail_url": "guardrails/agent-daily-operations-guardrail.html",
+      "content": "Agent Daily Operations Guardrail Agents sit idle after one task and report heartbeat-only status as productivity. Business Automation Agent Ops Schedulers Learning Loops RAG Revenue Ops silent watching heartbeat-only status stale queues missed scheduled runs unassigned failures",
+      "canonical_product_url": "https://atlasops.io/guardrails/agent-daily-operations-guardrail.html",
+      "fallback_product_url": "https://mark72772.github.io/atlasops-ai-site/guardrails/agent-daily-operations-guardrail.html",
+      "checkout_button_id": "buy_agent_daily_operations_guardrail",
+      "payment_provider": "stripe",
+      "delivery_type": "download_and_email",
+      "delivery_requires_verified_payment": true,
+      "service_type": "downloadable_guardrail_pack"
+    }
+  ],
+  "canonical_site": "https://atlasops.io/",
+  "fallback_site": "https://mark72772.github.io/atlasops-ai-site/",
+  "primary_payment_provider": "stripe",
+  "cloud9_status": "deprecated_or_disabled",
+  "disclaimer": "AtlasOps Guardrail Kits are independent workflow kits. They are not official products of OpenAI, Anthropic, OpenClaw, NVIDIA, IBM, CoreStory, LinkedIn, X, Stripe, or any other referenced platform.",
+  "price_tiers": {
+    "single_guardrail_kit": 99,
+    "setup_review": 199,
+    "custom_workflow_guardrail": "499+",
+    "business_agent_reliability_system": "999+"
+  }
+}

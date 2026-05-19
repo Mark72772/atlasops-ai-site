@@ -1,35 +1,20 @@
 (function () {
   window.ATLAS_PAYMENTS_CONFIG = Object.freeze({
-    provider: "c9pg",
-    displayName: "Cloud9 secure checkout",
-    mode: "sandbox_pending_credentials",
+    provider: "stripe",
+    primaryProvider: "stripe",
+    cloud9Status: "deprecated_or_disabled",
+    displayName: "Stripe-hosted Checkout",
+    mode: "test_pending_worker_secrets",
     currency: "USD",
-    checkoutWorkerUrl: "https://atlasops-payments-relay.atlasops-ai.workers.dev",
-    cardDataPolicy: "hosted_checkout_only",
-    liveCardCheckoutEnabled: false,
+    workerUrl: "",
+    cardDataPolicy: "stripe_hosted_checkout_only",
+    paymentVerificationPolicy: "signed_webhook_or_api_evidence_required",
+    canonicalSiteUrl: "https://atlasops.io/",
+    fallbackSiteUrl: "https://mark72772.github.io/atlasops-ai-site/",
     services: [
-      {
-        serviceId: "ai_business_automation_audit",
-        name: "AI Business Automation Audit",
-        amount: 149,
-        currency: "USD",
-        checkoutPath: "checkout.html?service=ai_business_automation_audit"
-      },
-      {
-        serviceId: "ai_website_seo_visibility_audit",
-        name: "AI Website SEO + AI Visibility Audit",
-        amount: 199,
-        currency: "USD",
-        checkoutPath: "checkout.html?service=ai_website_seo_visibility_audit"
-      },
-      {
-        serviceId: "automation_plus_ai_visibility_bundle",
-        name: "Automation + AI Visibility Bundle",
-        amount: 299,
-        currency: "USD",
-        checkoutPath: "checkout.html?service=automation_plus_ai_visibility_bundle"
-      }
+      { serviceId: "ai_website_seo_visibility_audit", name: "AI Website SEO + AI Visibility Audit", amount: 199, amountCents: 19900, currency: "USD", checkoutPath: "checkout.html?service=ai_website_seo_visibility_audit" },
+      { serviceId: "ai_business_automation_audit", name: "AI Business Automation Audit", amount: 149, amountCents: 14900, currency: "USD", checkoutPath: "checkout.html?service=ai_business_automation_audit" },
+      { serviceId: "ai_website_payment_cta_setup", name: "AI Website + Payment CTA Setup", amount: 199, amountCents: 19900, currency: "USD", checkoutPath: "checkout.html?service=ai_website_payment_cta_setup" }
     ]
   });
 })();
-

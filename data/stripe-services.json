@@ -1,0 +1,45 @@
+{
+  "services": [
+    {
+      "serviceId": "ai_website_seo_visibility_audit",
+      "name": "AI Website SEO + AI Visibility Audit",
+      "amount": 199,
+      "amount_cents": 19900,
+      "currency": "USD",
+      "signed_scope_required": false
+    },
+    {
+      "serviceId": "ai_business_automation_audit",
+      "name": "AI Business Automation Audit",
+      "amount": 149,
+      "amount_cents": 14900,
+      "currency": "USD",
+      "signed_scope_required": false
+    },
+    {
+      "serviceId": "ai_website_payment_cta_setup",
+      "name": "AI Website + Payment CTA Setup",
+      "amount": 199,
+      "amount_cents": 19900,
+      "currency": "USD",
+      "signed_scope_required": false
+    },
+    {
+      "serviceId": "code_dependency_security_audit",
+      "name": "Code + Dependency Security Audit",
+      "amount": 499,
+      "amount_cents": 49900,
+      "currency": "USD",
+      "signed_scope_required": true
+    },
+    {
+      "serviceId": "server_rdp_hardening_review",
+      "name": "Server/RDP Hardening Review",
+      "amount": 299,
+      "amount_cents": 29900,
+      "currency": "USD",
+      "signed_scope_required": true
+    }
+  ],
+  "updated_at": "2026-05-19T14:18:25.765139+00:00"
+}

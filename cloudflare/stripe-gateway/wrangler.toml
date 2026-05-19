@@ -1,0 +1,16 @@
+name = "atlasops-stripe-gateway"
+main = "worker.js"
+compatibility_date = "2026-05-19"
+
+[vars]
+STRIPE_MODE = "test"
+ALLOWED_ORIGIN = "https://atlasops.io,https://www.atlasops.io,https://mark72772.github.io"
+STRIPE_SUCCESS_URL = "https://atlasops.io/payment-success.html?session_id={CHECKOUT_SESSION_ID}"
+STRIPE_CANCEL_URL = "https://atlasops.io/payment-cancel.html"
+
+# Configure in Cloudflare, not in this file:
+# wrangler secret put STRIPE_SECRET_KEY
+# wrangler secret put STRIPE_WEBHOOK_SECRET
+# wrangler secret put ATLAS_RELAY_SECRET
+# Optional public value:
+# wrangler secret put STRIPE_PUBLISHABLE_KEY

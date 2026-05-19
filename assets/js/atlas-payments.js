@@ -1,85 +1,75 @@
 (function () {
   const config = window.ATLAS_PAYMENTS_CONFIG || {};
   const services = new Map((config.services || []).map((service) => [service.serviceId, service]));
-
-  function safeWorkerUrl() {
-    const value = String(config.checkoutWorkerUrl || "").trim().replace(/\/+$/, "");
+  function workerUrl() {
+    const value = String(config.workerUrl || window.ATLAS_STRIPE_WORKER_URL || "").trim().replace(/\/+$/, "");
     if (!value) return "";
     try {
       const parsed = new URL(value);
       const host = parsed.hostname.toLowerCase();
-      const loopback = [["local", "host"].join(""), ["127", "0", "0", "1"].join(".")];
-      if (loopback.includes(host) || host.startsWith(["192", "168"].join(".") + ".") || host.startsWith("10.")) return "";
+      const localHost = "local" + "host";
+      const loopbackHost = ["127", "0", "0", "1"].join(".");
+      if (host === localHost || host === loopbackHost || host.startsWith("10.") || host.startsWith("192.168.")) return "";
       return parsed.href.replace(/\/+$/, "");
     } catch {
       return "";
     }
   }
-
   function selectedService() {
     const params = new URLSearchParams(window.location.search);
     return services.get(params.get("service")) || services.get("ai_website_seo_visibility_audit");
   }
-
-  function setText(selector, text) {
+  function text(selector, value) {
     const node = document.querySelector(selector);
-    if (node) node.textContent = text;
+    if (node) node.textContent = value;
   }
-
-  function showMessage(kind, text) {
-    const node = document.querySelector("[data-payment-message]");
+  function message(kind, value) {
+    const node = document.querySelector("[data-payment-message], [data-stripe-message]");
     if (!node) return;
     node.dataset.kind = kind;
-    node.textContent = text;
+    node.textContent = value;
   }
-
   function initCheckout() {
-    const form = document.querySelector("[data-c9pg-checkout-form]");
+    const form = document.querySelector("[data-stripe-checkout-form], [data-payment-checkout-form]");
     if (!form) return;
     const service = selectedService();
-    setText("[data-service-name]", service.name);
-    setText("[data-service-price]", `$${service.amount}`);
-    form.service_id.value = service.serviceId;
-    form.amount_usd.value = String(service.amount);
+    text("[data-service-name]", service.name);
+    text("[data-service-price]", "$" + service.amount);
+    if (form.service_id) form.service_id.value = service.serviceId;
+    if (form.amount_usd) form.amount_usd.value = String(service.amount);
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
-      const worker = safeWorkerUrl();
+      const worker = workerUrl();
       if (!worker) {
-        showMessage("gated", "Card checkout is being configured. Atlas can still create the order and provide the current start path.");
+        message("gated", "Stripe Checkout is gated until the secure Worker URL and secrets are configured. No payment was marked verified.");
         return;
       }
       const payload = Object.fromEntries(new FormData(form).entries());
+      payload.source = "atlasops.io";
       try {
-        const response = await fetch(`${worker}/checkout/create`, {
+        const response = await fetch(worker + "/stripe/create-checkout-session", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(payload)
         });
         const result = await response.json().catch(() => ({}));
-        if (result.checkout_url) {
-          showMessage("ready", "Secure Cloud9 checkout is ready. Opening the hosted checkout path.");
-          window.location.href = result.checkout_url;
+        const checkoutUrl = result.url || result.checkout_url;
+        if (checkoutUrl) {
+          window.location.href = checkoutUrl;
         } else {
-          showMessage("gated", "Card checkout is being configured. Atlas can still create the order and provide the current start path.");
+          message("gated", "Stripe Checkout is not ready: " + (result.exact_gate || "stripe_checkout_session_not_created"));
         }
       } catch {
-        showMessage("gated", "Card checkout is being configured. Atlas can still create the order and provide the current start path.");
+        message("gated", "Stripe Checkout request failed safely. No payment was marked verified.");
       }
     });
   }
-
   function initResult() {
     const result = document.querySelector("[data-payment-result]");
     if (!result) return;
-    const params = new URLSearchParams(window.location.search);
-    const status = params.get("Status") || params.get("status") || "pending";
-    const approved = status.toLowerCase() === "success" || status.toLowerCase() === "approved";
-    result.dataset.status = approved ? "approved" : status.toLowerCase();
-    result.textContent = approved
-      ? "Payment result received. Atlas monitors the gateway callback before report work starts."
-      : "Payment is pending or not approved yet. Atlas will monitor gateway evidence and keep report delivery locked until payment verifies.";
+    result.dataset.status = "verification_pending";
+    result.textContent = "Payment received by Stripe if checkout completed. AtlasOps is verifying signed payment evidence before any report or download unlocks.";
   }
-
   document.addEventListener("DOMContentLoaded", () => {
     initCheckout();
     initResult();
