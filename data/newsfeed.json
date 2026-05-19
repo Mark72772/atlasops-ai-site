@@ -1,6 +1,51 @@
 {
-  "updated_at": "2026-05-13T21:49:40.980451-04:00",
+  "updated_at": "2026-05-19T12:18:07.252682+00:00",
   "items": [
+    {
+      "news_id": "ai_business_agents_need_workflows",
+      "title": "AI agents are becoming workflow operators, not just chat tools",
+      "summary": "Enterprise AI is moving toward agents that connect to context, systems, and governance.",
+      "business_takeaway": "Pick one painful workflow and define the proof that counts as done.",
+      "source_url": "https://openai.com/index/the-state-of-enterprise-ai-2025-report/",
+      "all_source_urls": [
+        "https://openai.com/index/the-state-of-enterprise-ai-2025-report/"
+      ],
+      "insight_url": "https://mark72772.github.io/atlasops-ai-site/ask-atlas.html",
+      "topic": "agents",
+      "status": "published_local_pending_public_deploy",
+      "source_name": "OpenAI",
+      "verified": true
+    },
+    {
+      "news_id": "agentic_workflows_require_owner",
+      "title": "The agent leap is really a workflow design problem",
+      "summary": "AI value rises when agents orchestrate repeatable processes instead of answering isolated prompts.",
+      "business_takeaway": "Assign one owner, one cadence, and one measurable outcome before adding more tools.",
+      "source_url": "https://cloud.google.com/resources/content/ai-agent-trends-2026",
+      "all_source_urls": [
+        "https://cloud.google.com/resources/content/ai-agent-trends-2026"
+      ],
+      "insight_url": "https://mark72772.github.io/atlasops-ai-site/ask-atlas.html",
+      "topic": "workflow",
+      "status": "published_local_pending_public_deploy",
+      "source_name": "Google Cloud",
+      "verified": true
+    },
+    {
+      "news_id": "code_intelligence_needs_specs",
+      "title": "Code intelligence is becoming an operations discipline",
+      "summary": "Agentic development is pushing teams toward context, specs, tests, and review loops.",
+      "business_takeaway": "Even non-software companies need proof-aware agents when business logic lives inside tools and websites.",
+      "source_url": "https://github.blog/news-insights/company-news/welcome-home-agents/",
+      "all_source_urls": [
+        "https://github.blog/news-insights/company-news/welcome-home-agents/"
+      ],
+      "insight_url": "https://mark72772.github.io/atlasops-ai-site/ask-atlas.html",
+      "topic": "code intelligence",
+      "status": "published_local_pending_public_deploy",
+      "source_name": "GitHub Blog",
+      "verified": true
+    },
     {
       "news_id": "building-a-safe-effective-sandbox-to-enable-codex-on-windows",
       "title": "Building a safe, effective sandbox to enable Codex on Windows",
