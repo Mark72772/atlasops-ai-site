@@ -3,7 +3,8 @@ main = "worker.js"
 compatibility_date = "2026-05-19"
 
 [vars]
-STRIPE_MODE = "test"
+STRIPE_MODE = "live"
+STRIPE_LIVE_CHECKOUT_APPROVED = "true"
 ALLOWED_ORIGIN = "https://atlasops.io,https://www.atlasops.io,https://mark72772.github.io"
 STRIPE_SUCCESS_BASE_URL = "https://mark72772.github.io/atlasops-ai-site"
 STRIPE_CANCEL_BASE_URL = "https://mark72772.github.io/atlasops-ai-site"

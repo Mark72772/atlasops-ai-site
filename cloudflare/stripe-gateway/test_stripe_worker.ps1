@@ -1,10 +1,20 @@
-param([string]$WorkerUrl = "")
+param(
+  [string]$WorkerUrl = "https://atlasops-stripe-gateway.atlasops-ai.workers.dev",
+  [switch]$UseUserEnvAdminSecret,
+  [switch]$SkipAdminPositive
+)
 $ErrorActionPreference = "Stop"
 $WorkerDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 Set-Location $WorkerDir
 if (-not $WorkerUrl) { $WorkerUrl = Read-Host "Worker URL" }
 $WorkerUrl = $WorkerUrl.TrimEnd("/")
-$adminSecret = Read-Host "Optional admin/relay secret for admin positive test, or press Enter to skip" -AsSecureString
+$adminSecret = $null
+$adminSecretPlain = $null
+if ($UseUserEnvAdminSecret) {
+  $adminSecretPlain = [Environment]::GetEnvironmentVariable("ATLAS_STRIPE_WORKER_ADMIN_SECRET", "User")
+} elseif (-not $SkipAdminPositive) {
+  $adminSecret = Read-Host "Optional admin/relay secret for admin positive test, or press Enter to skip" -AsSecureString
+}
 $health = Invoke-WebRequest -UseBasicParsing -Uri "$WorkerUrl/health" -Method GET
 $config = Invoke-WebRequest -UseBasicParsing -Uri "$WorkerUrl/stripe/config" -Method GET
 $adminDeniedStatus = $null
@@ -14,7 +24,16 @@ try { Invoke-WebRequest -UseBasicParsing -Uri "$WorkerUrl/stripe/webhook" -Metho
 $invalidStatus = $null
 try { Invoke-WebRequest -UseBasicParsing -Uri "$WorkerUrl/stripe/create-checkout-session" -Method POST -Body '{"pack_id":"not-a-real-pack"}' -ContentType "application/json" | Out-Null } catch { $invalidStatus = $_.Exception.Response.StatusCode.value__ }
 $adminPositive = "skipped"
-if ($adminSecret.Length -gt 0) {
+if (-not [string]::IsNullOrWhiteSpace($adminSecretPlain)) {
+  try {
+    $headers = @{ "X-Atlas-Relay-Secret" = $adminSecretPlain }
+    $admin = Invoke-WebRequest -UseBasicParsing -Uri "$WorkerUrl/admin/payments" -Method GET -Headers $headers
+    $adminPositive = $admin.StatusCode
+  } finally {
+    $adminSecretPlain = $null
+    [GC]::Collect()
+  }
+} elseif ($adminSecret -and $adminSecret.Length -gt 0) {
   $bstr = [Runtime.InteropServices.Marshal]::SecureStringToBSTR($adminSecret)
   try {
     $plain = [Runtime.InteropServices.Marshal]::PtrToStringBSTR($bstr)
