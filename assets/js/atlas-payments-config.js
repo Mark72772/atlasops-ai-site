@@ -9,6 +9,7 @@
     workerUrl: "",
     cardDataPolicy: "stripe_hosted_checkout_only",
     paymentVerificationPolicy: "signed_webhook_or_api_evidence_required",
+    activeSalesBaseUrl: "https://mark72772.github.io/atlasops-ai-site",
     canonicalSiteUrl: "https://atlasops.io/",
     fallbackSiteUrl: "https://mark72772.github.io/atlasops-ai-site/",
     services: [

@@ -1,4 +1,4 @@
-const WORKER_VERSION = "sprint-67-stripe-gateway-v1";
+const WORKER_VERSION = "sprint-75b-stripe-gateway-v2";
 const RATE_LIMIT_WINDOW_MS = 60_000;
 const RATE_LIMIT_MAX = 30;
 const memoryRateLimit = new Map();
@@ -166,15 +166,22 @@ async function createCheckoutSession(request, env) {
   if (!service) return json({ ok: false, status: "invalid_service_id" }, 400);
   const serviceId = String(body.service_id || packId);
   const orderId = body.order_id || `atlas_${serviceId.replace(/[^a-z0-9_-]/gi, "_")}_${crypto.randomUUID()}`;
-  const success = String(env.STRIPE_SUCCESS_URL || "https://atlasops.io/payment-success.html?session_id={CHECKOUT_SESSION_ID}");
-  const cancel = String(env.STRIPE_CANCEL_URL || "https://atlasops.io/payment-cancel.html");
+  const successBase = String(body.success_base_url || env.STRIPE_SUCCESS_BASE_URL || "https://mark72772.github.io/atlasops-ai-site").replace(/\/$/, "");
+  const cancelBase = String(body.cancel_base_url || env.STRIPE_CANCEL_BASE_URL || successBase).replace(/\/$/, "");
+  const success = `${successBase}/payment-success.html?session_id={CHECKOUT_SESSION_ID}`;
+  const cancel = `${cancelBase}/guardrails.html`;
   const metadata = {
     order_id: orderId,
     lead_id: body.lead_id || "",
     service_id: serviceId,
     pack_id: packId,
     service_name: service.name,
-    source: body.source || "website",
+    service_type: packId ? "downloadable_guardrail_kit" : "service_checkout",
+    amount_cents: String(service.amount),
+    currency: service.currency,
+    source: body.source || "guardrail_store",
+    source_url: body.source_url || "",
+    delivery_requires_verified_payment: "true",
     atlas_runtime: "local_only",
     client_website: body.client_website || body.business_url || ""
   };
@@ -192,7 +199,12 @@ async function createCheckoutSession(request, env) {
     "metadata[service_id]": metadata.service_id,
     "metadata[pack_id]": metadata.pack_id,
     "metadata[service_name]": metadata.service_name,
+    "metadata[service_type]": metadata.service_type,
+    "metadata[amount_cents]": metadata.amount_cents,
+    "metadata[currency]": metadata.currency,
     "metadata[source]": metadata.source,
+    "metadata[source_url]": metadata.source_url,
+    "metadata[delivery_requires_verified_payment]": metadata.delivery_requires_verified_payment,
     "metadata[atlas_runtime]": metadata.atlas_runtime,
     "metadata[client_website]": metadata.client_website
   });

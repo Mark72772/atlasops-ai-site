@@ -1,1 +1,93 @@
-(function(){const grid=document.getElementById('guardrailCards');if(!grid)return;let items=[];let filter='';const search=document.getElementById('guardrailSearch');const sort=document.getElementById('guardrailSort');function score(item,q){const text=(item.content||'').toLowerCase();let value=text.includes(q)?10:0;if((item.compatible_systems||[]).join(' ').toLowerCase().includes(q))value+=6;if((item.category||'').toLowerCase().includes(q))value+=4;return value}function card(item){const systems=(item.compatible_systems||[]).slice(0,5).map(s=>`<span>${s}</span>`).join('');return `<article class="gr-card"><h2>${item.name}</h2><p>${item.pain_point}</p><div class="systems">${systems}</div><p><strong>Proof:</strong> ${(item.proof_requirements||[]).join(', ')}</p><div class="meta"><span>$${item.price}</span><span>${item.status}</span></div><div class="card-actions"><a href="${item.detail_url}">Details</a><button type="button" data-pack-id="${item.pack_id}">Buy kit</button></div></article>`}function render(){const q=(search&&search.value||'').trim().toLowerCase();const s=sort&&sort.value||'Most relevant';let rows=items.filter(item=>!filter||[item.category,...(item.compatible_systems||[])].join(' ').toLowerCase().includes(filter.toLowerCase()));if(q)rows=rows.map(item=>({...item,_score:score(item,q)})).filter(item=>item._score>0||item.name.toLowerCase().includes(q)||item.pain_point.toLowerCase().includes(q));if(s.includes('Newest'))rows=rows.slice().reverse();else if(q)rows=rows.sort((a,b)=>(b._score||0)-(a._score||0));grid.innerHTML=rows.map(card).join('')||'<p class="gr-empty">No guardrail matches that search yet.</p>'}fetch(grid.dataset.storePath||'data/guardrail-store.json').then(r=>r.json()).then(data=>{items=data.items||data;render()}).catch(()=>{grid.innerHTML='<p class="gr-empty">Guardrail store data could not load.</p>'});if(search)search.addEventListener('input',render);if(sort)sort.addEventListener('change',render);document.querySelectorAll('[data-filter]').forEach(btn=>btn.addEventListener('click',()=>{filter=filter===btn.dataset.filter?'':btn.dataset.filter;document.querySelectorAll('[data-filter]').forEach(b=>b.classList.toggle('active',b===btn&&filter));render()}));document.addEventListener('click',event=>{const button=event.target.closest('[data-pack-id]');if(!button)return;if(window.AtlasGuardrailCheckout){window.AtlasGuardrailCheckout.start(button.dataset.packId)}else{window.location.href='payment-success.html?guardrail='+encodeURIComponent(button.dataset.packId)}})})();
+(function () {
+  const grid = document.getElementById("guardrailCards");
+  if (!grid) return;
+
+  const staticFallbackHtml = grid.innerHTML;
+  let items = [];
+  let filter = "";
+  const search = document.getElementById("guardrailSearch");
+  const sort = document.getElementById("guardrailSort");
+
+  function escapeHtml(value) {
+    return String(value || "").replace(/[&<>"']/g, (char) => ({
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': "&quot;",
+      "'": "&#39;"
+    })[char]);
+  }
+
+  function score(item, query) {
+    const text = String(item.content || "").toLowerCase();
+    let value = text.includes(query) ? 10 : 0;
+    if ((item.compatible_systems || []).join(" ").toLowerCase().includes(query)) value += 6;
+    if (String(item.category || "").toLowerCase().includes(query)) value += 4;
+    return value;
+  }
+
+  function card(item) {
+    const systems = (item.compatible_systems || []).slice(0, 5).map((system) => `<span>${escapeHtml(system)}</span>`).join("");
+    const detailUrl = escapeHtml(item.detail_url || `guardrails/${item.pack_id}.html`);
+    return `<article class="gr-card" data-pack-id-card="${escapeHtml(item.pack_id)}">
+      <h2>${escapeHtml(item.name)}</h2>
+      <p>${escapeHtml(item.pain_point)}</p>
+      <div class="systems">${systems}</div>
+      <p><strong>Proof:</strong> ${escapeHtml((item.proof_requirements || []).join(", "))}</p>
+      <div class="meta"><span>$${escapeHtml(item.price || 99)}</span><span>Stripe Checkout</span></div>
+      <div class="card-actions">
+        <a href="${detailUrl}">Details</a>
+        <button type="button" data-pack-id="${escapeHtml(item.pack_id)}" data-checkout-provider="stripe" data-exact-gate="stripe_worker_url_missing">Buy $99 Guardrail Kit</button>
+      </div>
+    </article>`;
+  }
+
+  function render() {
+    const query = (search && search.value || "").trim().toLowerCase();
+    const selectedSort = sort && sort.value || "Most relevant";
+    let rows = items.filter((item) => {
+      const filterText = [item.category, ...(item.compatible_systems || [])].join(" ").toLowerCase();
+      return !filter || filterText.includes(filter.toLowerCase());
+    });
+    if (query) {
+      rows = rows
+        .map((item) => ({ ...item, _score: score(item, query) }))
+        .filter((item) => item._score > 0 || String(item.name || "").toLowerCase().includes(query) || String(item.pain_point || "").toLowerCase().includes(query));
+    }
+    if (selectedSort.includes("Newest")) rows = rows.slice().reverse();
+    else if (query) rows = rows.sort((a, b) => (b._score || 0) - (a._score || 0));
+    grid.innerHTML = rows.map(card).join("") || staticFallbackHtml || '<p class="gr-empty">No guardrail matches that search yet.</p>';
+  }
+
+  fetch(grid.dataset.storePath || "data/guardrail-store.json")
+    .then((response) => response.json())
+    .then((data) => {
+      items = data.items || data;
+      render();
+    })
+    .catch(() => {
+      if (!grid.innerHTML.trim()) {
+        grid.innerHTML = '<p class="gr-empty">Guardrail store data could not load. Product pages remain available from the Guardrail Store navigation.</p>';
+      }
+    });
+
+  if (search) search.addEventListener("input", render);
+  if (sort) sort.addEventListener("change", render);
+  document.querySelectorAll("[data-filter]").forEach((button) => button.addEventListener("click", () => {
+    filter = filter === button.dataset.filter ? "" : button.dataset.filter;
+    document.querySelectorAll("[data-filter]").forEach((item) => item.classList.toggle("active", item === button && filter));
+    render();
+  }));
+
+  document.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-pack-id]");
+    if (!button) return;
+    if (window.AtlasGuardrailCheckout) {
+      window.AtlasGuardrailCheckout.start(button.dataset.packId, button);
+    } else {
+      button.dataset.exactGate = "stripe_checkout_script_missing";
+      button.setAttribute("aria-disabled", "true");
+      button.textContent = "Stripe checkout is being activated";
+    }
+  });
+})();
