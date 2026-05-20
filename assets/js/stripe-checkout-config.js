@@ -6,9 +6,10 @@
     canonicalTarget: "https://atlasops.io",
     workerUrl: "",
     mode: "test_pending_worker_secrets",
-    exactGate: "stripe_worker_url_missing|stripe_key_rotation_required|stripe_worker_secrets_missing",
+    exactGate: "stripe_worker_url_missing|stripe_key_rotation_required|stripe_worker_secrets_missing|stripe_worker_storage_binding_missing",
     checkoutSessionIsPaymentProof: false,
     successPageUnlocksDelivery: false,
     deliveryRequiresVerifiedStripeEvidence: true
   });
 })();
+
