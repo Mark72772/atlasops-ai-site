@@ -18,3 +18,5 @@ node_modules/
 .cache/
 .wrangler/
 cloudflare/**/.wrangler/
+cloudflare/stripe-gateway/*redacted*.json
+cloudflare/stripe-gateway/*redacted*.txt
