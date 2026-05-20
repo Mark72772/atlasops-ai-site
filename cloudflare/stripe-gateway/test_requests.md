@@ -11,4 +11,4 @@ curl -X POST https://<worker-host>/stripe/create-checkout-session \
 curl -H "X-Atlas-Relay-Secret: <configured-locally-not-in-chat>" https://<worker-host>/admin/payments
 ```
 
-Unsigned webhook events must be rejected by `/stripe/webhook`. A Checkout Session URL, payment link, or success redirect is never payment evidence.
+Unsigned webhook events must be rejected by `/stripe/webhook`. Signed test webhook events should be stored in the `ATLAS_PAYMENTS` KV namespace. A Checkout Session URL, payment link, or success redirect is never payment evidence.

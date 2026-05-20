@@ -10,10 +10,14 @@ Required Worker secrets:
 - `STRIPE_WEBHOOK_SECRET`
 - `ATLAS_RELAY_SECRET`
 
+Required evidence storage:
+
+- Cloudflare KV namespace binding `ATLAS_PAYMENTS`
+
 Optional Worker public config:
 
 - `STRIPE_PUBLISHABLE_KEY`
 
 Admin evidence endpoints require `X-Atlas-Relay-Secret`. Checkout URLs and success redirects are not payment evidence; Atlas marks payment verified only from signed Stripe evidence.
 
-The Worker is complete for Sprint 78 but remains exact-gated until Mark rotates the exposed live key and installs secrets with `wrangler secret put`. Do not paste secrets into chat or commit them to this repo.
+The Worker is complete for Sprint 78B but remains exact-gated until Mark rotates the exposed live key, installs secrets with `wrangler secret put`, creates the `ATLAS_PAYMENTS` KV namespace, deploys the Worker, and saves the Worker URL in local Atlas config. Do not paste secrets into chat or commit them to this repo.

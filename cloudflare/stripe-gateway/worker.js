@@ -1,4 +1,4 @@
-const WORKER_VERSION = "sprint-78-stripe-gateway-v3";
+const WORKER_VERSION = "sprint-78b-stripe-gateway-v1";
 const RATE_LIMIT_WINDOW_MS = 60_000;
 const RATE_LIMIT_MAX = 30;
 const memoryRateLimit = new Map();
@@ -88,6 +88,21 @@ const SERVICE_CATALOG = {
   server_rdp_hardening_review: {
     name: "Server/RDP Hardening Review",
     amount: 29900,
+    currency: "usd"
+  },
+  guardrail_setup_review: {
+    name: "Guardrail Setup Review",
+    amount: 19900,
+    currency: "usd"
+  },
+  custom_agent_workflow_guardrail: {
+    name: "Custom Agent Workflow Guardrail",
+    amount: 49900,
+    currency: "usd"
+  },
+  business_agent_reliability_system: {
+    name: "Business Agent Reliability System",
+    amount: 99900,
     currency: "usd"
   }
 };
@@ -282,19 +297,21 @@ function evidenceFromEvent(event) {
 }
 
 async function storeEvidence(env, evidence) {
-  if (env.PAYMENT_EVENTS && env.PAYMENT_EVENTS.put) {
-    await env.PAYMENT_EVENTS.put(evidence.event_id, JSON.stringify(evidence));
+  const store = env.ATLAS_PAYMENTS || env.PAYMENT_EVENTS;
+  if (store && store.put) {
+    await store.put(evidence.event_id, JSON.stringify(evidence));
   } else {
     memoryEvents.set(evidence.event_id, evidence);
   }
 }
 
 async function listEvidence(env) {
-  if (env.PAYMENT_EVENTS && env.PAYMENT_EVENTS.list) {
-    const keys = await env.PAYMENT_EVENTS.list({ limit: 100 });
+  const store = env.ATLAS_PAYMENTS || env.PAYMENT_EVENTS;
+  if (store && store.list) {
+    const keys = await store.list({ limit: 100 });
     const rows = [];
     for (const key of keys.keys) {
-      const value = await env.PAYMENT_EVENTS.get(key.name, "json");
+      const value = await store.get(key.name, "json");
       if (value) rows.push(value);
     }
     return rows;
