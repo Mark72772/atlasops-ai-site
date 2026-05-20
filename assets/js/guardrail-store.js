@@ -37,8 +37,9 @@
       <div class="meta"><span>$${escapeHtml(item.price || 99)}</span><span>Stripe Checkout</span></div>
       <div class="card-actions">
         <a href="${detailUrl}">Details</a>
-        <button type="button" data-pack-id="${escapeHtml(item.pack_id)}" data-checkout-provider="stripe" data-exact-gate="stripe_worker_url_missing">Buy $99 Guardrail Kit</button>
+        <button type="button" data-pack-id="${escapeHtml(item.pack_id)}" data-payment-provider="stripe" data-checkout-gate="stripe_worker_url_missing">Buy $99 Guardrail Kit</button>
       </div>
+      <p class="checkout-note" data-checkout-gate="stripe_worker_url_missing">Stripe checkout is being activated. Contact AtlasOps to purchase now.</p>
     </article>`;
   }
 
@@ -85,9 +86,10 @@
     if (window.AtlasGuardrailCheckout) {
       window.AtlasGuardrailCheckout.start(button.dataset.packId, button);
     } else {
-      button.dataset.exactGate = "stripe_checkout_script_missing";
+      button.dataset.checkoutGate = "stripe_checkout_script_missing";
       button.setAttribute("aria-disabled", "true");
       button.textContent = "Stripe checkout is being activated";
     }
   });
 })();
+

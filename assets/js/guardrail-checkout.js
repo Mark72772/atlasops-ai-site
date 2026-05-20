@@ -17,8 +17,8 @@
 
   function setGate(button, gate, message) {
     if (button) {
-      button.dataset.exactGate = gate;
-      button.dataset.checkoutProvider = "stripe";
+      button.dataset.checkoutGate = gate;
+      button.dataset.paymentProvider = "stripe";
       button.setAttribute("aria-disabled", "true");
       button.textContent = "Stripe checkout is being activated";
     }

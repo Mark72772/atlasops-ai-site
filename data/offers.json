@@ -7,6 +7,13 @@
     "checkout": "Stripe only through Guardrail Store Worker when configured"
   },
   {
+    "name": "Tool Packs for Agent Builders",
+    "slug": "tool-packs-for-agent-builders",
+    "price": "$99 each",
+    "url": "index.html#tool-packs",
+    "checkout": "Stripe only through Guardrail Store Worker when configured"
+  },
+  {
     "name": "AI Website SEO + AI Visibility Audit",
     "slug": "ai-website-seo-visibility-audit",
     "price": "$199",

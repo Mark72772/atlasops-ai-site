@@ -9,6 +9,15 @@
     "checkout_policy": "Stripe only through Guardrail Store Worker when configured"
   },
   {
+    "name": "Tool Packs for Agent Builders",
+    "slug": "tool-packs-for-agent-builders",
+    "price": "$99 each",
+    "helps": "Infrastructure-style workflow packs for Codex, Claude Code, OpenClaw, RAG, Stripe, AI SEO, SaaS, social, and research workflows.",
+    "deliverables": "Workflow controls, proof requirements, exact gates, and a practical next action.",
+    "url": "index.html#tool-packs",
+    "checkout_policy": "Stripe only through Guardrail Store Worker when configured"
+  },
+  {
     "name": "AI Website SEO + AI Visibility Audit",
     "slug": "ai-website-seo-visibility-audit",
     "price": "$199",
