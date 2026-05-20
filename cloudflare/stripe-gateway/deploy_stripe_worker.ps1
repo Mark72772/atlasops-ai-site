@@ -2,8 +2,8 @@ param()
 $ErrorActionPreference = "Stop"
 $WorkerDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 Set-Location $WorkerDir
-Write-Host "Deploying atlasops-stripe-gateway. No secret values are printed by this script."
-$whoami = npx wrangler whoami 2>&1
+Write-Host "Deploying atlasops-stripe-gateway. Secret values are not printed."
+npx wrangler whoami | Out-Null
 $deploy = npx wrangler deploy 2>&1
 $deploy | Tee-Object -FilePath ".\stripe-worker-deploy-output.redacted.txt"
 $workerUrl = $null
@@ -12,9 +12,6 @@ foreach ($line in $deploy) {
 }
 $report = [ordered]@{
   generated_at = (Get-Date).ToUniversalTime().ToString("o")
-  worker_dir = $WorkerDir
-  wrangler_whoami_ran = $true
-  deploy_ran = $true
   worker_url_captured = [bool]$workerUrl
   worker_url = $workerUrl
   secret_values_printed = $false
