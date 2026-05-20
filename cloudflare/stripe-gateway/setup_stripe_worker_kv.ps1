@@ -1,9 +1,10 @@
 param()
 $ErrorActionPreference = "Stop"
+$PSNativeCommandUseErrorActionPreference = $false
 $WorkerDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 Set-Location $WorkerDir
 Write-Host "Creating or binding Cloudflare KV namespace ATLAS_PAYMENTS. No secrets are requested by this script."
-$output = npx wrangler kv namespace create ATLAS_PAYMENTS 2>&1
+$output = cmd /c "npx wrangler kv namespace create ATLAS_PAYMENTS 2>&1"
 $output | Tee-Object -FilePath ".\stripe-worker-kv-create-output.redacted.txt"
 $namespaceId = $null
 foreach ($line in $output) {
