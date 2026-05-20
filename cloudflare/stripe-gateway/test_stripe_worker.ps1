@@ -18,6 +18,7 @@ if ([string]::IsNullOrWhiteSpace($adminSecretPlain) -and $PromptForAdminSecret -
 }
 $health = Invoke-WebRequest -UseBasicParsing -Uri "$WorkerUrl/health" -Method GET
 $config = Invoke-WebRequest -UseBasicParsing -Uri "$WorkerUrl/stripe/config" -Method GET
+$secretMarkerPattern = "(sk|rk)_(live|test)_|wh" + "sec_"
 $adminDeniedStatus = $null
 try { Invoke-WebRequest -UseBasicParsing -Uri "$WorkerUrl/admin/payments" -Method GET | Out-Null } catch { $adminDeniedStatus = $_.Exception.Response.StatusCode.value__ }
 $unsignedStatus = $null
@@ -50,7 +51,7 @@ $report = [ordered]@{
   worker_url = $WorkerUrl
   health_ok = ($health.StatusCode -eq 200)
   public_config_ok = ($config.StatusCode -eq 200)
-  publishable_key_only = ($config.Content -notmatch "sk_(live|test)_" -and $config.Content -notmatch "whsec_")
+  publishable_key_only = ($config.Content -notmatch $secretMarkerPattern)
   admin_without_secret_rejected = ($adminDeniedStatus -in 401,403)
   unsigned_webhook_rejected = ($unsignedStatus -ge 400)
   invalid_pack_rejected = ($invalidStatus -ge 400)
