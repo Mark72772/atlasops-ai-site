@@ -172,6 +172,31 @@ function formEncode(payload) {
   return params;
 }
 
+function secretMode(env) {
+  const key = String(env.STRIPE_SECRET_KEY || "");
+  if (!key) return "missing";
+  if (key.startsWith("sk_live_") || key.startsWith("rk_live_")) return "live";
+  if (key.startsWith("sk_test_") || key.startsWith("rk_test_")) return "test";
+  return "unknown";
+}
+
+function checkoutModePolicy(env) {
+  const configuredMode = String(env.STRIPE_MODE || "test").toLowerCase();
+  const keyMode = secretMode(env);
+  if (keyMode === "missing") return { ok: false, status: "stripe_worker_secrets_missing" };
+  if (keyMode === "unknown") return { ok: false, status: "stripe_secret_mode_unknown" };
+  if (configuredMode === "test" && keyMode === "live") {
+    return { ok: false, status: "stripe_live_secret_configured_while_worker_mode_test" };
+  }
+  if (configuredMode === "live" && keyMode === "test") {
+    return { ok: false, status: "stripe_test_secret_configured_while_worker_mode_live" };
+  }
+  if (keyMode === "live" && String(env.STRIPE_LIVE_CHECKOUT_APPROVED || "").toLowerCase() !== "true") {
+    return { ok: false, status: "stripe_live_checkout_requires_mark_approval" };
+  }
+  return { ok: true, status: "stripe_checkout_mode_policy_passed", mode: configuredMode };
+}
+
 function checkoutSessionSnapshot(session) {
   const metadata = session.metadata || {};
   return {
@@ -200,7 +225,11 @@ function checkoutSessionSnapshot(session) {
 
 async function createCheckoutSession(request, env) {
   if (!rateLimit(request)) return json({ ok: false, status: "rate_limited" }, 429);
-  if (!env.STRIPE_SECRET_KEY) return json({ ok: false, status: "stripe_worker_secrets_missing" }, 503);
+  const modePolicy = checkoutModePolicy(env);
+  if (!modePolicy.ok) {
+    const status = modePolicy.status === "stripe_worker_secrets_missing" ? 503 : 409;
+    return json({ ok: false, status: modePolicy.status, payment_verified: false, delivery_requires_verified_payment: true }, status);
+  }
   const body = await request.json().catch(() => ({}));
   const packId = String(body.pack_id || body.service_id || "");
   const service = serviceFor(body.service_id) || serviceFor(packId);
@@ -432,7 +461,7 @@ async function handle(request, env) {
   const url = new URL(request.url);
   if (request.method === "OPTIONS") return withCors(request, new Response(null, { status: 204 }), env);
   if (url.pathname === "/health") return json({ ok: true, status: "atlasops_stripe_gateway_online", version: WORKER_VERSION, local_runtime_exposed: false });
-  if (url.pathname === "/stripe/config") return withCors(request, json({ ok: true, publishableKey: env.STRIPE_PUBLISHABLE_KEY || "", mode: env.STRIPE_MODE || "test" }), env);
+  if (url.pathname === "/stripe/config") return withCors(request, json({ ok: true, publishableKey: env.STRIPE_PUBLISHABLE_KEY || "", mode: env.STRIPE_MODE || "test", liveCheckoutApproved: String(env.STRIPE_LIVE_CHECKOUT_APPROVED || "").toLowerCase() === "true" }), env);
   if (url.pathname === "/stripe/create-checkout-session" && request.method === "POST") return withCors(request, await createCheckoutSession(request, env), env);
   if (url.pathname === "/stripe/create-payment-link" && request.method === "POST") return withCors(request, await createPaymentLink(request, env), env);
   if (url.pathname === "/stripe/webhook" && request.method === "POST") return webhook(request, env);
