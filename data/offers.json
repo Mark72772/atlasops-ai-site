@@ -7,6 +7,13 @@
     "checkout": "Stripe-only Guardrail Store checkout when Worker activation is complete"
   },
   {
+    "name": "Agent Company Templates",
+    "price": "$199 each",
+    "description": "Company-level templates with org chart, tickets, routines, budgets, skills, QA review, governance, setup instructions, exact gates, and acceptance contracts for agent teams.",
+    "url": "insights/what-paperclip-teaches-about-running-ai-agents-like-a-company.html",
+    "checkout": "Stripe where configured or scoped setup review"
+  },
+  {
     "name": "AI Website SEO + AI Visibility Audit",
     "price": "$199",
     "description": "A public-site clarity review for people, Google, and AI answer engines.",

@@ -400,7 +400,7 @@
       "status": "ready",
       "category": "Stripe / Payments",
       "detail_url": "guardrails/stripe-payment-proof-guardrail.html",
-      "content": "Stripe Payment Proof Guardrail Teams count checkout links or success pages as paid even when no verified Stripe event exists. Stripe / Payments Stripe Checkout Payment Links Webhooks Reports payment link counted as evidence success redirect counted as paid report unlock without payment fake revenue",
+      "content": "Stripe Payment Proof Guardrail Teams count checkout links or success pages as paid even when no verified Stripe event exists. Stripe / Payments Stripe Checkout Payment Links Webhooks Reports payment link counted as evidence success redirect counted as paid report unlock without payment unsupported revenue claims",
       "canonical_product_url": "https://atlasops.io/guardrails/stripe-payment-proof-guardrail.html",
       "fallback_product_url": "https://mark72772.github.io/atlasops-ai-site/guardrails/stripe-payment-proof-guardrail.html",
       "checkout_button_id": "buy_stripe_payment_proof_guardrail",
@@ -497,8 +497,35 @@
   "primary_payment_provider": "stripe",
   "cloud9_status": "deprecated_or_disabled",
   "disclaimer": "AtlasOps Guardrail Kits are independent workflow kits. They are not official products of OpenAI, Anthropic, OpenClaw, NVIDIA, IBM, CoreStory, LinkedIn, X, Stripe, or any other referenced platform.",
+  "agent_company_templates": [
+    {
+      "template_id": "agent-company-templates",
+      "name": "Agent Company Templates",
+      "price": 199,
+      "description": "Company-level templates with org charts, tickets, routines, budgets, skills, QA review, governance, and acceptance contracts."
+    },
+    {
+      "template_id": "guardrail-store-operator-company",
+      "name": "AtlasOps Guardrail Store Operator Company",
+      "price": 199,
+      "description": "An agent-company template for selling, checking out, fulfilling, and QA-reviewing Guardrail Kits with proof before done."
+    },
+    {
+      "template_id": "stripe-checkout-delivery-company",
+      "name": "Stripe Checkout + Delivery Company",
+      "price": 199,
+      "description": "An agent-company template for Stripe checkout evidence, webhook review, payment-locked download tokens, and email delivery."
+    },
+    {
+      "template_id": "agentic-rag-newsfeed-company",
+      "name": "Agentic RAG Newsfeed Company",
+      "price": 199,
+      "description": "An agent-company template for source-backed newsfeed updates, social candidates, product memory, and QA review."
+    }
+  ],
   "price_tiers": {
     "single_guardrail_kit": 99,
+    "agent_company_template": 199,
     "setup_review": 199,
     "custom_workflow_guardrail": "499+",
     "business_agent_reliability_system": "999+"
