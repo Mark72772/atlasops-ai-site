@@ -1,12 +1,44 @@
 [
   {
-    "offer": "AI Business Automation Audit",
-    "paypal_me_url": "https://www.paypal.me/markWilson385",
-    "tiers": [
-      "Starter Audit: $99",
-      "Workflow Audit + Report: $299",
-      "AI Automation Setup Call: $499",
-      "Custom AI Agent Workflow Build: quote-based"
-    ]
+    "name": "Operational Guardrail Kits",
+    "slug": "operational-guardrail-kits",
+    "price": "$99 each",
+    "url": "guardrails.html",
+    "checkout": "Stripe only through Guardrail Store Worker when configured"
+  },
+  {
+    "name": "AI Website SEO + AI Visibility Audit",
+    "slug": "ai-website-seo-visibility-audit",
+    "price": "$199",
+    "url": "ai-website-seo-visibility-audit.html",
+    "checkout": "card checkout"
+  },
+  {
+    "name": "AI Business Automation Audit",
+    "slug": "ai-business-automation-audit",
+    "price": "$149",
+    "url": "ai-business-automation-audit.html",
+    "checkout": "card checkout"
+  },
+  {
+    "name": "Guardrail Setup Review",
+    "slug": "guardrail-setup-review",
+    "price": "$199",
+    "url": "services.html#guardrail-setup-review",
+    "checkout": "card checkout"
+  },
+  {
+    "name": "Custom Agent Workflow Guardrail",
+    "slug": "custom-agent-workflow-guardrail",
+    "price": "$499+",
+    "url": "services.html#custom-agent-workflow-guardrail",
+    "checkout": "scoped invoice after review"
+  },
+  {
+    "name": "Business Agent Reliability System",
+    "slug": "business-agent-reliability-system",
+    "price": "$999+",
+    "url": "services.html#business-agent-reliability-system",
+    "checkout": "scoped invoice after review"
   }
 ]

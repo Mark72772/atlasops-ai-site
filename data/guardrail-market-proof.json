@@ -1,193 +1,106 @@
 {
-  "sources": [
+  "products": [
     {
-      "source_id": "marketplace_skillsmp_style",
-      "source_name": "SkillsMP-style searchable skill marketplace",
-      "source_url_sanitized": "https://skillsmp.com/",
-      "source_type": "marketplace",
-      "claims": [
-        "Skill marketplaces benefit from categories, searchable cards, filters, and independent disclaimers."
+      "pack_id": "agent-context-intelligence-guardrail",
+      "sources": [
+        "skillsmp-marketplace-model",
+        "ibm-coursera-rag-agentic-ai",
+        "corestory-code-intelligence-context"
       ],
-      "business_meaning": "A guardrail store should behave like a product marketplace, not a folder dump.",
-      "sellable_guardrail_opportunities": [
-        "searchable guardrail store",
-        "pack metadata",
-        "category filters"
-      ],
-      "agents_to_teach": [
-        "Skill Store Agent",
-        "Website Agent",
-        "Social Operator"
-      ],
-      "confidence": 0.72
+      "sections_present": true
     },
     {
-      "source_id": "bluebag_skills_workflow_packages",
-      "source_name": "Bluebag-style skills as structured workflow packages",
-      "source_url_sanitized": "https://bluebag.ai/",
-      "source_type": "article",
-      "claims": [
-        "Skills are structured workflows with progressive disclosure; they are different from one-off prompts."
+      "pack_id": "codex-repo-control-guardrail",
+      "sources": [
+        "skillsmp-marketplace-model",
+        "corestory-code-intelligence-context"
       ],
-      "business_meaning": "AtlasOps should sell operational procedures and proof gates, not magic text.",
-      "sellable_guardrail_opportunities": [
-        "SKILL.md builder",
-        "workflow guardrails",
-        "production consistency checks"
-      ],
-      "agents_to_teach": [
-        "Skill Store Agent",
-        "HERO",
-        "RAG Agent"
-      ],
-      "confidence": 0.7
+      "sections_present": true
     },
     {
-      "source_id": "ibm_rag_agentic_ai_learning_categories",
-      "source_name": "IBM RAG and Agentic AI learning categories",
-      "source_url_sanitized": "https://www.ibm.com/topics/retrieval-augmented-generation",
-      "source_type": "article",
-      "claims": [
-        "RAG grounds generation in retrieved sources; agentic systems add planning, tool use, and validation loops."
+      "pack_id": "claude-code-workflow-guardrail",
+      "sources": [
+        "skillsmp-marketplace-model",
+        "bluebag-agent-skills-production"
       ],
-      "business_meaning": "Guardrails should require source selection, claim validation, and sufficiency checks before public claims.",
-      "sellable_guardrail_opportunities": [
-        "RAG Source Packet Guardrail",
-        "Agentic RAG intake",
-        "claim verifier"
-      ],
-      "agents_to_teach": [
-        "RAG Agent",
-        "Website Agent",
-        "Social Operator"
-      ],
-      "confidence": 0.82
+      "sections_present": true
     },
     {
-      "source_id": "geeksforgeeks_agentic_rag_process",
-      "source_name": "GeeksforGeeks Agentic RAG multi-step process",
-      "source_url_sanitized": "https://www.geeksforgeeks.org/artificial-intelligence/agentic-rag/",
-      "source_type": "article",
-      "claims": [
-        "Agentic RAG can refine queries, select sources, reason over evidence, and improve answers iteratively."
+      "pack_id": "rag-source-packet-guardrail",
+      "sources": [
+        "skillsmp-marketplace-model",
+        "ibm-coursera-rag-agentic-ai",
+        "geeksforgeeks-agentic-rag",
+        "nvidia-nim-rag-agent-docs",
+        "tradepub-ai-industry-discovery"
       ],
-      "business_meaning": "Atlas needs a repeatable memory intake route from sources to products, posts, and agent teaching.",
-      "sellable_guardrail_opportunities": [
-        "Agentic RAG workflow kit",
-        "source packet schema",
-        "sufficiency checker"
-      ],
-      "agents_to_teach": [
-        "RAG Agent",
-        "Learning Agent",
-        "Skill Store Agent"
-      ],
-      "confidence": 0.78
+      "sections_present": true
     },
     {
-      "source_id": "corestory_style_code_intelligence_context",
-      "source_name": "CoreStory-style code intelligence and context proof",
-      "source_url_sanitized": "https://corestory.ai/",
-      "source_type": "blog",
-      "claims": [
-        "Coding agent failure is often context failure; persistent code intelligence can complement AGENTS.md and RAG."
+      "pack_id": "ai-seo-visibility-guardrail",
+      "sources": [
+        "skillsmp-marketplace-model",
+        "thecentral-ai-tutorial-marketplace",
+        "vibe-marketer-productized-workflows",
+        "tradepub-ai-industry-discovery"
       ],
-      "business_meaning": "AtlasOps should position context intelligence guardrails as operating maps for agents.",
-      "sellable_guardrail_opportunities": [
-        "Agent Context Intelligence Guardrail",
-        "Legacy Code Spec Map Starter",
-        "MCP context kit"
-      ],
-      "agents_to_teach": [
-        "Skill Store Agent",
-        "OpenClaw Agent",
-        "RAG Agent"
-      ],
-      "confidence": 0.73
+      "sections_present": true
     },
     {
-      "source_id": "vibe_marketer_practical_ai_tools",
-      "source_name": "Vibe Marketer-style practical AI tools",
-      "source_url_sanitized": "https://vibemarketer.com/",
-      "source_type": "tool_directory",
-      "claims": [
-        "Business users respond to practical tool framing, clear use cases, and fast education around what to do next."
+      "pack_id": "saas-operator-guardrail",
+      "sources": [
+        "skillsmp-marketplace-model",
+        "ai-for-business-practical-language"
       ],
-      "business_meaning": "Guardrail product pages should translate technical failures into plain business outcomes.",
-      "sellable_guardrail_opportunities": [
-        "AI for Business Owners posts",
-        "education-first product copy",
-        "setup review upsell"
-      ],
-      "agents_to_teach": [
-        "Social Operator",
-        "Revenue Agent",
-        "Website Agent"
-      ],
-      "confidence": 0.68
+      "sections_present": true
     },
     {
-      "source_id": "thecentral_marketplace_tutorial_ux",
-      "source_name": "TheCentral-style AI tutorial and marketplace UX",
-      "source_url_sanitized": "https://www.thecentral.ai/",
-      "source_type": "tool_directory",
-      "claims": [
-        "Readable tutorials and searchable tool listings lower adoption friction for non-specialist buyers."
+      "pack_id": "stock-research-guardrail",
+      "sources": [
+        "skillsmp-marketplace-model",
+        "geeksforgeeks-agentic-rag"
       ],
-      "business_meaning": "The store needs search by pain point, role, platform, and failure mode.",
-      "sellable_guardrail_opportunities": [
-        "guided pack discovery",
-        "role filters",
-        "how-to install steps"
-      ],
-      "agents_to_teach": [
-        "Website Agent",
-        "Social Operator"
-      ],
-      "confidence": 0.68
+      "sections_present": true
     },
     {
-      "source_id": "nvidia_docs_source_hub",
-      "source_name": "NVIDIA docs source hub",
-      "source_url_sanitized": "https://docs.nvidia.com/",
-      "source_type": "docs",
-      "claims": [
-        "NVIDIA documentation is a source hub for NIM, RAG, AI agents, GPU inference, multimodal workflows, CUDA, and AI Enterprise topics."
+      "pack_id": "social-publishing-guardrail",
+      "sources": [
+        "skillsmp-marketplace-model",
+        "vibe-marketer-productized-workflows"
       ],
-      "business_meaning": "Atlas should store NVIDIA as a hub and select exact relevant docs later, not ingest the docs root blindly.",
-      "sellable_guardrail_opportunities": [
-        "enterprise AI workflow source packet",
-        "GPU inference source lane"
-      ],
-      "agents_to_teach": [
-        "RAG Agent",
-        "Website Agent",
-        "OpenClaw Agent"
-      ],
-      "confidence": 0.76
+      "sections_present": true
     },
     {
-      "source_id": "tradepub_product_research_tools_sanitized",
-      "source_name": "AI tools for product research / product insight workflow",
-      "source_url_sanitized": "https://www.tradepub.com/",
-      "source_type": "internal",
-      "claims": [
-        "Sanitized market proof: buyers search for AI tooling that helps with product research and product insight workflows."
+      "pack_id": "git-deploy-safety-guardrail",
+      "sources": [
+        "skillsmp-marketplace-model"
       ],
-      "business_meaning": "Guardrail packs should include product research and proof-intake angles without storing tracked private URLs.",
-      "sellable_guardrail_opportunities": [
-        "RAG source packet kit",
-        "market proof registry",
-        "AI tools discovery guardrail"
+      "sections_present": true
+    },
+    {
+      "pack_id": "stripe-payment-proof-guardrail",
+      "sources": [
+        "skillsmp-marketplace-model"
       ],
-      "agents_to_teach": [
-        "Skill Store Agent",
-        "Revenue Agent",
-        "HERO"
+      "sections_present": true
+    },
+    {
+      "pack_id": "openclaw-integration-guardrail",
+      "sources": [
+        "skillsmp-marketplace-model",
+        "nvidia-nim-rag-agent-docs"
       ],
-      "confidence": 0.66,
-      "raw_sensitive_url_stored": false
+      "sections_present": true
+    },
+    {
+      "pack_id": "agent-daily-operations-guardrail",
+      "sources": [
+        "skillsmp-marketplace-model",
+        "bluebag-agent-skills-production",
+        "thecentral-ai-tutorial-marketplace",
+        "ai-for-business-practical-language"
+      ],
+      "sections_present": true
     }
-  ],
-  "raw_sensitive_url_stored": false
+  ]
 }

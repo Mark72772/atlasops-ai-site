@@ -1,29 +1,56 @@
 [
   {
-    "name": "AI Business Automation Audit",
-    "slug": "ai-business-automation-audit",
-    "price": "$149",
-    "helps": "Service businesses with manual intake, follow-up, scheduling, estimate, reminder, or content handoff work.",
-    "deliverables": "Workflow map, bottleneck notes, automation opportunities, approval points, and 30-day action plan.",
-    "url": "ai-business-automation-audit.html",
-    "checkout_url": "checkout.html?service=ai_business_automation_audit"
+    "name": "Operational Guardrail Kits",
+    "slug": "operational-guardrail-kits",
+    "price": "$99 each",
+    "helps": "Twelve $99 kits for agent context, Codex control, RAG validation, social publishing, Stripe payment proof, Git deploy safety, and daily operations.",
+    "deliverables": "Clear scope, exact gates, and practical next action.",
+    "url": "guardrails.html",
+    "checkout_policy": "Stripe only through Guardrail Store Worker when configured"
   },
   {
     "name": "AI Website SEO + AI Visibility Audit",
     "slug": "ai-website-seo-visibility-audit",
     "price": "$199",
-    "helps": "Service businesses that want public website pages to be clearer for people, Google, and AI answer engines.",
-    "deliverables": "Service-page clarity review, FAQ gaps, proof/trust signal review, CTA clarity, and 30-day visibility plan.",
+    "helps": "A public-site clarity review for people, Google, and AI answer engines.",
+    "deliverables": "Clear scope, exact gates, and practical next action.",
     "url": "ai-website-seo-visibility-audit.html",
-    "checkout_url": "checkout.html?service=ai_website_seo_visibility_audit"
+    "checkout_policy": "card checkout"
   },
   {
-    "name": "Automation + AI Visibility Bundle",
-    "slug": "automation-plus-ai-visibility-bundle",
-    "price": "$299",
-    "helps": "Owners who need one workflow automation plan and a clearer website story at the same time.",
-    "deliverables": "Automation audit plus AI visibility audit combined into one prioritized 30-day plan.",
-    "url": "automation-plus-ai-visibility-bundle.html",
-    "checkout_url": "checkout.html?service=automation_plus_ai_visibility_bundle"
+    "name": "AI Business Automation Audit",
+    "slug": "ai-business-automation-audit",
+    "price": "$149",
+    "helps": "A practical workflow map for intake, follow-up, scheduling, estimates, reminders, and handoffs.",
+    "deliverables": "Clear scope, exact gates, and practical next action.",
+    "url": "ai-business-automation-audit.html",
+    "checkout_policy": "card checkout"
+  },
+  {
+    "name": "Guardrail Setup Review",
+    "slug": "guardrail-setup-review",
+    "price": "$199",
+    "helps": "A setup review that checks whether an installed Guardrail Kit blocks the right failure modes.",
+    "deliverables": "Clear scope, exact gates, and practical next action.",
+    "url": "services.html#guardrail-setup-review",
+    "checkout_policy": "card checkout"
+  },
+  {
+    "name": "Custom Agent Workflow Guardrail",
+    "slug": "custom-agent-workflow-guardrail",
+    "price": "$499+",
+    "helps": "A custom workflow guardrail for one business process, agent route, or team playbook.",
+    "deliverables": "Clear scope, exact gates, and practical next action.",
+    "url": "services.html#custom-agent-workflow-guardrail",
+    "checkout_policy": "scoped invoice after review"
+  },
+  {
+    "name": "Business Agent Reliability System",
+    "slug": "business-agent-reliability-system",
+    "price": "$999+",
+    "helps": "A larger reliability layer for teams that need multiple guardrails, proof states, and operator review loops.",
+    "deliverables": "Clear scope, exact gates, and practical next action.",
+    "url": "services.html#business-agent-reliability-system",
+    "checkout_policy": "scoped invoice after review"
   }
 ]

@@ -1,0 +1,128 @@
+{
+  "source_count": 10,
+  "sources": [
+    {
+      "source_id": "skillsmp-marketplace-model",
+      "source_name": "SkillsMP",
+      "source_url_sanitized": "https://skillsmp.com/categories",
+      "business_meaning": "Guardrail Kits should be browseable as products, not hidden as implementation notes.",
+      "guardrail_products_supported": [
+        "agent-context-intelligence-guardrail",
+        "codex-repo-control-guardrail",
+        "claude-code-workflow-guardrail",
+        "rag-source-packet-guardrail",
+        "ai-seo-visibility-guardrail",
+        "saas-operator-guardrail",
+        "stock-research-guardrail",
+        "social-publishing-guardrail",
+        "git-deploy-safety-guardrail",
+        "stripe-payment-proof-guardrail",
+        "openclaw-integration-guardrail",
+        "agent-daily-operations-guardrail"
+      ],
+      "exact_gate": null
+    },
+    {
+      "source_id": "bluebag-agent-skills-production",
+      "source_name": "Bluebag Agent Skills material",
+      "source_url_sanitized": "https://www.bluebag.ai/blog",
+      "business_meaning": "Atlas should explain Guardrail Kits as operating controls with files, tests, and evidence rules.",
+      "guardrail_products_supported": [
+        "claude-code-workflow-guardrail",
+        "agent-daily-operations-guardrail"
+      ],
+      "exact_gate": null
+    },
+    {
+      "source_id": "thecentral-ai-tutorial-marketplace",
+      "source_name": "TheCentral.ai",
+      "source_url_sanitized": "https://thecentral.ai/",
+      "business_meaning": "Guardrail Store pages should make the next action obvious and avoid hiding products behind JavaScript.",
+      "guardrail_products_supported": [
+        "ai-seo-visibility-guardrail",
+        "agent-daily-operations-guardrail"
+      ],
+      "exact_gate": null
+    },
+    {
+      "source_id": "vibe-marketer-productized-workflows",
+      "source_name": "The Vibe Marketer",
+      "source_url_sanitized": "https://www.thevibemarketer.com/",
+      "business_meaning": "Atlas should package social and marketing guardrails in business-owner language.",
+      "guardrail_products_supported": [
+        "social-publishing-guardrail",
+        "ai-seo-visibility-guardrail"
+      ],
+      "exact_gate": null
+    },
+    {
+      "source_id": "ibm-coursera-rag-agentic-ai",
+      "source_name": "IBM RAG and Agentic AI Professional Certificate",
+      "source_url_sanitized": "https://www.coursera.org/professional-certificates/ibm-rag-and-agentic-ai/",
+      "business_meaning": "RAG Source Packet Guardrail can be sold as a source-validation workflow, not as generic AI advice.",
+      "guardrail_products_supported": [
+        "rag-source-packet-guardrail",
+        "agent-context-intelligence-guardrail"
+      ],
+      "exact_gate": null
+    },
+    {
+      "source_id": "geeksforgeeks-agentic-rag",
+      "source_name": "GeeksForGeeks Agentic RAG",
+      "source_url_sanitized": "https://www.geeksforgeeks.org/artificial-intelligence/what-is-agentic-rag/",
+      "business_meaning": "Atlas should require retrieval planning, source checks, and review gates before RAG output counts.",
+      "guardrail_products_supported": [
+        "rag-source-packet-guardrail",
+        "stock-research-guardrail"
+      ],
+      "exact_gate": null
+    },
+    {
+      "source_id": "nvidia-nim-rag-agent-docs",
+      "source_name": "NVIDIA NIM and RAG docs",
+      "source_url_sanitized": "https://docs.nvidia.com/nim/index.html",
+      "business_meaning": "Atlas should treat NVIDIA docs as a future technical hub, not ingest the whole docs tree blindly.",
+      "guardrail_products_supported": [
+        "openclaw-integration-guardrail",
+        "rag-source-packet-guardrail"
+      ],
+      "exact_gate": null
+    },
+    {
+      "source_id": "corestory-code-intelligence-context",
+      "source_name": "CoreStory AI public material",
+      "source_url_sanitized": "https://corestory.ai/",
+      "business_meaning": "Agent Context Intelligence and Codex Repo Control are sellable pain-point products.",
+      "guardrail_products_supported": [
+        "agent-context-intelligence-guardrail",
+        "codex-repo-control-guardrail"
+      ],
+      "exact_gate": null
+    },
+    {
+      "source_id": "ai-for-business-practical-language",
+      "source_name": "AI for Business public material",
+      "source_url_sanitized": "https://summitridgeai.com/",
+      "business_meaning": "Atlas offers should stay clear, priced, and outcome-first for business owners.",
+      "guardrail_products_supported": [
+        "saas-operator-guardrail",
+        "agent-daily-operations-guardrail"
+      ],
+      "exact_gate": "ai_for_business_exact_source_name_ambiguous"
+    },
+    {
+      "source_id": "tradepub-ai-industry-discovery",
+      "source_name": "TradePub tracked URL",
+      "source_url_sanitized": "https://www.tradepub.com/",
+      "business_meaning": "Atlas must sanitize tracked URLs before memory intake or market proof use.",
+      "guardrail_products_supported": [
+        "rag-source-packet-guardrail",
+        "ai-seo-visibility-guardrail"
+      ],
+      "exact_gate": "tradepub_tracked_url_not_provided"
+    }
+  ],
+  "raw_sensitive_url_stored": false,
+  "no_competitor_copy": true,
+  "no_affiliation_claims": true
+}
