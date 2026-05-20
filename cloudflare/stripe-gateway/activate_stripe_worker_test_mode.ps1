@@ -12,8 +12,9 @@ $ExpectedWorkerName = "atlasops-stripe-gateway"
 $WebhookUrl = $WorkerUrl.TrimEnd("/") + "/stripe/webhook"
 $RuntimeSecretDir = "G:\Open Atlas AI\ATLAS\runtime-data\payments\stripe"
 $RelaySecretDpapiPath = Join-Path $RuntimeSecretDir "atlas-worker-relay-secret.dpapi"
-$ExecutionReportPath = "G:\Open Atlas AI\ATLAS\atlas-runtime\atlas_runtime\reports\sprint_86_one_click_activation_execution_report.json"
+$ExecutionReportPath = "G:\Open Atlas AI\ATLAS\atlas-runtime\atlas_runtime\reports\sprint_87_one_click_activation_execution_report.json"
 $LocalReportPath = Join-Path $WorkerDir "stripe-one-click-activation.redacted.json"
+$ChatExposedFingerprintPath = Join-Path $RuntimeSecretDir "chat-exposed-key-fingerprints.json"
 $StripeApiVersion = "2026-02-25.clover"
 $SecretMarkerPattern = "(sk|rk)_(live|test)_|wh" + "sec_"
 
@@ -121,6 +122,42 @@ function ConvertFrom-SecureStringInMemory([SecureString]$Secret) {
   finally { [Runtime.InteropServices.Marshal]::ZeroFreeBSTR($bstr) }
 }
 
+function Get-SecretFingerprint([string]$Secret) {
+  $sha = [Security.Cryptography.SHA256]::Create()
+  try {
+    $bytes = [Text.Encoding]::UTF8.GetBytes($Secret)
+    $hash = $sha.ComputeHash($bytes)
+    return ([BitConverter]::ToString($hash)).Replace("-", "").ToLowerInvariant()
+  } finally {
+    $sha.Dispose()
+  }
+}
+
+function Get-RejectedKeyFingerprints {
+  $fingerprints = New-Object System.Collections.Generic.HashSet[string]
+  if (-not (Test-Path -LiteralPath $ChatExposedFingerprintPath)) { return $fingerprints }
+  try {
+    $payload = Get-Content -LiteralPath $ChatExposedFingerprintPath -Raw | ConvertFrom-Json
+    foreach ($record in @($payload.records)) {
+      if ($record.status -like "rejected*" -and -not [string]::IsNullOrWhiteSpace([string]$record.fingerprint_sha256)) {
+        [void]$fingerprints.Add([string]$record.fingerprint_sha256)
+      }
+    }
+  } catch {
+    Add-Step "read_chat_exposed_key_fingerprints" $false "chat_exposed_key_fingerprint_store_unreadable" @{ error = $_.Exception.Message }
+  }
+  return $fingerprints
+}
+
+function Assert-NotChatExposedStripeKey([string]$PlainSecret) {
+  $fingerprints = Get-RejectedKeyFingerprints
+  $fingerprint = Get-SecretFingerprint $PlainSecret
+  if ($fingerprints.Contains($fingerprint)) {
+    throw "stripe_test_key_pasted_in_chat_rejected"
+  }
+  Add-Step "check_chat_exposed_key_fingerprint_denylist" $true $null @{ denylist_count = $fingerprints.Count; matched = $false }
+}
+
 function Read-TestStripeSecret {
   Write-Host ""
   Write-Host "Paste Stripe TEST secret key here. Do NOT paste it into chat."
@@ -148,6 +185,7 @@ function Read-TestStripeSecret {
         Write-Host "That key prefix is not accepted for test mode."
         continue
       }
+      Assert-NotChatExposedStripeKey $plain
       Write-Host "Test key prefix accepted. Secret value will not be printed or written."
       return $plain
     } catch {
