@@ -172,6 +172,32 @@ function formEncode(payload) {
   return params;
 }
 
+function checkoutSessionSnapshot(session) {
+  const metadata = session.metadata || {};
+  return {
+    id: session.id || null,
+    object: session.object || null,
+    mode: session.mode || null,
+    status: session.status || null,
+    payment_status: session.payment_status || null,
+    livemode: Boolean(session.livemode),
+    amount_total: session.amount_total ?? null,
+    currency: session.currency || null,
+    payment_intent: session.payment_intent || null,
+    metadata: {
+      order_id: metadata.order_id || null,
+      pack_id: metadata.pack_id || null,
+      service_id: metadata.service_id || null,
+      service_type: metadata.service_type || null,
+      amount_cents: metadata.amount_cents || null,
+      currency: metadata.currency || null,
+      delivery_requires_verified_payment: metadata.delivery_requires_verified_payment || null
+    },
+    url_present: Boolean(session.url),
+    url_is_payment_proof: false
+  };
+}
+
 async function createCheckoutSession(request, env) {
   if (!rateLimit(request)) return json({ ok: false, status: "rate_limited" }, 429);
   if (!env.STRIPE_SECRET_KEY) return json({ ok: false, status: "stripe_worker_secrets_missing" }, 503);
@@ -241,7 +267,12 @@ async function createCheckoutSession(request, env) {
     checkout_url: data.url,
     url: data.url,
     session_id: data.id,
+    checkout_session: checkoutSessionSnapshot(data),
+    checkout_session_url_is_payment_proof: false,
+    checkout_success_redirect_is_payment_proof: false,
+    payment_proof_required: "signed_stripe_webhook_event",
     payment_verified: false,
+    live_revenue_cents: 0,
     delivery_requires_verified_payment: true
   });
 }
@@ -275,9 +306,60 @@ async function verifyStripeSignature(rawBody, header, secret) {
   return v1.includes(digest);
 }
 
+function checkoutEvidenceReview(event, obj, metadata, amountTotal, currency, paymentStatus, checkoutStatus) {
+  const reasons = [];
+  const isCheckoutCompleted = event.type === "checkout.session.completed";
+  if (!isCheckoutCompleted) {
+    reasons.push("non_checkout_session_completed_event_requires_reconciliation");
+  }
+  if (isCheckoutCompleted && obj.object !== "checkout.session") {
+    reasons.push("event_object_not_checkout_session");
+  }
+  if (isCheckoutCompleted && checkoutStatus !== "complete") {
+    reasons.push("checkout_session_not_complete");
+  }
+  if (isCheckoutCompleted && paymentStatus !== "paid") {
+    reasons.push("checkout_session_payment_status_not_paid");
+  }
+  const requiredMetadata = ["order_id", "amount_cents", "currency", "delivery_requires_verified_payment"];
+  for (const key of requiredMetadata) {
+    if (!metadata[key]) reasons.push(`missing_metadata_${key}`);
+  }
+  const expectedAmount = Number.parseInt(metadata.amount_cents || "", 10);
+  if (!Number.isFinite(expectedAmount) || expectedAmount !== Number(amountTotal)) {
+    reasons.push("amount_total_metadata_mismatch");
+  }
+  if (String(metadata.currency || "").toLowerCase() !== currency) {
+    reasons.push("currency_metadata_mismatch");
+  }
+  if (String(metadata.delivery_requires_verified_payment || "") !== "true") {
+    reasons.push("delivery_requires_verified_payment_metadata_missing");
+  }
+  if (!metadata.pack_id && metadata.service_type === "downloadable_guardrail_kit") {
+    reasons.push("missing_metadata_pack_id");
+  }
+  const acceptedForDelivery = isCheckoutCompleted && reasons.length === 0;
+  return {
+    review_required: !acceptedForDelivery,
+    review_required_reasons: reasons,
+    accepted_for_delivery: acceptedForDelivery,
+    evidence_status: acceptedForDelivery
+      ? event.livemode
+        ? "verified_live_payment"
+        : "verified_test_payment_only"
+      : "review_required"
+  };
+}
+
 function evidenceFromEvent(event) {
   const obj = event.data?.object || {};
   const charge = obj.latest_charge || obj.charge || null;
+  const metadata = obj.metadata || {};
+  const amountTotal = obj.amount_total || obj.amount_received || obj.amount || 0;
+  const currency = String(obj.currency || metadata.currency || "usd").toLowerCase();
+  const paymentStatus = obj.payment_status || (event.type.includes("failed") ? "failed" : event.type.includes("refunded") ? "refunded" : "paid");
+  const checkoutStatus = obj.object === "checkout.session" ? obj.status || null : null;
+  const review = checkoutEvidenceReview(event, obj, metadata, amountTotal, currency, paymentStatus, checkoutStatus);
   return {
     event_id: event.id,
     event_type: event.type,
@@ -285,13 +367,22 @@ function evidenceFromEvent(event) {
     verified_signature: true,
     created: new Date((event.created || Math.floor(Date.now() / 1000)) * 1000).toISOString(),
     checkout_session_id: obj.object === "checkout.session" ? obj.id : null,
+    checkout_session_status: checkoutStatus,
+    checkout_session_url_is_payment_proof: false,
     payment_intent_id: obj.payment_intent || (obj.object === "payment_intent" ? obj.id : null),
     charge_id: typeof charge === "string" ? charge : obj.object === "charge" ? obj.id : null,
-    amount_total: obj.amount_total || obj.amount_received || obj.amount || 0,
-    currency: String(obj.currency || "usd").toLowerCase(),
-    payment_status: obj.payment_status || (event.type.includes("failed") ? "failed" : event.type.includes("refunded") ? "refunded" : "paid"),
+    amount_total: amountTotal,
+    currency,
+    payment_status: paymentStatus,
     customer_email: obj.customer_details?.email || obj.receipt_email || null,
-    metadata: obj.metadata || {},
+    metadata,
+    review_required: review.review_required,
+    review_required_reasons: review.review_required_reasons,
+    evidence_status: review.evidence_status,
+    accepted_for_delivery: review.accepted_for_delivery,
+    verified_test_payment: review.accepted_for_delivery && !event.livemode,
+    verified_live_payment: review.accepted_for_delivery && Boolean(event.livemode),
+    live_revenue_cents: review.accepted_for_delivery && event.livemode ? amountTotal : 0,
     raw_event_redacted: true
   };
 }
@@ -326,7 +417,15 @@ async function webhook(request, env) {
   const event = JSON.parse(rawBody);
   const evidence = evidenceFromEvent(event);
   await storeEvidence(env, evidence);
-  return json({ ok: true, status: "stripe_webhook_event_verified", event_id: evidence.event_id, event_type: evidence.event_type });
+  return json({
+    ok: true,
+    status: "stripe_webhook_event_verified",
+    event_id: evidence.event_id,
+    event_type: evidence.event_type,
+    evidence_status: evidence.evidence_status,
+    review_required: evidence.review_required,
+    accepted_for_delivery: evidence.accepted_for_delivery
+  });
 }
 
 async function handle(request, env) {
