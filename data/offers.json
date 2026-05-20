@@ -1,51 +1,44 @@
 [
   {
     "name": "Operational Guardrail Kits",
-    "slug": "operational-guardrail-kits",
     "price": "$99 each",
+    "description": "Twelve downloadable operational controls for agent workflows.",
     "url": "guardrails.html",
-    "checkout": "Stripe only through Guardrail Store Worker when configured"
-  },
-  {
-    "name": "Tool Packs for Agent Builders",
-    "slug": "tool-packs-for-agent-builders",
-    "price": "$99 each",
-    "url": "index.html#tool-packs",
-    "checkout": "Stripe only through Guardrail Store Worker when configured"
+    "checkout": "Stripe-only Guardrail Store checkout when Worker activation is complete"
   },
   {
     "name": "AI Website SEO + AI Visibility Audit",
-    "slug": "ai-website-seo-visibility-audit",
     "price": "$199",
+    "description": "A public-site clarity review for people, Google, and AI answer engines.",
     "url": "ai-website-seo-visibility-audit.html",
-    "checkout": "card checkout"
+    "checkout": "Stripe where configured or scoped review"
   },
   {
     "name": "AI Business Automation Audit",
-    "slug": "ai-business-automation-audit",
     "price": "$149",
+    "description": "A practical workflow map for intake, follow-up, scheduling, estimates, reminders, and handoffs.",
     "url": "ai-business-automation-audit.html",
-    "checkout": "card checkout"
+    "checkout": "Stripe where configured or scoped review"
   },
   {
     "name": "Guardrail Setup Review",
-    "slug": "guardrail-setup-review",
     "price": "$199",
+    "description": "Atlas checks whether an installed kit blocks the right failure modes.",
     "url": "services.html#guardrail-setup-review",
-    "checkout": "card checkout"
+    "checkout": "Stripe where configured or scoped review"
   },
   {
     "name": "Custom Agent Workflow Guardrail",
-    "slug": "custom-agent-workflow-guardrail",
     "price": "$499+",
+    "description": "A custom control layer for one agent workflow or business process.",
     "url": "services.html#custom-agent-workflow-guardrail",
-    "checkout": "scoped invoice after review"
+    "checkout": "Stripe where configured or scoped review"
   },
   {
     "name": "Business Agent Reliability System",
-    "slug": "business-agent-reliability-system",
     "price": "$999+",
+    "description": "A broader reliability layer for teams that need multiple guardrails and operator review.",
     "url": "services.html#business-agent-reliability-system",
-    "checkout": "scoped invoice after review"
+    "checkout": "Stripe where configured or scoped review"
   }
 ]

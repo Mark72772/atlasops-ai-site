@@ -14,3 +14,8 @@ STRIPE_CANCEL_BASE_URL = "https://mark72772.github.io/atlasops-ai-site"
 # wrangler secret put ATLAS_RELAY_SECRET
 # Optional public value:
 # wrangler secret put STRIPE_PUBLISHABLE_KEY
+
+# Optional durable evidence store:
+# [[kv_namespaces]]
+# binding = "PAYMENT_EVENTS"
+# id = "<cloudflare-kv-namespace-id>"

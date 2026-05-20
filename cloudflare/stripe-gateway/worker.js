@@ -1,4 +1,4 @@
-const WORKER_VERSION = "sprint-75b-stripe-gateway-v2";
+const WORKER_VERSION = "sprint-78-stripe-gateway-v3";
 const RATE_LIMIT_WINDOW_MS = 60_000;
 const RATE_LIMIT_MAX = 30;
 const memoryRateLimit = new Map();
@@ -159,7 +159,7 @@ function formEncode(payload) {
 
 async function createCheckoutSession(request, env) {
   if (!rateLimit(request)) return json({ ok: false, status: "rate_limited" }, 429);
-  if (!env.STRIPE_SECRET_KEY) return json({ ok: false, status: "external_gate_stripe_worker_secret_missing" }, 503);
+  if (!env.STRIPE_SECRET_KEY) return json({ ok: false, status: "stripe_worker_secrets_missing" }, 503);
   const body = await request.json().catch(() => ({}));
   const packId = String(body.pack_id || body.service_id || "");
   const service = serviceFor(body.service_id) || serviceFor(packId);
@@ -240,7 +240,7 @@ async function createPaymentLink(request, env) {
     ok: false,
     status: "external_gate_stripe_payment_link_price_id_required",
     payment_verified: false,
-    note: "Payment Links must be created server-side from mapped Stripe Price IDs; links are never payment proof."
+    note: "Payment Links must be created server-side from mapped Stripe Price IDs; links are never payment evidence."
   }, 409);
 }
 

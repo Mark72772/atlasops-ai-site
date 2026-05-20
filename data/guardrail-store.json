@@ -25,7 +25,7 @@
       ],
       "proof_requirements": [
         "evidence artifact",
-        "exact gate",
+        "review checkpoint",
         "regression check"
       ],
       "price": 99,
@@ -65,7 +65,7 @@
       ],
       "proof_requirements": [
         "evidence artifact",
-        "exact gate",
+        "review checkpoint",
         "regression check"
       ],
       "price": 99,
@@ -73,7 +73,7 @@
       "status": "ready",
       "category": "Codex",
       "detail_url": "guardrails/codex-repo-control-guardrail.html",
-      "content": "Codex Repo Control Guardrail Codex can move too fast in repos that lack project instructions, test commands, and completion proof. Codex Codex Git CI MCP unbounded patches forbidden path edits broad deletes unstated tests unsafe commits",
+      "content": "Codex Repo Control Guardrail Codex can move too fast in repos that lack project instructions, test commands, and completion evidence. Codex Codex Git CI MCP unbounded patches forbidden path edits broad deletes unstated tests unsafe commits",
       "canonical_product_url": "https://atlasops.io/guardrails/codex-repo-control-guardrail.html",
       "fallback_product_url": "https://mark72772.github.io/atlasops-ai-site/guardrails/codex-repo-control-guardrail.html",
       "checkout_button_id": "buy_codex_repo_control_guardrail",
@@ -106,7 +106,7 @@
       ],
       "proof_requirements": [
         "evidence artifact",
-        "exact gate",
+        "review checkpoint",
         "regression check"
       ],
       "price": 99,
@@ -148,7 +148,7 @@
       ],
       "proof_requirements": [
         "evidence artifact",
-        "exact gate",
+        "review checkpoint",
         "regression check"
       ],
       "price": 99,
@@ -188,7 +188,7 @@
       ],
       "proof_requirements": [
         "evidence artifact",
-        "exact gate",
+        "review checkpoint",
         "regression check"
       ],
       "price": 99,
@@ -196,7 +196,7 @@
       "status": "ready",
       "category": "AI SEO",
       "detail_url": "guardrails/ai-seo-visibility-guardrail.html",
-      "content": "AI SEO Visibility Guardrail Businesses can rank in Google while answer engines still cannot understand their entity, services, proof, or trust signals. AI SEO Websites AI SEO Answer Engines Content Ops entity ambiguity thin service pages FAQ gaps missing proof signals unsupported content claims",
+      "content": "AI SEO Visibility Guardrail Businesses can rank in Google while answer engines still cannot understand their entity, services, evidence, or trust signals. AI SEO Websites AI SEO Answer Engines Content Ops entity ambiguity thin service pages FAQ gaps missing evidence signals unsupported content claims",
       "canonical_product_url": "https://atlasops.io/guardrails/ai-seo-visibility-guardrail.html",
       "fallback_product_url": "https://mark72772.github.io/atlasops-ai-site/guardrails/ai-seo-visibility-guardrail.html",
       "checkout_button_id": "buy_ai_seo_visibility_guardrail",
@@ -229,7 +229,7 @@
       ],
       "proof_requirements": [
         "evidence artifact",
-        "exact gate",
+        "review checkpoint",
         "regression check"
       ],
       "price": 99,
@@ -269,7 +269,7 @@
       ],
       "proof_requirements": [
         "evidence artifact",
-        "exact gate",
+        "review checkpoint",
         "regression check"
       ],
       "price": 99,
@@ -277,7 +277,7 @@
       "status": "ready",
       "category": "Stock Research",
       "detail_url": "guardrails/stock-research-guardrail.html",
-      "content": "Stock Research Guardrail Research agents can turn notes into advice without recency proof, source checks, or risk flags. Stock Research Research Workflows RAG Market Notes Watchlists buy/sell recommendations stale market data unsupported catalysts missing risk flags",
+      "content": "Stock Research Guardrail Research agents can turn notes into advice without recency evidence, source checks, or risk flags. Stock Research Research Workflows RAG Market Notes Watchlists buy/sell recommendations stale market data unsupported catalysts missing risk flags",
       "canonical_product_url": "https://atlasops.io/guardrails/stock-research-guardrail.html",
       "fallback_product_url": "https://mark72772.github.io/atlasops-ai-site/guardrails/stock-research-guardrail.html",
       "checkout_button_id": "buy_stock_research_guardrail",
@@ -310,7 +310,7 @@
       ],
       "proof_requirements": [
         "evidence artifact",
-        "exact gate",
+        "review checkpoint",
         "regression check"
       ],
       "price": 99,
@@ -318,7 +318,7 @@
       "status": "ready",
       "category": "Social Publishing",
       "detail_url": "guardrails/social-publishing-guardrail.html",
-      "content": "Social Publishing Guardrail Agents publish debug-looking posts, stale drafts, duplicate content, or empty composer attempts. Social Publishing LinkedIn X Browser Automation Content Ops OpenClaw debug labels in public posts bad draft reentry empty LinkedIn composer X tab storms fake publish proof",
+      "content": "Social Publishing Guardrail Agents publish debug-looking posts, stale drafts, duplicate content, or empty composer attempts. Social Publishing LinkedIn X Browser Automation Content Ops OpenClaw debug labels in public posts bad draft reentry empty LinkedIn composer X tab storms fake publish evidence",
       "canonical_product_url": "https://atlasops.io/guardrails/social-publishing-guardrail.html",
       "fallback_product_url": "https://mark72772.github.io/atlasops-ai-site/guardrails/social-publishing-guardrail.html",
       "checkout_button_id": "buy_social_publishing_guardrail",
@@ -351,7 +351,7 @@
       ],
       "proof_requirements": [
         "evidence artifact",
-        "exact gate",
+        "review checkpoint",
         "regression check"
       ],
       "price": 99,
@@ -392,7 +392,7 @@
       ],
       "proof_requirements": [
         "evidence artifact",
-        "exact gate",
+        "review checkpoint",
         "regression check"
       ],
       "price": 99,
@@ -400,7 +400,7 @@
       "status": "ready",
       "category": "Stripe / Payments",
       "detail_url": "guardrails/stripe-payment-proof-guardrail.html",
-      "content": "Stripe Payment Proof Guardrail Teams count checkout links or success pages as paid even when no verified Stripe event exists. Stripe / Payments Stripe Checkout Payment Links Webhooks Reports payment link counted as proof success redirect counted as paid report unlock without payment fake revenue",
+      "content": "Stripe Payment Proof Guardrail Teams count checkout links or success pages as paid even when no verified Stripe event exists. Stripe / Payments Stripe Checkout Payment Links Webhooks Reports payment link counted as evidence success redirect counted as paid report unlock without payment fake revenue",
       "canonical_product_url": "https://atlasops.io/guardrails/stripe-payment-proof-guardrail.html",
       "fallback_product_url": "https://mark72772.github.io/atlasops-ai-site/guardrails/stripe-payment-proof-guardrail.html",
       "checkout_button_id": "buy_stripe_payment_proof_guardrail",
@@ -433,7 +433,7 @@
       ],
       "proof_requirements": [
         "evidence artifact",
-        "exact gate",
+        "review checkpoint",
         "regression check"
       ],
       "price": 99,
@@ -474,7 +474,7 @@
       ],
       "proof_requirements": [
         "evidence artifact",
-        "exact gate",
+        "review checkpoint",
         "regression check"
       ],
       "price": 99,

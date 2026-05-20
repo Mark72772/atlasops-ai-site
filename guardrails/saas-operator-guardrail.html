@@ -16,15 +16,7 @@
 <div class="gr-shell detail">
 <header class="gr-header">
   <a class="gr-brand" href="../index.html">AtlasOps AI</a>
-  <nav aria-label="Primary">
-    <a class="active" href="../guardrails.html">Guardrail Kits</a>
-    <a href="../index.html#tool-packs">Tool Packs</a>
-    <a href="../services.html">Services</a>
-    <a href="../index.html#pricing">Pricing</a>
-    <a href="../ai-website-seo-visibility-audit.html">AI SEO Audit</a>
-    <a href="../ai-business-automation-audit.html">Business Automation</a>
-    <a href="../ask-atlas.html">Ask Atlas</a>
-  </nav>
+  <nav aria-label="Primary"><a class="active" href="../guardrails.html">Guardrail Kits</a><a href="../index.html#tool-packs">Tool Packs</a><a href="../services.html">Services</a><a href="../index.html#pricing">Pricing</a><a href="../industry-watch.html">Live News</a><a href="../ask-atlas.html">Help</a></nav>
 </header>
 <main>
   <section class="gr-detail-hero">
@@ -32,7 +24,7 @@
     <h1>SaaS Operator Guardrail</h1>
     <p>Keep SaaS operations useful, proof-backed, and safe.</p>
     <div class="gr-detail-actions">
-      <button type="button" class="gr-buy" data-pack-id="saas-operator-guardrail" data-payment-provider="stripe" data-checkout-gate="stripe_worker_url_missing">Buy $99 Guardrail Kit</button><span class="gr-checkout-provider">Stripe Checkout only</span><span class="checkout-note" data-checkout-gate="stripe_worker_url_missing">Stripe checkout is being activated. Contact AtlasOps to purchase now.</span>
+      <button type="button" class="gr-buy" data-pack-id="saas-operator-guardrail" data-payment-provider="stripe" data-checkout-gate="stripe_worker_url_missing|stripe_key_rotation_required|stripe_worker_secrets_missing">Buy $99 Guardrail Kit</button><span class="gr-checkout-provider">Stripe Checkout only</span><span class="checkout-note" data-checkout-gate="stripe_worker_url_missing|stripe_key_rotation_required|stripe_worker_secrets_missing">Stripe checkout is being activated. Contact AtlasOps to purchase now.</span>
       <a class="gr-secondary" href="../services.html">Setup review - $199</a>
     </div>
   </section>
@@ -42,17 +34,17 @@
     <article><h2>What It Enforces</h2><ul><li>onboarding checklist</li><li>support triage workflow</li><li>churn-risk template</li><li>monthly report schema</li><li>no fake metrics gate</li></ul></article>
     <article><h2>Files Included</h2><ul><li><code>README.md</code></li><li><code>GUARDRAIL.md</code></li><li><code>SKILL.md</code></li><li><code>AGENTS.md</code></li><li><code>CLAUDE.md</code></li><li><code>CODEX.md</code></li><li><code>tests/</code></li><li><code>examples/</code></li></ul></article>
     <article><h2>Install Steps</h2><ol><li>Download after verified payment.</li><li>Place AGENTS.md, SKILL.md, or CLAUDE.md in the matching workflow.</li><li>Run the acceptance tests before marking work done.</li></ol></article>
-    <article><h2>Example Before / After</h2><p>Before: the agent says the work is done from a draft or local state. After: the agent supplies proof or an exact gate.</p></article>
+    <article><h2>Example Before / After</h2><p>Before: the agent says the work is done from a draft or local state. After: the agent supplies proof or an review checkpoint.</p></article>
     <article><h2>Failure Modes Blocked</h2><ul><li>fake metrics</li><li>unsafe billing follow-up</li><li>missed churn signals</li><li>unsupported support decisions</li></ul></article>
-    <article><h2>Proof Contract</h2><p>Evidence is required before completion. Drafts, local-only updates, checkout links, and browser-open states do not count.</p></article>
-    <article><h2>Exact Gates</h2><ul><li><code>saas_operator_guardrail_source_context_missing</code></li><li><code>saas_operator_guardrail_proof_missing</code></li><li><code>saas_operator_guardrail_unsafe_action_blocked</code></li><li><code>saas_operator_guardrail_manual_review_required</code></li></ul></article>
+    <article><h2>Verification Contract</h2><p>Evidence is required before completion. Drafts, local-only updates, checkout links, and browser-open states do not count.</p></article>
+    <article><h2>Review Checkpoints</h2><ul><li><code>saas_operator_guardrail_source_context_missing</code></li><li><code>saas_operator_guardrail_proof_missing</code></li><li><code>saas_operator_guardrail_unsafe_action_blocked</code></li><li><code>saas_operator_guardrail_manual_review_required</code></li></ul></article>
     <article><h2>Safety Boundaries</h2><p>No secrets, no private customer records, no unsafe publishing, no fake readiness, no official vendor affiliation claims.</p></article>
   </section>
-  <section class="gr-market-proof" data-sprint="76d">
+  <section class="gr-market-proof" data-market-context="source-backed">
     <article><h2>Why this guardrail exists</h2><p>AI teams are moving from experiments to repeatable agent workflows. This kit exists because repeatability needs visible rules, blocked failure modes, and evidence before completion.</p></article>
     <article><h2>What industry pain it solves</h2><p>SaaS operations need review states before support, billing, onboarding, or reports go out.</p></article>
     <article><h2>What this kit enforces</h2><p>SaaS Operator Guardrail defines checks, blocks, review states, and operator-visible gates for this workflow.</p></article>
-    <article><h2>Proof required before work counts as done</h2><p>. Drafts, local-only state, checkout links, and unsupported claims do not count as completion proof.</p></article>
+    <article><h2>Evidence required before work counts as done</h2><p>Drafts, private workspace state, checkout links, and unsupported claims do not count as completion evidence.</p></article>
     <article><h2>Compatible with</h2><p></p></article>
     <article><h2>Source mapping</h2><p>Business AI education patterns and Atlas guardrail delivery locks.. Atlas uses these as market proof inputs only; it does not copy claims or claim official affiliation.</p></article>
     <article><h2>Independent disclaimer</h2><p>AtlasOps Guardrail Kits are independent workflow kits. Referenced companies and platforms are compatibility or market-context references only.</p></article>

@@ -33,13 +33,13 @@
       <h2>${escapeHtml(item.name)}</h2>
       <p>${escapeHtml(item.pain_point)}</p>
       <div class="systems">${systems}</div>
-      <p><strong>Proof:</strong> ${escapeHtml((item.proof_requirements || []).join(", "))}</p>
+      <p><strong>Verification:</strong> ${escapeHtml((item.proof_requirements || []).join(", "))}</p>
       <div class="meta"><span>$${escapeHtml(item.price || 99)}</span><span>Stripe Checkout</span></div>
       <div class="card-actions">
         <a href="${detailUrl}">Details</a>
-        <button type="button" data-pack-id="${escapeHtml(item.pack_id)}" data-payment-provider="stripe" data-checkout-gate="stripe_worker_url_missing">Buy $99 Guardrail Kit</button>
+        <button type="button" data-pack-id="${escapeHtml(item.pack_id)}" data-payment-provider="stripe" data-checkout-gate="stripe_worker_url_missing|stripe_key_rotation_required|stripe_worker_secrets_missing">Buy $99 Guardrail Kit</button>
       </div>
-      <p class="checkout-note" data-checkout-gate="stripe_worker_url_missing">Stripe checkout is being activated. Contact AtlasOps to purchase now.</p>
+      <p class="checkout-note" data-checkout-gate="stripe_worker_url_missing|stripe_key_rotation_required|stripe_worker_secrets_missing">Stripe checkout is being activated. Contact AtlasOps to purchase now.</p>
     </article>`;
   }
 
