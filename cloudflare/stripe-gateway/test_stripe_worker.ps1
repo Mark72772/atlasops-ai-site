@@ -1,6 +1,6 @@
 param(
   [string]$WorkerUrl = "https://atlasops-stripe-gateway.atlasops-ai.workers.dev",
-  [switch]$UseUserEnvAdminSecret,
+  [switch]$PromptForAdminSecret,
   [switch]$SkipAdminPositive
 )
 $ErrorActionPreference = "Stop"
@@ -10,9 +10,10 @@ if (-not $WorkerUrl) { $WorkerUrl = Read-Host "Worker URL" }
 $WorkerUrl = $WorkerUrl.TrimEnd("/")
 $adminSecret = $null
 $adminSecretPlain = $null
-if ($UseUserEnvAdminSecret) {
+if (-not $SkipAdminPositive) {
   $adminSecretPlain = [Environment]::GetEnvironmentVariable("ATLAS_STRIPE_WORKER_ADMIN_SECRET", "User")
-} elseif (-not $SkipAdminPositive) {
+}
+if ([string]::IsNullOrWhiteSpace($adminSecretPlain) -and $PromptForAdminSecret -and -not $SkipAdminPositive) {
   $adminSecret = Read-Host "Optional admin/relay secret for admin positive test, or press Enter to skip" -AsSecureString
 }
 $health = Invoke-WebRequest -UseBasicParsing -Uri "$WorkerUrl/health" -Method GET
@@ -55,6 +56,7 @@ $report = [ordered]@{
   invalid_pack_rejected = ($invalidStatus -ge 400)
   admin_positive_status = $adminPositive
   secret_values_printed = $false
+  secret_values_written_to_disk = $false
 }
 $report | ConvertTo-Json | Out-File -Encoding utf8 ".\stripe-worker-test-status.redacted.json"
 Write-Host "Worker tests complete. Secret values were not printed."

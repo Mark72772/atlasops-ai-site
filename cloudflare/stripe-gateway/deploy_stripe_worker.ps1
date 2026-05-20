@@ -3,8 +3,10 @@ $ErrorActionPreference = "Stop"
 $WorkerDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 Set-Location $WorkerDir
 Write-Host "Deploying atlasops-stripe-gateway. Secret values are not printed."
-npx wrangler whoami | Out-Null
-$deploy = npx wrangler deploy 2>&1
+cmd /c "npx wrangler whoami 1>nul 2>nul"
+if ($LASTEXITCODE -ne 0) { throw "Wrangler auth missing. Run npx wrangler login first." }
+$deploy = cmd /c "npx wrangler deploy 2>&1"
+if ($LASTEXITCODE -ne 0) { throw "Wrangler deploy failed." }
 $deploy | Tee-Object -FilePath ".\stripe-worker-deploy-output.redacted.txt"
 $workerUrl = $null
 foreach ($line in $deploy) {

@@ -31,8 +31,19 @@ function Install-WorkerSecret([string]$Name, [SecureString]$Secret) {
   }
 }
 
+function Assert-KvBinding {
+  $config = cmd /c "npx wrangler deploy --dry-run --outdir .wrangler-stage-a-check 2>&1"
+  if ($LASTEXITCODE -ne 0) { throw "Wrangler dry-run failed while verifying ATLAS_PAYMENTS binding." }
+  $text = ($config -join "`n")
+  if ($text -notmatch "ATLAS_PAYMENTS") { throw "ATLAS_PAYMENTS KV binding missing from Worker configuration." }
+  if (Test-Path -LiteralPath ".wrangler-stage-a-check") {
+    Remove-Item -LiteralPath ".wrangler-stage-a-check" -Recurse -Force -ErrorAction SilentlyContinue
+  }
+}
+
 $whoami = cmd /c "npx wrangler whoami 2>&1"
 if ($LASTEXITCODE -ne 0) { throw "Wrangler auth missing. Run npx wrangler login first." }
+Assert-KvBinding
 if ($Mode -eq "live") {
   $confirm = Read-Host "Type ROTATED if the exposed live Stripe key was revoked/rotated and the replacement is being pasted only here"
   if ($confirm -ne "ROTATED") { throw "stripe_key_rotation_required" }
@@ -41,11 +52,13 @@ if ($Mode -eq "live") {
 Write-Host "Paste Stripe secret key only into this secure prompt. Do not paste it into chat, Codex, reports, or files."
 $stripeSecret = Read-Host "STRIPE_SECRET_KEY" -AsSecureString
 Install-WorkerSecret "STRIPE_SECRET_KEY" $stripeSecret
+$stripeSecret = $null
 
 $existingRelay = [Environment]::GetEnvironmentVariable("ATLAS_STRIPE_WORKER_ADMIN_SECRET", "User")
 if ([string]::IsNullOrWhiteSpace($existingRelay)) { $existingRelay = New-RelaySecret }
 $relaySecure = ConvertTo-SecureString $existingRelay -AsPlainText -Force
 Install-WorkerSecret "ATLAS_RELAY_SECRET" $relaySecure
+$relaySecure = $null
 [Environment]::SetEnvironmentVariable("ATLAS_STRIPE_WORKER_URL", $WorkerUrl, "User")
 [Environment]::SetEnvironmentVariable("ATLAS_STRIPE_WORKER_ADMIN_SECRET", $existingRelay, "User")
 [Environment]::SetEnvironmentVariable("ATLAS_STRIPE_MODE", $Mode, "User")
@@ -55,6 +68,7 @@ $report = [ordered]@{
   generated_at = (Get-Date).ToUniversalTime().ToString("o")
   mode = $Mode
   worker_url = $WorkerUrl
+  kv_binding_verified = $true
   stripe_secret_key_configured = $true
   atlas_relay_secret_configured = $true
   local_admin_secret_configured = $true

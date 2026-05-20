@@ -1,4 +1,4 @@
-param([string]$WorkerUrl = "")
+param([string]$WorkerUrl = "https://atlasops-stripe-gateway.atlasops-ai.workers.dev")
 $ErrorActionPreference = "Stop"
 $WorkerDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 Set-Location $WorkerDir
@@ -13,17 +13,24 @@ $body = @{
   success_base_url = "https://mark72772.github.io/atlasops-ai-site"
   cancel_base_url = "https://mark72772.github.io/atlasops-ai-site"
 } | ConvertTo-Json
-$response = Invoke-WebRequest -UseBasicParsing -Uri "$WorkerUrl/stripe/create-checkout-session" -Method POST -Body $body -ContentType "application/json"
-$data = $response.Content | ConvertFrom-Json
+try {
+  $response = Invoke-WebRequest -UseBasicParsing -Uri "$WorkerUrl/stripe/create-checkout-session" -Method POST -Body $body -ContentType "application/json"
+  $data = $response.Content | ConvertFrom-Json
+  $exactGate = $null
+} catch {
+  $data = $null
+  $exactGate = "stripe_worker_not_ready_for_test_checkout"
+}
 $report = [ordered]@{
   generated_at = (Get-Date).ToUniversalTime().ToString("o")
-  checkout_session_created = [bool]$data.checkout_url
-  checkout_url_exists = [bool]$data.checkout_url
+  checkout_session_created = [bool]($data -and $data.checkout_url)
+  checkout_url_exists = [bool]($data -and $data.checkout_url)
   checkout_url_is_payment_proof = $false
   payment_verified = $false
   download_token_created = $false
   email_delivery_sent = $false
   live_revenue = 0
+  exact_gate = $exactGate
 }
 $report | ConvertTo-Json | Out-File -Encoding utf8 ".\stripe-worker-test-checkout.redacted.json"
 Write-Host "Checkout URL was created if the Worker returned one. It is not payment proof."
