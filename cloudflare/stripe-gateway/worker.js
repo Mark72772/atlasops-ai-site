@@ -65,6 +65,36 @@ const SERVICE_CATALOG = {
     amount: 9900,
     currency: "usd"
   },
+  "agent-builder-starter-bundle": {
+    name: "Agent Builder Starter Bundle",
+    amount: 24900,
+    currency: "usd",
+    type: "downloadable_guardrail_bundle"
+  },
+  "social-publisher-safety-bundle": {
+    name: "Social Publisher Safety Bundle",
+    amount: 24900,
+    currency: "usd",
+    type: "downloadable_guardrail_bundle"
+  },
+  "revenue-agent-bundle": {
+    name: "Revenue Agent Bundle",
+    amount: 29900,
+    currency: "usd",
+    type: "downloadable_guardrail_bundle"
+  },
+  "openclaw-codex-integration-bundle": {
+    name: "OpenClaw + Codex Integration Bundle",
+    amount: 29900,
+    currency: "usd",
+    type: "downloadable_guardrail_bundle"
+  },
+  "agent-company-launch-kit": {
+    name: "Agent Company Launch Kit",
+    amount: 49900,
+    currency: "usd",
+    type: "downloadable_guardrail_bundle"
+  },
   ai_website_seo_visibility_audit: {
     name: "AI Website SEO + AI Visibility Audit",
     amount: 19900,
@@ -301,7 +331,7 @@ async function createCheckoutSession(request, env) {
     service_id: serviceId,
     pack_id: packId,
     service_name: service.name,
-    service_type: packId ? "downloadable_guardrail_kit" : "service_checkout",
+    service_type: service.type || (packId ? "downloadable_guardrail_kit" : "service_checkout"),
     amount_cents: String(service.amount),
     currency: service.currency,
     source: body.source || "guardrail_store",

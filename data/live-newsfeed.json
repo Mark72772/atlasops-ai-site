@@ -1,6 +1,6 @@
 {
-  "updated_label": "Updated from AtlasOps source library",
-  "generated_at": "2026-05-20T06:15:47.050Z",
+  "updated_label": "Updated from AtlasOps source library and product router",
+  "generated_at": "2026-05-21T17:25:20.416Z",
   "stale_after_hours": 24,
   "items": [
     {
@@ -92,6 +92,81 @@
       "verified": true,
       "current_claim": false,
       "confidence": 0.8
+    },
+    {
+      "item_id": "agent-skill-positioning",
+      "title": "Agent Skill Packs are operational infrastructure",
+      "source_name": "AtlasOps product update",
+      "source_url": null,
+      "source_type": "internal_atlas_product_update",
+      "category": "Agent Skill Packs",
+      "business_takeaway": "The Guardrail Store now explains packs as checks, blockers, evidence rules, SKILL.md files, AGENTS.md files, QA contracts, and delivery policies.",
+      "related_guardrail_pack": "agent-context-intelligence-guardrail",
+      "related_offer": "Agent Skill Packs + Operational Guardrails",
+      "created_at": "2026-05-21T17:25:20.416Z",
+      "verified": true,
+      "current_claim": false,
+      "confidence": 0.86
+    },
+    {
+      "item_id": "bundle-buyer-paths",
+      "title": "Bundle paths clarify what to buy first",
+      "source_name": "AtlasOps product update",
+      "source_url": null,
+      "source_type": "internal_atlas_product_update",
+      "category": "Bundles",
+      "business_takeaway": "Builder, Social Publisher, Revenue Agent, OpenClaw + Codex, and Agent Company bundles group related controls without fake discounts.",
+      "related_guardrail_pack": "agent-builder-starter-bundle",
+      "related_offer": "Agent Skill Packs + Operational Guardrails",
+      "created_at": "2026-05-21T17:25:20.416Z",
+      "verified": true,
+      "current_claim": false,
+      "confidence": 0.86
+    },
+    {
+      "item_id": "ask-atlas-product-router",
+      "title": "Ask Atlas can recommend a pack by failure mode",
+      "source_name": "AtlasOps product update",
+      "source_url": null,
+      "source_type": "internal_atlas_product_update",
+      "category": "Product Router",
+      "business_takeaway": "Buyers can describe the workflow problem and see a recommended kit, bundle, setup review path, and exact payment gate.",
+      "related_guardrail_pack": "codex-repo-control-guardrail",
+      "related_offer": "Agent Skill Packs + Operational Guardrails",
+      "created_at": "2026-05-21T17:25:20.416Z",
+      "verified": true,
+      "current_claim": false,
+      "confidence": 0.86
+    },
+    {
+      "item_id": "stripe-proof-backed-delivery",
+      "title": "Stripe Checkout still does not unlock delivery by itself",
+      "source_name": "AtlasOps product update",
+      "source_url": null,
+      "source_type": "internal_atlas_product_update",
+      "category": "Stripe",
+      "business_takeaway": "The buyer flow keeps delivery locked until signed Stripe payment evidence matches order metadata.",
+      "related_guardrail_pack": "stripe-payment-proof-guardrail",
+      "related_offer": "Agent Skill Packs + Operational Guardrails",
+      "created_at": "2026-05-21T17:25:20.416Z",
+      "verified": true,
+      "current_claim": false,
+      "confidence": 0.86
+    },
+    {
+      "item_id": "sales-drafts-draft-only",
+      "title": "Sales drafts stay draft-only until platform proof exists",
+      "source_name": "AtlasOps product update",
+      "source_url": null,
+      "source_type": "internal_atlas_product_update",
+      "category": "Social",
+      "business_takeaway": "LinkedIn and X sales copy can be prepared safely without claiming posts or metrics.",
+      "related_guardrail_pack": "social-publishing-guardrail",
+      "related_offer": "Agent Skill Packs + Operational Guardrails",
+      "created_at": "2026-05-21T17:25:20.416Z",
+      "verified": true,
+      "current_claim": false,
+      "confidence": 0.86
     }
   ]
 }

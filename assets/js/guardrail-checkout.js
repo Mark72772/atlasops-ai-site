@@ -14,7 +14,9 @@
       node.removeAttribute("data-checkout-gate");
       node.removeAttribute("aria-disabled");
       if (node.tagName === "BUTTON") {
-        node.textContent = "Buy $99 Guardrail Kit";
+        const price = node.dataset.price || "99";
+        const productType = String(node.dataset.productType || "");
+        node.textContent = productType.includes("bundle") ? `Buy $${price} Bundle` : `Buy $${price} Agent Skill Pack`;
       }
       if (node.classList && node.classList.contains("checkout-note")) {
         node.textContent = "Stripe-hosted Checkout is available. Delivery unlocks only after signed Stripe payment evidence.";

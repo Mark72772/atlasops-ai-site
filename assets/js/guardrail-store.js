@@ -23,23 +23,29 @@
     let value = text.includes(query) ? 10 : 0;
     if ((item.compatible_systems || []).join(" ").toLowerCase().includes(query)) value += 6;
     if (String(item.category || "").toLowerCase().includes(query)) value += 4;
+    if (String(item.product_type || "").toLowerCase().includes(query)) value += 4;
     return value;
   }
 
   function card(item) {
     const systems = (item.compatible_systems || []).slice(0, 5).map((system) => `<span>${escapeHtml(system)}</span>`).join("");
     const detailUrl = escapeHtml(item.detail_url || `guardrails/${item.pack_id}.html`);
+    const productType = String(item.product_type || item.service_type || "agent_skill_pack");
+    const isBundle = productType.includes("bundle") || String(item.category || "").toLowerCase().includes("bundle");
+    const label = isBundle ? "Agent Skill Bundle" : "Agent Skill Pack";
+    const price = escapeHtml(item.price || 99);
+    const buttonText = isBundle ? `Buy $${price} Bundle` : `Buy $${price} Agent Skill Pack`;
     return `<article class="gr-card" data-pack-id-card="${escapeHtml(item.pack_id)}">
       <h2>${escapeHtml(item.name)}</h2>
       <p>${escapeHtml(item.pain_point)}</p>
       <div class="systems">${systems}</div>
       <p><strong>Verification:</strong> ${escapeHtml((item.proof_requirements || []).join(", "))}</p>
-      <div class="meta"><span>$${escapeHtml(item.price || 99)}</span><span>Stripe Checkout</span></div>
+      <div class="meta"><span>$${price}</span><span>${label}</span></div>
       <div class="card-actions">
         <a href="${detailUrl}">Details</a>
-        <button type="button" data-pack-id="${escapeHtml(item.pack_id)}" data-payment-provider="stripe" data-checkout-gate="stripe_worker_url_missing|stripe_key_rotation_required|stripe_worker_secrets_missing">Buy $99 Guardrail Kit</button>
+        <button type="button" data-pack-id="${escapeHtml(item.pack_id)}" data-payment-provider="stripe" data-product-type="${escapeHtml(productType)}" data-price="${price}" data-checkout-gate="stripe_worker_url_missing|stripe_key_rotation_required|stripe_worker_secrets_missing">${buttonText}</button>
       </div>
-      <p class="checkout-note" data-checkout-gate="stripe_worker_url_missing|stripe_key_rotation_required|stripe_worker_secrets_missing">Stripe checkout is being activated. Contact AtlasOps to purchase now.</p>
+      <p class="checkout-note" data-checkout-gate="stripe_worker_url_missing|stripe_key_rotation_required|stripe_worker_secrets_missing">Stripe checkout is live-ready. Delivery unlocks only after signed Stripe payment evidence.</p>
     </article>`;
   }
 

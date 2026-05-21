@@ -490,6 +490,232 @@
       "delivery_type": "download_and_email",
       "delivery_requires_verified_payment": true,
       "service_type": "downloadable_guardrail_pack"
+    },
+    {
+      "pack_id": "agent-builder-starter-bundle",
+      "name": "Agent Builder Starter Bundle",
+      "slug": "agent-builder-starter-bundle",
+      "pain_point": "Agent builders need context, repo boundaries, and deploy safety working together before agents touch production code.",
+      "compatible_systems": [
+        "Codex",
+        "Claude Code",
+        "OpenClaw",
+        "Git",
+        "CI"
+      ],
+      "included_packs": [
+        "Agent Context Intelligence Guardrail",
+        "Codex Repo Control Guardrail",
+        "Git Deploy Safety Guardrail"
+      ],
+      "included_files": [
+        "README.md",
+        "GUARDRAIL.md",
+        "SKILL.md files",
+        "AGENTS.md files",
+        "QA contracts",
+        "examples/"
+      ],
+      "proof_requirements": [
+        "evidence artifact",
+        "repo scope check",
+        "deploy safety check"
+      ],
+      "price": 249,
+      "setup_upsell": "$199 setup review",
+      "status": "ready",
+      "category": "Bundles",
+      "product_type": "agent_skill_bundle",
+      "detail_url": "guardrails.html#agent-skill-bundles",
+      "content": "Agent Builder Starter Bundle Agent Context Intelligence Codex Repo Control Git Deploy Safety Codex Claude Code OpenClaw repo boundaries deploy safety agent builders",
+      "canonical_product_url": "https://atlasops.io/guardrails.html#agent-skill-bundles",
+      "fallback_product_url": "https://mark72772.github.io/atlasops-ai-site/guardrails.html#agent-skill-bundles",
+      "checkout_button_id": "buy_agent_builder_starter_bundle",
+      "payment_provider": "stripe",
+      "delivery_type": "download_and_email",
+      "delivery_requires_verified_payment": true,
+      "service_type": "downloadable_guardrail_bundle"
+    },
+    {
+      "pack_id": "social-publisher-safety-bundle",
+      "name": "Social Publisher Safety Bundle",
+      "slug": "social-publisher-safety-bundle",
+      "pain_point": "Social agents need publish proof, source discipline, and AI visibility checks before public content ships.",
+      "compatible_systems": [
+        "LinkedIn",
+        "X",
+        "RAG",
+        "AI SEO",
+        "OpenClaw"
+      ],
+      "included_packs": [
+        "Social Publishing Guardrail",
+        "RAG Source Packet Guardrail",
+        "AI SEO Visibility Guardrail"
+      ],
+      "included_files": [
+        "README.md",
+        "GUARDRAIL.md",
+        "SKILL.md files",
+        "AGENTS.md files",
+        "public voice policy",
+        "examples/"
+      ],
+      "proof_requirements": [
+        "publish proof policy",
+        "source packet check",
+        "public voice check"
+      ],
+      "price": 249,
+      "setup_upsell": "$199 setup review",
+      "status": "ready",
+      "category": "Bundles",
+      "product_type": "agent_skill_bundle",
+      "detail_url": "guardrails.html#agent-skill-bundles",
+      "content": "Social Publisher Safety Bundle Social Publishing RAG Source Packet AI SEO Visibility LinkedIn X source-backed public voice content operations",
+      "canonical_product_url": "https://atlasops.io/guardrails.html#agent-skill-bundles",
+      "fallback_product_url": "https://mark72772.github.io/atlasops-ai-site/guardrails.html#agent-skill-bundles",
+      "checkout_button_id": "buy_social_publisher_safety_bundle",
+      "payment_provider": "stripe",
+      "delivery_type": "download_and_email",
+      "delivery_requires_verified_payment": true,
+      "service_type": "downloadable_guardrail_bundle"
+    },
+    {
+      "pack_id": "revenue-agent-bundle",
+      "name": "Revenue Agent Bundle",
+      "slug": "revenue-agent-bundle",
+      "pain_point": "Revenue agents need Stripe proof, SaaS operator checks, and daily routines before sales or delivery can be claimed.",
+      "compatible_systems": [
+        "Stripe",
+        "SaaS",
+        "Revenue Ops",
+        "Agent Ops",
+        "Reports"
+      ],
+      "included_packs": [
+        "Stripe Payment Proof Guardrail",
+        "SaaS Operator Guardrail",
+        "Agent Daily Operations Guardrail"
+      ],
+      "included_files": [
+        "README.md",
+        "GUARDRAIL.md",
+        "SKILL.md files",
+        "AGENTS.md files",
+        "delivery policy",
+        "examples/"
+      ],
+      "proof_requirements": [
+        "signed Stripe evidence",
+        "daily ticket proof",
+        "no fake revenue check"
+      ],
+      "price": 299,
+      "setup_upsell": "$199 setup review",
+      "status": "ready",
+      "category": "Bundles",
+      "product_type": "agent_skill_bundle",
+      "detail_url": "guardrails.html#agent-skill-bundles",
+      "content": "Revenue Agent Bundle Stripe Payment Proof SaaS Operator Agent Daily Operations revenue ops payment evidence delivery lock live revenue proof",
+      "canonical_product_url": "https://atlasops.io/guardrails.html#agent-skill-bundles",
+      "fallback_product_url": "https://mark72772.github.io/atlasops-ai-site/guardrails.html#agent-skill-bundles",
+      "checkout_button_id": "buy_revenue_agent_bundle",
+      "payment_provider": "stripe",
+      "delivery_type": "download_and_email",
+      "delivery_requires_verified_payment": true,
+      "service_type": "downloadable_guardrail_bundle"
+    },
+    {
+      "pack_id": "openclaw-codex-integration-bundle",
+      "name": "OpenClaw + Codex Integration Bundle",
+      "slug": "openclaw-codex-integration-bundle",
+      "pain_point": "OpenClaw and Codex integrations need doctor checks, repo controls, and context intelligence before tools are trusted.",
+      "compatible_systems": [
+        "OpenClaw",
+        "Codex",
+        "MCP",
+        "Gateway",
+        "Git"
+      ],
+      "included_packs": [
+        "OpenClaw Integration Guardrail",
+        "Codex Repo Control Guardrail",
+        "Agent Context Intelligence Guardrail"
+      ],
+      "included_files": [
+        "README.md",
+        "GUARDRAIL.md",
+        "SKILL.md files",
+        "AGENTS.md files",
+        "doctor checklist",
+        "examples/"
+      ],
+      "proof_requirements": [
+        "doctor output",
+        "repo scope check",
+        "tool bridge proof"
+      ],
+      "price": 299,
+      "setup_upsell": "$199 setup review",
+      "status": "ready",
+      "category": "Bundles",
+      "product_type": "agent_skill_bundle",
+      "detail_url": "guardrails.html#agent-skill-bundles",
+      "content": "OpenClaw Codex Integration Bundle OpenClaw Integration Codex Repo Control Agent Context Intelligence doctor gateway MCP tool bridge",
+      "canonical_product_url": "https://atlasops.io/guardrails.html#agent-skill-bundles",
+      "fallback_product_url": "https://mark72772.github.io/atlasops-ai-site/guardrails.html#agent-skill-bundles",
+      "checkout_button_id": "buy_openclaw_codex_integration_bundle",
+      "payment_provider": "stripe",
+      "delivery_type": "download_and_email",
+      "delivery_requires_verified_payment": true,
+      "service_type": "downloadable_guardrail_bundle"
+    },
+    {
+      "pack_id": "agent-company-launch-kit",
+      "name": "Agent Company Launch Kit",
+      "slug": "agent-company-launch-kit",
+      "pain_point": "Agent teams need roles, tickets, routines, budgets, QA contracts, and setup review before they behave like an operating company.",
+      "compatible_systems": [
+        "Agent Company",
+        "Company OS",
+        "QA",
+        "Budgets",
+        "Routines"
+      ],
+      "included_packs": [
+        "Agent Company Template",
+        "Setup review checklist",
+        "QA acceptance contract",
+        "Routines + budgets + tickets"
+      ],
+      "included_files": [
+        "README.md",
+        "AGENTS.md",
+        "ticket templates",
+        "QA contract",
+        "routine checklist",
+        "budget worksheet"
+      ],
+      "proof_requirements": [
+        "setup review checklist",
+        "QA acceptance contract",
+        "routine proof"
+      ],
+      "price": 499,
+      "setup_upsell": "included setup review checklist",
+      "status": "ready",
+      "category": "Bundles",
+      "product_type": "agent_company_launch_kit",
+      "detail_url": "guardrails.html#agent-skill-bundles",
+      "content": "Agent Company Launch Kit Agent Company Template setup review QA acceptance contract routines budgets tickets company operating layer",
+      "canonical_product_url": "https://atlasops.io/guardrails.html#agent-skill-bundles",
+      "fallback_product_url": "https://mark72772.github.io/atlasops-ai-site/guardrails.html#agent-skill-bundles",
+      "checkout_button_id": "buy_agent_company_launch_kit",
+      "payment_provider": "stripe",
+      "delivery_type": "download_and_email",
+      "delivery_requires_verified_payment": true,
+      "service_type": "downloadable_guardrail_bundle"
     }
   ],
   "canonical_site": "https://atlasops.io/",

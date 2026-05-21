@@ -244,6 +244,55 @@ h3 { font-size: 1.12rem; line-height: 1.2; }
   background: rgba(255,255,255,.055);
 }
 
+.skill-store-panel .bundle-card button,
+.skill-router-panel button {
+  min-height: 2.9rem;
+  border: 0;
+  border-radius: 6px;
+  background: var(--navy);
+  color: #fff;
+  font: inherit;
+  font-weight: 850;
+  padding: .78rem 1rem;
+  cursor: pointer;
+}
+
+.skill-store-head h2 { max-width: 18ch; }
+.mini-list { margin: .2rem 0 0; padding-left: 1.15rem; color: var(--muted); }
+.mini-list li { margin: .22rem 0; }
+.router-form { display: grid; grid-template-columns: 2fr repeat(3, minmax(9rem, 1fr)) auto; gap: .8rem; align-items: end; }
+.router-form label { display: grid; gap: .35rem; font-weight: 820; color: #23334a; }
+.router-form textarea,
+.router-form select {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--ink);
+  font: inherit;
+  padding: .74rem .82rem;
+}
+.router-form textarea { min-height: 5.2rem; resize: vertical; }
+.router-result {
+  margin-top: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #f7fbff;
+  padding: 1rem;
+  color: var(--muted);
+}
+.router-card { color: #16243b; }
+.router-actions { display: flex; gap: .65rem; flex-wrap: wrap; margin-top: .9rem; }
+.router-actions a {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: .72rem .88rem;
+  text-decoration: none;
+  font-weight: 850;
+  color: var(--ink);
+  background: #fff;
+}
+
 .loop-diagram {
   display: grid;
   grid-template-columns: repeat(8, minmax(0, 1fr));
@@ -329,6 +378,7 @@ h3 { font-size: 1.12rem; line-height: 1.2; }
   .nav { justify-content: flex-end; }
   .hero { grid-template-columns: 1fr; min-height: auto; }
   .grid, .grid.two, .form-grid { grid-template-columns: 1fr; }
+  .router-form { grid-template-columns: 1fr 1fr; }
   .offer-list { grid-template-columns: 1fr; }
   .loop-diagram, .loop-diagram.buyer-flow { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   h1 { max-width: none; }
@@ -339,6 +389,7 @@ h3 { font-size: 1.12rem; line-height: 1.2; }
   .brand-logo { height: 2.7rem; }
   .nav { gap: .65rem; font-size: .86rem; }
   .hero, .section { padding-left: 1.1rem; padding-right: 1.1rem; }
+  .router-form { grid-template-columns: 1fr; }
   .chat-form { grid-template-columns: 1fr; }
   .message { max-width: 100%; }
 }
