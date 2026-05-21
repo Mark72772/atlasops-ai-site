@@ -34,7 +34,7 @@
     const isBundle = productType.includes("bundle") || String(item.category || "").toLowerCase().includes("bundle");
     const label = isBundle ? "Agent Skill Bundle" : "Agent Skill Pack";
     const price = escapeHtml(item.price || 99);
-    const buttonText = isBundle ? `Buy $${price} Bundle` : `Buy $${price} Agent Skill Pack`;
+    const buttonText = isBundle ? "Buy Bundle" : `Buy $${price} Guardrail Kit`;
     return `<article class="gr-card" data-pack-id-card="${escapeHtml(item.pack_id)}">
       <h2>${escapeHtml(item.name)}</h2>
       <p>${escapeHtml(item.pain_point)}</p>

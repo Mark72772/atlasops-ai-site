@@ -4,7 +4,7 @@
     "price": "$99 each",
     "description": "Twelve downloadable operational controls for agent workflows.",
     "url": "guardrails.html",
-    "checkout": "Stripe Checkout live. Delivery unlocks after verified Stripe payment evidence."
+    "checkout": "Guardrail Kits and Tool Packs use Stripe Checkout. Downloads and emails release after verified Stripe payment evidence."
   },
   {
     "name": "Agent Company Templates",

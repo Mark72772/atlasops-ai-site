@@ -16,7 +16,7 @@
       if (node.tagName === "BUTTON") {
         const price = node.dataset.price || "99";
         const productType = String(node.dataset.productType || "");
-        node.textContent = productType.includes("bundle") ? `Buy $${price} Bundle` : `Buy $${price} Agent Skill Pack`;
+        node.textContent = productType.includes("bundle") ? "Buy Bundle" : `Buy $${price} Guardrail Kit`;
       }
       if (node.classList && node.classList.contains("checkout-note")) {
         node.textContent = "Stripe Checkout live. Delivery unlocks after verified Stripe payment evidence.";
@@ -72,7 +72,7 @@
       }
       setGate(button, data.exact_gate || data.status || "stripe_checkout_session_not_created", "Stripe Checkout could not create a hosted session. No payment was marked verified.");
     } catch (error) {
-      setGate(button, "stripe_worker_health_failed", "Stripe checkout is not reachable yet. No payment was marked verified.");
+      setGate(button, "stripe_worker_health_failed", "Stripe Checkout is temporarily unavailable. No payment was marked verified.");
     }
   }
 

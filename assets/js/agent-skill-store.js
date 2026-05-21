@@ -153,7 +153,7 @@
   function checkoutNote() {
     return isCheckoutLive()
       ? "Stripe Checkout live. Delivery unlocks after verified Stripe payment evidence."
-      : "Stripe Checkout is gated. Request purchase or setup review now.";
+      : "Stripe Checkout is temporarily unavailable. Ask Atlas for setup review.";
   }
 
   function bundleCard(bundle, cardClass) {
@@ -164,7 +164,7 @@
       <p>${escapeHtml(bundle.pain_point)}</p>
       <p class="price">$${escapeHtml(bundle.price)}</p>
       <ul class="mini-list">${included}</ul>
-      <button type="button" data-router-buy="${escapeHtml(bundle.pack_id)}" data-product-type="agent_skill_bundle" data-price="${escapeHtml(bundle.price)}">${isCheckoutLive() ? `Buy $${escapeHtml(bundle.price)} Bundle` : "Request Bundle"}</button>
+      <button type="button" data-router-buy="${escapeHtml(bundle.pack_id)}" data-product-type="agent_skill_bundle" data-price="${escapeHtml(bundle.price)}">${isCheckoutLive() ? "Buy Bundle" : "Ask Atlas about this bundle"}</button>
       <p class="checkout-note">${checkoutNote()}</p>
     </article>`;
   }
@@ -244,8 +244,8 @@
       <strong>Why it fits:</strong> It targets the exact proof gap in this workflow.<br>
       <strong>What it blocks:</strong> ${escapeHtml(route.blocks)}.<br>
       <div class="router-actions">
-        <button type="button" data-router-buy="${escapeHtml(route.pack_id)}" data-product-type="agent_skill_pack" data-price="99">${isCheckoutLive() ? "Buy $99 Agent Skill Pack" : "Request This Pack"}</button>
-        <button type="button" data-router-buy="${escapeHtml(route.bundle_id)}" data-product-type="agent_skill_bundle" data-price="${route.bundle_id === "agent-company-launch-kit" ? "499" : route.bundle_id === "agent-builder-starter-bundle" || route.bundle_id === "social-publisher-safety-bundle" ? "249" : "299"}">${isCheckoutLive() ? "Buy Recommended Bundle" : "Request Bundle"}</button>
+        <button type="button" data-router-buy="${escapeHtml(route.pack_id)}" data-product-type="agent_skill_pack" data-price="99">${isCheckoutLive() ? "Buy $99 Guardrail Kit" : "Ask Atlas about this pack"}</button>
+        <button type="button" data-router-buy="${escapeHtml(route.bundle_id)}" data-product-type="agent_skill_bundle" data-price="${route.bundle_id === "agent-company-launch-kit" ? "499" : route.bundle_id === "agent-builder-starter-bundle" || route.bundle_id === "social-publisher-safety-bundle" ? "249" : "299"}">${isCheckoutLive() ? "Buy Bundle" : "Ask Atlas about this bundle"}</button>
         <a href="ask-atlas.html">Ask Atlas setup review</a>
       </div>
       <p class="checkout-note">${checkoutNote()}</p>

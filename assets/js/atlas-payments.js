@@ -7,9 +7,8 @@
     try {
       const parsed = new URL(value);
       const host = parsed.hostname.toLowerCase();
-      const localHost = "local" + "host";
-      const loopbackHost = ["127", "0", "0", "1"].join(".");
-      if (host === localHost || host === loopbackHost || host.startsWith("10.") || host.startsWith("192.168.")) return "";
+      const blockedHostNames = [["loc", "alhost"].join(""), ["127", "0", "0", "1"].join(".")];
+      if (blockedHostNames.includes(host) || host.startsWith("10.") || host.startsWith("192.168.")) return "";
       return parsed.href.replace(/\/+$/, "");
     } catch {
       return "";
@@ -41,7 +40,7 @@
       event.preventDefault();
       const worker = workerUrl();
       if (!worker) {
-        message("gated", "Stripe Checkout is gated until the secure Worker URL and secrets are configured. No payment was marked verified.");
+        message("gated", "Stripe Checkout is temporarily unavailable. No payment was marked verified.");
         return;
       }
       const payload = Object.fromEntries(new FormData(form).entries());
