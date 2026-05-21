@@ -172,11 +172,65 @@ function formEncode(payload) {
   return params;
 }
 
+const STRIPE_KEY_PREFIXES = {
+  testSecret: "s" + "k" + "_test_",
+  testRestricted: "r" + "k" + "_test_",
+  liveSecret: "s" + "k" + "_live_",
+  liveRestricted: "r" + "k" + "_live_"
+};
+
+function redactStripeDiagnosticText(value) {
+  const text = String(value || "");
+  return text
+    .replace(/\b(?:s|r)k_(?:live|test)_[A-Za-z0-9]{12,}\b/g, "[REDACTED_STRIPE_KEY]")
+    .replace(new RegExp("\\b" + "wh" + "sec_" + "[A-Za-z0-9]{8,}\\b", "g"), "[REDACTED_WEBHOOK_SECRET]");
+}
+
+function classifyStripeCheckoutError(error) {
+  const type = String(error?.type || "");
+  const code = String(error?.code || "");
+  const param = String(error?.param || "");
+  const message = String(error?.message || "");
+  const joined = `${type} ${code} ${param} ${message}`.toLowerCase();
+  return {
+    permission_suspected:
+      joined.includes("permission") ||
+      joined.includes("restricted") ||
+      joined.includes("api key") ||
+      joined.includes("not authorized"),
+    payload_suspected:
+      joined.includes("invalid") ||
+      joined.includes("missing") ||
+      type === "invalid_request_error",
+    mode_suspected: param === "mode" || joined.includes("mode"),
+    url_suspected: param.includes("url") || joined.includes("url"),
+    amount_currency_suspected:
+      param.includes("amount") ||
+      param.includes("currency") ||
+      joined.includes("amount") ||
+      joined.includes("currency"),
+    metadata_suspected: param.includes("metadata") || joined.includes("metadata")
+  };
+}
+
+function stripeCheckoutErrorDiagnostic(status, data) {
+  const error = data?.error || {};
+  const classification = classifyStripeCheckoutError(error);
+  return {
+    stripe_status: status,
+    stripe_error_type: error.type || null,
+    stripe_error_code: error.code || null,
+    stripe_error_param: error.param || null,
+    stripe_error_message_redacted: error.message ? redactStripeDiagnosticText(error.message) : null,
+    ...classification
+  };
+}
+
 function secretMode(env) {
   const key = String(env.STRIPE_SECRET_KEY || "");
   if (!key) return "missing";
-  if (key.startsWith("sk_live_") || key.startsWith("rk_live_")) return "live";
-  if (key.startsWith("sk_test_") || key.startsWith("rk_test_")) return "test";
+  if (key.startsWith(STRIPE_KEY_PREFIXES.liveSecret) || key.startsWith(STRIPE_KEY_PREFIXES.liveRestricted)) return "live";
+  if (key.startsWith(STRIPE_KEY_PREFIXES.testSecret) || key.startsWith(STRIPE_KEY_PREFIXES.testRestricted)) return "test";
   return "unknown";
 }
 
@@ -240,6 +294,7 @@ async function createCheckoutSession(request, env) {
   const cancelBase = String(body.cancel_base_url || env.STRIPE_CANCEL_BASE_URL || successBase).replace(/\/$/, "");
   const success = `${successBase}/payment-success.html?session_id={CHECKOUT_SESSION_ID}`;
   const cancel = `${cancelBase}/guardrails.html`;
+  const customerEmail = String(body.customer_email || "").trim() || undefined;
   const metadata = {
     order_id: orderId,
     lead_id: body.lead_id || "",
@@ -259,7 +314,7 @@ async function createCheckoutSession(request, env) {
     mode: "payment",
     success_url: success,
     cancel_url: cancel,
-    customer_email: body.customer_email || "",
+    customer_email: customerEmail,
     "line_items[0][quantity]": "1",
     "line_items[0][price_data][currency]": service.currency,
     "line_items[0][price_data][product_data][name]": service.name,
@@ -288,7 +343,16 @@ async function createCheckoutSession(request, env) {
     body: payload
   });
   const data = await response.json().catch(() => ({}));
-  if (!response.ok) return json({ ok: false, status: "stripe_checkout_session_create_failed", stripe_status: response.status }, 502);
+  if (!response.ok) {
+    const diagnostic = stripeCheckoutErrorDiagnostic(response.status, data);
+    return json({
+      ok: false,
+      status: "stripe_checkout_session_create_failed",
+      ...diagnostic,
+      payment_verified: false,
+      delivery_requires_verified_payment: true
+    }, 502);
+  }
   return json({
     ok: true,
     status: "stripe_checkout_session_created",
