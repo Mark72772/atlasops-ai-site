@@ -2,9 +2,9 @@
   window.ATLAS_STRIPE_CONFIG = Object.freeze({
     provider: "stripe",
     displayName: "Stripe-hosted Checkout",
-    mode: "test_pending_worker_secrets",
+    mode: "live",
     currency: "USD",
-    workerUrl: "",
+    workerUrl: "https://atlasops-stripe-gateway.atlasops-ai.workers.dev",
     cardDataPolicy: "stripe_hosted_checkout_only",
     paymentVerificationPolicy: "signed_webhook_or_api_evidence_required",
     services: [
@@ -51,4 +51,3 @@
     ]
   });
 })();
-

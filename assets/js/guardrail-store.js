@@ -58,6 +58,9 @@
     if (selectedSort.includes("Newest")) rows = rows.slice().reverse();
     else if (query) rows = rows.sort((a, b) => (b._score || 0) - (a._score || 0));
     grid.innerHTML = rows.map(card).join("") || staticFallbackHtml || '<p class="gr-empty">No guardrail matches that search yet.</p>';
+    if (window.AtlasGuardrailCheckout && typeof window.AtlasGuardrailCheckout.refresh === "function") {
+      window.AtlasGuardrailCheckout.refresh();
+    }
   }
 
   fetch(grid.dataset.storePath || "data/guardrail-store.json")

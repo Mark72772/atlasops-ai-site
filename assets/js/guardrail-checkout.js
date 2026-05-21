@@ -8,6 +8,20 @@
     return String(window.ATLAS_STRIPE_WORKER_URL || cfg.workerUrl || "").trim().replace(/\/$/, "");
   }
 
+  function updateCheckoutCopy() {
+    if (!workerUrl()) return;
+    document.querySelectorAll("[data-checkout-gate]").forEach((node) => {
+      node.removeAttribute("data-checkout-gate");
+      node.removeAttribute("aria-disabled");
+      if (node.tagName === "BUTTON") {
+        node.textContent = "Buy $99 Guardrail Kit";
+      }
+      if (node.classList && node.classList.contains("checkout-note")) {
+        node.textContent = "Stripe-hosted Checkout is available. Delivery unlocks only after signed Stripe payment evidence.";
+      }
+    });
+  }
+
   function activeBaseUrl() {
     const cfg = config();
     const fallback = "https://mark72772.github.io/atlasops-ai-site";
@@ -60,5 +74,6 @@
     }
   }
 
-  window.AtlasGuardrailCheckout = { start };
+  document.addEventListener("DOMContentLoaded", updateCheckoutCopy);
+  window.AtlasGuardrailCheckout = { start, refresh: updateCheckoutCopy };
 })();
