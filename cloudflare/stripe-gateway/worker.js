@@ -95,6 +95,122 @@ const SERVICE_CATALOG = {
     currency: "usd",
     type: "downloadable_guardrail_bundle"
   },
+  "agent-skill-update-club": {
+    name: "Agent Skill Update Club",
+    amount: 4900,
+    currency: "usd",
+    type: "subscription",
+    revenue_type: "subscription",
+    subscription_plan_id: "agent-skill-update-club",
+    price_env: "STRIPE_PRICE_AGENT_SKILL_UPDATE_CLUB"
+  },
+  "agent-operations-monitor": {
+    name: "Agent Operations Monitor",
+    amount: 19900,
+    currency: "usd",
+    type: "subscription",
+    revenue_type: "subscription",
+    subscription_plan_id: "agent-operations-monitor",
+    price_env: "STRIPE_PRICE_AGENT_OPERATIONS_MONITOR"
+  },
+  "social-sales-loop": {
+    name: "Social Sales Loop",
+    amount: 29900,
+    currency: "usd",
+    type: "subscription",
+    revenue_type: "subscription",
+    subscription_plan_id: "social-sales-loop",
+    price_env: "STRIPE_PRICE_SOCIAL_SALES_LOOP"
+  },
+  "revenue-agent-reliability-system": {
+    name: "Revenue Agent Reliability System",
+    amount: 49900,
+    currency: "usd",
+    type: "subscription",
+    revenue_type: "subscription",
+    subscription_plan_id: "revenue-agent-reliability-system",
+    price_env: "STRIPE_PRICE_REVENUE_AGENT_RELIABILITY_SYSTEM"
+  },
+  "custom-agent-ops-retainer": {
+    name: "Custom Agent Ops Retainer",
+    amount: 99900,
+    currency: "usd",
+    type: "custom_workflow_inquiry",
+    revenue_type: "quote_subscription",
+    subscription_plan_id: "custom-agent-ops-retainer"
+  },
+  "ai-business-assessment": {
+    name: "AI Business Assessment",
+    amount: 100000,
+    currency: "usd",
+    type: "service",
+    revenue_type: "one_time",
+    delivery_policy: "assessment_after_signed_payment_evidence"
+  },
+  "first-response-agent": {
+    name: "First Response Agent Setup Review",
+    amount: 49900,
+    currency: "usd",
+    type: "service",
+    revenue_type: "one_time",
+    delivery_policy: "implementation_scoping_after_signed_payment_evidence"
+  },
+  "first-response-agent-skill-pack": {
+    name: "First Response Agent DIY Skill Pack",
+    amount: 9900,
+    currency: "usd",
+    type: "downloadable_skill_pack",
+    revenue_type: "one_time",
+    delivery_policy: "download_after_signed_payment_evidence"
+  },
+  "workflow-automation-upsell-pack": {
+    name: "AI Workflow Automation Upsell Pack",
+    amount: 150000,
+    currency: "usd",
+    type: "service_pack",
+    revenue_type: "one_time",
+    delivery_policy: "implementation_after_signed_payment_evidence"
+  },
+  "knowledge-system-agent-pack": {
+    name: "Knowledge System / Custom GPT Pack",
+    amount: 9900,
+    currency: "usd",
+    type: "downloadable_skill_pack",
+    revenue_type: "one_time",
+    delivery_policy: "download_after_signed_payment_evidence"
+  },
+  "api-wrapper-product-factory-pack": {
+    name: "API Wrapper / Unbundling Product Factory Pack",
+    amount: 24900,
+    currency: "usd",
+    type: "agent_builder_pack",
+    revenue_type: "one_time",
+    delivery_policy: "download_after_signed_payment_evidence"
+  },
+  "marketplace-radar-pack": {
+    name: "Marketplace Radar Pack",
+    amount: 9900,
+    currency: "usd",
+    type: "source_gated_pack",
+    revenue_type: "one_time",
+    delivery_policy: "framework_delivery_after_signed_payment_evidence"
+  },
+  "social-media-distribution-pack": {
+    name: "LinkedIn/X/Media Distribution Pack",
+    amount: 9900,
+    currency: "usd",
+    type: "social_agent_addon",
+    revenue_type: "one_time",
+    delivery_policy: "download_after_signed_payment_evidence"
+  },
+  "recurring-revenue-monitor-pack": {
+    name: "Recurring Revenue Monitor Pack",
+    amount: 9900,
+    currency: "usd",
+    type: "revenue_agent_addon",
+    revenue_type: "one_time",
+    delivery_policy: "download_after_signed_payment_evidence"
+  },
   ai_website_seo_visibility_audit: {
     name: "AI Website SEO + AI Visibility Audit",
     amount: 19900,
@@ -334,21 +450,46 @@ async function createCheckoutSession(request, env) {
     service_type: service.type || (packId ? "downloadable_guardrail_kit" : "service_checkout"),
     amount_cents: String(service.amount),
     currency: service.currency,
+    revenue_type: service.revenue_type || "one_time",
+    subscription_plan_id: service.subscription_plan_id || "",
+    evidence_required: "true",
     source: body.source || "guardrail_store",
     source_url: body.source_url || "",
     delivery_requires_verified_payment: "true",
     atlas_runtime: "local_only",
     client_website: body.client_website || body.business_url || ""
   };
-  const payload = formEncode({
-    mode: "payment",
+  if (service.revenue_type === "quote_subscription") {
+    return json({
+      ok: false,
+      status: "custom_quote_required",
+      exact_gate: "custom_quote_required",
+      payment_verified: false,
+      subscription_active: false,
+      mrr_cents: 0,
+      checkout_session_url_is_payment_proof: false
+    }, 409);
+  }
+  const sessionMode = service.revenue_type === "subscription" ? "subscription" : "payment";
+  const subscriptionPriceId = service.revenue_type === "subscription" ? String(env[service.price_env] || "") : "";
+  if (service.revenue_type === "subscription" && !subscriptionPriceId) {
+    return json({
+      ok: false,
+      status: "recurring_price_id_missing",
+      exact_gate: "recurring_price_id_missing",
+      payment_verified: false,
+      subscription_active: false,
+      mrr_cents: 0,
+      checkout_session_url_is_subscription_proof: false,
+      signed_stripe_subscription_or_invoice_evidence_required: true
+    }, 409);
+  }
+  const payloadBase = {
+    mode: sessionMode,
     success_url: success,
     cancel_url: cancel,
     customer_email: customerEmail,
     "line_items[0][quantity]": "1",
-    "line_items[0][price_data][currency]": service.currency,
-    "line_items[0][price_data][product_data][name]": service.name,
-    "line_items[0][price_data][unit_amount]": service.amount,
     "metadata[order_id]": metadata.order_id,
     "metadata[lead_id]": metadata.lead_id,
     "metadata[service_id]": metadata.service_id,
@@ -357,12 +498,23 @@ async function createCheckoutSession(request, env) {
     "metadata[service_type]": metadata.service_type,
     "metadata[amount_cents]": metadata.amount_cents,
     "metadata[currency]": metadata.currency,
+    "metadata[revenue_type]": metadata.revenue_type,
+    "metadata[subscription_plan_id]": metadata.subscription_plan_id,
+    "metadata[evidence_required]": metadata.evidence_required,
     "metadata[source]": metadata.source,
     "metadata[source_url]": metadata.source_url,
     "metadata[delivery_requires_verified_payment]": metadata.delivery_requires_verified_payment,
     "metadata[atlas_runtime]": metadata.atlas_runtime,
     "metadata[client_website]": metadata.client_website
-  });
+  };
+  const lineItemPayload = service.revenue_type === "subscription"
+    ? { "line_items[0][price]": subscriptionPriceId }
+    : {
+        "line_items[0][price_data][currency]": service.currency,
+        "line_items[0][price_data][product_data][name]": service.name,
+        "line_items[0][price_data][unit_amount]": service.amount
+      };
+  const payload = formEncode({ ...payloadBase, ...lineItemPayload });
   const response = await fetch("https://api.stripe.com/v1/checkout/sessions", {
     method: "POST",
     headers: {
@@ -478,11 +630,14 @@ function evidenceFromEvent(event) {
   const obj = event.data?.object || {};
   const charge = obj.latest_charge || obj.charge || null;
   const metadata = obj.metadata || {};
+  const isSubscriptionEvent = event.type.startsWith("invoice.") || event.type.startsWith("customer.subscription.") || metadata.revenue_type === "subscription";
   const amountTotal = obj.amount_total || obj.amount_received || obj.amount || 0;
   const currency = String(obj.currency || metadata.currency || "usd").toLowerCase();
   const paymentStatus = obj.payment_status || (event.type.includes("failed") ? "failed" : event.type.includes("refunded") ? "refunded" : "paid");
   const checkoutStatus = obj.object === "checkout.session" ? obj.status || null : null;
   const review = checkoutEvidenceReview(event, obj, metadata, amountTotal, currency, paymentStatus, checkoutStatus);
+  const signedSubscriptionEvidence = Boolean(event.livemode) && isSubscriptionEvent && ["checkout.session.completed", "invoice.paid", "customer.subscription.created", "customer.subscription.updated", "customer.subscription.resumed"].includes(event.type);
+  const failedSubscriptionEvidence = Boolean(event.livemode) && isSubscriptionEvent && ["invoice.payment_failed", "customer.subscription.deleted", "customer.subscription.paused"].includes(event.type);
   return {
     event_id: event.id,
     event_type: event.type,
@@ -499,9 +654,15 @@ function evidenceFromEvent(event) {
     payment_status: paymentStatus,
     customer_email: obj.customer_details?.email || obj.receipt_email || null,
     metadata,
+    revenue_type: metadata.revenue_type || (isSubscriptionEvent ? "subscription" : "one_time"),
+    subscription_plan_id: metadata.subscription_plan_id || null,
+    subscription_id: obj.subscription || (obj.object === "subscription" ? obj.id : null),
+    invoice_id: obj.object === "invoice" ? obj.id : null,
+    signed_live_subscription_event: signedSubscriptionEvidence,
+    failed_live_subscription_event: failedSubscriptionEvidence,
     review_required: review.review_required,
     review_required_reasons: review.review_required_reasons,
-    evidence_status: review.evidence_status,
+    evidence_status: signedSubscriptionEvidence ? "verified_live_subscription_event" : failedSubscriptionEvidence ? "verified_live_subscription_lifecycle_event" : review.evidence_status,
     accepted_for_delivery: review.accepted_for_delivery,
     verified_test_payment: review.accepted_for_delivery && !event.livemode,
     verified_live_payment: review.accepted_for_delivery && Boolean(event.livemode),

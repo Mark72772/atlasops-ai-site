@@ -1,0 +1,103 @@
+{
+  "updated_by": "sprint_94a_productized_agent_skill_store",
+  "checkout_url_is_payment_proof": false,
+  "success_redirect_is_payment_proof": false,
+  "subscription_checkout_url_is_subscription_proof": false,
+  "signed_stripe_evidence_required_before_delivery": true,
+  "live_revenue_zero_until_signed_evidence": true,
+  "mrr_zero_until_signed_subscription_evidence": true,
+  "products": [
+    {
+      "id": "ai-business-assessment",
+      "name": "AI Business Assessment",
+      "price": "$1,000",
+      "summary": "Transcript-backed workflow assessment with pain points, effort/impact matrix, quick wins, and upsell menu.",
+      "checkout_type": "service",
+      "platform_badges": ["Atlas", "OpenAI Agents", "Claude Code"],
+      "page": "services/ai-business-assessment.html",
+      "stripe_route": "ai-business-assessment"
+    },
+    {
+      "id": "first-response-agent",
+      "name": "First Response / Missed Call Agent",
+      "price": "$499-$1,500 setup; $199-$500/mo monitor; DIY $99",
+      "summary": "Consent-safe inbound response workflow for missed calls, website forms, opted-in SMS leads, and CRM events.",
+      "checkout_type": "service_or_skill_pack",
+      "platform_badges": ["Atlas", "OpenAI Agents", "MCP"],
+      "page": "services/first-response-agent.html",
+      "stripe_route": "first-response-agent",
+      "exact_gate": "outbound_call_text_campaign_requires_consent_policy_dnc_review_and_mark_approval"
+    },
+    {
+      "id": "workflow-automation-upsell-pack",
+      "name": "AI Workflow Automation Upsell Pack",
+      "price": "$1,500-$5,000",
+      "summary": "Zapier/Make workflow, SOP cleanup, automation proof, owner handoff, and monitoring checklist.",
+      "checkout_type": "service_pack",
+      "platform_badges": ["Atlas", "MCP", "OpenAI Agents"],
+      "page": "services/workflow-automation-pack.html",
+      "stripe_route": "workflow-automation-upsell-pack"
+    },
+    {
+      "id": "knowledge-system-agent-pack",
+      "name": "Knowledge System / Custom GPT Pack",
+      "price": "DIY $99; Build $1,500-$5,000",
+      "summary": "Knowledge base intake, system prompt, Q&A guardrails, access rules, and deployment checklist.",
+      "checkout_type": "skill_pack_or_service",
+      "platform_badges": ["Claude Code", "OpenAI Agents", "Atlas"],
+      "page": "services/knowledge-system-agent-pack.html",
+      "stripe_route": "knowledge-system-agent-pack"
+    },
+    {
+      "id": "api-wrapper-product-factory-pack",
+      "name": "API Wrapper / Unbundling Product Factory",
+      "price": "DIY $99; Builder $249; Custom $499+",
+      "summary": "Opportunity scoring, source-policy gate, API wrapper template, simple UI, Stripe template, and recurring pricing plan.",
+      "checkout_type": "agent_builder_pack",
+      "platform_badges": ["MCP", "OpenClaw", "Atlas"],
+      "page": "services/api-wrapper-product-factory-pack.html",
+      "stripe_route": "api-wrapper-product-factory-pack",
+      "exact_gate": "source_policy_clearance_required"
+    },
+    {
+      "id": "marketplace-radar-pack",
+      "name": "Marketplace Radar Pack",
+      "price": "DIY $99; Setup $499+; Monitor $99-$299/mo",
+      "summary": "Source-gated radar framework for public or approved marketplace sources.",
+      "checkout_type": "source_gated_pack",
+      "platform_badges": ["Atlas", "MCP", "OpenAI Agents"],
+      "page": "services/marketplace-radar-pack.html",
+      "stripe_route": "marketplace-radar-pack",
+      "exact_gate": "source_policy_clearance_required"
+    },
+    {
+      "id": "social-media-distribution-pack",
+      "name": "LinkedIn/X/Media Distribution Pack",
+      "price": "DIY $99; Setup $499; Draft Pack $299/mo",
+      "summary": "Post quality guard, media template, approval workflow, permalink proof loop, and metrics memory.",
+      "checkout_type": "social_agent_addon",
+      "platform_badges": ["LinkedIn", "X", "Atlas"],
+      "page": "services/social-media-distribution-pack.html",
+      "stripe_route": "social-media-distribution-pack",
+      "exact_gate": "social_manual_approval_required"
+    },
+    {
+      "id": "recurring-revenue-monitor-pack",
+      "name": "Recurring Revenue Monitor Pack",
+      "price": "DIY $99; Setup $499; Monitor $199/mo",
+      "summary": "First sale watch, evidence polling, subscription event monitor, failed-invoice tasking, and delivery lock guard.",
+      "checkout_type": "revenue_agent_addon",
+      "platform_badges": ["Stripe", "Atlas", "OpenAI Agents"],
+      "page": "services/recurring-revenue-monitor-pack.html",
+      "stripe_route": "recurring-revenue-monitor-pack",
+      "exact_gate": "recurring_price_id_missing"
+    }
+  ],
+  "recurring_plans": [
+    {"id": "agent-skill-update-club", "name": "Agent Skill Update Club", "price": "$49/month", "exact_gate": "recurring_price_id_missing"},
+    {"id": "agent-operations-monitor", "name": "Agent Operations Monitor", "price": "$199/month", "exact_gate": "recurring_price_id_missing"},
+    {"id": "social-sales-loop", "name": "Social Sales Loop", "price": "$299/month", "exact_gate": "recurring_price_id_missing"},
+    {"id": "revenue-agent-reliability-system", "name": "Revenue Agent Reliability System", "price": "$499/month", "exact_gate": "recurring_price_id_missing"},
+    {"id": "custom-agent-ops-retainer", "name": "Custom Agent Ops Retainer", "price": "$999+/month", "route": "quote_request"}
+  ]
+}
