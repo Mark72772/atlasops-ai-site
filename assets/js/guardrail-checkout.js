@@ -19,7 +19,7 @@
         node.textContent = productType.includes("bundle") ? `Buy $${price} Bundle` : `Buy $${price} Agent Skill Pack`;
       }
       if (node.classList && node.classList.contains("checkout-note")) {
-        node.textContent = "Stripe-hosted Checkout is available. Delivery unlocks only after signed Stripe payment evidence.";
+        node.textContent = "Stripe Checkout live. Delivery unlocks after verified Stripe payment evidence.";
       }
     });
   }
@@ -36,16 +36,16 @@
       button.dataset.checkoutGate = gate;
       button.dataset.paymentProvider = "stripe";
       button.setAttribute("aria-disabled", "true");
-      button.textContent = "Stripe checkout is being activated";
+      button.textContent = "Stripe Checkout unavailable";
     }
-    window.alert(message || "Stripe checkout is being activated. Contact AtlasOps to purchase this kit.");
+    window.alert(message || "Stripe Checkout could not open. No payment was marked verified.");
   }
 
   async function start(packId, button) {
     const worker = workerUrl();
     const gate = config().exactGate || "stripe_worker_url_missing";
     if (!worker) {
-      setGate(button, gate, "Stripe checkout is being activated. Contact AtlasOps to purchase this kit.");
+      setGate(button, gate, "Stripe Checkout could not open. No payment was marked verified.");
       return;
     }
     const base = activeBaseUrl();
@@ -70,7 +70,7 @@
         window.location.href = checkoutUrl;
         return;
       }
-      setGate(button, data.exact_gate || data.status || "stripe_checkout_session_not_created", "Stripe checkout is not ready yet. AtlasOps will finish secure Stripe Worker setup before taking card payments.");
+      setGate(button, data.exact_gate || data.status || "stripe_checkout_session_not_created", "Stripe Checkout could not create a hosted session. No payment was marked verified.");
     } catch (error) {
       setGate(button, "stripe_worker_health_failed", "Stripe checkout is not reachable yet. No payment was marked verified.");
     }

@@ -152,8 +152,8 @@
 
   function checkoutNote() {
     return isCheckoutLive()
-      ? "Live Stripe Checkout is available. Delivery unlocks only after signed live Stripe payment evidence."
-      : "Stripe checkout is test-proven. Live checkout is being activated. Request purchase or setup review now.";
+      ? "Stripe Checkout live. Delivery unlocks after verified Stripe payment evidence."
+      : "Stripe Checkout is gated. Request purchase or setup review now.";
   }
 
   function bundleCard(bundle, cardClass) {

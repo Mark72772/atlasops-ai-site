@@ -24,7 +24,7 @@
     },
     {
       "title": "RAG source discipline",
-      "body": "A RAG workflow should not sound confident just because it retrieved something. The useful layer is a source packet: current sources, validation notes, conflict handling, and a clear gate for unsupported claims."
+      "body": "A RAG workflow should not sound confident just because it retrieved something. The useful layer is a retrieval evidence packet: current sources, validation notes, conflict handling, and a clear gate for unsupported claims."
     },
     {
       "title": "OpenClaw + Codex safely",
@@ -52,7 +52,7 @@
     "A checkout link is not payment proof. A success redirect is not payment proof. Delivery should wait for signed Stripe evidence.",
     "If Codex keeps touching too many files, add repo control: scope, ownership, tests, dirty-worktree rules, and proof before done.",
     "Social automation needs permalink proof. Browser-open and composer-open are not posts.",
-    "RAG agents need source packets: current sources, validation notes, uncertainty, and conflict handling.",
+    "RAG agents need retrieval evidence packets: current sources, validation notes, uncertainty, and conflict handling.",
     "OpenClaw + Codex needs doctor checks, gateway status, rollback plans, and repo boundaries before tool actions count.",
     "Agent companies need tickets, owners, routines, budgets, QA, and proof. Heartbeats are not work.",
     "Revenue agents should not count checkout sessions as revenue. Signed payment evidence changes state.",
@@ -109,3 +109,4 @@
     }
   ]
 }
+

@@ -45,7 +45,7 @@
         <a href="${detailUrl}">Details</a>
         <button type="button" data-pack-id="${escapeHtml(item.pack_id)}" data-payment-provider="stripe" data-product-type="${escapeHtml(productType)}" data-price="${price}" data-checkout-gate="stripe_worker_url_missing|stripe_key_rotation_required|stripe_worker_secrets_missing">${buttonText}</button>
       </div>
-      <p class="checkout-note" data-checkout-gate="stripe_worker_url_missing|stripe_key_rotation_required|stripe_worker_secrets_missing">Stripe checkout is live-ready. Delivery unlocks only after signed Stripe payment evidence.</p>
+      <p class="checkout-note" data-checkout-gate="stripe_worker_url_missing|stripe_key_rotation_required|stripe_worker_secrets_missing">Stripe Checkout live. Delivery unlocks after verified Stripe payment evidence.</p>
     </article>`;
   }
 
@@ -97,7 +97,7 @@
     } else {
       button.dataset.checkoutGate = "stripe_checkout_script_missing";
       button.setAttribute("aria-disabled", "true");
-      button.textContent = "Stripe checkout is being activated";
+      button.textContent = "Stripe Checkout unavailable";
     }
   });
 })();
