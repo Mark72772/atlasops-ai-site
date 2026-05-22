@@ -237,7 +237,7 @@
       "status": "ready",
       "category": "SaaS",
       "detail_url": "guardrails/saas-operator-guardrail.html",
-      "content": "SaaS Operator Guardrail SaaS agents can automate messages and reports before they have evidence, customer context, or safe billing language. SaaS SaaS Support Onboarding Billing Reporting fake metrics unsafe billing follow-up missed churn signals unsupported support decisions",
+      "content": "SaaS Operator Guardrail SaaS agents can automate messages and reports before they have evidence, customer context, or safe billing language. SaaS SaaS Support Onboarding Billing Reporting unsupported metrics claims unsafe billing follow-up missed churn signals unsupported support decisions",
       "canonical_product_url": "https://atlasops.io/guardrails/saas-operator-guardrail.html",
       "fallback_product_url": "https://mark72772.github.io/atlasops-ai-site/guardrails/saas-operator-guardrail.html",
       "checkout_button_id": "buy_saas_operator_guardrail",
@@ -318,7 +318,7 @@
       "status": "ready",
       "category": "Social Publishing",
       "detail_url": "guardrails/social-publishing-guardrail.html",
-      "content": "Social Publishing Guardrail Agents publish debug-looking posts, stale drafts, duplicate content, or empty composer attempts. Social Publishing LinkedIn X Browser Automation Content Ops OpenClaw internal draft labels in public posts bad draft reentry empty LinkedIn composer X tab storms fake publish evidence",
+      "content": "Social Publishing Guardrail Agents publish debug-looking posts, stale drafts, duplicate content, or empty composer attempts. Social Publishing LinkedIn X Browser Automation Content Ops OpenClaw internal draft labels in public posts bad draft reentry empty LinkedIn composer X tab storms unsupported publish claims",
       "canonical_product_url": "https://atlasops.io/guardrails/social-publishing-guardrail.html",
       "fallback_product_url": "https://mark72772.github.io/atlasops-ai-site/guardrails/social-publishing-guardrail.html",
       "checkout_button_id": "buy_social_publishing_guardrail",
@@ -400,7 +400,7 @@
       "status": "ready",
       "category": "Stripe / Payments",
       "detail_url": "guardrails/stripe-payment-proof-guardrail.html",
-      "content": "Stripe Payment Proof Guardrail Teams count checkout links or success pages as paid even when no verified Stripe event exists. Stripe / Payments Stripe Checkout Payment Links Webhooks Reports payment link counted as evidence success redirect counted as paid report unlock without payment unsupported revenue claims",
+      "content": "Stripe Payment Proof Guardrail Teams count checkout links or success pages as paid even when no payment verification exists. Stripe / Payments Stripe Checkout Payment Links Webhooks Reports checkout link mistaken for paid status success redirect mistaken for paid status delivery unlock before verification unsupported revenue claims",
       "canonical_product_url": "https://atlasops.io/guardrails/stripe-payment-proof-guardrail.html",
       "fallback_product_url": "https://mark72772.github.io/atlasops-ai-site/guardrails/stripe-payment-proof-guardrail.html",
       "checkout_button_id": "buy_stripe_payment_proof_guardrail",
@@ -607,9 +607,9 @@
         "examples/"
       ],
       "proof_requirements": [
-        "signed Stripe evidence",
+        "payment verification",
         "daily ticket proof",
-        "no fake revenue check"
+        "revenue verification check"
       ],
       "price": 299,
       "setup_upsell": "$199 setup review",
@@ -617,7 +617,7 @@
       "category": "Bundles",
       "product_type": "agent_skill_bundle",
       "detail_url": "guardrails.html#agent-skill-bundles",
-      "content": "Revenue Agent Bundle Stripe Payment Proof SaaS Operator Agent Daily Operations revenue ops payment verification delivery lock live revenue proof",
+      "content": "Revenue Agent Bundle Stripe Payment Proof SaaS Operator Agent Daily Operations revenue ops payment verification private delivery revenue review",
       "canonical_product_url": "https://atlasops.io/guardrails.html#agent-skill-bundles",
       "fallback_product_url": "https://mark72772.github.io/atlasops-ai-site/guardrails.html#agent-skill-bundles",
       "checkout_button_id": "buy_revenue_agent_bundle",

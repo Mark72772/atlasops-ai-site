@@ -67,7 +67,7 @@
     const result = document.querySelector("[data-payment-result]");
     if (!result) return;
     result.dataset.status = "verification_pending";
-    result.textContent = "Payment received by Stripe if checkout completed. AtlasOps is verifying payment verification before any report or download unlocks.";
+    result.textContent = "If checkout completed, AtlasOps verifies payment before any report or download unlocks.";
   }
   document.addEventListener("DOMContentLoaded", () => {
     initCheckout();

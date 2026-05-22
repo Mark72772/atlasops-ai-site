@@ -63,7 +63,7 @@
       included_packs: [
         "Claude Code Team Ergonomics Agent Pack",
         "Codex Team Ergonomics Agent Pack",
-        "Shared verification-first proof contract"
+        "Shared verification-first workflow contract"
       ],
       pain_point: "Shared AI coding operating contracts for teams using both Claude Code and Codex."
     }
@@ -161,7 +161,7 @@
       if (title) title.textContent = "Agent Skill Packs + Operational Guardrails";
       if (subtitle) subtitle.textContent = "Guardrails, not prompts.";
       if (body) {
-        body.textContent = "Reusable workflow controls for Codex, Claude Code, OpenClaw, RAG, Stripe, social publishing, SaaS operators, and AI business agents. These are operational infrastructure: checks, blockers, evidence rules, SKILL.md files, AGENTS.md files, QA contracts, and delivery policies.";
+        body.textContent = "Reusable workflow controls for Codex, Claude Code, OpenClaw, RAG, Stripe, social publishing, SaaS operators, and AI business agents. These are operational infrastructure: checks, blockers, workflow rules, SKILL.md files, AGENTS.md files, QA contracts, and delivery policies.";
       }
       const firstAction = guardrailHero.querySelector(".gr-primary");
       if (firstAction) firstAction.textContent = "Browse $99 Agent Skill Packs";
@@ -245,7 +245,7 @@
     return `<section id="ask-atlas-product-router" class="${isGuardrailPage ? "skill-router-panel" : "section white tight skill-router-panel"}">
       <div class="section-head skill-store-head">
         <h2>Ask Atlas which pack fits my workflow</h2>
-        <p class="lead">Describe the failure mode. Atlas recommends an Agent Skill Pack, a bundle, and the proof rule it protects.</p>
+        <p class="lead">Describe the failure mode. Atlas recommends an Agent Skill Pack, a bundle, and the workflow check it protects.</p>
       </div>
       <form class="router-form" data-agent-skill-router>
         <label>Workflow pain point<textarea name="pain_point" rows="4" placeholder="Example: My Codex agent keeps changing too many files."></textarea></label>
@@ -277,7 +277,7 @@
     resultNode.innerHTML = `<div class="router-card">
       <strong>Recommended kit:</strong> ${escapeHtml(route.kit)}<br>
       <strong>Recommended bundle:</strong> ${escapeHtml(route.bundle)}<br>
-      <strong>Why it fits:</strong> It targets the exact proof gap in this workflow.<br>
+      <strong>Why it fits:</strong> It targets the workflow gap behind this issue.<br>
       <strong>What it blocks:</strong> ${escapeHtml(route.blocks)}.<br>
       <div class="router-actions">
         <button type="button" ${gated ? `disabled title="${escapeHtml(route.exact_gate)}"` : `data-router-buy="${escapeHtml(route.pack_id)}" data-product-type="agent_skill_pack"`} data-price="99">${gated ? "Checkout route pending" : isCheckoutLive() ? "Buy $99 Guardrail Kit" : "Ask Atlas about this pack"}</button>
@@ -324,7 +324,7 @@
       const section = document.createElement("section");
       section.id = "recurring-agent-operations";
       section.className = document.querySelector(".gr-shell") ? "gr-proof-panel recurring-agent-ops" : "section white tight recurring-agent-ops";
-      section.innerHTML = `<span>Recurring Agent Operations</span><strong>Monthly support for teams running AI agents in production.</strong><p>Subscription checkout is evidence-gated: a Checkout URL or return page is not proof. AtlasOps activates recurring access only after signed Stripe subscription or invoice evidence.</p><div class="gr-grid">${cards}</div>`;
+      section.innerHTML = `<span>Recurring Agent Operations</span><strong>Monthly support for teams running AI agents in production.</strong><p>Subscription checkout uses payment verification. A checkout URL or return page does not activate recurring access by itself.</p><div class="gr-grid">${cards}</div>`;
       const anchor = document.getElementById("agent-skill-bundles") || document.getElementById("guardrail-store") || host.lastElementChild;
       if (anchor && anchor.parentNode) anchor.parentNode.insertBefore(section, anchor.nextSibling);
       else host.appendChild(section);

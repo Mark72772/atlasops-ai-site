@@ -46,7 +46,7 @@
       event.preventDefault();
       const worker = safeWorkerUrl();
       if (!worker) {
-        showMessage("gated", "Stripe Checkout is configured but waiting on the secure Worker URL and secrets. AtlasOps will verify payment from signed Stripe evidence before delivery starts.");
+        showMessage("gated", "Stripe Checkout is configured but not ready to open. AtlasOps uses payment verification before delivery starts.");
         return;
       }
       const payload = Object.fromEntries(new FormData(form).entries());
@@ -60,7 +60,7 @@
         const result = await response.json().catch(() => ({}));
         const checkoutUrl = result.checkout_url || result.url;
         if (response.ok && checkoutUrl) {
-          showMessage("ready", "Opening Stripe-hosted Checkout. Payment is verified only after signed Stripe evidence reaches AtlasOps.");
+          showMessage("ready", "Opening Stripe-hosted Checkout. Delivery starts only after payment verification.");
           window.location.href = checkoutUrl;
         } else {
           showMessage("gated", "Stripe Checkout is not ready yet. AtlasOps will finish Worker setup before taking card payments.");
@@ -78,8 +78,8 @@
     const session = params.get("session_id");
     result.dataset.status = session ? "checkout_returned" : "pending";
     result.textContent = session
-      ? "Checkout returned successfully. AtlasOps still waits for signed Stripe webhook/API evidence before marking the order paid or unlocking report delivery."
-      : "Payment is not verified yet. AtlasOps keeps report delivery locked until signed Stripe evidence is received.";
+      ? "Checkout returned successfully. AtlasOps still waits for payment verification before marking the order paid or unlocking delivery."
+      : "Payment is not verified yet. AtlasOps keeps delivery locked until payment verification is complete.";
   }
 
   document.addEventListener("DOMContentLoaded", () => {

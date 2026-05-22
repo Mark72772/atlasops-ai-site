@@ -116,9 +116,9 @@
         "examples/"
       ],
       "proof_requirements": [
-        "signed Stripe evidence",
+        "payment verification",
         "daily ticket proof",
-        "no fake revenue check"
+        "revenue verification check"
       ],
       "price": 299,
       "setup_upsell": "$199 setup review",

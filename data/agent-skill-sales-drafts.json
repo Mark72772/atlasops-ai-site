@@ -8,19 +8,19 @@
   "linkedin_drafts": [
     {
       "title": "Guardrails, not prompts",
-      "body": "Most agent failures are not model failures. They are operating failures: no scope, no proof rule, no delivery lock, and no one clear moment where work counts as done. AtlasOps Agent Skill Packs package the missing operating layer: SKILL.md files, AGENTS.md files, checks, blockers, QA contracts, and delivery policies."
+      "body": "Most agent failures are not model failures. They are operating failures: no scope, no acceptance rule, no delivery lock, and no one clear moment where work counts as done. AtlasOps Agent Skill Packs package the missing operating layer: SKILL.md files, AGENTS.md files, checks, blockers, QA contracts, and delivery policies."
     },
     {
       "title": "Codex repo control",
       "body": "If your coding agent keeps changing too many files, the fix is not another prompt. It is a repo control guardrail: ownership boundaries, test commands, dirty-worktree rules, and evidence before completion."
     },
     {
-      "title": "Stripe payment proof",
-      "body": "A checkout URL is not payment proof. A success redirect is not payment proof. For downloadable products, delivery should wait for signed Stripe evidence with matching order metadata."
+      "title": "Stripe delivery verification",
+      "body": "Checkout redirects do not unlock private delivery. Downloadable products release after payment verification matches the order."
     },
     {
-      "title": "Social publishing proof",
-      "body": "Opening a social composer is not a post. Typing text into a composer is not a post. Public content automation needs permalink proof, source discipline, and a rule against debug-looking labels."
+      "title": "Social publishing confirmation",
+      "body": "Opening a social composer is not a post. Typing text into a composer is not a post. Public content automation needs permalink confirmation, source discipline, and a rule against internal draft labels."
     },
     {
       "title": "RAG source discipline",
@@ -28,11 +28,11 @@
     },
     {
       "title": "OpenClaw + Codex safely",
-      "body": "Tool bridges need doctor checks, gateway proof, version awareness, rollback plans, and repo boundaries. That is the difference between an integration and a reliable operating path."
+      "body": "Tool bridges need doctor checks, gateway checks, version awareness, rollback plans, and repo boundaries. That is the difference between an integration and a reliable operating path."
     },
     {
       "title": "Agent Company Launch Kit",
-      "body": "When agents start acting like a team, they need company-shaped controls: owners, tickets, routines, budgets, QA review, and proof requirements. Agent speed needs an operating system."
+      "body": "When agents start acting like a team, they need company-shaped controls: owners, tickets, routines, budgets, QA review, and acceptance requirements. Agent speed needs an operating system."
     },
     {
       "title": "Revenue agents",
@@ -40,7 +40,7 @@
     },
     {
       "title": "AI SEO guardrails",
-      "body": "AI visibility work needs more than new content. It needs entity clarity, service-page proof, FAQ structure, and checks that prevent unsupported visibility claims."
+      "body": "AI visibility work needs more than new content. It needs entity clarity, service-page trust signals, FAQ structure, and checks that prevent unsupported visibility claims."
     },
     {
       "title": "Setup review",
@@ -49,12 +49,12 @@
   ],
   "x_drafts": [
     "Guardrails, not prompts. Agent Skill Packs package checks, blockers, evidence rules, SKILL.md files, AGENTS.md files, and QA contracts for real workflows.",
-    "A checkout link is not payment proof. A success redirect is not payment proof. Delivery should wait for signed Stripe evidence.",
-    "If Codex keeps touching too many files, add repo control: scope, ownership, tests, dirty-worktree rules, and proof before done.",
-    "Social automation needs permalink proof. Browser-open and composer-open are not posts.",
+    "Checkout links and success redirects do not unlock private delivery. Delivery waits for payment verification.",
+    "If Codex keeps touching too many files, add repo control: scope, ownership, tests, dirty-worktree rules, and review before done.",
+    "Social automation needs permalink confirmation. Browser-open and composer-open are not posts.",
     "RAG agents need retrieval evidence packets: current sources, validation notes, uncertainty, and conflict handling.",
     "OpenClaw + Codex needs doctor checks, gateway status, rollback plans, and repo boundaries before tool actions count.",
-    "Agent companies need tickets, owners, routines, budgets, QA, and proof. Heartbeats are not work.",
+    "Agent companies need tickets, owners, routines, budgets, and QA. Heartbeats are not work.",
     "Revenue agents should not count checkout sessions as revenue. Signed payment verification changes state.",
     "Agent Skill Bundles group the controls buyers usually need together: builder, social, revenue, OpenClaw + Codex, and company launch.",
     "The useful question is not 'what prompt should I use?' It is 'what evidence proves this workflow is done?'"
@@ -73,17 +73,17 @@
       "summary": "Buyers can describe a workflow problem and get a pack and bundle recommendation."
     },
     {
-      "title": "Stripe delivery rules remain proof-backed",
+      "title": "Stripe delivery rules stay verification-backed",
       "summary": "Checkout redirects still do not unlock downloads; delivery waits for payment verification."
     },
     {
       "title": "Social sales drafts remain draft-only",
-      "summary": "Drafts were generated for LinkedIn and X, but publishing still requires platform proof."
+      "summary": "Drafts were generated for LinkedIn and X, but publishing still requires platform confirmation."
     }
   ],
   "field_note_outlines": [
     "Why agent teams need operating controls before more autonomy",
-    "The difference between a checkout session and payment verification",
+    "Why checkout sessions and payment verification are different",
     "How to turn recurring agent failures into reusable Agent Skill Packs"
   ],
   "buyer_objection_responses": [
@@ -105,7 +105,7 @@
     },
     {
       "objection": "Do you publish social posts automatically?",
-      "response": "No. Drafts can be prepared, but publishing requires proof from the platform and current social gates."
+      "response": "No. Drafts can be prepared, but publishing requires platform confirmation and approval."
     }
   ]
 }

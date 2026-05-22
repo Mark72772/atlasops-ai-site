@@ -33,7 +33,7 @@
           <p>${money(service)}</p>
         </div>
         <a class="atlas-payment-button" href="${link}" rel="noopener" target="_blank">Pay with PayPal.me</a>
-        <p class="atlas-payment-note">${reason} PayPal.me remains available, but AtlasOps verifies payment from webhook/API evidence, transaction match, or explicit manual evidence before delivery.</p>
+        <p class="atlas-payment-note">${reason} PayPal.me remains available, but AtlasOps verifies payment before delivery.</p>
       </section>
     `;
   }
@@ -74,7 +74,7 @@
             <p>${money(service)}</p>
           </div>
           <div class="atlas-paypal-button-host"></div>
-          <p class="atlas-payment-note">Checkout payments are verified by PayPal capture/webhook/API evidence before AtlasOps marks an order paid.</p>
+          <p class="atlas-payment-note">Checkout payments are verified before AtlasOps marks an order paid.</p>
           <output class="atlas-payment-result" aria-live="polite"></output>
         </section>
       `;
