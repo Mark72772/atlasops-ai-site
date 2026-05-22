@@ -1,7 +1,7 @@
 {
-  "updated_by": "meaning_spine_marketplace_96b",
+  "updated_by": "revenue_execution_marketplace_97a",
   "public_buyer_language": true,
-  "delivery_policy_summary": "Digital packs are delivered privately after payment verification. Direct ZIP links are not public.",
+  "delivery_policy_summary": "Digital packs and spreadsheets are delivered privately after payment verification. Direct workbook and ZIP links are not public.",
   "products": [
     {
       "id": "ai-business-assessment",
@@ -373,6 +373,121 @@
       "page": "agent-skills/multi-platform-code-agent-starter-pack.html",
       "stripe_route": "stripe_product_route_missing",
       "status": "Book review"
+    },
+    {
+      "id": "premium-spreadsheet-product-builder-agent-pack",
+      "name": "Premium Spreadsheet Product Builder Agent Pack",
+      "price": "$99",
+      "summary": "Build polished spreadsheet products with research workflow, openpyxl builder patterns, quality gates, listing copy, and delivery packaging.",
+      "category": "Digital Product Builder Agents",
+      "platforms": [
+        "Claude Code",
+        "Codex",
+        "OpenAI Agents",
+        "Gemini",
+        "OpenClaw",
+        "Hermes",
+        "Local Python"
+      ],
+      "buyer_pains": [
+        "digital product factory",
+        "spreadsheet builder",
+        "listing workflow"
+      ],
+      "page": "agent-skills/premium-spreadsheet-product-builder-agent-pack.html",
+      "stripe_route": "stripe_product_route_missing",
+      "status": "Setup required",
+      "cta": "Buy Pack",
+      "public_status_note": "Private delivery after payment verification."
+    },
+    {
+      "id": "ai-agency-client-tracker",
+      "name": "AI Agency Client Tracker Spreadsheet",
+      "price": "$29",
+      "summary": "Track AI agency leads, proposals, client onboarding, delivery status, and follow-up tasks in one clean workbook.",
+      "category": "Digital Product Builder Agents",
+      "platforms": [
+        "Excel",
+        "Google Sheets import",
+        "Local"
+      ],
+      "buyer_pains": [
+        "agency client tracking",
+        "proposal follow-up",
+        "delivery pipeline"
+      ],
+      "page": "digital-products/ai-agency-client-tracker.html",
+      "stripe_route": "stripe_product_route_missing",
+      "status": "Setup required",
+      "cta": "Buy Spreadsheet",
+      "public_status_note": "Private delivery after payment verification."
+    },
+    {
+      "id": "small-business-lead-follow-up-tracker",
+      "name": "Small Business Lead Follow-Up Tracker Spreadsheet",
+      "price": "$29",
+      "summary": "Organize lead source, reply state, quote status, next follow-up, and owner handoff for small service businesses.",
+      "category": "Digital Product Builder Agents",
+      "platforms": [
+        "Excel",
+        "Google Sheets import",
+        "Local"
+      ],
+      "buyer_pains": [
+        "lead follow-up",
+        "missed replies",
+        "small business pipeline"
+      ],
+      "page": "digital-products/small-business-lead-follow-up-tracker.html",
+      "stripe_route": "stripe_product_route_missing",
+      "status": "Setup required",
+      "cta": "Buy Spreadsheet",
+      "public_status_note": "Private delivery after payment verification."
+    },
+    {
+      "id": "etsy-digital-product-launch-planner",
+      "name": "Etsy Digital Product Launch Planner",
+      "price": "$39",
+      "summary": "Plan original digital product ideas, listing assets, launch checklist, pricing tests, and weekly improvement work.",
+      "category": "Digital Product Builder Agents",
+      "platforms": [
+        "Excel",
+        "Google Sheets import",
+        "Local"
+      ],
+      "buyer_pains": [
+        "digital product launch",
+        "listing planning",
+        "product backlog"
+      ],
+      "page": "digital-products/etsy-digital-product-launch-planner.html",
+      "stripe_route": "stripe_product_route_missing",
+      "status": "Setup required",
+      "cta": "Buy Spreadsheet",
+      "public_status_note": "Private delivery after payment verification."
+    },
+    {
+      "id": "spreadsheet-product-builder-setup-review",
+      "name": "Spreadsheet Product Builder Setup Review",
+      "price": "$499",
+      "summary": "Review your spreadsheet product idea, workbook structure, listing copy, delivery path, and launch checklist.",
+      "category": "Digital Product Builder Agents",
+      "platforms": [
+        "Excel",
+        "Google Sheets import",
+        "Claude Code",
+        "Codex"
+      ],
+      "buyer_pains": [
+        "setup review",
+        "product structure",
+        "launch checklist"
+      ],
+      "page": "services.html#spreadsheet-product-builder-setup-review",
+      "stripe_route": "stripe_product_route_missing",
+      "status": "Book review",
+      "cta": "Book Setup Review",
+      "public_status_note": "Private delivery after payment verification."
     }
   ],
   "recurring_plans": [

@@ -1,5 +1,5 @@
 {
-  "updated_by": "meaning_spine_marketplace_96b",
+  "updated_by": "revenue_execution_marketplace_97a",
   "public_buyer_language": true,
   "categories": [
     {
@@ -117,6 +117,21 @@
       ],
       "primary_cta": "View Starter Pack",
       "related_bundle": "persistent-repo-intelligence-bundle"
+    },
+    {
+      "name": "Digital Product Builder Agents",
+      "slug": "digital-product-builder-agents",
+      "description": "Spreadsheet product builders, workbook launch planners, and sale-ready digital product workflows.",
+      "icon": "DP",
+      "products": [
+        "premium-spreadsheet-product-builder-agent-pack",
+        "ai-agency-client-tracker",
+        "small-business-lead-follow-up-tracker",
+        "etsy-digital-product-launch-planner",
+        "spreadsheet-product-builder-setup-review"
+      ],
+      "primary_cta": "Shop Digital Product Builders",
+      "related_bundle": "premium-spreadsheet-product-builder-agent-pack"
     }
   ],
   "filters": {
@@ -137,7 +152,8 @@
       "Social + Media Agents",
       "AI SEO + Website Meaning",
       "OpenClaw + Hermes Bridges",
-      "Workflow Integration Packs"
+      "Workflow Integration Packs",
+      "Digital Product Builder Agents"
     ],
     "buyer_pain": [
       "Code review",
@@ -145,7 +161,10 @@
       "Revenue/Stripe",
       "Social/media",
       "Website meaning",
-      "Team setup"
+      "Team setup",
+      "Spreadsheet products",
+      "Digital product launch",
+      "Lead follow-up tracker"
     ]
   }
 }
