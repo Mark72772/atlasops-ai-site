@@ -4,6 +4,6 @@
   "repo": "Mark72772/atlasops-ai-site",
   "expected_pages_url": "https://Mark72772.github.io/atlasops-ai-site/",
   "generated_at": "2026-05-05T15:32:08.732244+00:00",
-  "local_runtime_exposed": false,
+  "private_systems_publicly_exposed": false,
   "version": "v3-custom-domain-leads-gmail-readiness"
 }

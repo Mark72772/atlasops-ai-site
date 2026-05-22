@@ -1,5 +1,26 @@
 [
   {
+    "insight_id": "what-should-a-small-business-automate-first",
+    "title": "What should a small business automate first?",
+    "slug": "what-should-a-small-business-automate-first",
+    "url": "/atlasops-ai-site/insights/what-should-a-small-business-automate-first.html",
+    "summary": "Start with one painful workflow, one owner, one measurable outcome, and one approval gate.",
+    "takeaway": "For many small businesses, the first automation should be lead follow-up or website CTA routing.",
+    "source_ids": [
+      "first-buyer-readiness-cycle-01"
+    ],
+    "service_links": [
+      {
+        "label": "AI Business Automation Audit",
+        "url": "ai-business-automation-audit.html"
+      }
+    ],
+    "status": "drafted_public_safe",
+    "claim_verification_status": "internal_strategy_no_external_stats",
+    "created_at": "2026-05-14T02:23:26.313873+00:00",
+    "updated_at": "2026-05-14T02:23:26.313883+00:00"
+  },
+  {
     "insight_id": "ai-seo-business-visibility-problem",
     "title": "AI SEO is becoming a business visibility problem",
     "url": "insights/ai-seo-business-visibility-problem.html",

@@ -4,7 +4,7 @@
       "pack_id": "agent-context-intelligence-guardrail",
       "sources": [
         "skillsmp-marketplace-model",
-        "ibm-coursera-rag-agentic-ai",
+        "coursera-rag-agentic-ai",
         "corestory-code-intelligence-context"
       ],
       "sections_present": true
@@ -29,7 +29,7 @@
       "pack_id": "rag-source-packet-guardrail",
       "sources": [
         "skillsmp-marketplace-model",
-        "ibm-coursera-rag-agentic-ai",
+        "coursera-rag-agentic-ai",
         "geeksforgeeks-agentic-rag",
         "nvidia-nim-rag-agent-docs",
         "tradepub-ai-industry-discovery"

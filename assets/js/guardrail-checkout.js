@@ -19,7 +19,7 @@
         node.textContent = productType.includes("bundle") ? "Buy Bundle" : `Buy $${price} Guardrail Kit`;
       }
       if (node.classList && node.classList.contains("checkout-note")) {
-        node.textContent = "Stripe Checkout live. Delivery unlocks after verified Stripe payment evidence.";
+        node.textContent = "Secure Stripe Checkout. Private delivery after payment verification.";
       }
     });
   }

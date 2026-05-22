@@ -236,7 +236,7 @@
           clearInterval(activePoll);
           removeTyping();
           appendMessage("assistant", "Atlas relay is online. Atlas may queue complex replies, but simple questions can still be answered. Leave your email for follow-up if you want AtlasOps to reply directly.");
-          setStatus("Queued for local Atlas. Simple deterministic questions should answer immediately through the relay simple-tools layer.", "queued_fallback");
+          setStatus("Queued for AtlasOps private operations. Simple deterministic questions should answer immediately through the relay simple-tools layer.", "queued_fallback");
         }
       } catch {
         if (attempts >= 3) {
@@ -271,4 +271,3 @@
   consoleEl.dataset.atlasConsoleReady = "true";
   checkRelay();
 })();
-

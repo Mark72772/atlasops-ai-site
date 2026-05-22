@@ -4,12 +4,12 @@
     "price": "$99 each",
     "description": "Twelve downloadable operational controls for agent workflows.",
     "url": "guardrails.html",
-    "checkout": "Guardrail Kits and Tool Packs use Stripe Checkout. Downloads and emails release after verified Stripe payment evidence."
+    "checkout": "Guardrail Kits and Tool Packs use Stripe Checkout. Digital packs are delivered privately after payment verification."
   },
   {
     "name": "Agent Company Templates",
     "price": "$199 each",
-    "description": "Company-level templates with org chart, tickets, routines, budgets, skills, QA review, governance, setup instructions, exact gates, and acceptance contracts for agent teams.",
+    "description": "Company-level templates with org chart, tickets, routines, budgets, skills, QA review, governance, setup instructions, review gates, and acceptance contracts for agent teams.",
     "url": "insights/what-paperclip-teaches-about-running-ai-agents-like-a-company.html",
     "checkout": "Stripe where configured or scoped setup review"
   },

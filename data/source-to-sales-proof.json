@@ -20,7 +20,7 @@
         "openclaw-integration-guardrail",
         "agent-daily-operations-guardrail"
       ],
-      "exact_gate": null
+      "review_status": null
     },
     {
       "source_id": "bluebag-agent-skills-production",
@@ -31,7 +31,7 @@
         "claude-code-workflow-guardrail",
         "agent-daily-operations-guardrail"
       ],
-      "exact_gate": null
+      "review_status": null
     },
     {
       "source_id": "thecentral-ai-tutorial-marketplace",
@@ -42,7 +42,7 @@
         "ai-seo-visibility-guardrail",
         "agent-daily-operations-guardrail"
       ],
-      "exact_gate": null
+      "review_status": null
     },
     {
       "source_id": "vibe-marketer-productized-workflows",
@@ -53,18 +53,18 @@
         "social-publishing-guardrail",
         "ai-seo-visibility-guardrail"
       ],
-      "exact_gate": null
+      "review_status": null
     },
     {
-      "source_id": "ibm-coursera-rag-agentic-ai",
-      "source_name": "IBM RAG and Agentic AI Professional Certificate",
-      "source_url_sanitized": "https://www.coursera.org/professional-certificates/ibm-rag-and-agentic-ai/",
-      "business_meaning": "RAG Source Packet Guardrail can be sold as a source-validation workflow, not as generic AI advice.",
+      "source_id": "coursera-rag-agentic-ai",
+      "source_name": "RAG and Agentic AI education source",
+      "source_url_sanitized": "https://www.coursera.org/professional-certificates/rag-and-agentic-ai/",
+      "business_meaning": "RAG Source Review Guardrail can be sold as a source-validation workflow, not as generic AI advice.",
       "guardrail_products_supported": [
         "rag-source-packet-guardrail",
         "agent-context-intelligence-guardrail"
       ],
-      "exact_gate": null
+      "review_status": null
     },
     {
       "source_id": "geeksforgeeks-agentic-rag",
@@ -75,7 +75,7 @@
         "rag-source-packet-guardrail",
         "stock-research-guardrail"
       ],
-      "exact_gate": null
+      "review_status": null
     },
     {
       "source_id": "nvidia-nim-rag-agent-docs",
@@ -86,7 +86,7 @@
         "openclaw-integration-guardrail",
         "rag-source-packet-guardrail"
       ],
-      "exact_gate": null
+      "review_status": null
     },
     {
       "source_id": "corestory-code-intelligence-context",
@@ -97,7 +97,7 @@
         "agent-context-intelligence-guardrail",
         "codex-repo-control-guardrail"
       ],
-      "exact_gate": null
+      "review_status": null
     },
     {
       "source_id": "ai-for-business-practical-language",
@@ -108,7 +108,7 @@
         "saas-operator-guardrail",
         "agent-daily-operations-guardrail"
       ],
-      "exact_gate": "ai_for_business_exact_source_name_ambiguous"
+      "review_status": "source_name_ambiguous"
     },
     {
       "source_id": "tradepub-ai-industry-discovery",
@@ -119,7 +119,7 @@
         "rag-source-packet-guardrail",
         "ai-seo-visibility-guardrail"
       ],
-      "exact_gate": "tradepub_tracked_url_not_provided"
+      "review_status": "tracked_url_not_provided"
     }
   ],
   "raw_sensitive_url_stored": false,

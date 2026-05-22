@@ -32,7 +32,7 @@
       ok: true,
       state: relayReady() ? "online" : "endpoint_setup_required",
       relay_configured: relayReady(),
-      local_runtime_exposed: false,
+      private_systems_publicly_exposed: false,
     }),
     repaint: paint,
   };

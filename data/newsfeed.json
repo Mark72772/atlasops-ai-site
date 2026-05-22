@@ -74,13 +74,13 @@
       "status": "published"
     },
     {
-      "news_id": "think-ibm",
-      "title": "Think | IBM",
+      "news_id": "enterprise-ai-resource",
+      "title": "Enterprise AI resource",
       "summary": "AI adoption needs approval boundaries and proof trails so automation does not outrun business risk.",
       "business_takeaway": "AI adoption needs approval boundaries and proof trails so automation does not outrun business risk.",
-      "source_url": "https://www.ibm.com/blog/artificial-intelligence/feed/",
+      "source_url": "",
       "all_source_urls": [
-        "https://www.ibm.com/blog/artificial-intelligence/feed/"
+        ""
       ],
       "insight_url": "https://mark72772.github.io/atlasops-ai-site/ask-atlas.html",
       "topic": "Governance",

@@ -59,7 +59,7 @@
       ],
       "included_packs": [
         "Social Publishing Guardrail",
-        "RAG Source Packet Guardrail",
+        "RAG Source Review Guardrail",
         "AI SEO Visibility Guardrail"
       ],
       "included_files": [
@@ -72,7 +72,7 @@
       ],
       "proof_requirements": [
         "publish proof policy",
-        "source packet check",
+        "source review check",
         "public voice check"
       ],
       "price": 249,
@@ -81,7 +81,7 @@
       "category": "Bundles",
       "product_type": "agent_skill_bundle",
       "detail_url": "guardrails.html#agent-skill-bundles",
-      "content": "Social Publisher Safety Bundle Social Publishing RAG Source Packet AI SEO Visibility LinkedIn X source-backed public voice content operations",
+      "content": "Social Publisher Safety Bundle Social Publishing RAG Source Review AI SEO Visibility LinkedIn X source-backed public voice content operations",
       "canonical_product_url": "https://atlasops.io/guardrails.html#agent-skill-bundles",
       "fallback_product_url": "https://mark72772.github.io/atlasops-ai-site/guardrails.html#agent-skill-bundles",
       "checkout_button_id": "buy_social_publisher_safety_bundle",
@@ -126,7 +126,7 @@
       "category": "Bundles",
       "product_type": "agent_skill_bundle",
       "detail_url": "guardrails.html#agent-skill-bundles",
-      "content": "Revenue Agent Bundle Stripe Payment Proof SaaS Operator Agent Daily Operations revenue ops payment evidence delivery lock live revenue proof",
+      "content": "Revenue Agent Bundle Stripe Payment Proof SaaS Operator Agent Daily Operations revenue ops payment verification delivery lock live revenue proof",
       "canonical_product_url": "https://atlasops.io/guardrails.html#agent-skill-bundles",
       "fallback_product_url": "https://mark72772.github.io/atlasops-ai-site/guardrails.html#agent-skill-bundles",
       "checkout_button_id": "buy_revenue_agent_bundle",

@@ -1,0 +1,142 @@
+{
+  "updated_by": "marketplace_cleanup_96d",
+  "public_buyer_language": true,
+  "categories": [
+    {
+      "name": "Code Intelligence Agents",
+      "slug": "code-intelligence-agents",
+      "description": "Repo control, review discipline, context mastery, and safer team coding workflows.",
+      "icon": "CI",
+      "products": [
+        "claude-code-team-ergonomics-pack",
+        "codex-team-ergonomics-pack",
+        "codex-repo-control-guardrail",
+        "agent-context-intelligence-guardrail"
+      ],
+      "primary_cta": "Shop Code Intelligence Agents",
+      "related_bundle": "ai-coding-team-ergonomics-bundle"
+    },
+    {
+      "name": "Claude + Codex Team Packs",
+      "slug": "claude-codex-team-packs",
+      "description": "Team operating contracts for Claude Code, Codex, AGENTS.md, CLAUDE.md, review loops, and rollout habits.",
+      "icon": "CC",
+      "products": [
+        "claude-code-team-ergonomics-pack",
+        "codex-team-ergonomics-pack"
+      ],
+      "primary_cta": "Compare Team Packs",
+      "related_bundle": "ai-coding-team-ergonomics-bundle"
+    },
+    {
+      "name": "Business Automation Agents",
+      "slug": "business-automation-agents",
+      "description": "Assessment, first response, workflow automation, knowledge systems, and handoff workflows.",
+      "icon": "BA",
+      "products": [
+        "ai-business-assessment",
+        "first-response-agent",
+        "workflow-automation-upsell-pack",
+        "knowledge-system-agent-pack"
+      ],
+      "primary_cta": "View Business Automation",
+      "related_bundle": "agent-company-launch-kit"
+    },
+    {
+      "name": "Revenue + Stripe Agents",
+      "slug": "revenue-stripe-agents",
+      "description": "Checkout routes, private delivery, subscriptions, failed-payment follow-up, and revenue workflow controls.",
+      "icon": "RS",
+      "products": [
+        "stripe-payment-proof-guardrail",
+        "recurring-revenue-monitor-pack",
+        "revenue-agent-bundle"
+      ],
+      "primary_cta": "View Revenue Packs",
+      "related_bundle": "revenue-agent-bundle"
+    },
+    {
+      "name": "Social + Media Agents",
+      "slug": "social-media-agents",
+      "description": "Draft quality, media templates, approval workflows, public voice guardrails, and platform proof paths.",
+      "icon": "SM",
+      "products": [
+        "social-publishing-guardrail",
+        "social-media-distribution-pack"
+      ],
+      "primary_cta": "View Social Packs",
+      "related_bundle": "social-publisher-safety-bundle"
+    },
+    {
+      "name": "AI SEO + Website Meaning",
+      "slug": "ai-seo-website-meaning",
+      "description": "Entity clarity, service pages, FAQs, trust signals, and answer-engine-ready website structure.",
+      "icon": "SEO",
+      "products": [
+        "ai-seo-visibility-guardrail",
+        "ai-website-seo-visibility-audit"
+      ],
+      "primary_cta": "View AI SEO Offers",
+      "related_bundle": "social-publisher-safety-bundle"
+    },
+    {
+      "name": "OpenClaw + Hermes Bridges",
+      "slug": "openclaw-hermes-bridges",
+      "description": "Local agent bridge patterns, command setup, doctor checks, gateway review, and memory lessons.",
+      "icon": "OH",
+      "products": [
+        "openclaw-integration-guardrail",
+        "openclaw-codex-integration-bundle"
+      ],
+      "primary_cta": "View Bridge Packs",
+      "related_bundle": "openclaw-codex-integration-bundle"
+    },
+    {
+      "name": "Workflow Integration Packs",
+      "slug": "workflow-integration-packs",
+      "description": "Packaged workflows for MCP, OpenAI, Gemini, local agents, delivery systems, and custom operating layers.",
+      "icon": "WI",
+      "products": [
+        "api-wrapper-product-factory-pack",
+        "marketplace-radar-pack",
+        "custom-agent-workflow-guardrail"
+      ],
+      "primary_cta": "Scope Workflow Integration",
+      "related_bundle": "agent-builder-starter-bundle"
+    }
+  ],
+  "filters": {
+    "platform": [
+      "Claude Code",
+      "Codex",
+      "OpenAI",
+      "Gemini",
+      "OpenClaw",
+      "MCP",
+      "Local AI Agents"
+    ],
+    "category": [
+      "Code Intelligence Agents",
+      "Business Automation Agents",
+      "Revenue + Stripe Agents",
+      "Social + Media Agents",
+      "AI SEO + Website Meaning",
+      "Workflow Integration Packs"
+    ],
+    "price": [
+      "$99",
+      "$199-$299",
+      "$499+",
+      "$1,000+",
+      "Monthly"
+    ],
+    "buyer_pain": [
+      "I use Claude Code",
+      "I use Codex",
+      "I need lead follow-up",
+      "I need code review",
+      "I need social posting",
+      "I need Stripe delivery"
+    ]
+  }
+}

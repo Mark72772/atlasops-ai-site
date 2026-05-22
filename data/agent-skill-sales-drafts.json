@@ -36,7 +36,7 @@
     },
     {
       "title": "Revenue agents",
-      "body": "Revenue automation should be strict about what counts. Leads are not sales. Checkout sessions are not revenue. Test payments are not live revenue. Signed payment evidence is where the state changes."
+      "body": "Revenue automation should be strict about what counts. Leads are not sales. Checkout sessions are not revenue. Test payments are not live revenue. Signed payment verification is where the state changes."
     },
     {
       "title": "AI SEO guardrails",
@@ -55,7 +55,7 @@
     "RAG agents need retrieval evidence packets: current sources, validation notes, uncertainty, and conflict handling.",
     "OpenClaw + Codex needs doctor checks, gateway status, rollback plans, and repo boundaries before tool actions count.",
     "Agent companies need tickets, owners, routines, budgets, QA, and proof. Heartbeats are not work.",
-    "Revenue agents should not count checkout sessions as revenue. Signed payment evidence changes state.",
+    "Revenue agents should not count checkout sessions as revenue. Signed payment verification changes state.",
     "Agent Skill Bundles group the controls buyers usually need together: builder, social, revenue, OpenClaw + Codex, and company launch.",
     "The useful question is not 'what prompt should I use?' It is 'what evidence proves this workflow is done?'"
   ],
@@ -74,7 +74,7 @@
     },
     {
       "title": "Stripe delivery rules remain proof-backed",
-      "summary": "Checkout redirects still do not unlock downloads; delivery waits for signed payment evidence."
+      "summary": "Checkout redirects still do not unlock downloads; delivery waits for payment verification."
     },
     {
       "title": "Social sales drafts remain draft-only",
@@ -83,7 +83,7 @@
   ],
   "field_note_outlines": [
     "Why agent teams need operating controls before more autonomy",
-    "The difference between a checkout session and payment evidence",
+    "The difference between a checkout session and payment verification",
     "How to turn recurring agent failures into reusable Agent Skill Packs"
   ],
   "buyer_objection_responses": [
@@ -97,7 +97,7 @@
     },
     {
       "objection": "Does checkout mean I get an instant download?",
-      "response": "No. Download delivery unlocks only after signed Stripe payment evidence matches the order."
+      "response": "No. Download delivery unlocks only after Stripe payment verification matches the order."
     },
     {
       "objection": "Can Atlas install it?",
@@ -109,4 +109,3 @@
     }
   ]
 }
-

@@ -17,10 +17,10 @@
       price: 249,
       included_packs: [
         "Social Publishing Guardrail",
-        "RAG Source Packet Guardrail",
+        "RAG Source Review Guardrail",
         "AI SEO Visibility Guardrail"
       ],
-      pain_point: "Source-backed social workflows that block stale drafts and false publish claims."
+      pain_point: "Source-backed social workflows that block stale drafts and unsupported publishing claims."
     },
     {
       pack_id: "revenue-agent-bundle",
@@ -82,10 +82,10 @@
       pack_id: "social-publishing-guardrail",
       bundle: "Social Publisher Safety Bundle",
       bundle_id: "social-publisher-safety-bundle",
-      blocks: "empty composer attempts, stale drafts, debug labels, and false publish proof"
+      blocks: "empty composer attempts, stale drafts, internal draft labels, and unsupported publish claims"
     },
     rag: {
-      kit: "RAG Source Packet Guardrail",
+      kit: "RAG Source Review Guardrail",
       pack_id: "rag-source-packet-guardrail",
       bundle: "Social Publisher Safety Bundle",
       bundle_id: "social-publisher-safety-bundle",
@@ -177,7 +177,7 @@
 
   function checkoutNote() {
     return isCheckoutLive()
-      ? "Stripe Checkout live. Delivery unlocks after verified Stripe payment evidence."
+      ? "Secure Stripe Checkout. Private delivery after payment verification."
       : "Stripe Checkout is temporarily unavailable. Ask Atlas for setup review.";
   }
 
@@ -324,7 +324,7 @@
       const section = document.createElement("section");
       section.id = "recurring-agent-operations";
       section.className = document.querySelector(".gr-shell") ? "gr-proof-panel recurring-agent-ops" : "section white tight recurring-agent-ops";
-      section.innerHTML = "<span>Recurring Agent Operations</span><strong>Recurring plan catalog is temporarily gated.</strong><p>Exact gate: recurring_product_catalog_unavailable.</p>";
+      section.innerHTML = "<span>Recurring Agent Operations</span><strong>Recurring plan catalog is temporarily gated.</strong><p>Subscription catalog setup is in progress.</p>";
       host.appendChild(section);
     }
   }

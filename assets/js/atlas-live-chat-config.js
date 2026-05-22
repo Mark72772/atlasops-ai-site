@@ -17,5 +17,5 @@ window.AtlasLiveChatConfig = Object.freeze({
   provider: window.ATLAS_LIVE_CHAT_CONFIG.relayProvider,
   workerUrl: window.ATLAS_LIVE_CHAT_CONFIG.relayUrl,
   mode: window.ATLAS_LIVE_CHAT_CONFIG.mode,
-  publicRuntimeExposure: false
+  privateSystemsExposed: false
 });

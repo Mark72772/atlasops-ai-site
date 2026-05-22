@@ -8,9 +8,9 @@
     try {
       const parsed = new URL(raw);
       const host = parsed.hostname.toLowerCase();
-      const localHost = ["local", "host"].join("");
+      const loopbackName = ["local", "host"].join("");
       const loopback = ["127", "0", "0", "1"].join(".");
-      if (host === localHost || host === loopback || host.startsWith(["192", "168"].join(".") + ".") || host.startsWith("10.")) return "";
+      if (host === loopbackName || host === loopback || host.startsWith(["192", "168"].join(".") + ".") || host.startsWith("10.")) return "";
       return parsed.href.replace(/\/+$/, "");
     } catch {
       return "";
