@@ -31,11 +31,11 @@
   <section class="gr-detail-grid">
     <article><h2>Problem Prevented</h2><p>SaaS agents can automate messages and reports before they have evidence, customer context, or safe billing language.</p></article>
     <article><h2>Who It Is For</h2><p>SaaS, Support, Onboarding, Billing, Reporting</p></article>
-    <article><h2>What It Enforces</h2><ul><li>onboarding checklist</li><li>support triage workflow</li><li>churn-risk template</li><li>monthly report schema</li><li>no fake metrics gate</li></ul></article>
+    <article><h2>What It Enforces</h2><ul><li>onboarding checklist</li><li>support triage workflow</li><li>churn-risk template</li><li>monthly report schema</li><li>metrics require a source</li></ul></article>
     <article><h2>Files Included</h2><ul><li><code>README.md</code></li><li><code>GUARDRAIL.md</code></li><li><code>SKILL.md</code></li><li><code>AGENTS.md</code></li><li><code>CLAUDE.md</code></li><li><code>CODEX.md</code></li><li><code>tests/</code></li><li><code>examples/</code></li></ul></article>
     <article><h2>Install Steps</h2><ol><li>Download after verified payment.</li><li>Place AGENTS.md, SKILL.md, or CLAUDE.md in the matching workflow.</li><li>Run the acceptance tests before marking work done.</li></ol></article>
     <article><h2>Example Before / After</h2><p>Before: the agent says the work is done from a draft or local state. After: the agent supplies proof or an review checkpoint.</p></article>
-    <article><h2>Failure Modes Blocked</h2><ul><li>fake metrics</li><li>unsafe billing follow-up</li><li>missed churn signals</li><li>unsupported support decisions</li></ul></article>
+    <article><h2>Failure Modes Blocked</h2><ul><li>unsupported metrics</li><li>unsafe billing follow-up</li><li>missed churn signals</li><li>unsupported support decisions</li></ul></article>
     <article><h2>Verification Contract</h2><p>Evidence is required before completion. Drafts, local-only updates, checkout links, and browser-open states do not count.</p></article>
     <article><h2>Review Checkpoints</h2><ul><li><code>saas_operator_guardrail_source_context_missing</code></li><li><code>saas_operator_guardrail_proof_missing</code></li><li><code>saas_operator_guardrail_unsafe_action_blocked</code></li><li><code>saas_operator_guardrail_manual_review_required</code></li></ul></article>
     <article><h2>Safety Boundaries</h2><p>No secrets, no private buyer data, no unsafe publishing, no fake readiness, no official vendor affiliation claims.</p></article>

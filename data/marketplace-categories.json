@@ -1,20 +1,23 @@
 {
-  "updated_by": "marketplace_cleanup_96d",
+  "updated_by": "meaning_spine_marketplace_96b",
   "public_buyer_language": true,
   "categories": [
     {
       "name": "Code Intelligence Agents",
       "slug": "code-intelligence-agents",
-      "description": "Repo control, review discipline, context mastery, and safer team coding workflows.",
+      "description": "Repo meaning, local code review, bugfix suggestions, specs, and persistent agent intelligence.",
       "icon": "CI",
       "products": [
+        "codebase-meaning-agent-pack",
+        "local-code-review-agent-pack",
+        "spec-driven-code-agent-pack",
+        "persistent-repo-intelligence-bundle",
+        "multi-platform-code-agent-starter-pack",
         "claude-code-team-ergonomics-pack",
-        "codex-team-ergonomics-pack",
-        "codex-repo-control-guardrail",
-        "agent-context-intelligence-guardrail"
+        "codex-team-ergonomics-pack"
       ],
       "primary_cta": "Shop Code Intelligence Agents",
-      "related_bundle": "ai-coding-team-ergonomics-bundle"
+      "related_bundle": "persistent-repo-intelligence-bundle"
     },
     {
       "name": "Claude + Codex Team Packs",
@@ -103,40 +106,46 @@
       ],
       "primary_cta": "Scope Workflow Integration",
       "related_bundle": "agent-builder-starter-bundle"
+    },
+    {
+      "name": "Multi-Platform Agent Starters",
+      "slug": "multi-platform-agent-starters",
+      "description": "Starter adapters for Claude Code, Codex, OpenAI, Gemini, OpenClaw, Hermes, and local model routes.",
+      "icon": "MP",
+      "products": [
+        "multi-platform-code-agent-starter-pack"
+      ],
+      "primary_cta": "View Starter Pack",
+      "related_bundle": "persistent-repo-intelligence-bundle"
     }
   ],
   "filters": {
     "platform": [
-      "Claude Code",
-      "Codex",
-      "OpenAI",
-      "Gemini",
-      "OpenClaw",
-      "MCP",
-      "Local AI Agents"
+      "Works with Claude Code",
+      "Works with Codex",
+      "Works with OpenAI",
+      "Works with Gemini",
+      "Works with OpenClaw",
+      "Runs local"
     ],
     "category": [
       "Code Intelligence Agents",
+      "Claude + Codex Team Packs",
+      "Multi-Platform Agent Starters",
       "Business Automation Agents",
       "Revenue + Stripe Agents",
       "Social + Media Agents",
       "AI SEO + Website Meaning",
+      "OpenClaw + Hermes Bridges",
       "Workflow Integration Packs"
     ],
-    "price": [
-      "$99",
-      "$199-$299",
-      "$499+",
-      "$1,000+",
-      "Monthly"
-    ],
     "buyer_pain": [
-      "I use Claude Code",
-      "I use Codex",
-      "I need lead follow-up",
-      "I need code review",
-      "I need social posting",
-      "I need Stripe delivery"
+      "Code review",
+      "Bugfix suggestions",
+      "Revenue/Stripe",
+      "Social/media",
+      "Website meaning",
+      "Team setup"
     ]
   }
 }

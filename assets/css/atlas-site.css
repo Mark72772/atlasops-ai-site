@@ -222,6 +222,20 @@ h3 { font-size: 1.12rem; line-height: 1.2; }
 .button.gold { background: var(--amber); border-color: transparent; color: #1d1202; }
 .button.dark { background: var(--navy); border-color: transparent; color: #fff; }
 .button.ghost { background: rgba(255,255,255,.06); color: inherit; }
+.button.is-disabled,
+.button:disabled {
+  cursor: not-allowed;
+  opacity: .62;
+  background: #d7e0e9;
+  border-color: #c3cfda;
+  color: #384757;
+}
+.product-detail-hero h1,
+.product-cta-strip h2,
+.product-fact-grid p,
+.platform-row span {
+  overflow-wrap: anywhere;
+}
 
 .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
 .grid.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -418,6 +432,11 @@ h3 { font-size: 1.12rem; line-height: 1.2; }
   border-radius: 8px;
   background: #fff;
   padding: 1rem;
+}
+
+.product-cta-strip > * {
+  min-width: 0;
+  max-width: 100%;
 }
 
 .related-links {

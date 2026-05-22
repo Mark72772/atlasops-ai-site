@@ -58,6 +58,10 @@
       <div class="quick-prompts" aria-label="Quick prompts">
         <button type="button" data-prompt="I use Claude Code">I use Claude Code</button>
         <button type="button" data-prompt="I use Codex">I use Codex</button>
+        <button type="button" data-prompt="I use OpenAI">I use OpenAI</button>
+        <button type="button" data-prompt="I use Gemini">I use Gemini</button>
+        <button type="button" data-prompt="I need repo meaning">I need repo meaning</button>
+        <button type="button" data-prompt="I need bugfix suggestions">I need bugfix suggestions</button>
         <button type="button" data-prompt="I need a code review agent">I need a code review agent</button>
         <button type="button" data-prompt="I need lead follow-up">I need lead follow-up</button>
         <button type="button" data-prompt="I need social posting">I need social posting</button>
@@ -103,6 +107,9 @@
   const routes = [
     {terms: ["claude"], category: "Claude + Codex Team Packs", pack: "Claude Code Team Ergonomics Agent Pack", bundle: "Claude + Codex Team Ergonomics Bundle", review: "Team Rollout Review", status: "Available now", cta: "agent-skills/claude-code-team-ergonomics-pack.html"},
     {terms: ["codex", "code review"], category: "Code Intelligence Agents", pack: "Codex Team Ergonomics Agent Pack", bundle: "Claude + Codex Team Ergonomics Bundle", review: "Team Rollout Review", status: "Available now", cta: "agent-skills/codex-team-ergonomics-pack.html"},
+    {terms: ["repo meaning", "meaning", "module map"], category: "Code Intelligence Agents", pack: "Codebase Meaning Agent Pack", bundle: "Persistent Repo Intelligence Bundle", review: "Code Intelligence Setup Review", status: "Setup required", cta: "agent-skills/codebase-meaning-agent-pack.html"},
+    {terms: ["bugfix", "bug fix", "local code"], category: "Code Intelligence Agents", pack: "Local Code Review Agent Pack", bundle: "Persistent Repo Intelligence Bundle", review: "Local Review Setup", status: "Setup required", cta: "agent-skills/local-code-review-agent-pack.html"},
+    {terms: ["openai", "gemini", "multi-platform"], category: "Multi-Platform Agent Starters", pack: "Claude/Codex/Gemini/OpenAI Agent Starter Pack", bundle: "Persistent Repo Intelligence Bundle", review: "Multi-Platform Agent Setup Review", status: "Book review", cta: "agent-skills/multi-platform-code-agent-starter-pack.html"},
     {terms: ["lead", "follow-up", "missed"], category: "Business Automation Agents", pack: "First Response Agent", bundle: "Business Automation Setup Review", review: "First Response Setup Review", status: "Setup required", cta: "services/first-response-agent.html"},
     {terms: ["social", "posting", "media"], category: "Social + Media Agents", pack: "LinkedIn/X/Media Distribution Pack", bundle: "Social Sales Loop", review: "Social Workflow Review", status: "Setup required", cta: "services/social-media-distribution-pack.html"},
     {terms: ["stripe", "delivery", "checkout"], category: "Revenue + Stripe Agents", pack: "Recurring Revenue Monitor Pack", bundle: "Revenue Agent Bundle", review: "Stripe Delivery Review", status: "Available now", cta: "services/recurring-revenue-monitor-pack.html"},

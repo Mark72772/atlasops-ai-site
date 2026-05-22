@@ -1,5 +1,5 @@
 {
-  "updated_by": "marketplace_cleanup_96d",
+  "updated_by": "meaning_spine_marketplace_96b",
   "public_buyer_language": true,
   "delivery_policy_summary": "Digital packs are delivered privately after payment verification. Direct ZIP links are not public.",
   "products": [
@@ -9,8 +9,16 @@
       "price": "$1,000",
       "summary": "Transcript-backed workflow assessment with pain points, effort/impact matrix, quick wins, and implementation menu.",
       "category": "Business Automation Agents",
-      "platforms": ["Atlas", "OpenAI Agents", "Claude Code"],
-      "buyer_pains": ["workflow clarity", "automation roadmap", "implementation planning"],
+      "platforms": [
+        "Atlas",
+        "OpenAI Agents",
+        "Claude Code"
+      ],
+      "buyer_pains": [
+        "workflow clarity",
+        "automation roadmap",
+        "implementation planning"
+      ],
       "page": "services/ai-business-assessment.html",
       "stripe_route": "ai-business-assessment"
     },
@@ -20,8 +28,16 @@
       "price": "$499-$1,500 setup; $199-$500/mo monitor; DIY $99",
       "summary": "Consent-safe inbound response workflow for missed calls, website forms, opted-in SMS leads, and CRM events.",
       "category": "Business Automation Agents",
-      "platforms": ["Atlas", "OpenAI Agents", "MCP"],
-      "buyer_pains": ["lead follow-up", "booking handoff", "missed calls"],
+      "platforms": [
+        "Atlas",
+        "OpenAI Agents",
+        "MCP"
+      ],
+      "buyer_pains": [
+        "lead follow-up",
+        "booking handoff",
+        "missed calls"
+      ],
       "page": "services/first-response-agent.html",
       "stripe_route": "first-response-agent",
       "public_status_note": "Outbound campaign use requires approval and compliance review."
@@ -32,8 +48,16 @@
       "price": "$1,500-$5,000",
       "summary": "Zapier/Make workflow, SOP cleanup, automation proof, owner handoff, and monitoring checklist.",
       "category": "Business Automation Agents",
-      "platforms": ["Atlas", "MCP", "OpenAI Agents"],
-      "buyer_pains": ["manual handoffs", "workflow cleanup", "operations automation"],
+      "platforms": [
+        "Atlas",
+        "MCP",
+        "OpenAI Agents"
+      ],
+      "buyer_pains": [
+        "manual handoffs",
+        "workflow cleanup",
+        "operations automation"
+      ],
       "page": "services/workflow-automation-pack.html",
       "stripe_route": "workflow-automation-upsell-pack"
     },
@@ -43,8 +67,16 @@
       "price": "DIY $99; Build $1,500-$5,000",
       "summary": "Knowledge base intake, system prompt, Q&A guardrails, access rules, and deployment checklist.",
       "category": "Business Automation Agents",
-      "platforms": ["Claude Code", "OpenAI Agents", "Atlas"],
-      "buyer_pains": ["knowledge reuse", "support answers", "custom GPT setup"],
+      "platforms": [
+        "Claude Code",
+        "OpenAI Agents",
+        "Atlas"
+      ],
+      "buyer_pains": [
+        "knowledge reuse",
+        "support answers",
+        "custom GPT setup"
+      ],
       "page": "services/knowledge-system-agent-pack.html",
       "stripe_route": "knowledge-system-agent-pack"
     },
@@ -54,8 +86,16 @@
       "price": "DIY $99; Builder $249; Custom $499+",
       "summary": "Opportunity scoring, source-policy review, API wrapper template, simple UI, Stripe route, and recurring plan.",
       "category": "Workflow Integration Packs",
-      "platforms": ["MCP", "OpenClaw", "Atlas"],
-      "buyer_pains": ["productizing APIs", "thin SaaS offers", "workflow packaging"],
+      "platforms": [
+        "MCP",
+        "OpenClaw",
+        "Atlas"
+      ],
+      "buyer_pains": [
+        "productizing APIs",
+        "thin SaaS offers",
+        "workflow packaging"
+      ],
       "page": "services/api-wrapper-product-factory-pack.html",
       "stripe_route": "api-wrapper-product-factory-pack",
       "public_status_note": "External data sources require source-policy review before activation."
@@ -66,8 +106,16 @@
       "price": "DIY $99; Setup $499+; Monitor $99-$299/mo",
       "summary": "Source-gated radar framework for public or approved marketplace sources.",
       "category": "Workflow Integration Packs",
-      "platforms": ["Atlas", "MCP", "OpenAI Agents"],
-      "buyer_pains": ["opportunity monitoring", "market radar", "source review"],
+      "platforms": [
+        "Atlas",
+        "MCP",
+        "OpenAI Agents"
+      ],
+      "buyer_pains": [
+        "opportunity monitoring",
+        "market radar",
+        "source review"
+      ],
       "page": "services/marketplace-radar-pack.html",
       "stripe_route": "marketplace-radar-pack",
       "public_status_note": "External-source activation requires source-policy review."
@@ -78,8 +126,16 @@
       "price": "DIY $99; Setup $499; Draft Pack $299/mo",
       "summary": "Post quality guard, media template, approval workflow, platform proof path, and metrics memory.",
       "category": "Social + Media Agents",
-      "platforms": ["LinkedIn", "X", "Atlas"],
-      "buyer_pains": ["social posting", "draft quality", "media workflow"],
+      "platforms": [
+        "LinkedIn",
+        "X",
+        "Atlas"
+      ],
+      "buyer_pains": [
+        "social posting",
+        "draft quality",
+        "media workflow"
+      ],
       "page": "services/social-media-distribution-pack.html",
       "stripe_route": "social-media-distribution-pack",
       "public_status_note": "Publishing remains approval-based."
@@ -90,8 +146,16 @@
       "price": "DIY $99; Setup $499; Monitor $199/mo",
       "summary": "First buyer monitor, Stripe route monitoring, subscription event review, failed-invoice tasking, and private delivery controls.",
       "category": "Revenue + Stripe Agents",
-      "platforms": ["Stripe", "Atlas", "OpenAI Agents"],
-      "buyer_pains": ["Stripe delivery", "subscription monitoring", "failed invoice review"],
+      "platforms": [
+        "Stripe",
+        "Atlas",
+        "OpenAI Agents"
+      ],
+      "buyer_pains": [
+        "Stripe delivery",
+        "subscription monitoring",
+        "failed invoice review"
+      ],
       "page": "services/recurring-revenue-monitor-pack.html",
       "stripe_route": "recurring-revenue-monitor-pack",
       "public_status_note": "Monthly subscription checkout is being configured."
@@ -102,14 +166,34 @@
       "price": "DIY $99; Builder $249; Setup Review $499; Team Rollout $1,500+",
       "summary": "Team workflow pack for Claude Code adoption: six-step loop, TODO discipline, context mastery, MCP checklist, hooks policy, and verification-first rollout guide.",
       "category": "Claude + Codex Team Packs",
-      "platforms": ["Claude Code", "MCP", "Atlas"],
-      "buyer_pains": ["Claude Code rollout", "context cost", "team coding workflow"],
+      "platforms": [
+        "Claude Code",
+        "MCP",
+        "Atlas"
+      ],
+      "buyer_pains": [
+        "Claude Code rollout",
+        "context cost",
+        "team coding workflow"
+      ],
       "page": "agent-skills/claude-code-team-ergonomics-pack.html",
       "stripe_route": "claude-code-team-ergonomics-pack",
       "checkout_options": [
-        {"label": "Buy $99 Pack", "stripe_route": "claude-code-team-ergonomics-pack", "amount": 99},
-        {"label": "Buy $249 Builder Pack", "stripe_route": "claude-code-team-ergonomics-builder-pack", "amount": 249},
-        {"label": "Book $499 Setup Review", "stripe_route": "claude-code-team-ergonomics-setup-review", "amount": 499}
+        {
+          "label": "Buy $99 Pack",
+          "stripe_route": "claude-code-team-ergonomics-pack",
+          "amount": 99
+        },
+        {
+          "label": "Buy $249 Builder Pack",
+          "stripe_route": "claude-code-team-ergonomics-builder-pack",
+          "amount": 249
+        },
+        {
+          "label": "Book $499 Setup Review",
+          "stripe_route": "claude-code-team-ergonomics-setup-review",
+          "amount": 499
+        }
       ]
     },
     {
@@ -118,14 +202,34 @@
       "price": "DIY $99; Builder $249; Setup Review $499; Team Rollout $1,500+",
       "summary": "Native Codex team workflow pack: AGENTS.md contracts, local overrides, rules, approvals, sandboxing, skills, narrow subagents, and verification-first Build Sequence.",
       "category": "Claude + Codex Team Packs",
-      "platforms": ["Codex", "OpenAI Agents", "Atlas"],
-      "buyer_pains": ["Codex rollout", "AGENTS.md drift", "approval boundaries"],
+      "platforms": [
+        "Codex",
+        "OpenAI Agents",
+        "Atlas"
+      ],
+      "buyer_pains": [
+        "Codex rollout",
+        "AGENTS.md drift",
+        "approval boundaries"
+      ],
       "page": "agent-skills/codex-team-ergonomics-pack.html",
       "stripe_route": "codex-team-ergonomics-pack",
       "checkout_options": [
-        {"label": "Buy $99 Pack", "stripe_route": "codex-team-ergonomics-pack", "amount": 99},
-        {"label": "Buy $249 Builder Pack", "stripe_route": "codex-team-ergonomics-builder-pack", "amount": 249},
-        {"label": "Book $499 Setup Review", "stripe_route": "codex-team-ergonomics-setup-review", "amount": 499}
+        {
+          "label": "Buy $99 Pack",
+          "stripe_route": "codex-team-ergonomics-pack",
+          "amount": 99
+        },
+        {
+          "label": "Buy $249 Builder Pack",
+          "stripe_route": "codex-team-ergonomics-builder-pack",
+          "amount": 249
+        },
+        {
+          "label": "Book $499 Setup Review",
+          "stripe_route": "codex-team-ergonomics-setup-review",
+          "amount": 499
+        }
       ]
     },
     {
@@ -134,20 +238,173 @@
       "price": "$249+",
       "summary": "Combined team ergonomics bundle for teams running both Claude Code and Codex with shared operating contracts.",
       "category": "Claude + Codex Team Packs",
-      "platforms": ["Claude Code", "Codex", "Atlas"],
-      "buyer_pains": ["mixed AI coding tools", "workflow standardization", "team adoption"],
+      "platforms": [
+        "Claude Code",
+        "Codex",
+        "Atlas"
+      ],
+      "buyer_pains": [
+        "mixed AI coding tools",
+        "workflow standardization",
+        "team adoption"
+      ],
       "page": "bundles/ai-coding-team-ergonomics-bundle.html",
       "stripe_route": "ai-coding-team-ergonomics-bundle",
       "checkout_options": [
-        {"label": "Buy Bundle", "stripe_route": "ai-coding-team-ergonomics-bundle", "amount": 249}
+        {
+          "label": "Buy Bundle",
+          "stripe_route": "ai-coding-team-ergonomics-bundle",
+          "amount": 249
+        }
       ]
+    },
+    {
+      "id": "codebase-meaning-agent-pack",
+      "name": "Codebase Meaning Agent Pack",
+      "price": "$99",
+      "summary": "Stop agents from re-learning the same repo every run with a repo meaning map, invariants, and compact perspective packets.",
+      "category": "Code Intelligence Agents",
+      "platforms": [
+        "Claude Code",
+        "Codex",
+        "OpenAI",
+        "Gemini",
+        "OpenClaw",
+        "Local"
+      ],
+      "buyer_pains": [
+        "repo meaning",
+        "agent memory baseline",
+        "module ownership"
+      ],
+      "page": "agent-skills/codebase-meaning-agent-pack.html",
+      "stripe_route": "stripe_product_route_missing",
+      "status": "Setup required"
+    },
+    {
+      "id": "local-code-review-agent-pack",
+      "name": "Local Code Review Agent Pack",
+      "price": "$99",
+      "summary": "Read approved local code scope, review diffs, score risk, and suggest fixes without automatic modification.",
+      "category": "Code Intelligence Agents",
+      "platforms": [
+        "Claude Code",
+        "Codex",
+        "OpenAI",
+        "Gemini",
+        "OpenClaw",
+        "Local"
+      ],
+      "buyer_pains": [
+        "local code review",
+        "bugfix suggestions",
+        "risk scoring"
+      ],
+      "page": "agent-skills/local-code-review-agent-pack.html",
+      "stripe_route": "stripe_product_route_missing",
+      "status": "Setup required"
+    },
+    {
+      "id": "spec-driven-code-agent-pack",
+      "name": "Spec-Driven Code Agent Pack",
+      "price": "$249",
+      "summary": "Turn codebase meaning into specs, task plans, and QA proof contracts for AI coding agents.",
+      "category": "Code Intelligence Agents",
+      "platforms": [
+        "Claude Code",
+        "Codex",
+        "OpenAI",
+        "Gemini",
+        "OpenClaw",
+        "Local"
+      ],
+      "buyer_pains": [
+        "spec planning",
+        "feature tasking",
+        "QA proof"
+      ],
+      "page": "agent-skills/spec-driven-code-agent-pack.html",
+      "stripe_route": "stripe_product_route_missing",
+      "status": "Setup required"
+    },
+    {
+      "id": "persistent-repo-intelligence-bundle",
+      "name": "Persistent Repo Intelligence Bundle",
+      "price": "$499",
+      "summary": "Bundle repo meaning, local review, spec-driven tasking, and a monthly meaning refresh plan.",
+      "category": "Code Intelligence Agents",
+      "platforms": [
+        "Claude Code",
+        "Codex",
+        "OpenAI",
+        "Gemini",
+        "OpenClaw",
+        "Local"
+      ],
+      "buyer_pains": [
+        "repo intelligence refresh",
+        "team rollout",
+        "module map upkeep"
+      ],
+      "page": "bundles/persistent-repo-intelligence-bundle.html",
+      "stripe_route": "stripe_product_route_missing",
+      "status": "Setup required"
+    },
+    {
+      "id": "multi-platform-code-agent-starter-pack",
+      "name": "Claude/Codex/Gemini/OpenAI Agent Starter Pack",
+      "price": "$99",
+      "summary": "A platform-adapter starter pack for code agents that read scope, check risk, and suggest fixes locally when configured.",
+      "category": "Multi-Platform Agent Starters",
+      "platforms": [
+        "Claude Code",
+        "Codex",
+        "OpenAI",
+        "Gemini",
+        "OpenClaw",
+        "Hermes",
+        "Local"
+      ],
+      "buyer_pains": [
+        "multi-platform setup",
+        "starter code agent",
+        "local model route"
+      ],
+      "page": "agent-skills/multi-platform-code-agent-starter-pack.html",
+      "stripe_route": "stripe_product_route_missing",
+      "status": "Book review"
     }
   ],
   "recurring_plans": [
-    {"id": "agent-skill-update-club", "name": "Agent Skill Update Club", "price": "$49/month", "public_status_note": "Subscription checkout setup in progress."},
-    {"id": "agent-operations-monitor", "name": "Agent Operations Monitor", "price": "$199/month", "public_status_note": "Subscription checkout setup in progress."},
-    {"id": "social-sales-loop", "name": "Social Sales Loop", "price": "$299/month", "public_status_note": "Subscription checkout setup in progress."},
-    {"id": "revenue-agent-reliability-system", "name": "Revenue Agent Reliability System", "price": "$499/month", "public_status_note": "Subscription checkout setup in progress."},
-    {"id": "custom-agent-ops-retainer", "name": "Custom Agent Ops Retainer", "price": "$999+/month", "route": "quote_request"}
+    {
+      "id": "agent-skill-update-club",
+      "name": "Agent Skill Update Club",
+      "price": "$49/month",
+      "public_status_note": "Subscription checkout setup in progress."
+    },
+    {
+      "id": "agent-operations-monitor",
+      "name": "Agent Operations Monitor",
+      "price": "$199/month",
+      "public_status_note": "Subscription checkout setup in progress."
+    },
+    {
+      "id": "social-sales-loop",
+      "name": "Social Sales Loop",
+      "price": "$299/month",
+      "public_status_note": "Subscription checkout setup in progress."
+    },
+    {
+      "id": "revenue-agent-reliability-system",
+      "name": "Revenue Agent Reliability System",
+      "price": "$499/month",
+      "public_status_note": "Subscription checkout setup in progress."
+    },
+    {
+      "id": "custom-agent-ops-retainer",
+      "name": "Custom Agent Ops Retainer",
+      "price": "$999+/month",
+      "route": "quote_request"
+    }
   ]
 }
