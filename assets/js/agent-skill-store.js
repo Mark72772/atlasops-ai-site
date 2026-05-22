@@ -177,20 +177,25 @@
 
   function checkoutNote() {
     return isCheckoutLive()
-      ? "Secure Stripe Checkout. Private delivery after payment verification."
-      : "Stripe Checkout is temporarily unavailable. Ask Atlas for setup review.";
+      ? "Private delivery after payment verification."
+      : "Setup review available.";
   }
 
   function bundleCard(bundle, cardClass) {
-    const included = (bundle.included_packs || []).map((item) => `<li>${escapeHtml(item)}</li>`).join("");
+    const included = (bundle.included_packs || []).slice(0, 4).map((item) => escapeHtml(item)).join(" &middot; ");
     return `<article class="${cardClass}">
       <span class="tag">Bundle</span>
       <h3>${escapeHtml(bundle.name)}</h3>
-      <p>${escapeHtml(bundle.pain_point)}</p>
+      <p class="buyer-pain">${escapeHtml(bundle.pain_point)}</p>
+      <div class="product-meta">
+        <p><strong>Works with:</strong> Claude Code &middot; Codex &middot; OpenAI &middot; Gemini &middot; OpenClaw</p>
+        <p><strong>Includes:</strong> ${included || "SKILL.md &middot; AGENTS.md &middot; Workflow map &middot; Proof contract"}</p>
+      </div>
       <p class="price">$${escapeHtml(bundle.price)}</p>
-      <ul class="mini-list">${included}</ul>
-      <button type="button" data-router-buy="${escapeHtml(bundle.pack_id)}" data-product-type="agent_skill_bundle" data-price="${escapeHtml(bundle.price)}">${isCheckoutLive() ? "Buy Bundle" : "Ask Atlas about this bundle"}</button>
-      <p class="checkout-note">${checkoutNote()}</p>
+      <div class="card-actions-row">
+        <button type="button" data-router-buy="${escapeHtml(bundle.pack_id)}" data-product-type="agent_skill_bundle" data-price="${escapeHtml(bundle.price)}">${isCheckoutLive() ? "Buy Bundle" : "Ask Atlas"}</button>
+        <span class="delivery-hint" tabindex="0" aria-label="${checkoutNote()}">Private delivery</span>
+      </div>
     </article>`;
   }
 
@@ -206,6 +211,7 @@
 
   async function insertBundles() {
     if (document.getElementById("agent-skill-bundles")) return;
+    if (document.querySelector(".marketplace-hero")) return;
     const bundles = await loadBundles();
     const isGuardrailPage = Boolean(document.querySelector(".gr-shell"));
     const section = document.createElement("section");
@@ -254,6 +260,7 @@
 
   function insertRouter() {
     if (document.getElementById("ask-atlas-product-router")) return;
+    if (document.querySelector(".marketplace-hero") || document.querySelector(".chat-shell")) return;
     const isGuardrailPage = Boolean(document.querySelector(".gr-shell"));
     const wrapper = document.createElement("div");
     wrapper.innerHTML = routerMarkup(isGuardrailPage);
@@ -301,6 +308,7 @@
 
   async function insertRecurringRevenue() {
     if (document.getElementById("recurring-agent-operations")) return;
+    if (document.querySelector(".marketplace-hero")) return;
     const host = document.querySelector("main") || document.body;
     try {
       const response = await fetch("data/recurring-products.json", { cache: "no-store" });
