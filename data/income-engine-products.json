@@ -101,7 +101,11 @@
       "platform_badges": ["Claude Code", "MCP", "Atlas"],
       "page": "agent-skills/claude-code-team-ergonomics-pack.html",
       "stripe_route": "claude-code-team-ergonomics-pack",
-      "exact_gate": "stripe_product_route_missing"
+      "checkout_options": [
+        {"label": "Buy $99 Pack", "stripe_route": "claude-code-team-ergonomics-pack", "amount": 99},
+        {"label": "Buy $249 Builder Pack", "stripe_route": "claude-code-team-ergonomics-builder-pack", "amount": 249},
+        {"label": "Book $499 Setup Review", "stripe_route": "claude-code-team-ergonomics-setup-review", "amount": 499}
+      ]
     },
     {
       "id": "codex-team-ergonomics-pack",
@@ -112,7 +116,11 @@
       "platform_badges": ["Codex", "OpenAI Agents", "Atlas"],
       "page": "agent-skills/codex-team-ergonomics-pack.html",
       "stripe_route": "codex-team-ergonomics-pack",
-      "exact_gate": "stripe_product_route_missing"
+      "checkout_options": [
+        {"label": "Buy $99 Pack", "stripe_route": "codex-team-ergonomics-pack", "amount": 99},
+        {"label": "Buy $249 Builder Pack", "stripe_route": "codex-team-ergonomics-builder-pack", "amount": 249},
+        {"label": "Book $499 Setup Review", "stripe_route": "codex-team-ergonomics-setup-review", "amount": 499}
+      ]
     },
     {
       "id": "ai-coding-team-ergonomics-bundle",
@@ -123,7 +131,9 @@
       "platform_badges": ["Claude Code", "Codex", "Atlas"],
       "page": "bundles/ai-coding-team-ergonomics-bundle.html",
       "stripe_route": "ai-coding-team-ergonomics-bundle",
-      "exact_gate": "stripe_product_route_missing"
+      "checkout_options": [
+        {"label": "Buy Bundle", "stripe_route": "ai-coding-team-ergonomics-bundle", "amount": 249}
+      ]
     }
   ],
   "recurring_plans": [

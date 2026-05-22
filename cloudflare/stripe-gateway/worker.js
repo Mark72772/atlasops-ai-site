@@ -211,6 +211,70 @@ const SERVICE_CATALOG = {
     revenue_type: "one_time",
     delivery_policy: "download_after_signed_payment_evidence"
   },
+  "claude-code-team-ergonomics-pack": {
+    name: "Claude Code Team Ergonomics Agent Pack",
+    amount: 9900,
+    currency: "usd",
+    type: "downloadable_skill_pack",
+    revenue_type: "one_time",
+    delivery_policy: "download_after_signed_payment_evidence"
+  },
+  "claude-code-team-ergonomics-builder-pack": {
+    name: "Claude Code Team Ergonomics Builder Pack",
+    amount: 24900,
+    currency: "usd",
+    type: "downloadable_skill_pack",
+    revenue_type: "one_time",
+    delivery_policy: "download_after_signed_payment_evidence"
+  },
+  "claude-code-team-ergonomics-setup-review": {
+    name: "Claude Code Team Ergonomics Setup Review",
+    amount: 49900,
+    currency: "usd",
+    type: "service",
+    revenue_type: "one_time",
+    delivery_policy: "setup_review_after_signed_payment_evidence"
+  },
+  "codex-team-ergonomics-pack": {
+    name: "Codex Team Ergonomics Agent Pack",
+    amount: 9900,
+    currency: "usd",
+    type: "downloadable_skill_pack",
+    revenue_type: "one_time",
+    delivery_policy: "download_after_signed_payment_evidence"
+  },
+  "codex-team-ergonomics-builder-pack": {
+    name: "Codex Team Ergonomics Builder Pack",
+    amount: 24900,
+    currency: "usd",
+    type: "downloadable_skill_pack",
+    revenue_type: "one_time",
+    delivery_policy: "download_after_signed_payment_evidence"
+  },
+  "codex-team-ergonomics-setup-review": {
+    name: "Codex Team Ergonomics Setup Review",
+    amount: 49900,
+    currency: "usd",
+    type: "service",
+    revenue_type: "one_time",
+    delivery_policy: "setup_review_after_signed_payment_evidence"
+  },
+  "ai-coding-team-ergonomics-bundle": {
+    name: "Claude + Codex Team Ergonomics Bundle",
+    amount: 24900,
+    currency: "usd",
+    type: "downloadable_skill_bundle",
+    revenue_type: "one_time",
+    delivery_policy: "download_after_signed_payment_evidence"
+  },
+  "ai-coding-team-ergonomics-builder-bundle": {
+    name: "Claude + Codex Team Ergonomics Builder Bundle",
+    amount: 49900,
+    currency: "usd",
+    type: "downloadable_skill_bundle",
+    revenue_type: "one_time",
+    delivery_policy: "download_after_signed_payment_evidence"
+  },
   ai_website_seo_visibility_audit: {
     name: "AI Website SEO + AI Visibility Audit",
     amount: 19900,
@@ -456,7 +520,7 @@ async function createCheckoutSession(request, env) {
     source: body.source || "guardrail_store",
     source_url: body.source_url || "",
     delivery_requires_verified_payment: "true",
-    atlas_runtime: "local_only",
+    atlas_policy_scope: "local_atlas_only",
     client_website: body.client_website || body.business_url || ""
   };
   if (service.revenue_type === "quote_subscription") {
@@ -504,7 +568,7 @@ async function createCheckoutSession(request, env) {
     "metadata[source]": metadata.source,
     "metadata[source_url]": metadata.source_url,
     "metadata[delivery_requires_verified_payment]": metadata.delivery_requires_verified_payment,
-    "metadata[atlas_runtime]": metadata.atlas_runtime,
+    "metadata[atlas_policy_scope]": metadata.atlas_policy_scope,
     "metadata[client_website]": metadata.client_website
   };
   const lineItemPayload = service.revenue_type === "subscription"

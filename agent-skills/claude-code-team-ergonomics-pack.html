@@ -19,13 +19,13 @@
       <h1>Claude Code Team Ergonomics Agent Pack</h1>
       <p class="lead">Help teams use Claude Code with less friction, cleaner context, fewer repeated mistakes, and stronger verification habits.</p>
       <div class="actions">
-        <button class="button primary" type="button" disabled title="stripe_product_route_missing">Buy $99 Pack</button>
-        <button class="button gold" type="button" disabled title="stripe_product_route_missing">Buy $249 Builder Pack</button>
-        <a class="button ghost" href="../ask-atlas.html">Book $499 Setup Review</a>
+        <button class="button primary" type="button" data-router-buy="claude-code-team-ergonomics-pack" data-product-type="agent_skill_pack" data-price="99">Buy $99 Pack</button>
+        <button class="button gold" type="button" data-router-buy="claude-code-team-ergonomics-builder-pack" data-product-type="agent_skill_pack" data-price="249">Buy $249 Builder Pack</button>
+        <button class="button ghost" type="button" data-router-buy="claude-code-team-ergonomics-setup-review" data-product-type="setup_review" data-price="499">Book $499 Setup Review</button>
       </div>
     </div>
     <aside class="hero-panel">
-      <div class="hero-panel-header"><strong>Checkout gate</strong><span class="status-dot">stripe_product_route_missing</span></div>
+      <div class="hero-panel-header"><strong>Stripe Checkout</strong><span class="status-dot">Live route</span></div>
       <p>Delivery unlocks only after verified Stripe payment evidence. Checkout return pages are not payment proof.</p>
     </aside>
   </section>
@@ -48,6 +48,7 @@
 </footer>
 <script src="../assets/js/stripe-checkout-config.js"></script>
 <script src="../assets/js/atlas-payments-config.js"></script>
+<script src="../assets/js/guardrail-checkout.js"></script>
 <script src="../assets/js/agent-skill-store.js"></script>
 </body>
 </html>

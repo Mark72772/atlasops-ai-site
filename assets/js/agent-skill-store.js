@@ -117,16 +117,14 @@
       pack_id: "claude-code-team-ergonomics-pack",
       bundle: "Claude + Codex Team Ergonomics Bundle",
       bundle_id: "ai-coding-team-ergonomics-bundle",
-      blocks: "messy context windows, weak six-step verification, and unclear MCP or hook adoption",
-      exact_gate: "stripe_product_route_missing"
+      blocks: "messy context windows, weak six-step verification, and unclear MCP or hook adoption"
     },
     codexTeam: {
       kit: "Codex Team Ergonomics Agent Pack",
       pack_id: "codex-team-ergonomics-pack",
       bundle: "Claude + Codex Team Ergonomics Bundle",
       bundle_id: "ai-coding-team-ergonomics-bundle",
-      blocks: "AGENTS.md drift, fuzzy approvals, unsafe sandbox assumptions, and unsupported Claude-only command habits",
-      exact_gate: "stripe_product_route_missing"
+      blocks: "AGENTS.md drift, fuzzy approvals, unsafe sandbox assumptions, and unsupported Claude-only command habits"
     }
   };
 
