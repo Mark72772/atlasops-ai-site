@@ -55,6 +55,17 @@
         "Routines + budgets + tickets"
       ],
       pain_point: "A company-level operating layer for agent teams with roles, tickets, routines, and QA."
+    },
+    {
+      pack_id: "ai-coding-team-ergonomics-bundle",
+      name: "Claude + Codex Team Ergonomics Bundle",
+      price: 249,
+      included_packs: [
+        "Claude Code Team Ergonomics Agent Pack",
+        "Codex Team Ergonomics Agent Pack",
+        "Shared verification-first proof contract"
+      ],
+      pain_point: "Shared AI coding operating contracts for teams using both Claude Code and Codex."
     }
   ];
 
@@ -100,6 +111,22 @@
       bundle: "Agent Company Launch Kit",
       bundle_id: "agent-company-launch-kit",
       blocks: "heartbeat-only work, ownerless tickets, missing routines, and weak QA acceptance"
+    },
+    claudeTeam: {
+      kit: "Claude Code Team Ergonomics Agent Pack",
+      pack_id: "claude-code-team-ergonomics-pack",
+      bundle: "Claude + Codex Team Ergonomics Bundle",
+      bundle_id: "ai-coding-team-ergonomics-bundle",
+      blocks: "messy context windows, weak six-step verification, and unclear MCP or hook adoption",
+      exact_gate: "stripe_product_route_missing"
+    },
+    codexTeam: {
+      kit: "Codex Team Ergonomics Agent Pack",
+      pack_id: "codex-team-ergonomics-pack",
+      bundle: "Claude + Codex Team Ergonomics Bundle",
+      bundle_id: "ai-coding-team-ergonomics-bundle",
+      blocks: "AGENTS.md drift, fuzzy approvals, unsafe sandbox assumptions, and unsupported Claude-only command habits",
+      exact_gate: "stripe_product_route_missing"
     }
   };
 
@@ -201,6 +228,8 @@
   function chooseRoute(text, platform) {
     const q = `${text} ${platform}`.toLowerCase();
     if (/(linkedin|social|composer|post|publish)/.test(q) || /(^|\s)x(\s|$)/.test(q)) return PRODUCTS.social;
+    if (/(claude code|claude|mcp|six-step|six step|context window|todo)/.test(q)) return PRODUCTS.claudeTeam;
+    if (/(codex|agents\.md|agents md|approval|sandbox|subagent|rules)/.test(q)) return PRODUCTS.codexTeam;
     if (/(rag|source|citation|unsupported|claims|hallucination)/.test(q)) return PRODUCTS.rag;
     if (/(stripe|payment|download|checkout|revenue|paid|webhook)/.test(q)) return PRODUCTS.stripe;
     if (/(openclaw|gateway|doctor|plugin|tool bridge)/.test(q)) return PRODUCTS.openclaw;
@@ -238,14 +267,16 @@
   function renderRecommendation(form, resultNode) {
     const formData = new FormData(form);
     const route = chooseRoute(formData.get("pain_point"), formData.get("platform"));
+    const gated = Boolean(route.exact_gate);
+    const bundlePrice = route.bundle_id === "agent-company-launch-kit" ? "499" : route.bundle_id === "agent-builder-starter-bundle" || route.bundle_id === "social-publisher-safety-bundle" || route.bundle_id === "ai-coding-team-ergonomics-bundle" ? "249" : "299";
     resultNode.innerHTML = `<div class="router-card">
       <strong>Recommended kit:</strong> ${escapeHtml(route.kit)}<br>
       <strong>Recommended bundle:</strong> ${escapeHtml(route.bundle)}<br>
       <strong>Why it fits:</strong> It targets the exact proof gap in this workflow.<br>
       <strong>What it blocks:</strong> ${escapeHtml(route.blocks)}.<br>
       <div class="router-actions">
-        <button type="button" data-router-buy="${escapeHtml(route.pack_id)}" data-product-type="agent_skill_pack" data-price="99">${isCheckoutLive() ? "Buy $99 Guardrail Kit" : "Ask Atlas about this pack"}</button>
-        <button type="button" data-router-buy="${escapeHtml(route.bundle_id)}" data-product-type="agent_skill_bundle" data-price="${route.bundle_id === "agent-company-launch-kit" ? "499" : route.bundle_id === "agent-builder-starter-bundle" || route.bundle_id === "social-publisher-safety-bundle" ? "249" : "299"}">${isCheckoutLive() ? "Buy Bundle" : "Ask Atlas about this bundle"}</button>
+        <button type="button" ${gated ? `disabled title="${escapeHtml(route.exact_gate)}"` : `data-router-buy="${escapeHtml(route.pack_id)}" data-product-type="agent_skill_pack"`} data-price="99">${gated ? "Checkout route pending" : isCheckoutLive() ? "Buy $99 Guardrail Kit" : "Ask Atlas about this pack"}</button>
+        <button type="button" ${gated ? `disabled title="${escapeHtml(route.exact_gate)}"` : `data-router-buy="${escapeHtml(route.bundle_id)}" data-product-type="agent_skill_bundle"`} data-price="${bundlePrice}">${gated ? "Checkout route pending" : isCheckoutLive() ? "Buy Bundle" : "Ask Atlas about this bundle"}</button>
         <a href="ask-atlas.html">Ask Atlas setup review</a>
       </div>
       <p class="checkout-note">${checkoutNote()}</p>
@@ -270,9 +301,40 @@
     });
   }
 
+  async function insertRecurringRevenue() {
+    if (document.getElementById("recurring-agent-operations")) return;
+    const host = document.querySelector("main") || document.body;
+    try {
+      const response = await fetch("data/recurring-products.json", { cache: "no-store" });
+      const data = await response.json();
+      const plans = data.plans || [];
+      const cards = plans.map((plan) => {
+        const disabled = !plan.stripe_price_id_configured;
+        const button = disabled
+          ? `<button type="button" disabled title="${escapeHtml(plan.exact_gate)}">${escapeHtml(plan.button_label)} - ${escapeHtml(plan.exact_gate)}</button>`
+          : `<button type="button" data-router-buy="${escapeHtml(plan.id)}" data-product-type="subscription">${escapeHtml(plan.button_label)}</button>`;
+        return `<article class="gr-card"><h3>${escapeHtml(plan.name)}</h3><p><strong>${escapeHtml(plan.price)}</strong></p><p>${escapeHtml(plan.summary)}</p><div class="card-actions">${button}</div></article>`;
+      }).join("");
+      const section = document.createElement("section");
+      section.id = "recurring-agent-operations";
+      section.className = document.querySelector(".gr-shell") ? "gr-proof-panel recurring-agent-ops" : "section white tight recurring-agent-ops";
+      section.innerHTML = `<span>Recurring Agent Operations</span><strong>Monthly support for teams running AI agents in production.</strong><p>Subscription checkout is evidence-gated: a Checkout URL or return page is not proof. AtlasOps activates recurring access only after signed Stripe subscription or invoice evidence.</p><div class="gr-grid">${cards}</div>`;
+      const anchor = document.getElementById("agent-skill-bundles") || document.getElementById("guardrail-store") || host.lastElementChild;
+      if (anchor && anchor.parentNode) anchor.parentNode.insertBefore(section, anchor.nextSibling);
+      else host.appendChild(section);
+    } catch (error) {
+      const section = document.createElement("section");
+      section.id = "recurring-agent-operations";
+      section.className = document.querySelector(".gr-shell") ? "gr-proof-panel recurring-agent-ops" : "section white tight recurring-agent-ops";
+      section.innerHTML = "<span>Recurring Agent Operations</span><strong>Recurring plan catalog is temporarily gated.</strong><p>Exact gate: recurring_product_catalog_unavailable.</p>";
+      host.appendChild(section);
+    }
+  }
+
   document.addEventListener("DOMContentLoaded", () => {
     updatePositioningCopy();
     insertBundles();
+    insertRecurringRevenue();
     insertRouter();
     bindRouter();
   });
