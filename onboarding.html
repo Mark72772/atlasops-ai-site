@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AtlasOps Intake | AtlasOps AI</title>
+  <meta name="description" content="AtlasOps AI onboarding intake for Quick Fix Setup, AI Follow-Up Starter, and Monitoring.">
+  <link rel="icon" href="assets/img/favicon.png" type="image/png">
+  <link rel="stylesheet" href="assets/css/atlas-site.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="./"><img class="brand-logo" src="assets/img/atlasops-ai-logo.png" alt="AtlasOps AI"></a>
+    <nav class="nav" aria-label="Primary">
+      <a href="./">Home</a>
+      <a href="ask-atlas.html">Ask Atlas</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+  <main>
+    <section class="section">
+      <span class="eyebrow">AtlasOps intake</span>
+      <h1>Tell Atlas what to review first.</h1>
+      <p class="lead">Use this page after payment or when Atlas asks for intake details. Delivery stays locked until payment proof is verified.</p>
+      <form class="lead-form atlasops-lead-form" action="#intake-note" method="get">
+        <div class="form-grid two">
+          <label>Name <input name="name" autocomplete="name" required></label>
+          <label>Email <input name="email" type="email" autocomplete="email" required></label>
+          <label>Business website <input name="business_website" type="url" placeholder="https://example.com" required></label>
+          <label>Offer <select name="offer"><option>$297 Quick Fix Setup</option><option>$497 AI Follow-Up Starter</option><option>$97/month Monitoring</option><option>Free review first</option></select></label>
+        </div>
+        <label>Priority problem <textarea name="priority_problem" rows="5" placeholder="Describe the website, contact path, follow-up, or visibility problem to review first." required></textarea></label>
+        <label class="consent-line"><input name="consent_checkbox" type="checkbox" required> I understand this public form is not for passwords, API keys, payment card data, credentials, private customer files, or sensitive customer data.</label>
+        <button class="button primary" type="submit">Submit intake</button>
+      </form>
+      <p class="form-note" id="intake-note">Atlas will match intake to payment proof before delivery unlocks.</p>
+    </section>
+  </main>
+  <footer class="footer">
+    <span>Questions route to Atlasisai.3.14@gmail.com. Merchant-services inquiries route to Mark Wilson at mark@creditlinets.com.</span>
+    <span><a href="privacy.html">Privacy</a> / <a href="terms.html">Terms</a></span>
+  </footer>
+</body>
+</html>
