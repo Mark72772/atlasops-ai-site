@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">AtlasOps workflow leak repair diagram</title>
+  <desc id="desc">A website contact path, first response, handoff, follow-up, proof, and monitoring loop.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07111f"/>
+      <stop offset="1" stop-color="#0f2b3b"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#35d7ff"/>
+      <stop offset="1" stop-color="#48d597"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="540" rx="24" fill="url(#bg)"/>
+  <path d="M120 164h120c42 0 64 34 92 68l40 48c30 36 54 68 100 68h368" fill="none" stroke="#35d7ff" stroke-width="10" stroke-linecap="round" opacity=".82"/>
+  <path d="M246 164c44 2 72 42 102 78l38 46c28 34 52 60 94 60h268" fill="none" stroke="#48d597" stroke-width="3" stroke-dasharray="10 12" opacity=".86"/>
+  <g font-family="Inter, Segoe UI, Arial, sans-serif" font-size="22" font-weight="800" fill="#f8fbff">
+    <g transform="translate(72 118)">
+      <rect width="170" height="92" rx="10" fill="#10233a" stroke="#294662"/>
+      <text x="24" y="38">Website</text><text x="24" y="66" fill="#b9c7db" font-size="16">contact path</text>
+    </g>
+    <g transform="translate(292 198)">
+      <rect width="170" height="92" rx="10" fill="#10233a" stroke="#294662"/>
+      <text x="24" y="38">First</text><text x="24" y="66" fill="#b9c7db" font-size="16">response</text>
+    </g>
+    <g transform="translate(512 302)">
+      <rect width="170" height="92" rx="10" fill="#10233a" stroke="#294662"/>
+      <text x="24" y="38">Follow-up</text><text x="24" y="66" fill="#b9c7db" font-size="16">handoff</text>
+    </g>
+    <g transform="translate(724 302)">
+      <rect width="170" height="92" rx="10" fill="#10233a" stroke="#294662"/>
+      <text x="24" y="38">Proof</text><text x="24" y="66" fill="#b9c7db" font-size="16">monitoring</text>
+    </g>
+  </g>
+  <circle cx="378" cy="244" r="32" fill="#f5b84b"/>
+  <path d="M378 228v32M362 244h32" stroke="#07111f" stroke-width="7" stroke-linecap="round"/>
+  <text x="74" y="462" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="26" font-weight="900" fill="#fff">Find the leak. Fix one path. Keep proof visible.</text>
+  <text x="74" y="496" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="17" fill="#b9c7db">No fake sends, no fake payments, no delivery unlocks without proof.</text>
+</svg>

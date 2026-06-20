@@ -13,7 +13,7 @@
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
   <link rel="stylesheet" href="assets/css/atlas-site.css">
 </head>
-<body>
+<body class="ask-atlas-page">
 <header class="site-header">
   <a class="brand" href="index.html"><img class="brand-logo" src="assets/img/atlasops-ai-logo.png" alt="AtlasOps AI"></a>
   <nav class="nav" aria-label="Primary">
@@ -26,11 +26,17 @@
   </nav>
 </header>
 <main>
-  <section class="hero compact-hero">
+  <section class="hero compact-hero ask-atlas-hero">
     <div>
       <h1>Ask Atlas</h1>
       <p class="lead">Tell Atlas where the workflow leaks. It will explain the problem, recommend the right public offer, and give one practical next step.</p>
-      <div class="actions"><a class="button primary" href="index.html#marketplace">Browse Marketplace</a><a class="button gold" href="services.html">View Setup Services</a></div>
+      <div class="ask-example-grid" aria-label="Example questions">
+        <span>I miss follow-ups</span>
+        <span>My website is confusing</span>
+        <span>I need card processing</span>
+        <span>I want monthly checks</span>
+      </div>
+      <div class="actions"><a class="button primary" href="#ask-atlas-chat">Ask a Question</a><a class="button gold" href="index.html#what-happens-next">See Offer Ladder</a></div>
     </div>
     <aside class="hero-panel">
       <div class="hero-panel-header"><strong>Router output</strong><span class="status-dot">available</span></div>
@@ -43,11 +49,11 @@
     </aside>
   </section>
 
-  <section class="section white tight">
+  <section class="section white tight ask-atlas-workbench" id="ask-atlas-chat">
     <div class="chat-shell">
       <div class="chat-top"><strong>Ask Atlas public workflow guide</strong><span class="status-dot">offer-aware</span></div>
       <div class="chat-thread" id="atlas-chat-thread" aria-live="polite">
-        <div class="message">Choose a prompt or describe your workflow. Atlas will recommend a public AtlasOps path without exposing internal operations status.</div>
+        <div class="message">Choose a prompt or describe your workflow. Atlas will answer in three parts: what is leaking, which offer fits, and why that recommendation makes sense.</div>
       </div>
       <form id="atlas-chat-form" class="chat-form atlasops-lead-form ask-atlas-widget-form">
         <textarea id="atlas-chat-input" name="question" aria-label="Ask Atlas a question" placeholder="Example: I get leads from my website but forget to follow up."></textarea>
@@ -152,7 +158,7 @@
   }
   function renderAnswer(result) {
     const offer = result.recommended_offer || offers.free_review;
-    return `<div class="public-answer-card"><p>${escapeHtml(result.answer)}</p><div class="router-card"><strong>${escapeHtml(offer.title)}</strong><p>${escapeHtml(result.next_step || offer.next)}</p><p><em>Why this recommendation:</em> ${escapeHtml(result.response_mode || "visitor_context")}</p><div class="router-actions"><a href="${escapeHtml(result.link || offer.link)}">Open recommendation</a><a href="index.html#what-happens-next">See offer ladder</a></div></div><p class="form-note">${escapeHtml(result.follow_up_question || "What should Atlas inspect first?")}</p></div>`;
+    return `<div class="public-answer-card"><section class="answer-card"><strong>Atlas answer</strong><p>${escapeHtml(result.answer)}</p></section><section class="recommendation-card"><strong>${escapeHtml(offer.title)}</strong><p>${escapeHtml(result.next_step || offer.next)}</p><div class="router-actions"><a href="${escapeHtml(result.link || offer.link)}">Open recommendation</a><a href="index.html#what-happens-next">See offer ladder</a></div></section><section class="why-panel"><strong>Why this recommendation</strong><p>${escapeHtml(result.response_mode || "visitor_context")}</p><p>${escapeHtml(result.follow_up_question || "What should Atlas inspect first?")}</p></section></div>`;
   }
   async function publicAskAtlas(text) {
     try {

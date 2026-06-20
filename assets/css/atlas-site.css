@@ -833,3 +833,190 @@ h3 { font-size: 1.12rem; line-height: 1.2; }
 .maturity-label { display: inline-flex; align-items: center; min-height: 28px; padding: 4px 10px; border: 1px solid rgba(21,32,43,.14); font-size: .78rem; font-weight: 800; text-transform: uppercase; color: #1f6f5b; background: #f7fbf9; }
 @media (max-width: 900px) { .aios-engine-grid, .capability-stack-grid { grid-template-columns: 1fr 1fr; } .aios-hero-visual { grid-template-columns: 1fr; } .aios-node.strong { grid-column: auto; } }
 @media (max-width: 620px) { .aios-engine-grid, .capability-stack-grid { grid-template-columns: 1fr; } }
+
+/* Atlas DESIGN.md public polish activation */
+.premium-homepage-refresh {
+  grid-template-columns: minmax(0, .98fr) minmax(320px, .78fr);
+  gap: min(5vw, 4rem);
+  padding-bottom: 5.25rem;
+}
+.premium-homepage-refresh::after {
+  display: none;
+}
+.premium-homepage-refresh h1 {
+  max-width: 13ch;
+  line-height: .96;
+}
+.hero-proof-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .55rem;
+  margin-top: 1.15rem;
+}
+.hero-proof-row span {
+  min-height: 2.35rem;
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid rgba(53, 215, 255, .24);
+  border-radius: 6px;
+  padding: .48rem .68rem;
+  color: #dff7ff;
+  background: rgba(255,255,255,.055);
+  font-weight: 850;
+  font-size: .92rem;
+}
+.premium-diagram-panel {
+  display: grid;
+  gap: .9rem;
+  padding: .8rem;
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 8px;
+  background: rgba(255,255,255,.07);
+  box-shadow: 0 28px 80px rgba(0,0,0,.34);
+}
+.premium-diagram-panel img,
+.page-diagram,
+.visual-proof-card img {
+  width: 100%;
+  display: block;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: #07111f;
+}
+.hero-visual-caption {
+  display: grid;
+  gap: .18rem;
+  color: #c7d5e8;
+  padding: .2rem .2rem .35rem;
+}
+.hero-visual-caption strong {
+  color: #fff;
+}
+.visual-proof-strip {
+  border-bottom: 1px solid rgba(7,17,31,.08);
+}
+.visual-proof-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+.visual-proof-card {
+  display: grid;
+  gap: .85rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: linear-gradient(180deg, #fff, #f7fbff);
+  padding: 1rem;
+  box-shadow: 0 16px 42px rgba(9,22,42,.07);
+}
+.visual-proof-card h3,
+.visual-proof-card p {
+  margin: 0;
+}
+.ask-atlas-hero {
+  grid-template-columns: minmax(0, .95fr) minmax(300px, .75fr);
+}
+.ask-example-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .6rem;
+  margin-top: 1.25rem;
+  max-width: 38rem;
+}
+.ask-example-grid span {
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 7px;
+  padding: .72rem .78rem;
+  background: rgba(255,255,255,.06);
+  color: #f8fbff;
+  font-weight: 850;
+}
+.ask-atlas-workbench {
+  background: linear-gradient(180deg, #fff, #f4f9ff);
+}
+.ask-atlas-workbench .chat-shell {
+  max-width: 980px;
+  border-radius: 8px;
+}
+.ask-atlas-workbench .chat-thread {
+  background:
+    linear-gradient(180deg, rgba(53,215,255,.08), rgba(72,213,151,.05)),
+    #f7fbff;
+}
+.ask-atlas-workbench .message {
+  border: 1px solid rgba(21,32,43,.08);
+  box-shadow: 0 10px 30px rgba(9,22,42,.06);
+}
+.public-answer-card {
+  gap: .85rem;
+}
+.answer-card,
+.recommendation-card,
+.why-panel {
+  display: grid;
+  gap: .42rem;
+  border: 1px solid rgba(21,32,43,.1);
+  border-radius: 8px;
+  padding: .9rem;
+  background: #fff;
+}
+.answer-card strong,
+.recommendation-card strong,
+.why-panel strong {
+  color: #07111f;
+}
+.answer-card {
+  border-left: 4px solid var(--cyan);
+}
+.recommendation-card {
+  border-left: 4px solid var(--green);
+  background: #f6fbf9;
+}
+.why-panel {
+  border-left: 4px solid var(--amber);
+  background: #fffaf0;
+}
+.premium-aios-page {
+  grid-template-columns: minmax(0, .95fr) minmax(290px, .68fr);
+}
+.premium-aios-page .page-diagram {
+  box-shadow: 0 24px 72px rgba(0,0,0,.3);
+}
+.proof-tile-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+.proof-tile-grid article {
+  display: grid;
+  gap: .45rem;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 8px;
+  padding: 1rem;
+  background: rgba(255,255,255,.055);
+}
+.proof-tile-grid strong {
+  color: #fff;
+}
+.proof-tile-grid span {
+  color: #b9c7db;
+}
+@media (max-width: 980px) {
+  .premium-homepage-refresh,
+  .ask-atlas-hero,
+  .premium-aios-page {
+    grid-template-columns: 1fr;
+  }
+  .visual-proof-grid,
+  .proof-tile-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 620px) {
+  .ask-example-grid {
+    grid-template-columns: 1fr;
+  }
+  .premium-homepage-refresh h1 {
+    max-width: none;
+  }
+}

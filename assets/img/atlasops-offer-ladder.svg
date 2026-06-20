@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">AtlasOps offer ladder</title>
+  <desc id="desc">The AtlasOps offer ladder from free review to quick fix, follow-up starter, and monitoring.</desc>
+  <rect width="960" height="540" rx="24" fill="#f8fbff"/>
+  <path d="M120 420h720" stroke="#d8e3ee" stroke-width="4"/>
+  <g font-family="Inter, Segoe UI, Arial, sans-serif">
+    <g transform="translate(80 286)"><rect width="170" height="134" rx="12" fill="#ffffff" stroke="#cfdde9"/><text x="24" y="42" font-size="20" font-weight="900" fill="#07111f">Free Review</text><text x="24" y="76" font-size="16" fill="#38506b">Find the leak</text><text x="24" y="108" font-size="28" font-weight="900" fill="#0b5f7a">$0</text></g>
+    <g transform="translate(290 238)"><rect width="170" height="182" rx="12" fill="#ffffff" stroke="#35d7ff"/><text x="24" y="42" font-size="20" font-weight="900" fill="#07111f">Quick Fix</text><text x="24" y="76" font-size="16" fill="#38506b">Repair one path</text><text x="24" y="138" font-size="28" font-weight="900" fill="#0b5f7a">$297</text></g>
+    <g transform="translate(500 180)"><rect width="170" height="240" rx="12" fill="#10243a" stroke="#48d597"/><text x="24" y="42" font-size="20" font-weight="900" fill="#fff">Follow-Up</text><text x="24" y="76" font-size="16" fill="#c7d5e8">First response</text><text x="24" y="196" font-size="28" font-weight="900" fill="#48d597">$497</text></g>
+    <g transform="translate(710 128)"><rect width="170" height="292" rx="12" fill="#07111f" stroke="#f5b84b"/><text x="24" y="42" font-size="20" font-weight="900" fill="#fff">Monitoring</text><text x="24" y="76" font-size="16" fill="#c7d5e8">Keep it checked</text><text x="24" y="248" font-size="28" font-weight="900" fill="#f5b84b">$97/mo</text></g>
+  </g>
+  <text x="80" y="78" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="34" font-weight="900" fill="#07111f">Smallest useful step first.</text>
+  <text x="80" y="116" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="18" fill="#38506b">The ladder prevents a simple workflow leak from turning into a giant project.</text>
+</svg>
