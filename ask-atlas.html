@@ -160,9 +160,17 @@
     const offer = result.recommended_offer || offers.free_review;
     return `<div class="public-answer-card"><section class="answer-card"><strong>Atlas answer</strong><p>${escapeHtml(result.answer)}</p></section><section class="recommendation-card"><strong>${escapeHtml(offer.title)}</strong><p>${escapeHtml(result.next_step || offer.next)}</p><div class="router-actions"><a href="${escapeHtml(result.link || offer.link)}">Open recommendation</a><a href="index.html#what-happens-next">See offer ladder</a></div></section><section class="why-panel"><strong>Why this recommendation</strong><p>${escapeHtml(result.response_mode || "visitor_context")}</p><p>${escapeHtml(result.follow_up_question || "What should Atlas inspect first?")}</p></section></div>`;
   }
+  function publicAskEndpoint() {
+    const workerBase = (window.ATLAS_LIVE_CHAT_CONFIG && window.ATLAS_LIVE_CHAT_CONFIG.relayUrl) || "https://atlasops-live-chat.atlasops-ai.workers.dev";
+    try {
+      return new URL("/api/public/ask-atlas", workerBase).toString();
+    } catch {
+      return "https://atlasops-live-chat.atlasops-ai.workers.dev/api/public/ask-atlas";
+    }
+  }
   async function publicAskAtlas(text) {
     try {
-      const response = await fetch("/api/public/ask-atlas", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ question: text, page_context: "ask-atlas_public_page", visitor_type: "public_visitor" }) });
+      const response = await fetch(publicAskEndpoint(), { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ question: text, page_context: "ask-atlas_public_page", visitor_type: "public_visitor" }) });
       if (!response.ok) throw new Error("public_ask_route_unavailable");
       return safeResult(await response.json(), text);
     } catch {
