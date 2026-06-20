@@ -239,6 +239,7 @@ h3 { font-size: 1.12rem; line-height: 1.2; }
 
 .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
 .grid.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.grid.four { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 .card, .ops-card {
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -252,6 +253,23 @@ h3 { font-size: 1.12rem; line-height: 1.2; }
   border-color: rgba(255,255,255,.12);
 }
 .card h3, .ops-card h3 { margin-bottom: .55rem; }
+.verified-lane { border-left: 4px solid var(--green); }
+.handoff-lane { border-left: 4px solid var(--amber); }
+.contact-strip { display: flex; flex-wrap: wrap; gap: .65rem; margin: 1rem 0 0; }
+.contact-pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.5rem;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: .58rem .76rem;
+  background: #f3fbff;
+  color: #102339;
+  font-weight: 850;
+  text-decoration: none;
+}
+.proof-list { margin: .5rem 0 0; padding-left: 1.15rem; color: var(--muted); }
+.proof-list li { margin: .28rem 0; }
 .price { color: #a96d00; font-weight: 900; font-size: 1.1rem; }
 .dark .price { color: var(--amber); }
 .tag {
@@ -780,7 +798,7 @@ h3 { font-size: 1.12rem; line-height: 1.2; }
   .product-detail-hero,
   .product-fact-grid,
   .service-menu { grid-template-columns: 1fr; }
-  .grid, .grid.two, .form-grid { grid-template-columns: 1fr; }
+  .grid, .grid.two, .grid.four, .form-grid { grid-template-columns: 1fr; }
   .router-form { grid-template-columns: 1fr 1fr; }
   .offer-list { grid-template-columns: 1fr; }
   .loop-diagram, .loop-diagram.buyer-flow, .simple-buyer-flow { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -799,3 +817,19 @@ h3 { font-size: 1.12rem; line-height: 1.2; }
   .chat-form { grid-template-columns: 1fr; }
   .message { max-width: 100%; }
 }
+
+
+/* Atlas AIOS public experience upgrade */
+.atlas-aios-hero { align-items: center; }
+.atlas-aios-hero .marketplace-hero-copy h1 { max-width: 860px; }
+.aios-hero-visual { display: grid; grid-template-columns: repeat(2, minmax(120px, 1fr)); gap: 12px; min-width: min(420px, 100%); padding: 18px; border: 1px solid rgba(21, 32, 43, .14); background: linear-gradient(135deg, #f8fbff, #eef7f4); box-shadow: 0 24px 70px rgba(14, 28, 43, .12); }
+.aios-node { min-height: 72px; display: grid; place-items: center; text-align: center; padding: 12px; border: 1px solid rgba(21, 32, 43, .12); background: rgba(255,255,255,.86); font-weight: 700; color: #14212f; }
+.aios-node.strong { grid-column: 1 / -1; min-height: 88px; background: #14212f; color: #fff; font-size: 1.1rem; letter-spacing: 0; }
+.aios-engine-section { border-top: 1px solid rgba(21, 32, 43, .08); }
+.aios-engine-grid, .capability-stack-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
+.public-answer-card { display: grid; gap: 12px; }
+.public-answer-card .router-card { border-left: 4px solid #1f6f5b; background: #f6fbf9; }
+.aios-page-hero { padding-top: 74px; }
+.maturity-label { display: inline-flex; align-items: center; min-height: 28px; padding: 4px 10px; border: 1px solid rgba(21,32,43,.14); font-size: .78rem; font-weight: 800; text-transform: uppercase; color: #1f6f5b; background: #f7fbf9; }
+@media (max-width: 900px) { .aios-engine-grid, .capability-stack-grid { grid-template-columns: 1fr 1fr; } .aios-hero-visual { grid-template-columns: 1fr; } .aios-node.strong { grid-column: auto; } }
+@media (max-width: 620px) { .aios-engine-grid, .capability-stack-grid { grid-template-columns: 1fr; } }

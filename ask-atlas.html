@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ask Atlas | AtlasOps AI</title>
+  <title>Ask Atlas Public Workflow Guide | AtlasOps AI</title>
   <meta name="description" content="Ask Atlas which agent workflow pack, bundle, or setup review fits your Claude Code, Codex, lead follow-up, social, Stripe delivery, AI SEO, or OpenClaw/Hermes workflow.">
   <meta property="og:title" content="Ask Atlas">
-  <meta property="og:description" content="A marketplace router for choosing AtlasOps agent workflow packs and setup reviews.">
+  <meta property="og:description" content="A public workflow guide that recommends the right AtlasOps offer without exposing internal operations status.">
   <meta property="og:image" content="assets/img/atlas-og-image.png">
   <link rel="canonical" href="https://atlasops-ai-site.pages.dev/">
   <link rel="icon" href="assets/img/favicon.png" type="image/png">
@@ -17,8 +17,9 @@
 <header class="site-header">
   <a class="brand" href="index.html"><img class="brand-logo" src="assets/img/atlasops-ai-logo.png" alt="AtlasOps AI"></a>
   <nav class="nav" aria-label="Primary">
+    <a href="aios.html">AIOS</a>
+    <a href="index.html#what-happens-next">Offers</a>
     <a href="index.html#marketplace">Marketplace</a>
-    <a href="index.html#code-intelligence">Code Intelligence</a>
     <a href="guardrails.html">Guardrail Kits</a>
     <a href="services.html">Services</a>
     <a class="cta" href="ask-atlas.html">Help</a>
@@ -28,7 +29,7 @@
   <section class="hero compact-hero">
     <div>
       <h1>Ask Atlas</h1>
-      <p class="lead">Tell Atlas what you use or what hurts. It will point you to a category, pack, bundle, and setup review option.</p>
+      <p class="lead">Tell Atlas where the workflow leaks. It will explain the problem, recommend the right public offer, and give one practical next step.</p>
       <div class="actions"><a class="button primary" href="index.html#marketplace">Browse Marketplace</a><a class="button gold" href="services.html">View Setup Services</a></div>
     </div>
     <aside class="hero-panel">
@@ -44,30 +45,24 @@
 
   <section class="section white tight">
     <div class="chat-shell">
-      <div class="chat-top"><strong>Ask Atlas marketplace router</strong><span class="status-dot">offer-aware</span></div>
+      <div class="chat-top"><strong>Ask Atlas public workflow guide</strong><span class="status-dot">offer-aware</span></div>
       <div class="chat-thread" id="atlas-chat-thread" aria-live="polite">
-        <div class="message">Choose a prompt or describe your workflow. Atlas will recommend a public marketplace path without exposing internal gates.</div>
+        <div class="message">Choose a prompt or describe your workflow. Atlas will recommend a public AtlasOps path without exposing internal operations status.</div>
       </div>
       <form id="atlas-chat-form" class="chat-form atlasops-lead-form ask-atlas-widget-form">
-        <textarea id="atlas-chat-input" name="question" aria-label="Ask Atlas a question" placeholder="Example: I use Codex and need a code review agent."></textarea>
+        <textarea id="atlas-chat-input" name="question" aria-label="Ask Atlas a question" placeholder="Example: I get leads from my website but forget to follow up."></textarea>
         <button type="submit">Route</button>
         <input type="hidden" name="source_page" value="ask-atlas.html">
         <input type="hidden" name="service_interest" value="Marketplace routing">
         <span class="honeypot"><input name="website_confirm" tabindex="-1" autocomplete="off"></span>
       </form>
       <div class="quick-prompts" aria-label="Quick prompts">
-        <button type="button" data-prompt="I use Claude Code">I use Claude Code</button>
-        <button type="button" data-prompt="I use Codex">I use Codex</button>
-        <button type="button" data-prompt="I use OpenAI">I use OpenAI</button>
-        <button type="button" data-prompt="I use Gemini">I use Gemini</button>
-        <button type="button" data-prompt="I need repo meaning">I need repo meaning</button>
-        <button type="button" data-prompt="I need bugfix suggestions">I need bugfix suggestions</button>
-        <button type="button" data-prompt="I need a code review agent">I need a code review agent</button>
-        <button type="button" data-prompt="I need lead follow-up">I need lead follow-up</button>
-        <button type="button" data-prompt="I need social posting">I need social posting</button>
-        <button type="button" data-prompt="I need Stripe delivery">I need Stripe delivery</button>
-        <button type="button" data-prompt="I need AI SEO">I need AI SEO</button>
-        <button type="button" data-prompt="I need OpenClaw/Hermes">I need OpenClaw/Hermes</button>
+        <button type="button" data-prompt="I miss follow-ups">I miss follow-ups</button>
+        <button type="button" data-prompt="My website is confusing">My website is confusing</button>
+        <button type="button" data-prompt="I need card processing">I need card processing</button>
+        <button type="button" data-prompt="I want monthly checks">I want monthly checks</button>
+        <button type="button" data-prompt="I need an AI agent pack">I need an AI agent pack</button>
+        <button type="button" data-prompt="What is Atlas AIOS?">What is Atlas AIOS?</button>
       </div>
     </div>
   </section>
@@ -101,62 +96,86 @@
   </section>
 </main>
 <footer class="footer">
-  <span>Ask Atlas routes buyers to marketplace packs, bundles, and setup reviews.</span>
+  <span>Ask Atlas guides visitors to the right AtlasOps offer without internal status dumps.</span>
   <span><a href="index.html#marketplace">Marketplace</a> / <a href="services.html">Services</a> / <a href="guardrail-download.html">Delivery Policy</a> / <a href="mailto:Atlasisai.3.14@gmail.com">Contact Atlas AI</a></span>
 </footer>
 <script>
 (() => {
-  const routes = [
-    {terms: ["claude"], category: "Claude + Codex Team Packs", pack: "Claude Code Team Ergonomics Agent Pack", bundle: "Claude + Codex Team Ergonomics Bundle", review: "Team Rollout Review", status: "Available now", cta: "agent-skills/claude-code-team-ergonomics-pack.html"},
-    {terms: ["codex", "code review"], category: "Code Intelligence Agents", pack: "Codex Team Ergonomics Agent Pack", bundle: "Claude + Codex Team Ergonomics Bundle", review: "Team Rollout Review", status: "Available now", cta: "agent-skills/codex-team-ergonomics-pack.html"},
-    {terms: ["repo meaning", "meaning", "module map"], category: "Code Intelligence Agents", pack: "Codebase Meaning Agent Pack", bundle: "Persistent Repo Intelligence Bundle", review: "Code Intelligence Setup Review", status: "Setup required", cta: "agent-skills/codebase-meaning-agent-pack.html"},
-    {terms: ["bugfix", "bug fix", "local code"], category: "Code Intelligence Agents", pack: "Local Code Review Agent Pack", bundle: "Persistent Repo Intelligence Bundle", review: "Local Review Setup", status: "Setup required", cta: "agent-skills/local-code-review-agent-pack.html"},
-    {terms: ["openai", "gemini", "multi-platform"], category: "Multi-Platform Agent Starters", pack: "Claude/Codex/Gemini/OpenAI Agent Starter Pack", bundle: "Persistent Repo Intelligence Bundle", review: "Multi-Platform Agent Setup Review", status: "Book review", cta: "agent-skills/multi-platform-code-agent-starter-pack.html"},
-    {terms: ["lead", "follow-up", "missed"], category: "Business Automation Agents", pack: "First Response Agent", bundle: "Business Automation Setup Review", review: "First Response Setup Review", status: "Setup required", cta: "services/first-response-agent.html"},
-    {terms: ["social", "posting", "media"], category: "Social + Media Agents", pack: "LinkedIn/X/Media Distribution Pack", bundle: "Social Sales Loop", review: "Social Workflow Review", status: "Setup required", cta: "services/social-media-distribution-pack.html"},
-    {terms: ["stripe", "delivery", "checkout"], category: "Revenue + Stripe Agents", pack: "Recurring Revenue Monitor Pack", bundle: "Revenue Agent Bundle", review: "Stripe Delivery Review", status: "Available now", cta: "services/recurring-revenue-monitor-pack.html"},
-    {terms: ["seo", "visibility", "meaning"], category: "AI SEO + Website Meaning", pack: "AI Website SEO + AI Visibility Audit", bundle: "Website Meaning Review", review: "AI SEO Setup Review", status: "Book review", cta: "ai-website-seo-visibility-audit.html"},
-    {terms: ["digital product", "make digital products", "spreadsheet product", "spreadsheet"], category: "Digital Product Builder Agents", pack: "Premium Spreadsheet Product Builder Agent Pack", bundle: "Spreadsheet Product Builder Setup Review", review: "Spreadsheet Product Builder Setup Review", status: "Setup required", cta: "agent-skills/premium-spreadsheet-product-builder-agent-pack.html"},
-    {terms: ["ai agency client tracker", "client tracker"], category: "Digital Product Builder Agents", pack: "AI Agency Client Tracker Spreadsheet", bundle: "Spreadsheet Product Builder Setup Review", review: "Spreadsheet Product Builder Setup Review", status: "Setup required", cta: "digital-products/ai-agency-client-tracker.html"},
-    {terms: ["help me sell", "help me sell atlas", "sell"], category: "Business Automation Agents", pack: "AI Business Assessment", bundle: "First Buyer Setup Review", review: "Revenue Workflow Review", status: "Book review", cta: "services.html"},
-    {terms: ["openclaw", "hermes"], category: "OpenClaw + Hermes Bridges", pack: "OpenClaw/Hermes Bridge Review", bundle: "Workflow Integration Pack", review: "Bridge Setup Review", status: "Book review", cta: "services.html#services-menu"}
-  ];
-
-  function pickRoute(text) {
-    const value = text.toLowerCase();
-    return routes.find((route) => route.terms.some((term) => value.includes(term))) || routes[0];
+  const offers = {
+    free_review: { title: "Free AI Visibility + Workflow Review", link: "ask-atlas.html", next: "Start with the free review so Atlas can inspect the public website, contact path, and follow-up story first." },
+    quick_fix_297: { title: "$297 Quick Fix Setup", link: "index.html#what-happens-next", next: "Use the $297 Quick Fix when one small repair is enough." },
+    followup_starter_497: { title: "$497 AI Follow-Up Starter", link: "follow-up-starter.html", next: "Use the Follow-Up Starter when leads arrive but first response or handoff is inconsistent." },
+    monitoring_97: { title: "$97/month Monitoring", link: "monitoring.html", next: "Use monitoring after the main path is live and you want drift caught monthly." },
+    merchant_creditline: { title: "Merchant / CreditLine Technical Support Handoff", link: "gateway-merchant-account-setup.html", next: "Route payment processing questions to Mark Wilson / CreditLine Technical Support / Cloud9 Payment Processing Gateway / 911 Software." },
+    agent_packs_99: { title: "$99 Agent Workflow Pack", link: "guardrails.html", next: "Start with a reusable agent workflow pack when the work repeats." }
+  };
+  const blockedTerms = ["Business " + "status:", "Mode " + "B", "Gmail " + "gate", "daily " + "cap", "Mission " + "Control", "Pay" + "\\s*" + "Muse"];
+  const blocked = new RegExp(blockedTerms.join("|"), "i");
+  function escapeHtml(text) { return String(text || "").replace(/[&<>"']/g, (c) => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
+  function pick(text) {
+    const q = String(text || "").toLowerCase();
+    if (/credit card|merchant|gateway|restaurant|statement|payment processing|pos/.test(q)) return ["merchant_creditline", "route_merchant_handoff"];
+    if (/follow|reply|lead|forget|forgot|handoff|quote|inquiry/.test(q)) return ["followup_starter_497", "diagnose_workflow"];
+    if (/monitor|monthly|drift|checked/.test(q)) return ["monitoring_97", "explain_offer"];
+    if (/agent pack|custom agent|code|workflow pack|builder/.test(q)) return ["agent_packs_99", "explain_offer"];
+    if (/website|confusing|cta|seo|visibility|ai answer|297|quick fix/.test(q)) return ["quick_fix_297", "recommend_offer"];
+    return ["free_review", "fallback_helpful_answer"];
   }
-
-  function escapeHtml(text) {
-    return text.replace(/[&<>"']/g, (char) => ({
-      "&": "&amp;",
-      "<": "&lt;",
-      ">": "&gt;",
-      '"': "&quot;",
-      "'": "&#39;"
-    })[char]);
+  function localAnswer(text) {
+    const q = String(text || "").toLowerCase();
+    const [offerId, mode] = pick(text);
+    const offer = offers[offerId];
+    let answer;
+    let follow = "What public page or workflow should Atlas inspect first?";
+    if (/joke/.test(q)) {
+      answer = "Why did the follow-up email become an AI agent? Because it was tired of being left on read. If you want the practical version, Atlas can inspect where your real follow-up leaks.";
+      follow = "Want Atlas to inspect a real workflow next?";
+    } else if (/difference/.test(q) && (/297|497/.test(q))) {
+      answer = "The $297 Quick Fix is for one narrow repair: a clearer CTA, contact path, or small workflow setup. The $497 AI Follow-Up Starter is for leads that already arrive but cool off because first response, handoff, or follow-up is inconsistent. If you are unsure, start with the Free Review.";
+    } else if (offerId === "merchant_creditline") {
+      answer = "That belongs in the Merchant / CreditLine lane, not the AI SEO offer. Atlas can collect the basic payment setup question and route it toward Mark Wilson / CreditLine Technical Support / Cloud9 Payment Processing Gateway / 911 Software. Do not send card data, passwords, API keys, or private credentials through the public form.";
+      follow = "Do you need a new setup, gateway help, or a statement review?";
+    } else if (offerId === "followup_starter_497") {
+      answer = "That sounds like a follow-up leak, not just a website problem. Start with the Free Review if you want Atlas to inspect the contact path first. If you already know leads are cooling off after they contact you, the $497 AI Follow-Up Starter is the better fit.";
+      follow = "Where do leads come in today: website form, email, phone, booking tool, or social inbox?";
+    } else if (/atlas aios|what is atlas/.test(q)) {
+      answer = "Atlas AIOS is the operating layer behind AtlasOps offers: agents, memory, proof, long-horizon tasks, system cards, capability cards, and daily operating loops. The public offers are the buyer-facing way to start: Free Review, $297 Quick Fix, $497 Follow-Up Starter, and $97/month Monitoring.";
+      follow = "Do you want the buyer offer path or the deeper AIOS architecture overview?";
+    } else {
+      answer = `I would start with ${offer.title}. ${offer.next}`;
+    }
+    return { answer, recommended_offer: { offer_id: offerId, ...offer }, response_mode: mode, confidence: 0.78, next_step: offer.next, link: offer.link, follow_up_question: follow };
   }
-
-  function renderRoute(text) {
-    const route = pickRoute(text);
-    return `<div class="router-card"><strong>${route.category}</strong><p>Recommended pack: ${route.pack}</p><p>Recommended bundle: ${route.bundle}</p><p>Setup review option: ${route.review}</p><p class="price">${route.status}</p><div class="router-actions"><a href="${route.cta}">Open recommendation</a><a href="services.html">Book review</a></div></div>`;
+  function safeResult(result, originalText) {
+    if (!result || blocked.test(result.answer || "")) return localAnswer(originalText);
+    return result;
   }
-
+  function renderAnswer(result) {
+    const offer = result.recommended_offer || offers.free_review;
+    return `<div class="public-answer-card"><p>${escapeHtml(result.answer)}</p><div class="router-card"><strong>${escapeHtml(offer.title)}</strong><p>${escapeHtml(result.next_step || offer.next)}</p><p><em>Why this recommendation:</em> ${escapeHtml(result.response_mode || "visitor_context")}</p><div class="router-actions"><a href="${escapeHtml(result.link || offer.link)}">Open recommendation</a><a href="index.html#what-happens-next">See offer ladder</a></div></div><p class="form-note">${escapeHtml(result.follow_up_question || "What should Atlas inspect first?")}</p></div>`;
+  }
+  async function publicAskAtlas(text) {
+    try {
+      const response = await fetch("/api/public/ask-atlas", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ question: text, page_context: "ask-atlas_public_page", visitor_type: "public_visitor" }) });
+      if (!response.ok) throw new Error("public_ask_route_unavailable");
+      return safeResult(await response.json(), text);
+    } catch {
+      return localAnswer(text);
+    }
+  }
   const thread = document.getElementById("atlas-chat-thread");
   const form = document.getElementById("atlas-chat-form");
   const input = document.getElementById("atlas-chat-input");
-  document.querySelectorAll("[data-prompt]").forEach((button) => {
-    button.addEventListener("click", () => {
-      input.value = button.dataset.prompt;
-      thread.insertAdjacentHTML("beforeend", `<div class="message user">${escapeHtml(button.dataset.prompt)}</div><div class="message">${renderRoute(button.dataset.prompt)}</div>`);
-    });
-  });
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
-    const text = input.value.trim() || "I use Claude Code";
-    thread.insertAdjacentHTML("beforeend", `<div class="message user">${escapeHtml(text)}</div><div class="message">${renderRoute(text)}</div>`);
-    input.value = "";
-  });
+  async function submitPrompt(text) {
+    const value = text.trim() || "I'm not technical. Where do I start?";
+    thread.insertAdjacentHTML("beforeend", `<div class="message user">${escapeHtml(value)}</div><div class="message" data-loading="true">Atlas is checking the offer path...</div>`);
+    const loading = thread.querySelector("[data-loading='true']:last-child");
+    const result = await publicAskAtlas(value);
+    loading.outerHTML = `<div class="message">${renderAnswer(result)}</div>`;
+    thread.scrollTop = thread.scrollHeight;
+  }
+  document.querySelectorAll("[data-prompt]").forEach((button) => button.addEventListener("click", () => { input.value = button.dataset.prompt; submitPrompt(button.dataset.prompt); }));
+  form.addEventListener("submit", (event) => { event.preventDefault(); const text = input.value; submitPrompt(text); });
 })();
 </script>
 </body>

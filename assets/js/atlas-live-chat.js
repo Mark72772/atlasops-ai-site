@@ -15,7 +15,7 @@
   const storageKey = "atlasops_live_chat_session";
   const transcriptKey = "atlasops_live_chat_transcript";
   const rootId = "atlas-live-chat-root";
-  const fallbackText = "Live relay is not connected yet. Use the contact page or start-audit path, and AtlasOps can follow up by email.";
+  const fallbackText = "I can still help from public visitor mode. Tell me where the workflow leaks: website clarity, contact path, follow-up, card processing, monitoring, or an agent pack.";
   let pollTimer = null;
   let lastQuestionId = "";
 
@@ -126,7 +126,7 @@
     if (transcript().length) return;
     saveTranscript([{
       role: "atlas",
-      text: "Hi, I\u2019m Atlas. Ask me about AI automation, website fixes, content systems, code reviews, SWOT reports, or how AtlasOps can help.",
+      text: "Hi, I\u2019m Atlas. Tell me where the workflow leaks: missed follow-ups, confusing website, card processing, monthly checks, or an agent pack. I will recommend the smallest next step.",
       created_at: new Date().toISOString()
     }]);
   }
@@ -169,22 +169,21 @@
           <input name="atlas_chat_company" autocomplete="organization" placeholder="Company">
           <select name="atlas_chat_service" aria-label="Service interest">
             <option value="">Service interest</option>
-            <option>AI Business Automation Audit</option>
-            <option>Website + PayPal CTA Setup</option>
-            <option>AI Marketing Automation Audit</option>
-            <option>AI Social Content System</option>
-            <option>Code Intelligence / Spec-Driven Audit</option>
-            <option>Company SWOT Pilot</option>
-            <option>Atlas Native Coding CLI</option>
+            <option>Free AI Visibility + Workflow Review</option>
+            <option>$297 Quick Fix Setup</option>
+            <option>$497 AI Follow-Up Starter</option>
+            <option>$97/month Monitoring</option>
+            <option>Merchant / CreditLine Technical Support</option>
+            <option>$99 Agent Workflow Pack</option>
           </select>
         </div>
         <div class="atlas-chat-chips" aria-label="Quick prompts" data-atlas-chat-chips>
-          <button type="button">Can Atlas review my website?</button>
-          <button type="button">What should I automate first?</button>
-          <button type="button">Can Atlas build a lead follow-up system?</button>
-          <button type="button">Can Atlas review my codebase?</button>
-          <button type="button">Can Atlas create a SWOT report?</button>
-          <button type="button">How do I start an audit?</button>
+          <button type="button">I miss follow-ups</button>
+          <button type="button">My website is confusing</button>
+          <button type="button">I need card processing</button>
+          <button type="button">I want monthly checks</button>
+          <button type="button">I need an AI agent pack</button>
+          <button type="button">What is Atlas AIOS?</button>
         </div>
         <div class="atlas-chat-messages" data-atlas-chat-messages></div>
         <p class="atlas-chat-safety">Do not send passwords, API keys, payment card data, private files, or sensitive customer data.</p>
@@ -249,13 +248,26 @@
     }
   }
 
+
+  function publicVisitorAnswer(text) {
+    const q = String(text || "").toLowerCase();
+    if (/joke/.test(q)) return "Why did the follow-up email become an AI agent? Because it was tired of being left on read. If you want the practical version, Atlas can inspect where your real follow-up leaks.";
+    if (/credit card|merchant|gateway|restaurant|statement|payment processing|pos/.test(q)) return "That belongs in the Merchant / CreditLine lane. Atlas can route payment processing, gateway, merchant account, or statement review questions toward Mark Wilson / CreditLine Technical Support / Cloud9 Payment Processing Gateway / 911 Software. Do not send card data or credentials here.";
+    if (/follow|reply|lead|forget|forgot|handoff|quote|inquiry/.test(q)) return "That sounds like a follow-up leak. Start with the Free Review if Atlas should inspect the contact path first; use the $497 AI Follow-Up Starter when leads already arrive but first response or handoff is inconsistent.";
+    if (/monitor|monthly|drift|checked/.test(q)) return "Monitoring is the $97/month path for keeping contact paths, CTAs, broken links, and follow-up workflow from drifting after the main setup works.";
+    if (/agent pack|custom agent|code|workflow pack|builder/.test(q)) return "A $99 Agent Workflow Pack fits repeated work that needs instructions, guardrails, proof rules, or setup help. Name the workflow and Atlas can point you to the pack or setup review.";
+    if (/atlas aios|what is atlas|operating system/.test(q)) return "Atlas AIOS is the operating layer behind AtlasOps: agents, memory, proof, long-horizon tasks, system cards, capability cards, and daily operating loops. The public offers are the buyer-facing way to start.";
+    if (/website|confusing|cta|seo|visibility|ai answer|quick fix/.test(q)) return "That sounds like a visibility or contact-path leak. Start with the Free Review if Atlas should inspect the public page, or the $297 Quick Fix if the narrow repair is already clear.";
+    return fallbackText;
+  }
+
   async function sendText(text) {
     if (!text) return;
     addMessage("visitor", text);
     setStatus("thinking", "Checking...", "Atlas is checking...");
     setOrbState("thinking");
     if (!config.relayUrl) {
-      addMessage("atlas", fallbackText);
+      addMessage("atlas", publicVisitorAnswer(text));
       setStatus("offline", "Leave message", "Relay setup pending — this message will use fallback instructions.");
       return;
     }
@@ -268,7 +280,7 @@
       setStatus(result.status === "sent_to_atlas" || result.status === "reply_available" ? "live" : "relay", result.status === "sent_to_atlas" ? "Live" : "Online relay", result.status === "sent_to_atlas" ? "Atlas is online." : "Atlas relay is online. Atlas may queue complex replies, but simple questions can still be answered.");
       pollForReply(questionId);
     } catch {
-      addMessage("atlas", "Atlas has your message path, but the relay did not answer. If you left an email, AtlasOps can follow up.");
+      addMessage("atlas", publicVisitorAnswer(text));
       setStatus("offline", "Leave message", "Atlas relay is offline. Leave a message for follow-up.");
     }
   }
